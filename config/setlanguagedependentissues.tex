@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Generic template for TFC/TFM/TFG/Tesis
+%
+% $Id: setlanguagedependentissues.tex,v 1.9 2015/02/24 23:21:55 macias Exp $
+%
+% By:
+%  + Javier Macías-Guarasa. 
+%    Departamento de Electrónica
+%    Universidad de Alcalá
+%  + Roberto Barra-Chicote. 
+%    Departamento de Ingeniería Electrónica
+%    Universidad Politécnica de Madrid   
+% 
+% Based on original sources by Roberto Barra, Manuel Ocaña, Jesús Nuevo,
+% Pedro Revenga, Fernando Herránz and Noelia Hernández. Thanks a lot to
+% all of them, and to the many anonymous contributors found (thanks to
+% google) that provided help in setting all this up.
+%
+% See also the additionalContributors.txt file to check the name of
+% additional contributors to this work.
+%
+% If you think you can add pieces of relevant/useful examples,
+% improvements, please contact us at (macias@depeca.uah.es)
+%
+% Copyleft 2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% You should not need to modify this file, unless you want to add
+% language specific definitions.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\equal{\mybooklanguage}{english}}
+{
+  \selectlanguage{english}
+
+  \newcommand{\xUseSpanish}{~}    
+  \newcommand{\xUseEnglish}{X}  
+
+  \floatname{codefloat}{Listing}
+  \renewcommand{\lstlistingname}{Listing}
+
+  %% \DeclareFloatingEnvironment[
+  %%       fileext=lox,
+  %%       listname={Source code listing},
+  %%       name=Code,
+  %%       placement=p,
+  %%       within=section,
+  %%       chapterlistsgaps=off,
+  %%       ]{sourcecode}
+}
+{
+  \selectlanguage{spanish}
+
+  \newcommand{\xUseSpanish}{X}    
+  \newcommand{\xUseEnglish}{~}  
+  \renewcommand{\tablename}{Tabla}
+  \renewcommand{\listtablename}{Índice de tablas}
+
+  \floatname{codefloat}{Listado}
+  \renewcommand{\lstlistingname}{Listado}
+
+
+  %% \DeclareFloatingEnvironment[
+  %%       fileext=lox,
+  %%       listname={Lista de código fuente},
+  %%       name=Código,
+  %%       placement=p,
+  %%       within=section,
+  %%       chapterlistsgaps=off,
+  %%       ]{sourcecode}
+}
+
+%%% Local Variables:
+%%% TeX-master: "../book"
+%%% End:
+
+

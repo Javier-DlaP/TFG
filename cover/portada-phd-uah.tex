@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Generic template for TFC/TFM/TFG/Tesis
+%
+% $Id: portada-phd-uah.tex,v 1.8 2014/12/09 11:55:54 macias Exp $
+%
+% By:
+%  + Javier Macías-Guarasa. 
+%    Departamento de Electrónica
+%    Universidad de Alcalá
+%  + Roberto Barra-Chicote. 
+%    Departamento de Ingeniería Electrónica
+%    Universidad Politécnica de Madrid   
+% 
+% Based on original sources by Roberto Barra, Manuel Ocaña, Jesús Nuevo,
+% Pedro Revenga, Fernando Herránz and Noelia Hernández. Thanks a lot to
+% all of them, and to the many anonymous contributors found (thanks to
+% google) that provided help in setting all this up.
+%
+% See also the additionalContributors.txt file to check the name of
+% additional contributors to this work.
+%
+% If you think you can add pieces of relevant/useful examples,
+% improvements, please contact us at (macias@depeca.uah.es)
+%
+% Copyleft 2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+\large
+\vspace{3cm}
+\begin{center}
+
+\color{pantone293}
+
+  \centerline{\includegraphics[height=3cm]{uah/01_logo-vA_pant293.pdf}}
+
+  \ifthenelse{\equal{\mybooklanguage}{english}}
+  {
+    \huge{{\mybookphdprogramEnglish}}
+  }
+  {
+    \huge{{\mybookphdprogram}}
+  }
+  % \Huge{\textbf{\MakeUppercase{\mybookuniversity}}}
+
+%  \vspace{5mm}
+
+%  \Large{\MakeUppercase{\mybookschool}}
+  
+%  \vspace{5mm}
+
+%  \Large\textbf{\MakeUppercase{\mybookdepartment}}
+
+%  \vspace{15mm}
+
+  \vspace{2cm}   
+  
+  \Huge\textbf{\mybooktitle}
+
+  \vspace{15mm}
+  
+  \ifthenelse{\equal{\mybooklanguage}{english}}
+  {
+    \huge{{PhD. Thesis Presented by}}
+  }
+  {
+    \huge{{Tesis Doctoral presentada por}}
+  }
+
+%  \vspace{15mm}
+
+  \huge{\textbf{\mybookauthor}}
+
+%  \LARGE\textbf{\mybookworktypefull}
+
+  
+
+\end{center}
+
+\begin{bottomparagraph}
+  \begin{center}
+    \huge{\mybookyear}
+  \end{center}
+\end{bottomparagraph}
+
+\color{black}
+
+\clearemptydoublepage
+
+%%% Local Variables:
+%%% TeX-master: "../book"
+%%% End:

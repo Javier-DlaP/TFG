@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Generic template for TFC/TFM/TFG/Tesis
+%
+% $Id: acronymsgl.tex,v 1.7 2014/11/26 23:09:10 macias Exp $
+%
+% By:
+%  + Javier Macías-Guarasa. 
+%    Departamento de Electrónica
+%    Universidad de Alcalá
+%  + Roberto Barra-Chicote. 
+%    Departamento de Ingeniería Electrónica
+%    Universidad Politécnica de Madrid   
+% 
+% Based on original sources by Roberto Barra, Manuel Ocaña, Jesús Nuevo,
+% Pedro Revenga, Fernando Herránz and Noelia Hernández. Thanks a lot to
+% all of them, and to the many anonymous contributors found (thanks to
+% google) that provided help in setting all this up.
+%
+% See also the additionalContributors.txt file to check the name of
+% additional contributors to this work.
+%
+% If you think you can add pieces of relevant/useful examples,
+% improvements, please contact us at (macias@depeca.uah.es)
+%
+% Copyleft 2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% You can change the way the entries appear the first time they are
+% used. I've used italics by default. I found a problem if using this:
+% LaTeX adds an extra space after the acronym, so I'm commenting it out
+% (if you find a solution, please let me know)
+%\defglsdisplayfirst[\acronymtype]{\textit{#1}} % EDIT this if required
+
+% This may lead to problems... I don't know how to fix it in case the
+% column for acronym is wider than 0.3\linewidth
+\setlength{\glsdescwidth}{0.7\linewidth}       % EDIT this if required
+
+% Set language specific definitions...
+\ifthenelse{\equal{\mybooklanguage}{english}}
+{
+\printglossary[type=\acronymtype,style=super,nonumberlist=true,title=List of Acronyms,toctitle=List of Acronyms]
+\addcontentsline{toc}{chapter}{List of Acronyms}
+}
+{
+\printglossary[type=\acronymtype,style=super,nonumberlist=true,title=Lista de acrónimos,toctitle=Lista de acrónimos]
+\addcontentsline{toc}{chapter}{Lista de acrónimos}
+}
+
+
+%%% Local Variables:
+%%% TeX-master: "../book"
+%%% End:
+
+

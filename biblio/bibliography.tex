@@ -1,0 +1,58 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Generic template for TFC/TFM/TFG/Tesis
+%
+% $Id: bibliography.tex,v 1.8 2015/01/23 22:44:45 macias Exp $
+%
+% By:
+%  + Javier Macías-Guarasa. 
+%    Departamento de Electrónica
+%    Universidad de Alcalá
+%  + Roberto Barra-Chicote. 
+%    Departamento de Ingeniería Electrónica
+%    Universidad Politécnica de Madrid   
+% 
+% Based on original sources by Roberto Barra, Manuel Ocaña, Jesús Nuevo,
+% Pedro Revenga, Fernando Herránz and Noelia Hernández. Thanks a lot to
+% all of them, and to the many anonymous contributors found (thanks to
+% google) that provided help in setting all this up.
+%
+% See also the additionalContributors.txt file to check the name of
+% additional contributors to this work.
+%
+% If you think you can add pieces of relevant/useful examples,
+% improvements, please contact us at (macias@depeca.uah.es)
+%
+% Copyleft 2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\bibliographystyle{plainnat}
+%\bibliographystyle{dinat}
+%\bibliographystyle{unsrt}
+\bibliographystyle{IEEEtran}
+
+% The following is overly complicated because I was not able to do so in
+% another way. The problem is the bibliography command being "called"
+% from both the root and anteproyecto directories...
+%
+% Here define as many bibfiles as needed
+\newcommand{\mybibfileOne}{biblio/biblio}
+\newcommand{\mybibfileTwo}{biblio/biblio2}
+%...
+%\newcommand{\mybibfileN}{biblio/biblioN}
+
+% This is for a single bib file
+\newcommand{\mybibfiles}{\myreferencespath\mybibfileOne}
+% but do this for multiple files
+%\newcommand{\mybibfiles}{\myreferencespath\mybibfile1,\myreferencespath\mybibfile2,...,\myreferencespath\mybibfileN}
+
+% Do not touch this
+\bibliography{\mybibfiles}
+
+
+%%% Local Variables:
+%%% TeX-master: "../book"
+%%% End:
+
+
