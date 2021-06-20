@@ -1,0 +1,1440 @@
+\ifglsentryexists{HMI}{}%
+{%
+\gls@defglossaryentry{HMI}%
+{%
+name={HMI},%
+sort={HMI},%
+type={acronym},%
+first={Human-Machine Interfaces\glsspace (HMI)},%
+firstplural={Human-Machine Interfacess\glsspace (HMIs)},%
+text={HMI},%
+plural={HMIs},%
+description={Human-Machine Interfaces},%
+descriptionplural={Human-Machine Interfaces\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Human-Machine Interfaces},%
+longplural={Human-Machine Interfacess},%
+short={HMI},%
+shortplural={HMIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ETTS}{}%
+{%
+\gls@defglossaryentry{ETTS}%
+{%
+name={ETTS},%
+sort={ETTS},%
+type={acronym},%
+first={Emotional Text To Speech\glsspace (ETTS)},%
+firstplural={Emotional Text To Speechs\glsspace (ETTSs)},%
+text={ETTS},%
+plural={ETTSs},%
+description={Emotional Text To Speech},%
+descriptionplural={Emotional Text To Speech\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Emotional Text To Speech},%
+longplural={Emotional Text To Speechs},%
+short={ETTS},%
+shortplural={ETTSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TTS}{}%
+{%
+\gls@defglossaryentry{TTS}%
+{%
+name={TTS},%
+sort={TTS},%
+type={acronym},%
+first={Text To Speech\glsspace (TTS)},%
+firstplural={Text To Speechs\glsspace (TTSs)},%
+text={TTS},%
+plural={TTSs},%
+description={Text To Speech},%
+descriptionplural={Text To Speech\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Text To Speech},%
+longplural={Text To Speechs},%
+short={TTS},%
+shortplural={TTSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PSOLA}{}%
+{%
+\gls@defglossaryentry{PSOLA}%
+{%
+name={PSOLA},%
+sort={PSOLA},%
+type={acronym},%
+first={Pitch Synchronous OverLap Add\glsspace (PSOLA)},%
+firstplural={Pitch Synchronous OverLap Adds\glsspace (PSOLAs)},%
+text={PSOLA},%
+plural={PSOLAs},%
+description={Pitch Synchronous OverLap Add},%
+descriptionplural={Pitch Synchronous OverLap Add\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Pitch Synchronous OverLap Add},%
+longplural={Pitch Synchronous OverLap Adds},%
+short={PSOLA},%
+shortplural={PSOLAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TDPSOLA}{}%
+{%
+\gls@defglossaryentry{TDPSOLA}%
+{%
+name={TD-PSOLA},%
+sort={TD-PSOLA},%
+type={acronym},%
+first={Time Domain Pitch Synchronous OverLap Add\glsspace (TD-PSOLA)},%
+firstplural={Time Domain Pitch Synchronous OverLap Adds\glsspace (TD-PSOLAs)},%
+text={TD-PSOLA},%
+plural={TD-PSOLAs},%
+description={Time Domain Pitch Synchronous OverLap Add},%
+descriptionplural={Time Domain Pitch Synchronous OverLap Add\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Time Domain Pitch Synchronous OverLap Add},%
+longplural={Time Domain Pitch Synchronous OverLap Adds},%
+short={TD-PSOLA},%
+shortplural={TD-PSOLAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AI}{}%
+{%
+\gls@defglossaryentry{AI}%
+{%
+name={AI},%
+sort={AI},%
+type={acronym},%
+first={Artificial Intelligenge\glsspace (AI)},%
+firstplural={Artificial Intelligenges\glsspace (AIs)},%
+text={AI},%
+plural={AIs},%
+description={Artificial Intelligenge},%
+descriptionplural={Artificial Intelligenge\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Artificial Intelligenge},%
+longplural={Artificial Intelligenges},%
+short={AI},%
+shortplural={AIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SPSS}{}%
+{%
+\gls@defglossaryentry{SPSS}%
+{%
+name={SPSS},%
+sort={SPSS},%
+type={acronym},%
+first={Statistical Parametric Speech Synthesis\glsspace (SPSS)},%
+firstplural={Statistical Parametric Speech Synthesiss\glsspace (SPSSs)},%
+text={SPSS},%
+plural={SPSSs},%
+description={Statistical Parametric Speech Synthesis},%
+descriptionplural={Statistical Parametric Speech Synthesis\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Statistical Parametric Speech Synthesis},%
+longplural={Statistical Parametric Speech Synthesiss},%
+short={SPSS},%
+shortplural={SPSSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{VC}{}%
+{%
+\gls@defglossaryentry{VC}%
+{%
+name={VC},%
+sort={VC},%
+type={acronym},%
+first={Voice Conversion\glsspace (VC)},%
+firstplural={Voice Conversions\glsspace (VCs)},%
+text={VC},%
+plural={VCs},%
+description={Voice Conversion},%
+descriptionplural={Voice Conversion\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Voice Conversion},%
+longplural={Voice Conversions},%
+short={VC},%
+shortplural={VCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{US}{}%
+{%
+\gls@defglossaryentry{US}%
+{%
+name={US},%
+sort={US},%
+type={acronym},%
+first={Unit Selection\glsspace (US)},%
+firstplural={Unit Selections\glsspace (USs)},%
+text={US},%
+plural={USs},%
+description={Unit Selection},%
+descriptionplural={Unit Selection\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unit Selection},%
+longplural={Unit Selections},%
+short={US},%
+shortplural={USs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HMM}{}%
+{%
+\gls@defglossaryentry{HMM}%
+{%
+name={HMM},%
+sort={HMM},%
+type={acronym},%
+first={Hidden Markov Model\glsspace (HMM)},%
+firstplural={Hidden Markov Models\glsspace (HMMs)},%
+text={HMM},%
+plural={HMMs},%
+description={Hidden Markov Model},%
+descriptionplural={Hidden Markov Model\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hidden Markov Model},%
+longplural={Hidden Markov Models},%
+short={HMM},%
+shortplural={HMMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LSP}{}%
+{%
+\gls@defglossaryentry{LSP}%
+{%
+name={LSP},%
+sort={LSP},%
+type={acronym},%
+first={Line Spectral Pairs\glsspace (LSP)},%
+firstplural={Line Spectral Pairss\glsspace (LSPs)},%
+text={LSP},%
+plural={LSPs},%
+description={Line Spectral Pairs},%
+descriptionplural={Line Spectral Pairs\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Line Spectral Pairs},%
+longplural={Line Spectral Pairss},%
+short={LSP},%
+shortplural={LSPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LPC}{}%
+{%
+\gls@defglossaryentry{LPC}%
+{%
+name={LPC},%
+sort={LPC},%
+type={acronym},%
+first={Linear Prediction Coefficiens\glsspace (LPC)},%
+firstplural={Linear Prediction Coefficienss\glsspace (LPCs)},%
+text={LPC},%
+plural={LPCs},%
+description={Linear Prediction Coefficiens},%
+descriptionplural={Linear Prediction Coefficiens\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Linear Prediction Coefficiens},%
+longplural={Linear Prediction Coefficienss},%
+short={LPC},%
+shortplural={LPCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LSF}{}%
+{%
+\gls@defglossaryentry{LSF}%
+{%
+name={LSF},%
+sort={LSF},%
+type={acronym},%
+first={Line Spectral Frequencies\glsspace (LSF)},%
+firstplural={Line Spectral Frequenciess\glsspace (LSFs)},%
+text={LSF},%
+plural={LSFs},%
+description={Line Spectral Frequencies},%
+descriptionplural={Line Spectral Frequencies\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Line Spectral Frequencies},%
+longplural={Line Spectral Frequenciess},%
+short={LSF},%
+shortplural={LSFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{F0}{}%
+{%
+\gls@defglossaryentry{F0}%
+{%
+name={F0},%
+sort={F0},%
+type={acronym},%
+first={Fundamental Frequency\glsspace (F0)},%
+firstplural={Fundamental Frequencys\glsspace (F0s)},%
+text={F0},%
+plural={F0s},%
+description={Fundamental Frequency},%
+descriptionplural={Fundamental Frequency\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fundamental Frequency},%
+longplural={Fundamental Frequencys},%
+short={F0},%
+shortplural={F0s},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MCEP}{}%
+{%
+\gls@defglossaryentry{MCEP}%
+{%
+name={MCEP},%
+sort={MCEP},%
+type={acronym},%
+first={Mel Cepstral Coefficients\glsspace (MCEP)},%
+firstplural={Mel Cepstral Coefficientss\glsspace (MCEPs)},%
+text={MCEP},%
+plural={MCEPs},%
+description={Mel Cepstral Coefficients},%
+descriptionplural={Mel Cepstral Coefficients\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mel Cepstral Coefficients},%
+longplural={Mel Cepstral Coefficientss},%
+short={MCEP},%
+shortplural={MCEPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MGCEP}{}%
+{%
+\gls@defglossaryentry{MGCEP}%
+{%
+name={MGCEP},%
+sort={MGCEP},%
+type={acronym},%
+first={Mel Generalized Cepstral Coefficients\glsspace (MGCEP)},%
+firstplural={Mel Generalized Cepstral Coefficientss\glsspace (MGCEPs)},%
+text={MGCEP},%
+plural={MGCEPs},%
+description={Mel Generalized Cepstral Coefficients},%
+descriptionplural={Mel Generalized Cepstral Coefficients\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mel Generalized Cepstral Coefficients},%
+longplural={Mel Generalized Cepstral Coefficientss},%
+short={MGCEP},%
+shortplural={MGCEPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MFCC}{}%
+{%
+\gls@defglossaryentry{MFCC}%
+{%
+name={MFCC},%
+sort={MFCC},%
+type={acronym},%
+first={Mel Frequency Cepstrum Coefficients\glsspace (MFCC)},%
+firstplural={Mel Frequency Cepstrum Coefficientss\glsspace (MFCCs)},%
+text={MFCC},%
+plural={MFCCs},%
+description={Mel Frequency Cepstrum Coefficients},%
+descriptionplural={Mel Frequency Cepstrum Coefficients\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mel Frequency Cepstrum Coefficients},%
+longplural={Mel Frequency Cepstrum Coefficientss},%
+short={MFCC},%
+shortplural={MFCCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ASR}{}%
+{%
+\gls@defglossaryentry{ASR}%
+{%
+name={ASR},%
+sort={ASR},%
+type={acronym},%
+first={Automatic Speech Recognition\glsspace (ASR)},%
+firstplural={Automatic Speech Recognitions\glsspace (ASRs)},%
+text={ASR},%
+plural={ASRs},%
+description={Automatic Speech Recognition},%
+descriptionplural={Automatic Speech Recognition\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Automatic Speech Recognition},%
+longplural={Automatic Speech Recognitions},%
+short={ASR},%
+shortplural={ASRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MDL}{}%
+{%
+\gls@defglossaryentry{MDL}%
+{%
+name={MDL},%
+sort={MDL},%
+type={acronym},%
+first={Minimum Description Length Criterion\glsspace (MDL)},%
+firstplural={Minimum Description Length Criterions\glsspace (MDLs)},%
+text={MDL},%
+plural={MDLs},%
+description={Minimum Description Length Criterion},%
+descriptionplural={Minimum Description Length Criterion\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Minimum Description Length Criterion},%
+longplural={Minimum Description Length Criterions},%
+short={MDL},%
+shortplural={MDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MSD}{}%
+{%
+\gls@defglossaryentry{MSD}%
+{%
+name={MSD},%
+sort={MSD},%
+type={acronym},%
+first={Multi Space Probability Distributions\glsspace (MSD)},%
+firstplural={Multi Space Probability Distributionss\glsspace (MSDs)},%
+text={MSD},%
+plural={MSDs},%
+description={Multi Space Probability Distributions},%
+descriptionplural={Multi Space Probability Distributions\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Multi Space Probability Distributions},%
+longplural={Multi Space Probability Distributionss},%
+short={MSD},%
+shortplural={MSDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HSMM}{}%
+{%
+\gls@defglossaryentry{HSMM}%
+{%
+name={HSMM},%
+sort={HSMM},%
+type={acronym},%
+first={Hidden Semi-Markov Models\glsspace (HSMM)},%
+firstplural={Hidden Semi-Markov Modelss\glsspace (HSMMs)},%
+text={HSMM},%
+plural={HSMMs},%
+description={Hidden Semi-Markov Models},%
+descriptionplural={Hidden Semi-Markov Models\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hidden Semi-Markov Models},%
+longplural={Hidden Semi-Markov Modelss},%
+short={HSMM},%
+shortplural={HSMMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ML}{}%
+{%
+\gls@defglossaryentry{ML}%
+{%
+name={ML},%
+sort={ML},%
+type={acronym},%
+first={Maximum Likelihood\glsspace (ML)},%
+firstplural={Maximum Likelihoods\glsspace (MLs)},%
+text={ML},%
+plural={MLs},%
+description={Maximum Likelihood},%
+descriptionplural={Maximum Likelihood\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maximum Likelihood},%
+longplural={Maximum Likelihoods},%
+short={ML},%
+shortplural={MLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MLSA}{}%
+{%
+\gls@defglossaryentry{MLSA}%
+{%
+name={MLSA},%
+sort={MLSA},%
+type={acronym},%
+first={Mel Log Spectrum Approximation\glsspace (MLSA)},%
+firstplural={Mel Log Spectrum Approximations\glsspace (MLSAs)},%
+text={MLSA},%
+plural={MLSAs},%
+description={Mel Log Spectrum Approximation},%
+descriptionplural={Mel Log Spectrum Approximation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mel Log Spectrum Approximation},%
+longplural={Mel Log Spectrum Approximations},%
+short={MLSA},%
+shortplural={MLSAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MAP}{}%
+{%
+\gls@defglossaryentry{MAP}%
+{%
+name={MAP},%
+sort={MAP},%
+type={acronym},%
+first={Maximum A Posteriori\glsspace (MAP)},%
+firstplural={Maximum A Posterioris\glsspace (MAPs)},%
+text={MAP},%
+plural={MAPs},%
+description={Maximum A Posteriori},%
+descriptionplural={Maximum A Posteriori\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maximum A Posteriori},%
+longplural={Maximum A Posterioris},%
+short={MAP},%
+shortplural={MAPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MLLR}{}%
+{%
+\gls@defglossaryentry{MLLR}%
+{%
+name={MLLR},%
+sort={MLLR},%
+type={acronym},%
+first={Maximum Likelihood Linear Regression\glsspace (MLLR)},%
+firstplural={Maximum Likelihood Linear Regressions\glsspace (MLLRs)},%
+text={MLLR},%
+plural={MLLRs},%
+description={Maximum Likelihood Linear Regression},%
+descriptionplural={Maximum Likelihood Linear Regression\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maximum Likelihood Linear Regression},%
+longplural={Maximum Likelihood Linear Regressions},%
+short={MLLR},%
+shortplural={MLLRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CSMAPLR}{}%
+{%
+\gls@defglossaryentry{CSMAPLR}%
+{%
+name={CSMAPLR},%
+sort={CSMAPLR},%
+type={acronym},%
+first={Constrain Structural MAP Linear Regression\glsspace (CSMAPLR)},%
+firstplural={Constrain Structural MAP Linear Regressions\glsspace (CSMAPLRs)},%
+text={CSMAPLR},%
+plural={CSMAPLRs},%
+description={Constrain Structural MAP Linear Regression},%
+descriptionplural={Constrain Structural MAP Linear Regression\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Constrain Structural MAP Linear Regression},%
+longplural={Constrain Structural MAP Linear Regressions},%
+short={CSMAPLR},%
+shortplural={CSMAPLRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AV}{}%
+{%
+\gls@defglossaryentry{AV}%
+{%
+name={AV},%
+sort={AV},%
+type={acronym},%
+first={Average Voice\glsspace (AV)},%
+firstplural={Average Voices\glsspace (AVs)},%
+text={AV},%
+plural={AVs},%
+description={Average Voice},%
+descriptionplural={Average Voice\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Voice},%
+longplural={Average Voices},%
+short={AV},%
+shortplural={AVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ANN}{}%
+{%
+\gls@defglossaryentry{ANN}%
+{%
+name={ANN},%
+sort={ANN},%
+type={acronym},%
+first={Artificial Neural Network\glsspace (ANN)},%
+firstplural={Artificial Neural Networks\glsspace (ANNs)},%
+text={ANN},%
+plural={ANNs},%
+description={Artificial Neural Network},%
+descriptionplural={Artificial Neural Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Artificial Neural Network},%
+longplural={Artificial Neural Networks},%
+short={ANN},%
+shortplural={ANNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NIST}{}%
+{%
+\gls@defglossaryentry{NIST}%
+{%
+name={NIST},%
+sort={NIST},%
+type={acronym},%
+first={National Institute of Technology\glsspace (NIST)},%
+firstplural={National Institute of Technologys\glsspace (NISTs)},%
+text={NIST},%
+plural={NISTs},%
+description={National Institute of Technology},%
+descriptionplural={National Institute of Technology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={National Institute of Technology},%
+longplural={National Institute of Technologys},%
+short={NIST},%
+shortplural={NISTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SES}{}%
+{%
+\gls@defglossaryentry{SES}%
+{%
+name={SES},%
+sort={SES},%
+type={acronym},%
+first={Spanish Expressive Speech\glsspace (SES)},%
+firstplural={Spanish Expressive Speechs\glsspace (SESs)},%
+text={SES},%
+plural={SESs},%
+description={Spanish Expressive Speech},%
+descriptionplural={Spanish Expressive Speech\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Spanish Expressive Speech},%
+longplural={Spanish Expressive Speechs},%
+short={SES},%
+shortplural={SESs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EMODB}{}%
+{%
+\gls@defglossaryentry{EMODB}%
+{%
+name={EMODB},%
+sort={EMODB},%
+type={acronym},%
+first={Berlin Database of Emotional Speech\glsspace (EMODB)},%
+firstplural={Berlin Database of Emotional Speechs\glsspace (EMODBs)},%
+text={EMODB},%
+plural={EMODBs},%
+description={Berlin Database of Emotional Speech},%
+descriptionplural={Berlin Database of Emotional Speech\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Berlin Database of Emotional Speech},%
+longplural={Berlin Database of Emotional Speechs},%
+short={EMODB},%
+shortplural={EMODBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FAUAIBO}{}%
+{%
+\gls@defglossaryentry{FAUAIBO}%
+{%
+name={FAU-AIBO},%
+sort={FAU-AIBO},%
+type={acronym},%
+first={FAU AIBO Emotion Corpus\glsspace (FAU-AIBO)},%
+firstplural={FAU AIBO Emotion Corpuss\glsspace (FAU-AIBOs)},%
+text={FAU-AIBO},%
+plural={FAU-AIBOs},%
+description={FAU AIBO Emotion Corpus},%
+descriptionplural={FAU AIBO Emotion Corpus\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={FAU AIBO Emotion Corpus},%
+longplural={FAU AIBO Emotion Corpuss},%
+short={FAU-AIBO},%
+shortplural={FAU-AIBOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SEV}{}%
+{%
+\gls@defglossaryentry{SEV}%
+{%
+name={SEV},%
+sort={SEV},%
+type={acronym},%
+first={Spanish Expressive Voices\glsspace (SEV)},%
+firstplural={Spanish Expressive Voicess\glsspace (SEVs)},%
+text={SEV},%
+plural={SEVs},%
+description={Spanish Expressive Voices},%
+descriptionplural={Spanish Expressive Voices\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Spanish Expressive Voices},%
+longplural={Spanish Expressive Voicess},%
+short={SEV},%
+shortplural={SEVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AER}{}%
+{%
+\gls@defglossaryentry{AER}%
+{%
+name={AER},%
+sort={AER},%
+type={acronym},%
+first={Automatic Emotion Recognition\glsspace (AER)},%
+firstplural={Automatic Emotion Recognitions\glsspace (AERs)},%
+text={AER},%
+plural={AERs},%
+description={Automatic Emotion Recognition},%
+descriptionplural={Automatic Emotion Recognition\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Automatic Emotion Recognition},%
+longplural={Automatic Emotion Recognitions},%
+short={AER},%
+shortplural={AERs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{UBEC}{}%
+{%
+\gls@defglossaryentry{UBEC}%
+{%
+name={UBEC},%
+sort={UBEC},%
+type={acronym},%
+first={Universal Background Emotion Codebook\glsspace (UBEC)},%
+firstplural={Universal Background Emotion Codebooks\glsspace (UBECs)},%
+text={UBEC},%
+plural={UBECs},%
+description={Universal Background Emotion Codebook},%
+descriptionplural={Universal Background Emotion Codebook\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Universal Background Emotion Codebook},%
+longplural={Universal Background Emotion Codebooks},%
+short={UBEC},%
+shortplural={UBECs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{STRAIGHT}{}%
+{%
+\gls@defglossaryentry{STRAIGHT}%
+{%
+name={STRAIGHT},%
+sort={STRAIGHT},%
+type={acronym},%
+first={Speech Transformation and Representation using Adaptive Interpolation of weiGHTed spectrum\glsspace (STRAIGHT)},%
+firstplural={Speech Transformation and Representation using Adaptive Interpolation of weiGHTed spectrums\glsspace (STRAIGHTs)},%
+text={STRAIGHT},%
+plural={STRAIGHTs},%
+description={Speech Transformation and Representation using Adaptive Interpolation of weiGHTed spectrum},%
+descriptionplural={Speech Transformation and Representation using Adaptive Interpolation of weiGHTed spectrum\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Speech Transformation and Representation using Adaptive Interpolation of weiGHTed spectrum},%
+longplural={Speech Transformation and Representation using Adaptive Interpolation of weiGHTed spectrums},%
+short={STRAIGHT},%
+shortplural={STRAIGHTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DBN}{}%
+{%
+\gls@defglossaryentry{DBN}%
+{%
+name={DBN},%
+sort={DBN},%
+type={acronym},%
+first={Dynamic Bayesian Network\glsspace (DBN)},%
+firstplural={Dynamic Bayesian Networks\glsspace (DBNs)},%
+text={DBN},%
+plural={DBNs},%
+description={Dynamic Bayesian Network},%
+descriptionplural={Dynamic Bayesian Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Dynamic Bayesian Network},%
+longplural={Dynamic Bayesian Networks},%
+short={DBN},%
+shortplural={DBNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SQ}{}%
+{%
+\gls@defglossaryentry{SQ}%
+{%
+name={SQ},%
+sort={SQ},%
+type={acronym},%
+first={Speech Quality\glsspace (SQ)},%
+firstplural={Speech Qualitys\glsspace (SQs)},%
+text={SQ},%
+plural={SQs},%
+description={Speech Quality},%
+descriptionplural={Speech Quality\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Speech Quality},%
+longplural={Speech Qualitys},%
+short={SQ},%
+shortplural={SQs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EIR}{}%
+{%
+\gls@defglossaryentry{EIR}%
+{%
+name={EIR},%
+sort={EIR},%
+type={acronym},%
+first={Emotion Identification Rate\glsspace (EIR)},%
+firstplural={Emotion Identification Rates\glsspace (EIRs)},%
+text={EIR},%
+plural={EIRs},%
+description={Emotion Identification Rate},%
+descriptionplural={Emotion Identification Rate\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Emotion Identification Rate},%
+longplural={Emotion Identification Rates},%
+short={EIR},%
+shortplural={EIRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SIR}{}%
+{%
+\gls@defglossaryentry{SIR}%
+{%
+name={SIR},%
+sort={SIR},%
+type={acronym},%
+first={Speaker Identification Rate\glsspace (SIR)},%
+firstplural={Speaker Identification Rates\glsspace (SIRs)},%
+text={SIR},%
+plural={SIRs},%
+description={Speaker Identification Rate},%
+descriptionplural={Speaker Identification Rate\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Speaker Identification Rate},%
+longplural={Speaker Identification Rates},%
+short={SIR},%
+shortplural={SIRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ES}{}%
+{%
+\gls@defglossaryentry{ES}%
+{%
+name={ES},%
+sort={ES},%
+type={acronym},%
+first={Emotional Strength\glsspace (ES)},%
+firstplural={Emotional Strengths\glsspace (ESs)},%
+text={ES},%
+plural={ESs},%
+description={Emotional Strength},%
+descriptionplural={Emotional Strength\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Emotional Strength},%
+longplural={Emotional Strengths},%
+short={ES},%
+shortplural={ESs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ACCCHARS}{}%
+{%
+\gls@defglossaryentry{ACCCHARS}%
+{%
+name={¡…Õ”⁄‹—·ÈÌÛ˙¸Ò},%
+sort={¡…Õ”⁄‹—·ÈÌÛ˙¸Ò},%
+type={acronym},%
+first={Long \'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~n\glsspace (\'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~n)},%
+firstplural={Long \'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~ns\glsspace (\'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~ns)},%
+text={\'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~n},%
+plural={\'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~ns},%
+description={Long ¡…Õ”⁄‹—·ÈÌÛ˙¸Ò},%
+descriptionplural={Long ¡…Õ”⁄‹—·ÈÌÛ˙¸Ò\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long \'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~n},%
+longplural={Long \'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~ns},%
+short={\'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~n},%
+shortplural={\'A\'E\'I\'O\'U\"U\~N\'a\'e\IeC {\'\i }\'o\'u\"u\~ns},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SOC}{}%
+{%
+\gls@defglossaryentry{SOC}%
+{%
+name={SOC},%
+sort={soc},%
+type={acronym},%
+first={SOC},%
+firstplural={Systems on a Chip (SOCs)},%
+text={SOC},%
+plural={SOCs},%
+description={System on a Chip},%
+descriptionplural={Systems on a Chip},%
+symbol={},%
+symbolplural={},%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ohm}{}%
+{%
+\gls@defglossaryentry{ohm}%
+{%
+name={\ensuremath {\Omega }},%
+sort={ohm},%
+type={symbols},%
+first={\protect \ensuremath {\Omega }},%
+firstplural={\protect \ensuremath {\Omega }s},%
+text={\protect \ensuremath {\Omega }},%
+plural={\protect \ensuremath {\Omega }s},%
+description={unit of electrical resistance},%
+descriptionplural={unit of electrical resistance},%
+symbol={\ensuremath {\Omega }},%
+symbolplural={\ensuremath {\Omega }},%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{angstrom}{}%
+{%
+\gls@defglossaryentry{angstrom}%
+{%
+name={\AA },%
+sort={angstrom},%
+type={symbols},%
+first={\r A},%
+firstplural={\r As},%
+text={\r A},%
+plural={\r As},%
+description={non-SI unit of length},%
+descriptionplural={non-SI unit of length},%
+symbol={\AA },%
+symbolplural={\AA },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{xdet}{}%
+{%
+\gls@defglossaryentry{xdet}%
+{%
+name={\ensuremath {x(t)}},%
+sort={xdet},%
+type={symbols},%
+first={\protect \ensuremath {x(t)}},%
+firstplural={\protect \ensuremath {x(t)}s},%
+text={\protect \ensuremath {x(t)}},%
+plural={\protect \ensuremath {x(t)}s},%
+description={Audio signal},%
+descriptionplural={Audio signal},%
+symbol={\ensuremath {x(t)}},%
+symbolplural={\ensuremath {x(t)}},%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{xidet}{}%
+{%
+\gls@defglossaryentry{xidet}%
+{%
+name={\ensuremath {x_i(t)}},%
+sort={xidet},%
+type={symbols},%
+first={\protect \ensuremath {x_i(t)}},%
+firstplural={\protect \ensuremath {x_i(t)}s},%
+text={\protect \ensuremath {x_i(t)}},%
+plural={\protect \ensuremath {x_i(t)}s},%
+description={Audio signal captured at microphone $i$},%
+descriptionplural={Audio signal captured at microphone $i$},%
+symbol={\ensuremath {x_i(t)}},%
+symbolplural={\ensuremath {x_i(t)}},%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{condindep}{}%
+{%
+\gls@defglossaryentry{condindep}%
+{%
+name={\ensuremath {\ci }},%
+sort={conditionalindependence},%
+type={symbols},%
+first={\protect \ensuremath {\perp \protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\perp }},%
+firstplural={\protect \ensuremath {\perp \protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\perp }s},%
+text={\protect \ensuremath {\perp \protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\perp }},%
+plural={\protect \ensuremath {\perp \protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\protect \tmspace -\thinmuskip {.1667em}\perp }s},%
+description={conditional independence},%
+descriptionplural={conditional independence},%
+symbol={\ensuremath {\ci }},%
+symbolplural={\ensuremath {\ci }},%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

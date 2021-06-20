@@ -1,0 +1,63 @@
+\babel@toc {english}{}
+\babel@toc {spanish}{}
+\contentsline {chapter}{Resumen}{ix}{chapter*.2}
+\contentsline {chapter}{Abstract}{xi}{chapter*.3}
+\contentsline {chapter}{\'{I}ndice general}{xiii}{chapter*.4}
+\contentsline {chapter}{\'{I}ndice de figuras}{xvii}{chapter*.5}
+\contentsline {chapter}{\'Indice de tablas}{xix}{chapter*.6}
+\contentsline {chapter}{\'Indice de listados de c\'odigo fuente}{xxi}{chapter*.7}
+\contentsline {chapter}{\'Indice de algoritmos}{xxiii}{chapter*.8}
+\contentsline {chapter}{Lista de acr\'onimos}{xxiii}{chapter*.8}
+\contentsline {chapter}{Lista de s\IeC {\'\i }mbolos}{xxiii}{chapter*.8}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.9}
+\contentsline {section}{\numberline {1.1}Presentaci\'on}{1}{section.10}
+\contentsline {section}{\numberline {1.2}Uso de la plantilla}{1}{section.11}
+\contentsline {subsection}{\numberline {1.2.1}Prerrequisitos}{1}{subsection.12}
+\contentsline {subsection}{\numberline {1.2.2}Compilaci\'on}{2}{subsection.13}
+\contentsline {subsection}{\numberline {1.2.3}Estructura del documento generado por la plantilla}{3}{subsection.14}
+\contentsline {subsection}{\numberline {1.2.4}Definiciones espec\IeC {\'\i }ficas del tipo de documento}{4}{subsection.15}
+\contentsline {subsection}{\numberline {1.2.5}Plantilla de anteproyecto}{6}{subsection.16}
+\contentsline {subsection}{\numberline {1.2.6}Plantilla de hoja de control de anteproyecto}{6}{subsection.17}
+\contentsline {subsection}{\numberline {1.2.7}Papeleo adicional para la defensa de los TFGs}{7}{subsection.18}
+\contentsline {subsection}{\numberline {1.2.8}Generaci\'on del documento con control de cambios (para revisi\'on)}{7}{subsection.19}
+\contentsline {subsection}{\numberline {1.2.9}Problemas conocidos}{8}{subsection.20}
+\contentsline {section}{\numberline {1.3}Ejemplos de elementos de utilidad}{8}{section.21}
+\contentsline {subsection}{\numberline {1.3.1}Uso de comandos definidos}{8}{subsection.22}
+\contentsline {subsection}{\numberline {1.3.2}Uso de ``frases c\'elebres''}{8}{subsection.23}
+\contentsline {subsection}{\numberline {1.3.3}Inclusi\'on de diagramas}{9}{subsection.24}
+\contentsline {subsection}{\numberline {1.3.4}Definici\'on y uso de acr\'onimos (aqu\IeC {\'\i } tambi\'en se pueden poner acr\'onimos como \acs {ETTS})}{9}{subsection.26}
+\contentsline {subsection}{\numberline {1.3.5}Definici\'on y uso de s\IeC {\'\i }mbolos (aqu\IeC {\'\i } tambi\'en se pueden s\IeC {\'\i }mbolos como \ac {xidet})}{10}{subsection.27}
+\contentsline {section}{\numberline {1.4}Motivaci\'on y objetivos}{10}{section.30}
+\contentsline {section}{\numberline {1.5}Organizaci\'on de la memoria}{11}{section.36}
+\contentsline {chapter}{\numberline {2}Estudio te\'orico}{13}{chapter.37}
+\contentsline {section}{\numberline {2.1}Introducci\'on}{13}{section.38}
+\contentsline {section}{\numberline {2.2}Estado del Arte}{13}{section.39}
+\contentsline {section}{\numberline {2.3}T\'ecnicas utilizadas}{14}{section.42}
+\contentsline {subsection}{\numberline {2.3.1}Subsecci\'on}{14}{subsection.43}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Subsubsecci\'on}{14}{subsubsection.44}
+\contentsline {paragraph}{\numberline {2.3.1.1.1}Paragraph}{14}{paragraph.45}
+\contentsline {subparagraph}{Subparagraph}{14}{section*.46}
+\contentsline {section}{\numberline {2.4}Conclusiones}{15}{section.47}
+\contentsline {chapter}{\numberline {3}Desarrollo}{17}{chapter.48}
+\contentsline {section}{\numberline {3.1}Introducci\'on}{17}{section.49}
+\contentsline {section}{\numberline {3.2}Desarrollo del sistema de experimentaci\'on}{17}{section.50}
+\contentsline {section}{\numberline {3.3}Planteamiento matem\'atico}{17}{section.51}
+\contentsline {section}{\numberline {3.4}Conclusiones}{17}{section.53}
+\contentsline {chapter}{\numberline {4}Resultados}{19}{chapter.54}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{19}{section.55}
+\contentsline {section}{\numberline {4.2}Entorno experimental}{19}{section.56}
+\contentsline {subsection}{\numberline {4.2.1}Bases de datos utilizadas}{19}{subsection.57}
+\contentsline {subsection}{\numberline {4.2.2}M\'etricas de calidad}{19}{subsection.58}
+\contentsline {subsection}{\numberline {4.2.3}Estrategia y metodolog\IeC {\'\i }a de experimentaci\'on}{19}{subsection.59}
+\contentsline {section}{\numberline {4.3}Resultados experimentales}{19}{section.60}
+\contentsline {section}{\numberline {4.4}Conclusiones}{26}{section.69}
+\contentsline {chapter}{\numberline {5}Conclusiones y l\IeC {\'\i }neas futuras}{29}{chapter.70}
+\contentsline {section}{\numberline {5.1}Conclusiones}{29}{section.71}
+\contentsline {section}{\numberline {5.2}L\IeC {\'\i }neas futuras}{29}{section.72}
+\contentsline {chapter}{Bibliograf\'{\i }a}{31}{chapter*.73}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{33}{appendix.74}
+\contentsline {section}{\numberline {A.1}Introducci\'on}{33}{section.75}
+\contentsline {section}{\numberline {A.2}Manual}{33}{section.76}
+\contentsline {section}{\numberline {A.3}Ejemplos de inclusi\'on de fragmentos de c\'odigo fuente}{33}{section.77}
+\contentsline {section}{\numberline {A.4}Ejemplos de inclusi\'on de algoritmos}{35}{section.163}
+\contentsline {chapter}{\numberline {B}Herramientas y recursos}{37}{appendix.172}

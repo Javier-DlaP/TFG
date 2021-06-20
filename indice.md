@@ -1,0 +1,64 @@
+# Indice
+
+- Introducción
+  - Sistemas de condución autónomos
+  - Sistemas de percepción
+    - Sensores utilizados
+      - LiDAR
+      - Cámara
+      - Radar
+    - Detección
+      - 2D
+      - 3D
+    - Fusión sensorial
+    - Tracking
+- Sistemas clásicos de percepción con LiDAR
+  - Voxelización
+  - Ransac-3D
+  - KD-tree
+  - Filtrados
+    - Basado en candidad de puntos
+    - Basado en la distancia entre puntos
+- Sistemas basados en Deep Learning de percecpción con LiDAR
+  - Datasets
+    - Kitti
+      - Formato de los datos
+        - Análisis del ground truth
+      - Métricas
+    - nuScenes
+      - Formato de los datos
+      - devkit nuScenes
+      - Métricas
+    - Waymo
+      - Formato de los datos
+      - Métricas
+    - Comparativa
+  - Modelos en el estado del arte
+    - PointPillars
+    - SECOND
+    - PointRCNN
+    - PV-RCNN
+    - CBGS
+  - OpenPCDet
+  - Comparativas adicionales
+    - Ajuste de modelos basados en Kitti a nuScenes
+    - Número de PCL de entrada
+    - Tamaño del voxel
+- Implementaciones realizadas
+  - Estado del proyecto T4AC
+    - ROS
+    - Docker
+  - Implementación en CARLA
+    - CARLA
+    - Funcionamiento del LiDAR en CARLA
+    - Tratado de datos aplicado
+  - Implementación sobre el vehículo T4AC
+  - Fusión sensorial
+- Resultados obtenidos
+  - Análisis cuantitativo en Kitti
+  - Análisis cuantitativo en nuScenes
+  - Análisis cualitativo del modelo clásico en CARLA
+  - Análisis cualitativo de CBGS en CARLA
+    - Comparación con Poinpillars
+  - Análisis cualitativo de CBGS sobre el vehículo T4AC
+    - Comparación con Poinpillars
