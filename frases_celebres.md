@@ -1,0 +1,4 @@
+- Estar preparado es importante, saber esperarlo es aún más, pero aprovechar el momento adecuado es la clave de la vida - *Arthur Schnitzler*
+- La inspiración existe, pero tiene que encontrarte trabajando - *Picasso*
+- La duda es la madre de la invención - *Galileo Galilei*
+- Uno llega a ser grande por lo que lee y no por lo que escribe - *Borges*

@@ -3,15 +3,16 @@
 - Introducción
   - Sistemas de condución autónomos
   - Sistemas de percepción
-    - Sensores utilizados
+    - Principales sensores para la percepción en vehículos autónomos
       - LiDAR
       - Cámara
       - Radar
-    - Detección
+    - Sistemas de detección
       - 2D
       - 3D
-    - Fusión sensorial
     - Tracking
+    - Fusión sensorial
+- Propuesta de trabajo
 - Sistemas clásicos de percepción con LiDAR
   - Voxelización
   - Ransac-3D
@@ -19,7 +20,7 @@
   - Filtrados
     - Basado en candidad de puntos
     - Basado en la distancia entre puntos
-- Sistemas basados en Deep Learning de percecpción con LiDAR
+- Sistemas de percepción con LiDAR basados en Deep Learning
   - Datasets
     - Kitti
       - Formato de los datos
@@ -40,11 +41,7 @@
     - PV-RCNN
     - CBGS
   - OpenPCDet
-  - Comparativas adicionales
-    - Ajuste de modelos basados en Kitti a nuScenes
-    - Número de PCL de entrada
-    - Tamaño del voxel
-- Implementaciones realizadas
+- Desarrollo realizado
   - Estado del proyecto T4AC
     - ROS
     - Docker
@@ -62,3 +59,9 @@
     - Comparación con Poinpillars
   - Análisis cualitativo de CBGS sobre el vehículo T4AC
     - Comparación con Poinpillars
+- Conclusiones
+  - Comparativas adicionales
+    - Ajuste de modelos basados en Kitti a nuScenes
+    - Número de PCL de entrada
+    - Tamaño del voxel
+  - Futuros trabajos
