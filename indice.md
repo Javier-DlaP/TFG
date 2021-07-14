@@ -51,15 +51,21 @@
     - Tratado de datos aplicado
   - Implementación sobre el vehículo T4AC
   - Fusión sensorial
+- Ad_devkit
+  - Estado del arte en evaluación de vehiculos autónomos
+  - Obtención del groundtruth
+  - Evaluación de los modelos
 - Resultados obtenidos
   - Análisis cuantitativo en Kitti
   - Análisis cuantitativo en nuScenes
   - Análisis cualitativo del modelo clásico en CARLA
   - Análisis cualitativo de CBGS en CARLA
     - Comparación con Poinpillars
+  - Análisis cuantitativo de CBGS en CARLA
   - Análisis cualitativo de CBGS sobre el vehículo T4AC
     - Comparación con Poinpillars
 - Conclusiones
+  - Modelos estudiados
   - Comparativas adicionales
     - Ajuste de modelos basados en Kitti a nuScenes
     - Número de PCL de entrada
