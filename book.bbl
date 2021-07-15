@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{TFG_Miguel}
+M.~Antunes, ``Sistema de visión estereo aplicado a la detección y seguimiento
+  de objetos en conducción autonoma,'' Trabajo de Fin de Grado, UAH
+  Politécnica, 2021.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso
