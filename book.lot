@@ -7,5 +7,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Rendimiento medio de CBGS PointPillars Multihead en nuScenes.\relax }}{17}{table.caption.68}
+\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{18}{table.caption.69}
+\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en CARLA.\relax }}{18}{table.caption.74}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

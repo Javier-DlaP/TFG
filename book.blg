@@ -12,46 +12,51 @@ Database file #2: biblio/biblio_TFG.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty author in automated_vehicles_for_safety
+Warning--missing institution in automated_vehicles_for_safety
+Warning--empty author in how_self_driving_vehicles_work
+Warning--missing institution in how_self_driving_vehicles_work
 
 Done.
-You've used 9 entries,
+You've used 15 entries,
             4087 wiz_defined-function locations,
-            854 strings with 8338 characters,
-and the built_in function-call counts, 2768 in all, are:
-= -- 176
-> -- 15
-< -- 0
-+ -- 11
-- -- 2
-* -- 89
-:= -- 444
-add.period$ -- 18
-call.type$ -- 9
-change.case$ -- 15
-chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 265
-empty$ -- 313
-format.name$ -- 2
-if$ -- 615
+            883 strings with 9500 characters,
+and the built_in function-call counts, 7349 in all, are:
+= -- 527
+> -- 126
+< -- 40
++ -- 78
+- -- 20
+* -- 317
+:= -- 1088
+add.period$ -- 29
+call.type$ -- 15
+change.case$ -- 20
+chr.to.int$ -- 96
+cite$ -- 19
+duplicate$ -- 594
+empty$ -- 677
+format.name$ -- 24
+if$ -- 1691
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 61
-newline$ -- 50
-num.names$ -- 2
-pop$ -- 196
+int.to.str$ -- 15
+missing$ -- 123
+newline$ -- 74
+num.names$ -- 5
+pop$ -- 346
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 213
+skip$ -- 568
 stack$ -- 0
-substring$ -- 22
-swap$ -- 123
-text.length$ -- 0
+substring$ -- 251
+swap$ -- 397
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 9
-warning$ -- 0
-while$ -- 2
-width$ -- 10
-write$ -- 80
+type$ -- 15
+warning$ -- 4
+while$ -- 17
+width$ -- 17
+write$ -- 140
+(There were 4 warnings)
