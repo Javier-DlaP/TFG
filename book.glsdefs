@@ -448,6 +448,96 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{carla}{}%
+{%
+\gls@defglossaryentry{carla}%
+{%
+name={CARLA},%
+sort={CARLA},%
+type={acronym},%
+first={Car Learning to Act\glsspace (CARLA)},%
+firstplural={Car Learning to Acts\glsspace (CARLAs)},%
+text={CARLA},%
+plural={CARLAs},%
+description={Car Learning to Act},%
+descriptionplural={Car Learning to Act\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Car Learning to Act},%
+longplural={Car Learning to Acts},%
+short={CARLA},%
+shortplural={CARLAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kit}{}%
+{%
+\gls@defglossaryentry{kit}%
+{%
+name={KIT},%
+sort={KIT},%
+type={acronym},%
+first={Karlsruhe Institute of Technology\glsspace (KIT)},%
+firstplural={Karlsruhe Institute of Technologys\glsspace (KITs)},%
+text={KIT},%
+plural={KITs},%
+description={Karlsruhe Institute of Technology},%
+descriptionplural={Karlsruhe Institute of Technology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Karlsruhe Institute of Technology},%
+longplural={Karlsruhe Institute of Technologys},%
+short={KIT},%
+shortplural={KITs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ad_devkit}{}%
+{%
+\gls@defglossaryentry{ad_devkit}%
+{%
+name={AD DevKit},%
+sort={AD DevKit},%
+type={acronym},%
+first={Autonomous Driving DevKit\glsspace (AD DevKit)},%
+firstplural={Autonomous Driving DevKits\glsspace (AD DevKits)},%
+text={AD DevKit},%
+plural={AD DevKits},%
+description={Autonomous Driving DevKit},%
+descriptionplural={Autonomous Driving DevKit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Autonomous Driving DevKit},%
+longplural={Autonomous Driving DevKits},%
+short={AD DevKit},%
+shortplural={AD DevKits},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{SOC}{}%
 {%
 \gls@defglossaryentry{SOC}%

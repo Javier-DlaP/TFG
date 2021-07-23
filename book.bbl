@@ -88,6 +88,16 @@ T.-L. Kim, J.-S. Lee, and T.-H. Park, ``Fusing lidar, radar, and camera using
   Systems (CIS) and IEEE Conference on Robotics, Automation and Mechatronics
   (RAM)}, 2019, pp. 374--379.
 
+\bibitem{tfm_del_egido}
+J.~del Egido~Sierra, ``Detección del entorno 360º de un vehículo autónomo
+  mediante lidar aplicando técnicas deep learning,'' Trabajo de Fin de Master,
+  UAH Politécnica, 2020.
+
+\bibitem{tfg_miguel}
+M.~Antunes, ``Sistema de visión estereo aplicado a la detección y seguimiento
+  de objetos en conducción autonoma,'' Trabajo de Fin de Grado, UAH
+  Politécnica, 2021.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso

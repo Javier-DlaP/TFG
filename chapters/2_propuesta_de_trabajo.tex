@@ -10,5 +10,7 @@
   \end{Fuente}
 \end{FraseCelebre}
 
-
-
+Este trabajo se encuentra dentro del proyecto Tech4AgeCars perteneciente al grupo RobeSafe. En este se pretende realizar un estudio de diferentes técnicas de detección utilizando \acs{lidar}, tanto con métodos clásicos como basados en \acl{dl} para el análisis en datasets reales, en el simulador \ac{carla} y en el coche del grupo RobeSafe.\par
+En la arquitectura del proyecto se tiene implementado un procesamiento basado en PointPillars para una ejecución en tiempo real sobre una plataforma NVIDIA Jetson AGX Xavier \cite{tfm_del_egido}, por lo que se pretende remplazar esta subtarea de detección utilizando \acs{lidar}, dentro de la capa de percepción.\par
+Con la implementación de la detección realizada, se pretende realizar una fusión sensorial entre cámara y \acs{lidar} junto con un compañero del grupo RobeSafe que se encuentra realizando un TFG de detección 3D utilizando cámara \cite{tfg_miguel}.\par
+Tras una fusión y sin la posibilidad de analizar el sistema de percepción a crear, se trabajará por último en un proyecto junto con el \ac{kit} llamado \ac{ad_devkit} que tratará de analizar un \acl{ads}, en concreto se trabajará en el apartado de percepción del kit de desarrollo, todo ello esperando que este proyecto no solo sea útil para los compañeros del proyecto sino para cualquier desarrollador que utilice el simulador \acs{carla}. 

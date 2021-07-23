@@ -52,7 +52,7 @@
 \contentsline {section}{\numberline {5.3}Fusi\'on sensorial}{15}{section.63}
 \contentsline {section}{\numberline {5.4}Veh\IeC {\'\i }culo del proyecto T4AC}{15}{section.64}
 \contentsline {section}{\numberline {5.5}Implementaci\'on sobre el veh\IeC {\'\i }culo T4AC}{15}{section.65}
-\contentsline {chapter}{\numberline {6}ad-devkit}{17}{chapter.66}
+\contentsline {chapter}{\numberline {6}AD DevKit}{17}{chapter.66}
 \contentsline {section}{\numberline {6.1}Estado del arte en evaluaci\'on de veh\IeC {\'\i }culos aut\'onomos}{17}{section.67}
 \contentsline {section}{\numberline {6.2}Obtenci\'on del ground truth}{17}{section.68}
 \contentsline {section}{\numberline {6.3}Evaluaci\'on de los modelos}{17}{section.69}
