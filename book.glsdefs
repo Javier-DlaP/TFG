@@ -268,6 +268,186 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{kf}{}%
+{%
+\gls@defglossaryentry{kf}%
+{%
+name={KF},%
+sort={KF},%
+type={acronym},%
+first={Kalman Filter\glsspace (KF)},%
+firstplural={Kalman Filters\glsspace (KFs)},%
+text={KF},%
+plural={KFs},%
+description={Kalman Filter},%
+descriptionplural={Kalman Filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Kalman Filter},%
+longplural={Kalman Filters},%
+short={KF},%
+shortplural={KFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ekf}{}%
+{%
+\gls@defglossaryentry{ekf}%
+{%
+name={EKF},%
+sort={EKF},%
+type={acronym},%
+first={Extended Kalman Filter\glsspace (EKF)},%
+firstplural={Extended Kalman Filters\glsspace (EKFs)},%
+text={EKF},%
+plural={EKFs},%
+description={Extended Kalman Filter},%
+descriptionplural={Extended Kalman Filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Extended Kalman Filter},%
+longplural={Extended Kalman Filters},%
+short={EKF},%
+shortplural={EKFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ukf}{}%
+{%
+\gls@defglossaryentry{ukf}%
+{%
+name={UKF},%
+sort={UKF},%
+type={acronym},%
+first={Unscented Kalman Filter\glsspace (UKF)},%
+firstplural={Unscented Kalman Filters\glsspace (UKFs)},%
+text={UKF},%
+plural={UKFs},%
+description={Unscented Kalman Filter},%
+descriptionplural={Unscented Kalman Filter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unscented Kalman Filter},%
+longplural={Unscented Kalman Filters},%
+short={UKF},%
+shortplural={UKFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cnn}{}%
+{%
+\gls@defglossaryentry{cnn}%
+{%
+name={CNN},%
+sort={CNN},%
+type={acronym},%
+first={Convolutional Neural Network\glsspace (CNN)},%
+firstplural={Convolutional Neural Networks\glsspace (CNNs)},%
+text={CNN},%
+plural={CNNs},%
+description={Convolutional Neural Network},%
+descriptionplural={Convolutional Neural Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Convolutional Neural Network},%
+longplural={Convolutional Neural Networks},%
+short={CNN},%
+shortplural={CNNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fc}{}%
+{%
+\gls@defglossaryentry{fc}%
+{%
+name={FC},%
+sort={FC},%
+type={acronym},%
+first={Fully Connected\glsspace (FC)},%
+firstplural={Fully Connecteds\glsspace (FCs)},%
+text={FC},%
+plural={FCs},%
+description={Fully Connected},%
+descriptionplural={Fully Connected\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fully Connected},%
+longplural={Fully Connecteds},%
+short={FC},%
+shortplural={FCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dl}{}%
+{%
+\gls@defglossaryentry{dl}%
+{%
+name={DL},%
+sort={DL},%
+type={acronym},%
+first={Deep Learning\glsspace (DL)},%
+firstplural={Deep Learnings\glsspace (DLs)},%
+text={DL},%
+plural={DLs},%
+description={Deep Learning},%
+descriptionplural={Deep Learning\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Deep Learning},%
+longplural={Deep Learnings},%
+short={DL},%
+shortplural={DLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{SOC}{}%
 {%
 \gls@defglossaryentry{SOC}%

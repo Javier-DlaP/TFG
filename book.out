@@ -15,59 +15,60 @@
 \BOOKMARK [3][-]{subsubsection.21}{1.2.1.2 Radar}{subsection.17}% 15
 \BOOKMARK [3][-]{subsubsection.23}{1.2.1.3 LiDAR}{subsection.17}% 16
 \BOOKMARK [2][-]{subsection.25}{1.2.2 Sistemas de detecci\363n}{section.16}% 17
-\BOOKMARK [2][-]{subsection.27}{1.2.3 Sistemas de seguimiento}{section.16}% 18
-\BOOKMARK [2][-]{subsection.28}{1.2.4 Fusi\363n sensorial}{section.16}% 19
-\BOOKMARK [1][-]{section.29}{1.3 Deep Learning}{chapter.12}% 20
-\BOOKMARK [0][-]{chapter.30}{2 Propuesta de trabajo}{}% 21
-\BOOKMARK [0][-]{chapter.31}{3 Sistemas cl\341sicos de percepci\363n con LiDAR}{}% 22
-\BOOKMARK [1][-]{section.32}{3.1 Voxelizaci\363n}{chapter.31}% 23
-\BOOKMARK [1][-]{section.33}{3.2 Ransac-3D}{chapter.31}% 24
-\BOOKMARK [1][-]{section.34}{3.3 KD-tree}{chapter.31}% 25
-\BOOKMARK [1][-]{section.35}{3.4 Filtrado posterior a la detecci\363n}{chapter.31}% 26
-\BOOKMARK [0][-]{chapter.36}{4 Sistemas de percepci\363n con LiDAR basados en Deep Learning}{}% 27
-\BOOKMARK [1][-]{section.37}{4.1 Principales datasets}{chapter.36}% 28
-\BOOKMARK [2][-]{subsection.38}{4.1.1 Kitti}{section.37}% 29
-\BOOKMARK [2][-]{subsection.39}{4.1.2 Waymo}{section.37}% 30
-\BOOKMARK [2][-]{subsection.40}{4.1.3 nuScenes}{section.37}% 31
-\BOOKMARK [3][-]{subsubsection.41}{4.1.3.1 nuScenes-devkit}{subsection.40}% 32
-\BOOKMARK [2][-]{subsection.42}{4.1.4 Comparativa entre los diferentes datasets}{section.37}% 33
-\BOOKMARK [1][-]{section.43}{4.2 Estado del arte en detecci\363n utilizando LiDAR}{chapter.36}% 34
-\BOOKMARK [2][-]{subsection.44}{4.2.1 PointPillars}{section.43}% 35
-\BOOKMARK [2][-]{subsection.45}{4.2.2 SECOND}{section.43}% 36
-\BOOKMARK [2][-]{subsection.46}{4.2.3 PointRCNN}{section.43}% 37
-\BOOKMARK [2][-]{subsection.47}{4.2.4 PV-RCNN}{section.43}% 38
-\BOOKMARK [2][-]{subsection.48}{4.2.5 CBGS}{section.43}% 39
-\BOOKMARK [1][-]{section.49}{4.3 OpenPCDet}{chapter.36}% 40
-\BOOKMARK [0][-]{chapter.50}{5 Desarrollo realizado}{}% 41
-\BOOKMARK [1][-]{section.51}{5.1 Estado del proyecto T4AC}{chapter.50}% 42
-\BOOKMARK [2][-]{subsection.52}{5.1.1 ROS}{section.51}% 43
-\BOOKMARK [2][-]{subsection.53}{5.1.2 Docker}{section.51}% 44
-\BOOKMARK [1][-]{section.54}{5.2 Implementaci\363n en CARLA}{chapter.50}% 45
-\BOOKMARK [2][-]{subsection.55}{5.2.1 CARLA}{section.54}% 46
-\BOOKMARK [2][-]{subsection.56}{5.2.2 Funcionamiento del LiDAR en CARLA}{section.54}% 47
-\BOOKMARK [2][-]{subsection.57}{5.2.3 Tratado de datos}{section.54}% 48
-\BOOKMARK [1][-]{section.58}{5.3 Fusi\363n sensorial}{chapter.50}% 49
-\BOOKMARK [1][-]{section.59}{5.4 Veh\355culo del proyecto T4AC}{chapter.50}% 50
-\BOOKMARK [1][-]{section.60}{5.5 Implementaci\363n sobre el veh\355culo T4AC}{chapter.50}% 51
-\BOOKMARK [0][-]{chapter.61}{6 ad-devkit}{}% 52
-\BOOKMARK [1][-]{section.62}{6.1 Estado del arte en evaluaci\363n de veh\355culos aut\363nomos}{chapter.61}% 53
-\BOOKMARK [1][-]{section.63}{6.2 Obtenci\363n del ground truth}{chapter.61}% 54
-\BOOKMARK [1][-]{section.64}{6.3 Evaluaci\363n de los modelos}{chapter.61}% 55
-\BOOKMARK [0][-]{chapter.65}{7 Resultados obtenidos}{}% 56
-\BOOKMARK [1][-]{section.66}{7.1 An\341lisis cuantitativo en Kitti}{chapter.65}% 57
-\BOOKMARK [1][-]{section.67}{7.2 An\341lisis cuantitativo en nuScenes}{chapter.65}% 58
-\BOOKMARK [1][-]{section.70}{7.3 An\341lisis cualitativo del modelo cl\341sico en CARLA}{chapter.65}% 59
-\BOOKMARK [1][-]{section.71}{7.4 An\341lisis cualitativo de CBGS en CARLA}{chapter.65}% 60
-\BOOKMARK [2][-]{subsection.72}{7.4.1 Comparativa con PointPillars en CARLA}{section.71}% 61
-\BOOKMARK [1][-]{section.73}{7.5 An\341lisis cuantitativo de CBGS en CARLA}{chapter.65}% 62
-\BOOKMARK [1][-]{section.75}{7.6 An\341lisis cualitativo de CBGS sobre el veh\355culo T4AC}{chapter.65}% 63
-\BOOKMARK [2][-]{subsection.76}{7.6.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{section.75}% 64
-\BOOKMARK [0][-]{chapter.77}{8 Conclusiones}{}% 65
-\BOOKMARK [1][-]{section.78}{8.1 Modelos estudiados}{chapter.77}% 66
-\BOOKMARK [1][-]{section.79}{8.2 Comparativas adicionales}{chapter.77}% 67
-\BOOKMARK [2][-]{subsection.80}{8.2.1 Ajuste de modelos basados en Kitti a nuScenes}{section.79}% 68
-\BOOKMARK [2][-]{subsection.81}{8.2.2 N\372mero de PCL de entrada en modelos evaluados sobre nuScenes}{section.79}% 69
-\BOOKMARK [2][-]{subsection.82}{8.2.3 Tama\361o del voxel en modelos basados en redes neuronales}{section.79}% 70
-\BOOKMARK [1][-]{section.83}{8.3 Futuros trabajos}{chapter.77}% 71
-\BOOKMARK [0][-]{chapter*.84}{Bibliograf\355a}{}% 72
-\BOOKMARK [0][-]{appendix.85}{A Herramientas y recursos}{}% 73
+\BOOKMARK [2][-]{subsection.28}{1.2.3 Sistemas de seguimiento}{section.16}% 18
+\BOOKMARK [2][-]{subsection.30}{1.2.4 Fusi\363n sensorial}{section.16}% 19
+\BOOKMARK [1][-]{section.32}{1.3 Deep Learning}{chapter.12}% 20
+\BOOKMARK [0][-]{chapter.34}{2 Propuesta de trabajo}{}% 21
+\BOOKMARK [0][-]{chapter.35}{3 Sistemas cl\341sicos de percepci\363n con LiDAR}{}% 22
+\BOOKMARK [1][-]{section.36}{3.1 Voxelizaci\363n}{chapter.35}% 23
+\BOOKMARK [1][-]{section.37}{3.2 Ransac-3D}{chapter.35}% 24
+\BOOKMARK [1][-]{section.38}{3.3 KD-tree}{chapter.35}% 25
+\BOOKMARK [1][-]{section.39}{3.4 Filtrado posterior a la detecci\363n}{chapter.35}% 26
+\BOOKMARK [0][-]{chapter.40}{4 Sistemas de percepci\363n con LiDAR basados en Deep Learning}{}% 27
+\BOOKMARK [1][-]{section.41}{4.1 Principales datasets}{chapter.40}% 28
+\BOOKMARK [2][-]{subsection.42}{4.1.1 Kitti}{section.41}% 29
+\BOOKMARK [3][-]{subsubsection.43}{4.1.1.1 An\341lisis de la estructura del GT y las PCLs}{subsection.42}% 30
+\BOOKMARK [2][-]{subsection.44}{4.1.2 Waymo}{section.41}% 31
+\BOOKMARK [2][-]{subsection.45}{4.1.3 nuScenes}{section.41}% 32
+\BOOKMARK [3][-]{subsubsection.46}{4.1.3.1 nuScenes-devkit}{subsection.45}% 33
+\BOOKMARK [2][-]{subsection.47}{4.1.4 Comparativa entre los diferentes datasets}{section.41}% 34
+\BOOKMARK [1][-]{section.48}{4.2 Estado del arte en detecci\363n utilizando LiDAR}{chapter.40}% 35
+\BOOKMARK [2][-]{subsection.49}{4.2.1 PointPillars}{section.48}% 36
+\BOOKMARK [2][-]{subsection.50}{4.2.2 SECOND}{section.48}% 37
+\BOOKMARK [2][-]{subsection.51}{4.2.3 PointRCNN}{section.48}% 38
+\BOOKMARK [2][-]{subsection.52}{4.2.4 PV-RCNN}{section.48}% 39
+\BOOKMARK [2][-]{subsection.53}{4.2.5 CBGS}{section.48}% 40
+\BOOKMARK [1][-]{section.54}{4.3 OpenPCDet}{chapter.40}% 41
+\BOOKMARK [0][-]{chapter.55}{5 Desarrollo realizado}{}% 42
+\BOOKMARK [1][-]{section.56}{5.1 Estado del proyecto T4AC}{chapter.55}% 43
+\BOOKMARK [2][-]{subsection.57}{5.1.1 ROS}{section.56}% 44
+\BOOKMARK [2][-]{subsection.58}{5.1.2 Docker}{section.56}% 45
+\BOOKMARK [1][-]{section.59}{5.2 Implementaci\363n en CARLA}{chapter.55}% 46
+\BOOKMARK [2][-]{subsection.60}{5.2.1 CARLA}{section.59}% 47
+\BOOKMARK [2][-]{subsection.61}{5.2.2 Funcionamiento del LiDAR en CARLA}{section.59}% 48
+\BOOKMARK [2][-]{subsection.62}{5.2.3 Tratado de datos}{section.59}% 49
+\BOOKMARK [1][-]{section.63}{5.3 Fusi\363n sensorial}{chapter.55}% 50
+\BOOKMARK [1][-]{section.64}{5.4 Veh\355culo del proyecto T4AC}{chapter.55}% 51
+\BOOKMARK [1][-]{section.65}{5.5 Implementaci\363n sobre el veh\355culo T4AC}{chapter.55}% 52
+\BOOKMARK [0][-]{chapter.66}{6 ad-devkit}{}% 53
+\BOOKMARK [1][-]{section.67}{6.1 Estado del arte en evaluaci\363n de veh\355culos aut\363nomos}{chapter.66}% 54
+\BOOKMARK [1][-]{section.68}{6.2 Obtenci\363n del ground truth}{chapter.66}% 55
+\BOOKMARK [1][-]{section.69}{6.3 Evaluaci\363n de los modelos}{chapter.66}% 56
+\BOOKMARK [0][-]{chapter.70}{7 Resultados obtenidos}{}% 57
+\BOOKMARK [1][-]{section.71}{7.1 An\341lisis cuantitativo en Kitti}{chapter.70}% 58
+\BOOKMARK [1][-]{section.72}{7.2 An\341lisis cuantitativo en nuScenes}{chapter.70}% 59
+\BOOKMARK [1][-]{section.75}{7.3 An\341lisis cualitativo del modelo cl\341sico en CARLA}{chapter.70}% 60
+\BOOKMARK [1][-]{section.76}{7.4 An\341lisis cualitativo de CBGS en CARLA}{chapter.70}% 61
+\BOOKMARK [2][-]{subsection.77}{7.4.1 Comparativa con PointPillars en CARLA}{section.76}% 62
+\BOOKMARK [1][-]{section.78}{7.5 An\341lisis cuantitativo de CBGS en CARLA}{chapter.70}% 63
+\BOOKMARK [1][-]{section.80}{7.6 An\341lisis cualitativo de CBGS sobre el veh\355culo T4AC}{chapter.70}% 64
+\BOOKMARK [2][-]{subsection.81}{7.6.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{section.80}% 65
+\BOOKMARK [0][-]{chapter.82}{8 Conclusiones}{}% 66
+\BOOKMARK [1][-]{section.83}{8.1 Modelos estudiados}{chapter.82}% 67
+\BOOKMARK [1][-]{section.84}{8.2 Comparativas adicionales}{chapter.82}% 68
+\BOOKMARK [2][-]{subsection.85}{8.2.1 Ajuste de modelos basados en Kitti a nuScenes}{section.84}% 69
+\BOOKMARK [2][-]{subsection.86}{8.2.2 N\372mero de PCL de entrada en modelos evaluados sobre nuScenes}{section.84}% 70
+\BOOKMARK [2][-]{subsection.87}{8.2.3 Tama\361o del voxel en modelos basados en redes neuronales}{section.84}% 71
+\BOOKMARK [1][-]{section.88}{8.3 Futuros trabajos}{chapter.82}% 72
+\BOOKMARK [0][-]{chapter*.89}{Bibliograf\355a}{}% 73
+\BOOKMARK [0][-]{appendix.90}{A Herramientas y recursos}{}% 74

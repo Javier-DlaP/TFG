@@ -61,6 +61,33 @@ J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi, ``You only look once:
   Unified, real-time object detection,'' in \emph{2016 IEEE Conference on
   Computer Vision and Pattern Recognition (CVPR)}, 2016, pp. 779--788.
 
+\bibitem{pointpillars}
+A.~H. Lang, S.~Vora, H.~Caesar, L.~Zhou, J.~Yang, and O.~Beijbom,
+  ``Pointpillars: Fast encoders for object detection from point clouds,'' in
+  \emph{2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2019, pp. 12\,689--12\,697.
+
+\bibitem{tracking_based_on_rnn}
+F.~Lotfi, V.~Ajallooeian, and H.~D. Taghirad, ``Robust object tracking based on
+  recurrent neural networks,'' in \emph{2018 6th RSI International Conference
+  on Robotics and Mechatronics (IcRoM)}, 2018, pp. 507--511.
+
+\bibitem{pointtracknet}
+S.~Wang, Y.~Sun, C.~Liu, and M.~Liu, ``Pointtracknet: An end-to-end network for
+  3-d object detection and tracking from point clouds,'' \emph{IEEE Robotics
+  and Automation Letters}, vol.~5, no.~2, pp. 3206--3212, 2020.
+
+\bibitem{cbgs}
+B.~Zhu, Z.~Jiang, X.~Zhou, Z.~Li, and G.~Yu, ``Class-balanced grouping and
+  sampling for point cloud 3d object detection,'' 2019.
+
+\bibitem{fusion_lidar_radar_and_camera}
+T.-L. Kim, J.-S. Lee, and T.-H. Park, ``Fusing lidar, radar, and camera using
+  extended kalman filter for estimating the forward position of vehicles,'' in
+  \emph{2019 IEEE International Conference on Cybernetics and Intelligent
+  Systems (CIS) and IEEE Conference on Robotics, Automation and Mechatronics
+  (RAM)}, 2019, pp. 374--379.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso
