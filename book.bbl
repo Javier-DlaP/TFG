@@ -98,6 +98,37 @@ M.~Antunes, ``Sistema de visión estereo aplicado a la detección y seguimiento
   de objetos en conducción autonoma,'' Trabajo de Fin de Grado, UAH
   Politécnica, 2021.
 
+\bibitem{ransac}
+\BIBentryALTinterwordspacing
+M.~A. Fischler and R.~C. Bolles, ``Random sample consensus: A paradigm for
+  model fitting with applications to image analysis and automated
+  cartography,'' \emph{Commun. ACM}, vol.~24, no.~6, pp. 381--395, Jun. 1981.
+  [Online]. Available: \url{https://doi.org/10.1145/358669.358692}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kd_tree}
+\BIBentryALTinterwordspacing
+J.~L. Bentley, ``Multidimensional binary search trees used for associative
+  searching,'' \emph{Commun. ACM}, vol.~18, no.~9, pp. 509--517, Sep. 1975.
+  [Online]. Available: \url{https://doi.org/10.1145/361002.361007}
+\BIBentrySTDinterwordspacing
+
+\bibitem{knn_kd_tree}
+W.~Hou, D.~Li, C.~Xu, H.~Zhang, and T.~Li, ``An advanced k nearest neighbor
+  classification algorithm based on kd-tree,'' in \emph{2018 IEEE International
+  Conference of Safety Produce Informatization (IICSPI)}, 2018, pp. 902--905.
+
+\bibitem{kd_tree_presorted}
+Y.~Cao, X.~Zhang, B.~Duan, W.~Zhao, and H.~Wang, ``An improved method to build
+  the kd tree based on presorted results,'' in \emph{2020 IEEE 11th
+  International Conference on Software Engineering and Service Science
+  (ICSESS)}, 2020, pp. 71--75.
+
+\bibitem{kd_tree_gpu}
+L.~Hu, S.~Nooshabadi, and M.~Ahmadi, ``Massively parallel kd-tree construction
+  and nearest neighbor search algorithms,'' in \emph{2015 IEEE International
+  Symposium on Circuits and Systems (ISCAS)}, 2015, pp. 2752--2755.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso

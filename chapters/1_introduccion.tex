@@ -10,27 +10,30 @@
   \end{Fuente}
 \end{FraseCelebre}
 
+\noindent
+Para el pleno entendimiento del trabajo desarrollado se explica el funcionamiento de los sistemas de conducción autónoma, para centrarse en la parte de percepción del vehículo y comprender que gracias al \acl{dl} se consigue el estado del arte en este campo.
+
 \section{Sistemas de conducción autónomos}
 \label{sec:sistemas-de-conduccion-autonomos}
 
 En los últimos años gracias a una mejora en los sensores, en la capacidad de computo principalmente por la aceleración por hardware, la visión por computador, el \ac{dl} \ref{sec:deep_learning} y el desarrollo de técnicas de comunicación, ha propiciado que nos encontremos en una carrera por la creación de sistemas de conducción autónomos.
 Empresas de sectores de la automoción y la tecnológicas como ArgoAI, Audi, Baidu, Cruise, Mercedes-Benz, Tesla, Uber o Waymo entre otras, invierten enormes cantidades de dinero para el desarrollo de estas tecnologías \cite{computing_system_for_autonomous_driving}.\par
-Para la obtención de sistemas de conducción autónoma es necesario tener un buen entendimiento del entorno y hacer uso de un buen control en tiempo real, para ello son utilizados sensores que puedan aportar información al vehículo como son cámaras, \acs{lidar}, \acs{radar}, \acs{imu}, \acs{gps} o hasta \acs{sonar}.\par
-En adición a los sensores también es necesario la utilización de sistemas de localización tanto global como local, mapeado del entorno, toma de decisiones y control del vehículo.
+Para la obtención de sistemas de conducción autónoma es necesario tener un buen entendimiento del entorno y hacer uso de un buen control en tiempo real, para ello son utilizados sensores que puedan aportar información al vehículo como son cámaras, \acs{lidar}, \acs{radar}, \acs{imu}, \acs{gps} o hasta \acs{sonar}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{figures/1_introduccion/Ejemplo_de_arquitectura_de_un_sistema_de_conduccion_autonoma.png}
+	\includegraphics[width=0.6\textwidth]{figures/1_introduccion/Ejemplo_de_arquitectura_de_un_sistema_de_conduccion_autonoma.png}
 	\caption{Arquitectura de un sistema de conducción autonóma.}
 	\label{fig:Arquitectura_de_un_sistema_de_conduccion_autonoma}
 \end{figure}
 
+En adición a los sensores también es necesario la utilización de sistemas de localización tanto global como local, mapeado del entorno, toma de decisiones y control del vehículo.\par
 La evolución continua de estos sistemas trata de ofrecer un mayor nivel de seguridad al volante con \ac{adas}, para que en un futuro puedan ser remplazados por \ac{ads}.\par
 Para analizar el avance de estos sistemas y para poder compararlos, se ha dividido según su nivel de autonomía, por lo que se tiene desde un nivel 0 a un nivel 5. El nivel 0 indica que el coche no tiene ningún tipo de autonomía, en el nivel 1 el vehiculo sigue siendo controlado por el conductor pero ciertas características de ayuda a la conducción son añadidas, en el siguiente nivel el vehículo es capaz de acelerar, frenar y hasta dirigir el vehículo pero con el conductor siempre atento, en el nivel 3 el conductor es necesario pero no es requerimiento la atención al entorno, pero debe de estar listo para tomar en control en todo momento, el nivel 4 permite un nivel de autonomía donde el vehículo no requiere de atención pero unicamente en ciertos escenarios y el último nivel es el que habilita la conducción autónoma completa \cite{automated_vehicles_for_safety}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/1_introduccion/Niveles_de_autonomia.png}
+	\includegraphics[width=0.7\textwidth]{figures/1_introduccion/Niveles_de_autonomia.png}
 	\caption{Niveles de autonomia.}
 	\label{fig:Niveles_de_autonomia}
 \end{figure}
@@ -41,6 +44,8 @@ El desarrollo de este tipo de sistemas no es una tarea sencilla, múltiples empre
 \label{sec:sistemas-de-percepcion}
 
 Los sistemas de \acs{ads}/\acs{adas} requieren de un entendimiento del entorno para poder funcionar correctamente, para ello es necesario añadir diversos sensores a los largo del vehículo que nos permitan obtener la mayor información del exterior posible. A partir de este conocimiento es posible la toma de decisiones y la planificación, por lo que en este apartado se va a explicar de que manera se puede configurar un sistema de percepción, cuales son los principales sensores y que información se puede obtener de cada uno de ellos.
+
+\newpage
 
 \subsection{Principales sensores para la percepción en vehículos autónomos}
 \label{sec:principales-sensores-para-la-percepcion-en-vehiculos-autonomos}
@@ -56,7 +61,7 @@ Uno de los sensores más utilizados es la cámara, este es el más extendido debido
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{figures/1_introduccion/Camara.png}
+	\includegraphics[width=0.2\textwidth]{figures/1_introduccion/Camara.jpg}
 	\caption{Cámara utilizada en vehículos autónomos.}
 	\label{fig:Camara_utilizada_en_vehiculos_autonomos}
 \end{figure}
@@ -66,7 +71,7 @@ Por último es necesario conocer las limitaciones de la cámara, esta funciona de 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/1_introduccion/Lluvia_camara.jpg}
+	\includegraphics[width=0.4\textwidth]{figures/1_introduccion/Lluvia_camara.jpg}
 	\caption{Uso de cámara con lluvia.}
 	\label{fig:Uso_de_camara_con_lluvia}
 \end{figure}
@@ -118,9 +123,7 @@ Principalmente en los sistemas de detección para conducción autónoma se trata de
 	\label{fig:Detecciones_2d_utilizando_camara}
 \end{figure}
 
-\newpage
-
-Una de las formas de detección del entorno es a partir de cámaras, esto puede ser conseguido con un sistema de una cámara o de un sistema multicámara que abarque los 360 grados alrededor del coche, con esto instalado en el coche se puede generar rectángulos sobre las imágenes de los objetos del entorno como coches, peatones, bicicletas, motocicletas... Con esto se obtendría un listado de objetos detectados en 2D, lo cual es obtenible con un modelo basado en redes neuronales como YOLO \cite{yolo} que es capaz de hacerlo en tiempo real, y que funciona tal y como se ve en \ref{fig:Detecciones_2d_utilizando_camara}.
+Una de las formas de detección del entorno es a partir de cámaras, esto puede ser conseguido con un sistema de una cámara o de un sistema multicámara que abarque los 360 grados alrededor del coche, con esto instalado en el coche se puede generar rectángulos sobre las imágenes de los objetos del entorno como coches, peatones, bicicletas, motocicletas... Con esto se obtendría un listado de objetos detectados en 2D, lo cual es obtenible con un modelo basado en redes neuronales como \acs{yolo} \cite{yolo} que es capaz de hacerlo en tiempo real, y que funciona tal y como se ve en \ref{fig:Detecciones_2d_utilizando_camara}.
 
 \begin{figure}[H]
 	\centering
@@ -140,12 +143,12 @@ En este campo se pueden tomar diversos acercamientos al problema, utilizando téc
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/1_introduccion/Seguimiento.png}
+	\includegraphics[width=0.6\textwidth]{figures/1_introduccion/Seguimiento.png}
 	\caption{Tracking como vista de pájaro sobre una nube de puntos.}
 	\label{fig:Tracking_como_vista_de_pajaro_sobre_una_nube_de_puntos}
 \end{figure}
 
-Los sistemas de detección suelen trabajar a partir de modelos en dos dimensiones que trabajan en vista de pájaro lo cual elimina lidiar con movimientos verticales, en estos se detecta la posición actual, velocidad lineal, velocidad angular y se puede definir el movimiento todo lo complejo que se desee. Tras esto también se predice los futuros estados de los objetos, manteniendo un identificador asociado a estos a los largo de los frames analizados.
+Los sistemas de detección suelen trabajar a partir de modelos en dos dimensiones que trabajan en vista de pájaro lo cual elimina lidiar con movimientos verticales, en estos se detecta la posición actual, velocidad lineal, velocidad angular y se puede definir el movimiento todo lo complejo que se desee. Tras esto también se predice los futuros estados de los objetos, manteniendo un identificador asociado a estos a los luargo de los frames analizados.
 
 \subsection{Fusión sensorial}
 \label{sec:fusion-sensorial}
@@ -162,7 +165,7 @@ Los sistemas de fusión sensorial son necesario para aumentar la precisión en los
 Para la realización de un sistema de fusión sensorial se pueden tomar diversos acercamientos, en una early fusion se tratan todos los datos en crudo de los sensores para obtener un mejor sistema de percepción, si se trabaja con sensores tratados pero no con las detecciones finales se trata de una middle fusion, en el caso de utilizar las detecciones finales estaríamos ante una late fusion.\par
 Entre las técnicas más utilizas para sistemas de fusión sensorial encontramos los \ac{kf}, \ac{ekf} y \ac{ukf} \cite{fusion_lidar_radar_and_camera}, pero también se comienzan a utilizar técnicas más complejas que radican en el uso de redes neuronales para la fusión.
 
-\clearpage
+\newpage
 
 \section{Deep Learning}
 \label{sec:deep_learning}

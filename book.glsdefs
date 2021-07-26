@@ -515,12 +515,12 @@ parent={},%
 name={AD DevKit},%
 sort={AD DevKit},%
 type={acronym},%
-first={Autonomous Driving DevKit\glsspace (AD DevKit)},%
-firstplural={Autonomous Driving DevKits\glsspace (AD DevKits)},%
+first={Autonomous Driving Development Kit\glsspace (AD DevKit)},%
+firstplural={Autonomous Driving Development Kits\glsspace (AD DevKits)},%
 text={AD DevKit},%
 plural={AD DevKits},%
-description={Autonomous Driving DevKit},%
-descriptionplural={Autonomous Driving DevKit\acrpluralsuffix },%
+description={Autonomous Driving Development Kit},%
+descriptionplural={Autonomous Driving Development Kit\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -529,10 +529,100 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Autonomous Driving DevKit},%
-longplural={Autonomous Driving DevKits},%
+long={Autonomous Driving Development Kit},%
+longplural={Autonomous Driving Development Kits},%
 short={AD DevKit},%
 shortplural={AD DevKits},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{yolo}{}%
+{%
+\gls@defglossaryentry{yolo}%
+{%
+name={YOLO},%
+sort={YOLO},%
+type={acronym},%
+first={You Only Look Once\glsspace (YOLO)},%
+firstplural={You Only Look Onces\glsspace (YOLOs)},%
+text={YOLO},%
+plural={YOLOs},%
+description={You Only Look Once},%
+descriptionplural={You Only Look Once\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={You Only Look Once},%
+longplural={You Only Look Onces},%
+short={YOLO},%
+shortplural={YOLOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ransac}{}%
+{%
+\gls@defglossaryentry{ransac}%
+{%
+name={RANSAC},%
+sort={RANSAC},%
+type={acronym},%
+first={Random Sampling and Consensus\glsspace (RANSAC)},%
+firstplural={Random Sampling and Consensuss\glsspace (RANSACs)},%
+text={RANSAC},%
+plural={RANSACs},%
+description={Random Sampling and Consensus},%
+descriptionplural={Random Sampling and Consensus\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Random Sampling and Consensus},%
+longplural={Random Sampling and Consensuss},%
+short={RANSAC},%
+shortplural={RANSACs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{knn}{}%
+{%
+\gls@defglossaryentry{knn}%
+{%
+name={KNN},%
+sort={KNN},%
+type={acronym},%
+first={K Nearest Neighbors\glsspace (KNN)},%
+firstplural={K Nearest Neighborss\glsspace (KNNs)},%
+text={KNN},%
+plural={KNNs},%
+description={K Nearest Neighbors},%
+descriptionplural={K Nearest Neighbors\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={K Nearest Neighbors},%
+longplural={K Nearest Neighborss},%
+short={KNN},%
+shortplural={KNNs},%
 counter={page},%
 parent={},%
 %
