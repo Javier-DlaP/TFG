@@ -36,10 +36,16 @@ type =	 {Trabajo de Fin de Master},
   year = {2021}
 }
 
-@manual{velodyne_hdl_64,
+@misc{velodyne_hdl_64,
   title = {HDL-64E, High Definition Real-Time 3D Lidar},
   url = {https://velodynelidar.com/products/hdl-64e/},
   organization = {Velodyne Lidar},
+}
+
+@misc{waymo_web_page,
+title = {Waymo Open Dataset},
+url = {https://waymo.com/open},
+organization = {Waymo},
 }
 
 %%%%%%%%%%%%%
@@ -111,15 +117,6 @@ type =	 {Trabajo de Fin de Master},
   year={2018},
   pages={507-511},
   doi={10.1109/ICRoM.2018.8657608}
-}
-
-@misc{cbgs,
-  title={Class-balanced Grouping and Sampling for Point Cloud 3D Object Detection}, 
-  author={Benjin Zhu and Zhengkai Jiang and Xiangxin Zhou and Zeming Li and Gang Yu},
-  year={2019},
-  eprint={1908.09492},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV}
 }
 
 @ARTICLE{pointtracknet,
@@ -222,4 +219,122 @@ type =	 {Trabajo de Fin de Master},
   year={2015},
   pages={2752-2755},
   doi={10.1109/ISCAS.2015.7169256}
+}
+
+@misc{a2d2_dataset,
+  title={A2D2: Audi Autonomous Driving Dataset}, 
+  author={Jakob Geyer and Yohannes Kassahun and Mentar Mahmudi and Xavier Ricou and Rupesh Durgesh and Andrew S. Chung and Lorenz Hauswald and Viet Hoang Pham and Maximilian Mühlegg and Sebastian Dorn and Tiffany Fernandez and Martin Jänicke and Sudesh Mirashi and Chiragkumar Savani and Martin Sturm and Oleksandr Vorobiov and Martin Oelker and Sebastian Garreis and Peter Schuberth},
+  year={2020},
+  eprint={2004.06320},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}
+
+@InProceedings{argoverse_dataset,
+  author = {Chang, Ming-Fang and Lambert, John and Sangkloy, Patsorn and Singh, Jagjeet and Bak, Slawomir and Hartnett, Andrew and Wang, De and Carr, Peter and Lucey, Simon and Ramanan, Deva and Hays, James},
+  title = {Argoverse: 3D Tracking and Forecasting With Rich Maps},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month = {June},
+  year = {2019}
+}
+
+@InProceedings{cityscapes_dataset,
+  author = {Cordts, Marius and Omran, Mohamed and Ramos, Sebastian and Rehfeld, Timo and Enzweiler, Markus and Benenson, Rodrigo and Franke, Uwe and Roth, Stefan and Schiele, Bernt},
+  title = {The Cityscapes Dataset for Semantic Urban Scene Understanding},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month = {June},
+  year = {2016}
+}
+
+@INPROCEEDINGS{kitti_dataset,
+  author={Geiger, Andreas and Lenz, Philip and Urtasun, Raquel},
+  booktitle={2012 IEEE Conference on Computer Vision and Pattern Recognition}, 
+  title={Are we ready for autonomous driving? The KITTI vision benchmark suite}, 
+  year={2012},
+  volume={},
+  number={},
+  pages={3354-3361},
+  doi={10.1109/CVPR.2012.6248074}
+}
+
+@misc{level_5_dataset,
+  title={One Thousand and One Hours: Self-driving Motion Prediction Dataset}, 
+  author={John Houston and Guido Zuidhof and Luca Bergamini and Yawei Ye and Long Chen and Ashesh Jain and Sammy Omari and Vladimir Iglovikov and Peter Ondruska},
+  year={2020},
+  eprint={2006.14480},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}
+
+@InProceedings{nuscenes_dataset,
+  author = {Caesar, Holger and Bankiti, Varun and Lang, Alex H. and Vora, Sourabh and Liong, Venice Erin and Xu, Qiang and Krishnan, Anush and Pan, Yu and Baldan, Giancarlo and Beijbom, Oscar},
+  title = {nuScenes: A Multimodal Dataset for Autonomous Driving},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month = {June},
+  year = {2020}
+}
+
+@InProceedings{waymo_dataset,
+  author = {Sun, Pei and Kretzschmar, Henrik and Dotiwalla, Xerxes and Chouard, Aurelien and Patnaik, Vijaysai and Tsui, Paul and Guo, James and Zhou, Yin and Chai, Yuning and Caine, Benjamin and Vasudevan, Vijay and Han, Wei and Ngiam, Jiquan and Zhao, Hang and Timofeev, Aleksei and Ettinger, Scott and Krivokon, Maxim and Gao, Amy and Joshi, Aditya and Zhang, Yu and Shlens, Jonathon and Chen, Zhifeng and Anguelov, Dragomir},
+  title = {Scalability in Perception for Autonomous Driving: Waymo Open Dataset},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month = {June},
+  year = {2020}
+}
+
+@INPROCEEDINGS{kitti_360_dataset,
+author = {Jun Xie and Martin Kiefel and Ming-Ting Sun and Andreas Geiger},
+title = {Semantic Instance Annotation of Street Scenes by 3D to 2D Label Transfer},
+booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+year = {2016}
+}
+
+@Article{second,
+  AUTHOR = {Yan, Yan and Mao, Yuxing and Li, Bo},
+  TITLE = {SECOND: Sparsely Embedded Convolutional Detection},
+  JOURNAL = {Sensors},
+  VOLUME = {18},
+  YEAR = {2018},
+  NUMBER = {10},
+  ARTICLE-NUMBER = {3337},
+  URL = {https://www.mdpi.com/1424-8220/18/10/3337},
+  ISSN = {1424-8220},
+  ABSTRACT = {LiDAR-based or RGB-D-based object detection is used in numerous applications, ranging from autonomous driving to robot vision. Voxel-based 3D convolutional networks have been used for some time to enhance the retention of information when processing point cloud LiDAR data. However, problems remain, including a slow inference speed and low orientation estimation performance. We therefore investigate an improved sparse convolution method for such networks, which significantly increases the speed of both training and inference. We also introduce a new form of angle loss regression to improve the orientation estimation performance and a new data augmentation approach that can enhance the convergence speed and performance. The proposed network produces state-of-the-art results on the KITTI 3D object detection benchmarks while maintaining a fast inference speed.},
+  DOI = {10.3390/s18103337}
+}
+
+@INPROCEEDINGS{pointrcnn,
+  author={Shi, Shaoshuai and Wang, Xiaogang and Li, Hongsheng},
+  booktitle={2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={PointRCNN: 3D Object Proposal Generation and Detection From Point Cloud}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={770-779},
+  doi={10.1109/CVPR.2019.00086}
+}
+
+@INPROCEEDINGS{pv_rcnn,
+  author={Shi, Shaoshuai and Guo, Chaoxu and Jiang, Li and Wang, Zhe and Shi, Jianping and Wang, Xiaogang and Li, Hongsheng},
+  booktitle={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={PV-RCNN: Point-Voxel Feature Set Abstraction for 3D Object Detection}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={10526-10535},
+  doi={10.1109/CVPR42600.2020.01054}
+}
+
+@article{cbgs,
+  author    = {Benjin Zhu and Zhengkai Jiang and Xiangxin Zhou and Zeming Li and Gang Yu},
+  title     = {Class-balanced Grouping and Sampling for Point Cloud 3D Object Detection},
+  journal   = {CoRR},
+  volume    = {abs/1908.09492},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1908.09492},
+  archivePrefix = {arXiv},
+  eprint    = {1908.09492},
+  timestamp = {Thu, 29 Aug 2019 16:32:34 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1908-09492.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }

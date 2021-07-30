@@ -4,11 +4,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Comparativa entre los principales datasets.\relax }}{29}{table.caption.96}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Rendimiento medio de CBGS PointPillars Multihead en nuScenes.\relax }}{25}{table.caption.96}
-\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{26}{table.caption.97}
-\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en CARLA.\relax }}{26}{table.caption.102}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Rendimiento medio de CBGS PointPillars Multihead en nuScenes.\relax }}{35}{table.caption.124}
+\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{36}{table.caption.125}
+\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en CARLA.\relax }}{36}{table.caption.130}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

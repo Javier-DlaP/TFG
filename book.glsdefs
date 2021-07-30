@@ -448,36 +448,6 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{carla}{}%
-{%
-\gls@defglossaryentry{carla}%
-{%
-name={CARLA},%
-sort={CARLA},%
-type={acronym},%
-first={Car Learning to Act\glsspace (CARLA)},%
-firstplural={Car Learning to Acts\glsspace (CARLAs)},%
-text={CARLA},%
-plural={CARLAs},%
-description={Car Learning to Act},%
-descriptionplural={Car Learning to Act\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Car Learning to Act},%
-longplural={Car Learning to Acts},%
-short={CARLA},%
-shortplural={CARLAs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
 \ifglsentryexists{kit}{}%
 {%
 \gls@defglossaryentry{kit}%
@@ -623,6 +593,186 @@ long={K Nearest Neighbors},%
 longplural={K Nearest Neighborss},%
 short={KNN},%
 shortplural={KNNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sota}{}%
+{%
+\gls@defglossaryentry{sota}%
+{%
+name={SOTA},%
+sort={SOTA},%
+type={acronym},%
+first={State of the Art\glsspace (SOTA)},%
+firstplural={State of the Arts\glsspace (SOTAs)},%
+text={SOTA},%
+plural={SOTAs},%
+description={State of the Art},%
+descriptionplural={State of the Art\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={State of the Art},%
+longplural={State of the Arts},%
+short={SOTA},%
+shortplural={SOTAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ttic}{}%
+{%
+\gls@defglossaryentry{ttic}%
+{%
+name={TTIC},%
+sort={TTIC},%
+type={acronym},%
+first={Toyota Technological Institute at Chicago\glsspace (TTIC)},%
+firstplural={Toyota Technological Institute at Chicagos\glsspace (TTICs)},%
+text={TTIC},%
+plural={TTICs},%
+description={Toyota Technological Institute at Chicago},%
+descriptionplural={Toyota Technological Institute at Chicago\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Toyota Technological Institute at Chicago},%
+longplural={Toyota Technological Institute at Chicagos},%
+short={TTIC},%
+shortplural={TTICs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{slam}{}%
+{%
+\gls@defglossaryentry{slam}%
+{%
+name={SLAM},%
+sort={SLAM},%
+type={acronym},%
+first={Simultaneous Localization and Mapping\glsspace (SLAM)},%
+firstplural={Simultaneous Localization and Mappings\glsspace (SLAMs)},%
+text={SLAM},%
+plural={SLAMs},%
+description={Simultaneous Localization and Mapping},%
+descriptionplural={Simultaneous Localization and Mapping\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Simultaneous Localization and Mapping},%
+longplural={Simultaneous Localization and Mappings},%
+short={SLAM},%
+shortplural={SLAMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rtk}{}%
+{%
+\gls@defglossaryentry{rtk}%
+{%
+name={RTK},%
+sort={RTK},%
+type={acronym},%
+first={Real Time Kinematic\glsspace (RTK)},%
+firstplural={Real Time Kinematics\glsspace (RTKs)},%
+text={RTK},%
+plural={RTKs},%
+description={Real Time Kinematic},%
+descriptionplural={Real Time Kinematic\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Real Time Kinematic},%
+longplural={Real Time Kinematics},%
+short={RTK},%
+shortplural={RTKs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{xml}{}%
+{%
+\gls@defglossaryentry{xml}%
+{%
+name={XML},%
+sort={XML},%
+type={acronym},%
+first={Extensible Markup Language\glsspace (XML)},%
+firstplural={Extensible Markup Languages\glsspace (XMLs)},%
+text={XML},%
+plural={XMLs},%
+description={Extensible Markup Language},%
+descriptionplural={Extensible Markup Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Extensible Markup Language},%
+longplural={Extensible Markup Languages},%
+short={XML},%
+shortplural={XMLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ahrs}{}%
+{%
+\gls@defglossaryentry{ahrs}%
+{%
+name={AHRS},%
+sort={AHRS},%
+type={acronym},%
+first={Attitude and Heading Reference System\glsspace (AHRS)},%
+firstplural={Attitude and Heading Reference Systems\glsspace (AHRSs)},%
+text={AHRS},%
+plural={AHRSs},%
+description={Attitude and Heading Reference System},%
+descriptionplural={Attitude and Heading Reference System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Attitude and Heading Reference System},%
+longplural={Attitude and Heading Reference Systems},%
+short={AHRS},%
+shortplural={AHRSs},%
 counter={page},%
 parent={},%
 %

@@ -47,7 +47,7 @@ Y.~Zhang, J.~Ran, X.~Chen, K.~Fang, and H.~Chen, ``Observation of the inverse,
 
 \bibitem{velodyne_hdl_64}
 \BIBentryALTinterwordspacing
-\emph{HDL-64E, High Definition Real-Time 3D Lidar}, Velodyne Lidar. [Online].
+``Hdl-64e, high definition real-time 3d lidar,'' Velodyne Lidar. [Online].
   Available: \url{https://velodynelidar.com/products/hdl-64e/}
 \BIBentrySTDinterwordspacing
 
@@ -78,8 +78,12 @@ S.~Wang, Y.~Sun, C.~Liu, and M.~Liu, ``Pointtracknet: An end-to-end network for
   and Automation Letters}, vol.~5, no.~2, pp. 3206--3212, 2020.
 
 \bibitem{cbgs}
+\BIBentryALTinterwordspacing
 B.~Zhu, Z.~Jiang, X.~Zhou, Z.~Li, and G.~Yu, ``Class-balanced grouping and
-  sampling for point cloud 3d object detection,'' 2019.
+  sampling for point cloud 3d object detection,'' \emph{CoRR}, vol.
+  abs/1908.09492, 2019. [Online]. Available:
+  \url{http://arxiv.org/abs/1908.09492}
+\BIBentrySTDinterwordspacing
 
 \bibitem{fusion_lidar_radar_and_camera}
 T.-L. Kim, J.-S. Lee, and T.-H. Park, ``Fusing lidar, radar, and camera using
@@ -128,6 +132,59 @@ Y.~Cao, X.~Zhang, B.~Duan, W.~Zhao, and H.~Wang, ``An improved method to build
 L.~Hu, S.~Nooshabadi, and M.~Ahmadi, ``Massively parallel kd-tree construction
   and nearest neighbor search algorithms,'' in \emph{2015 IEEE International
   Symposium on Circuits and Systems (ISCAS)}, 2015, pp. 2752--2755.
+
+\bibitem{a2d2_dataset}
+J.~Geyer, Y.~Kassahun, M.~Mahmudi, X.~Ricou, R.~Durgesh, A.~S. Chung,
+  L.~Hauswald, V.~H. Pham, M.~Mühlegg, S.~Dorn, T.~Fernandez, M.~Jänicke,
+  S.~Mirashi, C.~Savani, M.~Sturm, O.~Vorobiov, M.~Oelker, S.~Garreis, and
+  P.~Schuberth, ``A2d2: Audi autonomous driving dataset,'' 2020.
+
+\bibitem{argoverse_dataset}
+M.-F. Chang, J.~Lambert, P.~Sangkloy, J.~Singh, S.~Bak, A.~Hartnett, D.~Wang,
+  P.~Carr, S.~Lucey, D.~Ramanan, and J.~Hays, ``Argoverse: 3d tracking and
+  forecasting with rich maps,'' in \emph{Proceedings of the IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition (CVPR)}, June 2019.
+
+\bibitem{cityscapes_dataset}
+M.~Cordts, M.~Omran, S.~Ramos, T.~Rehfeld, M.~Enzweiler, R.~Benenson,
+  U.~Franke, S.~Roth, and B.~Schiele, ``The cityscapes dataset for semantic
+  urban scene understanding,'' in \emph{Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, June 2016.
+
+\bibitem{kitti_dataset}
+A.~Geiger, P.~Lenz, and R.~Urtasun, ``Are we ready for autonomous driving? the
+  kitti vision benchmark suite,'' in \emph{2012 IEEE Conference on Computer
+  Vision and Pattern Recognition}, 2012, pp. 3354--3361.
+
+\bibitem{level_5_dataset}
+J.~Houston, G.~Zuidhof, L.~Bergamini, Y.~Ye, L.~Chen, A.~Jain, S.~Omari,
+  V.~Iglovikov, and P.~Ondruska, ``One thousand and one hours: Self-driving
+  motion prediction dataset,'' 2020.
+
+\bibitem{nuscenes_dataset}
+H.~Caesar, V.~Bankiti, A.~H. Lang, S.~Vora, V.~E. Liong, Q.~Xu, A.~Krishnan,
+  Y.~Pan, G.~Baldan, and O.~Beijbom, ``nuscenes: A multimodal dataset for
+  autonomous driving,'' in \emph{Proceedings of the IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, June 2020.
+
+\bibitem{waymo_dataset}
+P.~Sun, H.~Kretzschmar, X.~Dotiwalla, A.~Chouard, V.~Patnaik, P.~Tsui, J.~Guo,
+  Y.~Zhou, Y.~Chai, B.~Caine, V.~Vasudevan, W.~Han, J.~Ngiam, H.~Zhao,
+  A.~Timofeev, S.~Ettinger, M.~Krivokon, A.~Gao, A.~Joshi, Y.~Zhang, J.~Shlens,
+  Z.~Chen, and D.~Anguelov, ``Scalability in perception for autonomous driving:
+  Waymo open dataset,'' in \emph{Proceedings of the IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, June 2020.
+
+\bibitem{kitti_360_dataset}
+J.~Xie, M.~Kiefel, M.-T. Sun, and A.~Geiger, ``Semantic instance annotation of
+  street scenes by 3d to 2d label transfer,'' in \emph{Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, 2016.
+
+\bibitem{waymo_web_page}
+\BIBentryALTinterwordspacing
+``Waymo open dataset,'' Waymo. [Online]. Available:
+  \url{https://waymo.com/open}
+\BIBentrySTDinterwordspacing
 
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''

@@ -18,45 +18,45 @@ Warning--empty author in how_self_driving_vehicles_work
 Warning--missing institution in how_self_driving_vehicles_work
 
 Done.
-You've used 27 entries,
+You've used 36 entries,
             4087 wiz_defined-function locations,
-            948 strings with 12126 characters,
-and the built_in function-call counts, 17075 in all, are:
-= -- 1296
-> -- 360
-< -- 124
-+ -- 220
-- -- 65
-* -- 773
-:= -- 2486
-add.period$ -- 53
-call.type$ -- 27
-change.case$ -- 32
-chr.to.int$ -- 303
-cite$ -- 31
-duplicate$ -- 1269
-empty$ -- 1477
-format.name$ -- 72
-if$ -- 4001
+            986 strings with 14739 characters,
+and the built_in function-call counts, 23982 in all, are:
+= -- 1693
+> -- 730
+< -- 135
++ -- 405
+- -- 153
+* -- 1118
+:= -- 3396
+add.period$ -- 72
+call.type$ -- 36
+change.case$ -- 42
+chr.to.int$ -- 330
+cite$ -- 40
+duplicate$ -- 1787
+empty$ -- 2106
+format.name$ -- 168
+if$ -- 5623
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 243
-newline$ -- 114
-num.names$ -- 17
-pop$ -- 624
+int.to.str$ -- 36
+missing$ -- 389
+newline$ -- 145
+num.names$ -- 25
+pop$ -- 1059
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1328
+skip$ -- 1819
 stack$ -- 0
-substring$ -- 762
-swap$ -- 966
-text.length$ -- 23
+substring$ -- 835
+swap$ -- 1327
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 27
+type$ -- 36
 warning$ -- 4
-while$ -- 56
-width$ -- 29
-write$ -- 258
+while$ -- 67
+width$ -- 38
+write$ -- 335
 (There were 4 warnings)

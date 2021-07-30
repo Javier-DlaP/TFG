@@ -21,6 +21,18 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Espacio bidimensional dividido por un KD-tree.\relax }}{16}{figure.caption.57}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Estructura de un KD-tree de dos dimensiones.\relax }}{16}{figure.caption.57}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura del dataset de KITTI.\relax }}{20}{figure.caption.64}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Veh\IeC {\'\i }culo utilizado en KITTI.\relax }}{21}{figure.caption.65}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Medidas del veh\IeC {\'\i }culo utilizado en KITTI\relax }}{21}{figure.caption.65}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Estructura del archivo tracklet\_labels.xml.\relax }}{22}{figure.caption.67}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Visualizaci\'on de una nube de puntos de KITTI junto con su ground truth.\relax }}{23}{figure.caption.68}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Veh\IeC {\'\i }culo utilizado en Waymo.\relax }}{23}{figure.caption.70}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Nube de puntos con las diferentes clases del dataset de Waymo.\relax }}{24}{figure.caption.71}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Veh\IeC {\'\i }culo utilizado en el dataset de nuScenes.\relax }}{25}{figure.caption.73}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Estructura del dataset nuScenes.\relax }}{26}{figure.caption.74}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Esquema de nuScenes.\relax }}{27}{figure.caption.75}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Esquema de nuImages\relax }}{27}{figure.caption.75}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Transformaci\'on mundo a imagen de la nube de puntos segmentada.\relax }}{28}{figure.caption.77}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
