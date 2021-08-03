@@ -186,6 +186,53 @@ J.~Xie, M.~Kiefel, M.-T. Sun, and A.~Geiger, ``Semantic instance annotation of
   \url{https://waymo.com/open}
 \BIBentrySTDinterwordspacing
 
+\bibitem{second}
+\BIBentryALTinterwordspacing
+Y.~Yan, Y.~Mao, and B.~Li, ``Second: Sparsely embedded convolutional
+  detection,'' \emph{Sensors}, vol.~18, no.~10, 2018. [Online]. Available:
+  \url{https://www.mdpi.com/1424-8220/18/10/3337}
+\BIBentrySTDinterwordspacing
+
+\bibitem{voxelnet}
+Y.~Zhou and O.~Tuzel, ``Voxelnet: End-to-end learning for point cloud based 3d
+  object detection,'' in \emph{2018 IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, 2018, pp. 4490--4499.
+
+\bibitem{sparseconvnet}
+\BIBentryALTinterwordspacing
+``Sparseconvnet,'' Facebook. [Online]. Available:
+  \url{https://github.com/facebookresearch/SparseConvNet}
+\BIBentrySTDinterwordspacing
+
+\bibitem{fast_rcnn}
+R.~Girshick, ``Fast r-cnn,'' in \emph{Proceedings of the IEEE International
+  Conference on Computer Vision (ICCV)}, December 2015.
+
+\bibitem{pointrcnn}
+S.~Shi, X.~Wang, and H.~Li, ``Pointrcnn: 3d object proposal generation and
+  detection from point cloud,'' in \emph{2019 IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, 2019, pp. 770--779.
+
+\bibitem{pointnet++}
+C.~R. Qi, L.~Yi, H.~Su, and L.~J. Guibas, ``Pointnet++: Deep hierarchical
+  feature learning on point sets in a metric space,'' 2017.
+
+\bibitem{rangercnn}
+Z.~Liang, M.~Zhang, Z.~Zhang, X.~Zhao, and S.~Pu, ``Rangercnn: Towards fast and
+  accurate 3d object detection with range image representation,'' 2021.
+
+\bibitem{pv_rcnn}
+S.~Shi, C.~Guo, L.~Jiang, Z.~Wang, J.~Shi, X.~Wang, and H.~Li, ``Pv-rcnn:
+  Point-voxel feature set abstraction for 3d object detection,'' in \emph{2020
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2020,
+  pp. 10\,526--10\,535.
+
+\bibitem{pointnet}
+R.~Q. Charles, H.~Su, M.~Kaichun, and L.~J. Guibas, ``Pointnet: Deep learning
+  on point sets for 3d classification and segmentation,'' in \emph{2017 IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017, pp.
+  77--85.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso

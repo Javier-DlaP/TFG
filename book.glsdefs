@@ -778,6 +778,276 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{rpn}{}%
+{%
+\gls@defglossaryentry{rpn}%
+{%
+name={RPN},%
+sort={RPN},%
+type={acronym},%
+first={Region Proposal Network\glsspace (RPN)},%
+firstplural={Region Proposal Networks\glsspace (RPNs)},%
+text={RPN},%
+plural={RPNs},%
+description={Region Proposal Network},%
+descriptionplural={Region Proposal Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Region Proposal Network},%
+longplural={Region Proposal Networks},%
+short={RPN},%
+shortplural={RPNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vfe}{}%
+{%
+\gls@defglossaryentry{vfe}%
+{%
+name={VFE},%
+sort={VFE},%
+type={acronym},%
+first={Voxel Feature Encoding\glsspace (VFE)},%
+firstplural={Voxel Feature Encodings\glsspace (VFEs)},%
+text={VFE},%
+plural={VFEs},%
+description={Voxel Feature Encoding},%
+descriptionplural={Voxel Feature Encoding\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Voxel Feature Encoding},%
+longplural={Voxel Feature Encodings},%
+short={VFE},%
+shortplural={VFEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{relu}{}%
+{%
+\gls@defglossaryentry{relu}%
+{%
+name={ReLU},%
+sort={ReLU},%
+type={acronym},%
+first={Rectified Linear Unit\glsspace (ReLU)},%
+firstplural={Rectified Linear Units\glsspace (ReLUs)},%
+text={ReLU},%
+plural={ReLUs},%
+description={Rectified Linear Unit},%
+descriptionplural={Rectified Linear Unit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Rectified Linear Unit},%
+longplural={Rectified Linear Units},%
+short={ReLU},%
+shortplural={ReLUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fcn}{}%
+{%
+\gls@defglossaryentry{fcn}%
+{%
+name={FCN},%
+sort={FCN},%
+type={acronym},%
+first={Fully Connected Network\glsspace (FCN)},%
+firstplural={Fully Connected Networks\glsspace (FCNs)},%
+text={FCN},%
+plural={FCNs},%
+description={Fully Connected Network},%
+descriptionplural={Fully Connected Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fully Connected Network},%
+longplural={Fully Connected Networks},%
+short={FCN},%
+shortplural={FCNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bev}{}%
+{%
+\gls@defglossaryentry{bev}%
+{%
+name={BEV},%
+sort={BEV},%
+type={acronym},%
+first={Bird's Eye View\glsspace (BEV)},%
+firstplural={Bird's Eye Views\glsspace (BEVs)},%
+text={BEV},%
+plural={BEVs},%
+description={Bird's Eye View},%
+descriptionplural={Bird's Eye View\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bird's Eye View},%
+longplural={Bird's Eye Views},%
+short={BEV},%
+shortplural={BEVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ssd}{}%
+{%
+\gls@defglossaryentry{ssd}%
+{%
+name={SSD},%
+sort={SSD},%
+type={acronym},%
+first={Single Shot Detector\glsspace (SSD)},%
+firstplural={Single Shot Detectors\glsspace (SSDs)},%
+text={SSD},%
+plural={SSDs},%
+description={Single Shot Detector},%
+descriptionplural={Single Shot Detector\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Single Shot Detector},%
+longplural={Single Shot Detectors},%
+short={SSD},%
+shortplural={SSDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nms}{}%
+{%
+\gls@defglossaryentry{nms}%
+{%
+name={NMS},%
+sort={NMS},%
+type={acronym},%
+first={Non Maximum Suppression\glsspace (NMS)},%
+firstplural={Non Maximum Suppressions\glsspace (NMSs)},%
+text={NMS},%
+plural={NMSs},%
+description={Non Maximum Suppression},%
+descriptionplural={Non Maximum Suppression\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Non Maximum Suppression},%
+longplural={Non Maximum Suppressions},%
+short={NMS},%
+shortplural={NMSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{iou}{}%
+{%
+\gls@defglossaryentry{iou}%
+{%
+name={IoU},%
+sort={IoU},%
+type={acronym},%
+first={Intersection over Union\glsspace (IoU)},%
+firstplural={Intersection over Unions\glsspace (IoUs)},%
+text={IoU},%
+plural={IoUs},%
+description={Intersection over Union},%
+descriptionplural={Intersection over Union\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intersection over Union},%
+longplural={Intersection over Unions},%
+short={IoU},%
+shortplural={IoUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{roi}{}%
+{%
+\gls@defglossaryentry{roi}%
+{%
+name={RoI},%
+sort={RoI},%
+type={acronym},%
+first={Region of Interest\glsspace (RoI)},%
+firstplural={Region of Interests\glsspace (RoIs)},%
+text={RoI},%
+plural={RoIs},%
+description={Region of Interest},%
+descriptionplural={Region of Interest\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Region of Interest},%
+longplural={Region of Interests},%
+short={RoI},%
+shortplural={RoIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{SOC}{}%
 {%
 \gls@defglossaryentry{SOC}%

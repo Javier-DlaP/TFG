@@ -32,7 +32,15 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Estructura del dataset nuScenes.\relax }}{26}{figure.caption.74}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Esquema de nuScenes.\relax }}{27}{figure.caption.75}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Esquema de nuImages\relax }}{27}{figure.caption.75}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Transformaci\'on mundo a imagen de la nube de puntos segmentada.\relax }}{28}{figure.caption.77}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Transformaci\'on mundo a imagen de la nube de puntos segmentada en el devkit de nuScenes.\relax }}{28}{figure.caption.77}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Arquitectura propuesta del detector SECOND.\relax }}{30}{figure.caption.99}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Algoritmo de convoluci\'on disperso propuesto en SECOND.\relax }}{30}{figure.caption.103}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Arquitectura propuesta del detector PointPillars.\relax }}{31}{figure.caption.107}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Arquitectura propuesta del detector PointRCNN.\relax }}{32}{figure.caption.112}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Agrupaci\'on de regiones de la nube de puntos en el modelo PointRCNN.\relax }}{33}{figure.caption.115}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Arquitectura propuesta del detector PV-RCNN.\relax }}{34}{figure.caption.117}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces M\'odulo Predicted Keypoint Weighting del modelo PV-RCNN.\relax }}{34}{figure.caption.120}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Arquitectura propuesta del detector CBGS.\relax }}{35}{figure.caption.123}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

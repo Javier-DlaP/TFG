@@ -446,11 +446,11 @@ A partir del devkit es muy sencillo realizar tareas como filtrado de clases, agr
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/lidar_segmentation.png}
-	\caption{Transformación mundo a imagen de la nube de puntos segmentada.}
-	\label{fig:Transformacion_mundo_a_imagen_de_la_nube_de_puntos_segmentada}
+	\caption{Transformación mundo a imagen de la nube de puntos segmentada en el devkit de nuScenes.}
+	\label{fig:Transformacion_mundo_a_imagen_de_la_nube_de_puntos_segmentada_en_el_devkit_de_nuscenes}
 \end{figure}
 
-Con código tan simple como el siguiente \ref{cod:Obtencion_de_una_nube_de_puntos_segmentada_sobre_una_imagen_utilizando_nuscenes_devkit} es muy fácil obtener la imagen de una cámara con la nube de puntos segmentada tras realizar una transformación de mundo a cámara tal y como se ve en la figura \ref{fig:Transformacion_mundo_a_imagen_de_la_nube_de_puntos_segmentada}. Dichas transformaciones como se verá en el capítulo \ref{cha:ad_devkit} no es algo inmediato, por lo es necesario cierto conocimiento del funcionamiento de las cámaras y de transformaciones geométricas.
+Con código tan simple como el siguiente \ref{cod:Obtencion_de_una_nube_de_puntos_segmentada_sobre_una_imagen_utilizando_nuscenes_devkit} es muy fácil obtener la imagen de una cámara con la nube de puntos segmentada tras realizar una transformación de mundo a cámara tal y como se ve en la figura \ref{fig:Transformacion_mundo_a_imagen_de_la_nube_de_puntos_segmentada_en_el_devkit_de_nuscenes}. Dichas transformaciones como se verá en el capítulo \ref{cha:ad_devkit} no es algo inmediato, por lo es necesario cierto conocimiento del funcionamiento de las cámaras y de transformaciones geométricas.
 
 \begin{codefloat}
 \begin{lstlisting}[language=Python]
@@ -501,37 +501,164 @@ En la parte del hardware, se ha visto que el acercamiento por parte de KITTI de 
 
 En relación a la cantidad de situaciones y de datos Waymo y nuScenes se encuentran en un estado similar con una gran cantidad de datos del entorno, mientras que KITTI se queda más atrás debido a la longevidad del dataset.\par
 Unicamente KITTI y nuScenes cuentan con un devkit, este es utilizado para uso más simplificado del dataset, aunque en el caso de nuScenes es casi requerido su uso. El problema de KITTI en este aspecto es el uso de Matlab para el uso del devkit ya que la mayoría de la comunidad investigadora no utiliza este lenguaje para la creación de los modelos de detección, aunque se pueden encontrar de forma no oficial, repositorios Open-Source que ofrecen variantes del devkit de KITTI en otros lenguajes.\par
-En conclusión, KITTI ha sido una gran base para la generación de la siguiente generación de datasets, aunque para sistemas de percepción algo más complejos se puede quedar corto, lo cual se ha ido mejorando con el tiempo y por esto mismo se está desarrollando KITII-360. Por otra parte, Waymo y nuScenes ofrecen un dataset más completo, aunque nuScenes ofrece información de un sensor más y contiene la información de los mapas.
+En conclusión, KITTI ha sido una gran base para la generación de la siguiente generación de datasets, aunque para sistemas de percepción algo más complejos se puede quedar corto, lo cual se ha ido mejorando con el tiempo y por esto mismo se está desarrollando KITII-360. Por otra parte, Waymo y nuScenes ofrecen un dataset más completo, aunque nuScenes ofrece información de un sensor más y contiene la información de los mapas. Debido a esto se ha decidido estudiar más en profundidad y trabajar con los dataset de KITTI y nuScenes.
 
 \section{Estado del arte en detección utilizando LiDAR}
 \label{sec:estado_del_arte_en_deteccion_utilizando_lidar}
 
 Las técnicas basadas en \acs{dl} que hacen uso de \acs{cnn} llevan unos años siendo \acs{sota} en el campo de la detección utilizando unicamente \acs{lidar}. En este apartado se van a estudiar los principales modelos de detección en este campo que hacen uso de estas técnicas.
 
-\subsection{PointPillars}
-\label{sec:pointpillars}
-
-\cite{cbgs}
-
 \subsection{SECOND}
 \label{sec:second}
 
+SECOND (Sparsely Embedded CONvolutional Detector) \cite{second} se publica en 2018 para superar los modelos de detección 3D, utilizando unicamente \acs{lidar}. Para ello propone una arquitectura basada en tres componentes principales: extractor de características a nivel de vóxel, \ac{cnn} dispersa y \ac{rpn}. Precedido todo ello de una fase de preprocesamiento de la nube de puntos y con una obtención a posteriori de las salidas del modelo.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second.png}
+	\caption{Arquitectura propuesta del detector SECOND.}
+	\label{fig:Arquitectura_propuesta_del_detector_second}
+\end{figure}
+
+Las diferentes fases del modelo que son utilizadas son las siguientes:
+\begin{enumerate}
+\item Preprocesamiento de la nube de puntos\par
+Se comienza con la voxelización de la nube de puntos haciendo uso de una tabla hash, para su rápido acceso en memoria. Al tener que definir un tamaño de vóxel fijo en función de lo que se desee detectar, se ajusta el tamaño de la \acs{roi}, ya que como se trabajar con KITTI solo se utiliza la parte frontal del \acs{lidar}. Para la detección de coches y otros vehículos se usa [-3, 1] x [-40, 40] x [0, 70.4] m y para el modelo más pequeño se utiliza [-3, 1] x [-32, 32] x [0, 52.8] m para no tener que computar tantos vóxeles como el modelo completo. Todas las versiones del modelo utilizan un tamaño de vóxel fijo de [0.4, 0.2, 0.2] m y por cada uno de ellos se guarda un máximo de 35 puntos.
+\item Extractor de características a nivel de vóxel\par
+Se utiliza una capa \ac{vfe} tal como se presenta en el detector VoxelNet \cite{voxelnet} para extraer las características. Para ello se utiliza una \ac{fcn} compuesta de capas \acs{fc}, una capa que aplica batch nomalization y una \ac{relu} de salida para extraer las características a nivel de punto y se aplica max pooling para la obtención de las características a nivel de vóxel.
+\item Extractor convolucional disperso\par
+El uso de Sparse Convolutional Networks  ofrece una mejora en rendimiento de al no computar una salida si no hay una entrada dada. Al trabajar con una nube de puntos voxelizada se consigue un mejora en el rendimiento al no utilizar aquellos vóxeles que no contienen ningún punto. Para poder aplicar este tipo de redes es necesario hallar que indices del kernel van a ser utilizados, y para ello se necesita un algoritmo que contenga las reglas para indicar que parte del kernel es utilizado.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse_convolutional_extractor.png}
+	\caption{Algoritmo de convolución disperso propuesto en SECOND.}
+	\label{fig:Algoritmo_de_convolucion_disperso_propuesto_en_second}
+\end{figure}
+
+Para ello se construye una tabla de matrices de reglas para guardar los indices utilizados. Con esto en cuenta, hace falta el algoritmo que genere las reglas, SparseConvNet \cite{sparseconvnet} es el modelo original que ofrece la implementación del Submanifold Convolution, una técnica dentro del campo de las Sparse Convolutional Networks que realiza la generación de reglas en CPU. En este paper se implementa un generador de reglas en GPU aprovechando la aceleración por hardware y el procesamiento paralelo para conseguir una generación de reglas en la mitad de tiempo que SparseConvNet. Este extractor es utilizado para convertir la información 3D en un formato similar a una imagen \ac{bev}.
+\item \acl{rpn}\par
+Las \acs{rpn} fueron presentadas junto con el detector Fast R-CNN \cite{fast_rcnn} y son utilizadas en este modelo para que a partir del mapa de características extraído de la fase anterior, obtenga las predicciones del modelo.
+\item Obtención de las detecciones\par
+En la salida se utilizan unos tamaños fijados para las diferentes clases que son ajustados a las detecciones, a partir del centro del objeto detectado. Por cada objeto es fijado un one-hot vector para el ajuste de las cajas y otro para el ajuste de la dirección. Tras esto se aplica un límite de precisión por clase para minimizar los falsos positivos.
+\end{enumerate}
+
+Este método tras su publicación consiguió convertirse en \acs{sota} en el benchmark KITTI en su evaluador de detección utilizando \acs{lidar}, además de realizar esto en tiempo real, con tiempos de computo de 20 Hz en su modelo completo y 40 Hz en su modelo reducido.
+
+\subsection{PointPillars}
+\label{sec:pointpillars}
+
+PointPillars se publica meses después de SECOND y no solo consigue una mejora en la precisión para la detección de objetos 3D sino que consigue esto a una velocidad de inferencia de hasta 62 Hz o hasta 105 Hz con su modelo reducido. Esto no solo permite la utilización con nubes de puntos mayores sin disminuir apenas el rendimiento sino que permite la integración de este modelo en sistemas embebidos.\par
+Para la obtención de esta velocidad de inferencia, PointPillars elimina el uso de las capas convolucionales 3D, convirtiendo las nubes de puntos en imágenes \acs{bev} de la escena. Los principales componentes de la red que consiguen este funcionamiento son los siguientes:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pointpillars.png}
+	\caption{Arquitectura propuesta del detector PointPillars.}
+	\label{fig:Arquitectura_propuesta_del_detector_pointpillars}
+\end{figure}
+
+\newpage
+
+\begin{enumerate}
+\item Nube de puntos a pseudo imágenes\par
+Se comienza voxelizando la nube de puntos formando diferentes pilares, esto quiere decir que cada vóxel tiene un tamaño $x$ e $y$ fijo pero en $z$ se tiene un tamaño infinito. Por cada punto en los vóxeles se les añade junto a las tres dimensiones con la información de posición: el grado de reflectividad, la distancia aritmética a la media de los puntos del vóxel en las tres dimensiones y el desplazamiento en $x$ e $y$ al centro del vóxel, por lo que se tiene un espacio de nueve dimensiones por pilar. Para limitar el cómputo, se define un támaño máximo por pilar de [9, número de pilares no vacíos, número de puntos por pilar], se esta manera se fija un máximo de números de puntos por pilar y se aplica zero padding si el pilar se encuentra con muy poca información.\par
+Tras esto se aplica una capa linear con batch normalization y una \acs{relu} seguido de una operación de máximo por cada uno de los puntos del pilar para obtener un tensor de tamaño [X, número de pilares no vacíos], lo cual es pasado a una pseudo imagen pasando el número de pilares no vacíos a la altura y anchura de la imagen en función de la posición de dichos pilares. Con lo que se consigue un estructura similar a la de una imagen \acs{bev}.
+\item Backbone\par
+Se utiliza un backbone similar al de VoxelNet \cite{voxelnet}, este backbone tiene dos subcapas, una que aumenta el número de características a nivel espacial y otra que aumenta y relaciona las características de los pilares.
+\item Cabeza detectora\par
+En la salida se utiliza una \ac{ssd} para obtener las salidas de las detecciones 3D.
+\end{enumerate}
+
+Este enfoque de uso de \acs{cnn} sobre nubes de puntos de la misma manera que se analizaría para imágenes, se ha visto en este paper, que es muy útil para acelerar la inferencia del modelo, además que se consigue un muy buen rendimiento para tareas de detección 3D y detección \acs{bev} 2D.
 
 \subsection{PointRCNN}
 \label{sec:pointrcnn}
 
+PointRCNN \cite{pointrcnn} propone un modelo basado en dos fases para la detección de objetos 3D. Dichas fases consisten en una primera fase de generación de las detecciones 3D y otra de refinamiento de las bounding boxes 3D.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pointrcnn.png}
+	\caption{Arquitectura propuesta del detector PointRCNN.}
+	\label{fig:Arquitectura_propuesta_del_detector_pointrcnn}
+\end{figure}
+
+El funcionamiento de las dos fases del modelo es el siguiente:
+
+\begin{enumerate}
+\item Generación de propuestas de detección 3D vía segmentación de la nube de puntos\par
+La primera fase del modelo se basa en el backbone de PointNet++ \cite{pointnet++} para extraer las características a nivel de punto de la nube de puntos utilizando un agrupación multiescala. Con dicho modelo junto con un método propio basado en la discretización 2D en \acs{bev} (bin-based) se hayan las múltiples detecciones 3D, pero se reducen por cada objeto aplicando \ac{nms} basado en el \ac{iou} como \acs{bev} con un límite de 0,8 y solo las 100 mejores detecciones son mantenidas para la siguiente fase de ajuste de las detecciones 3D.
+\item Refinamiento de las bounding boxes 3D\par
+Tras la obtención de las bounding boxes 3D, se trata de mejorar el centro y la orientación de estas. Por cada una de dichas detecciones se aumenta su tamaño por un valor constante incluyendo además una mascara que diferencia aquellos puntos de la detección original al espacio aumentado. Cada una de dichas detecciones aumentadas pasan a utilizar el sistema de coordenadas propio de cada detección.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/region_pooling_pointrcnn.png}
+	\caption{Agrupación de regiones de la nube de puntos en el modelo PointRCNN.}
+	\label{fig:Agrupacion_de_regiones_de_la_nube_de_puntos_en_el_modelo_pointrcnn}
+\end{figure}
+A partir de los puntos de cada agrupación de las características extraídas de la primera fase y de un parámetro que agrega información de la distancia al sensor para aquellas agrupaciones con menos puntos calculado como $\sqrt{x²+y²+z²}$, se introducen en múltiples capas \acs{fc} para obtener las características locales. Tras esto se vuelve a utilizar el modelo bin-based utilizado en la primera fase con lo que se obtienen las bounding boxes 3D aplicando nuevamente \acs{nms} sobre un \acs{iou} en \acs{bev} con un límite de 0,01 para eliminar solapamientos.
+\end{enumerate}
+
+Al encontrarse basado este método en dos subredes, sufre de un tiempo de computo mayor, lo que se traduce en una velocidad de 12 Hz \cite{rangercnn}, pero suficiente para aplicarse en tiempo real al obtener típicamente las nubes de puntos a 10 Hz.
 
 \subsection{PV-RCNN}
 \label{sec:pv_rcnn}
 
+PV-RCNN \cite{pv_rcnn} unifica los beneficios de las dos principales técnicas de detección de objetos utilizando \acs{lidar}, como son: el uso de técnicas de voxelización junto con Sparse Convolutional Networks y el uso de backbones como el de PointNet \cite{pointnet} o métodos similares. Para ello se construye un modelo basado en tres pasos:
 
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pvrcnn.png}
+	\caption{Arquitectura propuesta del detector PV-RCNN.}
+	\label{fig:Arquitectura_propuesta_del_detector_pv_rcnn}
+\end{figure}
+
+\begin{enumerate}
+\item 3D Voxel \acs{cnn} para la extracción de características y generación de detecciones\par
+Se utiliza una Voxel \acs{cnn} con 3D sparse convolution junto con una \acs{rpn}, la cual es una elección popular en el \acs{sota} gracias a su eficiencia, por lo que es el backbone utilizado utilizado en este modelo. Este método obtiene de forma interna características semánticas de los vóxeles además de conseguir las detecciones de los objetos a partir de los tamaños prefijados o anchors.
+\item Codificación de escenas de vóxel a puntos clave\par
+Primero se agregan las características de los vóxeles en un conjunto de puntos clave que sirven de conexión entre la fase anterior y el refinamiento de las detecciones. Para la obtención de los puntos clave se adopta el algoritmo Furthest Point Sampling y se aplica sobre la nube de puntos, lo cual elige puntos de forma uniformemente distribuida sobre los vóxeles no vacíos. Tras esto se propone el módulo Voxel Set Abstraction para codificar características semánticas de la primera fase en los puntos clave. Basándose en la premisa de que los puntos más cercanos tiene que contribuir más a la propuesta de detección se propone el módulo Predicted Keypoint Weighting.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pkw_pvrcnn.png}
+	\caption{Módulo Predicted Keypoint Weighting del modelo PV-RCNN.}
+	\label{fig:Agrupacion_de_regiones_de_la_nube_de_puntos_en_el_modelo_pc_rcnn}
+\end{figure}
+En dicho módulo se introducen los puntos clave codificados previamente para dar un peso a cada uno en función de su importancia para las detecciones.
+\item Abstracción de características de \acs{roi} de puntos clave a cuadrícula para el refinamiento de la detección\par
+Para el refinamiento de las detecciones se utiliza un método de abstracción de características \acs{roi} de puntos clave a rejilla. Dadas las detecciones junto con los puntos codificados y sus pesos, se agregan entorno a diferentes puntos de rejilla con un radio determinado. Tras esto se obtienen las características de las rejillas y a partir de estas, con una pequeña red de dos capas se ajusta la detección.
+\end{enumerate}
+
+De la misma manera que ocurría en PointRCNN, PV-RCNN tiene una velocidad de inferencia baja de 10 Hz \cite{rangercnn} debido a la fase de refinamiento y el procesamiento adicional de las características del backbone.
 
 \subsection{CBGS}
 \label{sec:cbgs}
 
+Class-balanced Grouping and Sampling (CBGS) \cite{cbgs} propone un modelo compuesto principalmente de 4 partes: módulo de entrada, extractor de características 3D, \acs{rpn} y una red con múltiples cabeceras en función del grupo. Con esto se consigue un funcionamiento en detección 3D, predicción de la velocidad y de la clase, todo ello sobre las 10 clases diferentes que utiliza nuScenes.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/cbgs.png}
+	\caption{Arquitectura propuesta del detector CBGS.}
+	\label{fig:Arquitectura_propuesta_del_detector_pv_rcnn}
+\end{figure}
+
+Parte del funcionamiento del modelo proviene de la fase de entrenamiento, en la que se aplica una técnica de muestreo que trata de mejorar la media de uso de las diferentes clases para reducir la irregularidad del dataset de nuScenes, lo que aumenta el conjunto de entrenamiento de 28.130 a 128.100 muestras.\par
+Para realizar la inferencia en el modelo se siguen los siguientes pasos:
+
+\begin{enumerate}
+\item Entrada de la red\par
+Debido al método de validación de las detecciones en nuScenes es necesaria la inferencia de la velocidad por lo que siguiendo el método oficial del dataset, se utilizan diez barridos de \acs{lidar} para la obtención del dato de la velocidad. En la entrada del modelo es necesario entonces alguna medida de tiempo, por lo que cada punto se encuentra codificado como [$x$, $y$, $z$, $intensity$, $\Delta t$], siendo $\Delta t$ la diferencia de tiempo entre el barrido inicial y el barrido del que proviene el punto. Tras esto se voxeliza la nube de puntos con un tamaño de vóxel de [0.1, 0.1, 0.2] m para la reducción del tiempo de computo. Dentro de cada vóxel se mantiene unicamente la media de todos puntos de dicho vóxel.
+\item Backbone utilizado\par
+En la red principal es utilizado un modelo basado en sparse 3D convolution y un extractor de características. Tras esto se aplica un \acs{rpn}, lo que termina en una red similar a la de VoxelNet \cite{voxelnet} para extraer más características pero con capas convolucionales 2D.
+\item Class-balance Grouping\par
+Al tener una aparición de las diferentes clases muy irregular, con casi un 45\% de los objetos siendo coches, es muy difícil para objetos con formas diferentes extraer las diferencias entre ellos. Por ejemplo una bicicleta y una motocicleta tienen una forma muy similar en lo que respecta a la nube de puntos, al igual que ocurren con un camión y un camión de construcción. Para solucionar este problema se propone la agrupación de clases en función de su similitud, teniendo en cuenta el tamaño de los objetos y un balanceo del tamaño de los grupos en función del número de clases. Lo cual acaba generando 6 grupos diferentes: (Coche), (Camión, Camión de construcción), (Bus, Tráiler), (Barrera), (Motocicleta, Bicicleta), (Peatón, Cono de tráfico). Por lo que tras la elección del grupo, se obtiene su cabecera y se hayan la posición, tamaño, rotación y velocidad.
+\end{enumerate}
+
+Este método consigue por tanto una detección de objetos 3D además de un pseudo tracking para inferir la velocidad de los objetos, todo ello trabajando con 10 clases diferentes y obteniendo una velocidad de 9 Hz.
 
 \section{OpenPCDet}
 \label{sec:openpcdet}
