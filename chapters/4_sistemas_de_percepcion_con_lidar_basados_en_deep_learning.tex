@@ -663,4 +663,40 @@ Este método consigue por tanto una detección de objetos 3D además de un pseudo t
 \section{OpenPCDet}
 \label{sec:openpcdet}
 
+OpenPCDet \cite{openpcdet} es un proyecto Open-Source para realizar detecciones de objetos 3D utilizando \acs{lidar}. Esta herramienta ha sido utilizada para la evaluación, entrenamiento e implementación de diversos modelos debido a la diversidad de modelos y de datasets que son soportados.\par
+OpenPCDet es un repositorio en Pytorch \cite{pytorch} que soporta múltiples modelos \acs{sota} en detección de objetos 3D, con un código altamente refactorizado para las arquitecturas basadas en una o dos etapas. Este repositorio de código abierto es activamente actualizado con nuevos datasets soportados y modelos. Basado en OpenPCDet se ha conseguido ganar el Waymo Open Dataset en detección 3D, seguimiento 3D y adaptación del entorno utilizando unicamente las nubes de puntos del \acs{lidar}.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/openpcdet.png}
+	\caption{Diseño de OpenPCDet.}
+	\label{fig:Diseño_de_openpcdet}
+\end{figure}
+
+El patrón de diseño de OpenPCDet se encuentra basado en: la separación de datos a modelo unificando el sistema de coordenadas, definición única de las bounding boxes 3D [$x$, $y$, $z$, $dx$, $dy$, $dz$, $heading$], definición de la estructura de los modelos clara y flexible permitiendo fácilmente el soporte de múltiples modelos. Esta herramienta incluye diversos modelos en diferentes datasets, estos son:
+
+\begin{itemize}
+\item KITTI \cite{kitti_dataset}
+	\begin{itemize}
+	\item PointPillars \cite{pointpillars}
+	\item SECOND \cite{second}
+	\item PointRCNN \cite{pointrcnn}
+	\item Part-A$²$ \cite{part-a2}
+	\item PV-RCNN \cite{pv_rcnn}
+	\item Voxel R-CNN \cite{voxel_rcnn}
+	\item CaDDN \cite{caddn}
+	\end{itemize}
+\item nuScenes \cite{nuscenes_dataset}
+	\begin{itemize}
+	\item CBGS \cite{cbgs}
+	\end{itemize}
+\item Waymo \cite{waymo_dataset}
+	\begin{itemize}
+	\item SECOND \cite{second}
+	\item Part-A$²$ \cite{part-a2}
+	\item PV-RCNN \cite{pv_rcnn}
+	\end{itemize}
+\end{itemize}
+
+Para el uso principal de la herramienta se utilizan los ficheros \textit{train.py} y \textit{test.py}, con estos a partir de diferentes flags es posible entrenar y evaluar los diferentes modelos que se deseen, sin necesidad de limitarse a los modelos que se tienen implementados, sino que dentro de \textit{OpenPCDet/tools/cfgs} es posible modificar los ya existentes o también es posible crear nuevos modelos a partir de objetos en Python que utilicen toda la flexibilidad que OpenPCDet ofrece para reutilizar módulos de otros modelos.\par
+Todo esto convierte a OpenPCDet en una gran herramienta para el desarrollo de modelos que sean basados en el \acs{sota}, como herramienta de evaluación o para la implementación de modelos ya creados.

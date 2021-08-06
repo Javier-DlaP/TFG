@@ -39,38 +39,38 @@
 \BOOKMARK [2][-]{subsection.116}{4.2.4 PV-RCNN}{section.97}% 39
 \BOOKMARK [2][-]{subsection.122}{4.2.5 CBGS}{section.97}% 40
 \BOOKMARK [1][-]{section.127}{4.3 OpenPCDet}{chapter.61}% 41
-\BOOKMARK [0][-]{chapter.128}{5 Desarrollo realizado}{}% 42
-\BOOKMARK [1][-]{section.129}{5.1 Estado del proyecto T4AC}{chapter.128}% 43
-\BOOKMARK [2][-]{subsection.130}{5.1.1 ROS}{section.129}% 44
-\BOOKMARK [2][-]{subsection.131}{5.1.2 Docker}{section.129}% 45
-\BOOKMARK [2][-]{subsection.132}{5.1.3 Estructura del proyecto}{section.129}% 46
-\BOOKMARK [1][-]{section.133}{5.2 Implementaci\363n en CARLA}{chapter.128}% 47
-\BOOKMARK [2][-]{subsection.134}{5.2.1 CARLA}{section.133}% 48
-\BOOKMARK [2][-]{subsection.135}{5.2.2 Funcionamiento del LiDAR en CARLA}{section.133}% 49
-\BOOKMARK [2][-]{subsection.136}{5.2.3 Implementaci\363n del sistema cl\341sico utilizando LiDAR}{section.133}% 50
-\BOOKMARK [2][-]{subsection.137}{5.2.4 Implementaci\363n del sistema basado en Deep Learning utilizando LiDAR}{section.133}% 51
-\BOOKMARK [1][-]{section.138}{5.3 Fusi\363n sensorial}{chapter.128}% 52
-\BOOKMARK [1][-]{section.139}{5.4 Veh\355culo del proyecto T4AC}{chapter.128}% 53
-\BOOKMARK [1][-]{section.140}{5.5 Implementaci\363n sobre el veh\355culo T4AC}{chapter.128}% 54
-\BOOKMARK [0][-]{chapter.141}{6 AD DevKit}{}% 55
-\BOOKMARK [1][-]{section.142}{6.1 Estado del arte en evaluaci\363n de veh\355culos aut\363nomos}{chapter.141}% 56
-\BOOKMARK [1][-]{section.143}{6.2 Obtenci\363n del ground truth}{chapter.141}% 57
-\BOOKMARK [1][-]{section.144}{6.3 Evaluaci\363n de los modelos}{chapter.141}% 58
-\BOOKMARK [0][-]{chapter.145}{7 Resultados obtenidos}{}% 59
-\BOOKMARK [1][-]{section.146}{7.1 An\341lisis cuantitativo en Kitti}{chapter.145}% 60
-\BOOKMARK [1][-]{section.147}{7.2 An\341lisis cuantitativo en nuScenes}{chapter.145}% 61
-\BOOKMARK [1][-]{section.150}{7.3 An\341lisis cualitativo del modelo cl\341sico en CARLA}{chapter.145}% 62
-\BOOKMARK [1][-]{section.151}{7.4 An\341lisis cualitativo de CBGS en CARLA}{chapter.145}% 63
-\BOOKMARK [2][-]{subsection.152}{7.4.1 Comparativa con PointPillars en CARLA}{section.151}% 64
-\BOOKMARK [1][-]{section.153}{7.5 An\341lisis cuantitativo de CBGS en CARLA}{chapter.145}% 65
-\BOOKMARK [1][-]{section.155}{7.6 An\341lisis cualitativo de CBGS sobre el veh\355culo T4AC}{chapter.145}% 66
-\BOOKMARK [2][-]{subsection.156}{7.6.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{section.155}% 67
-\BOOKMARK [0][-]{chapter.157}{8 Conclusiones}{}% 68
-\BOOKMARK [1][-]{section.158}{8.1 Modelos estudiados}{chapter.157}% 69
-\BOOKMARK [1][-]{section.159}{8.2 Comparativas adicionales}{chapter.157}% 70
-\BOOKMARK [2][-]{subsection.160}{8.2.1 Ajuste de modelos basados en Kitti a nuScenes}{section.159}% 71
-\BOOKMARK [2][-]{subsection.161}{8.2.2 N\372mero de PCL de entrada en modelos evaluados sobre nuScenes}{section.159}% 72
-\BOOKMARK [2][-]{subsection.162}{8.2.3 Tama\361o del voxel en modelos basados en redes neuronales}{section.159}% 73
-\BOOKMARK [1][-]{section.163}{8.3 Futuros trabajos}{chapter.157}% 74
-\BOOKMARK [0][-]{chapter*.164}{Bibliograf\355a}{}% 75
-\BOOKMARK [0][-]{appendix.165}{A Herramientas y recursos}{}% 76
+\BOOKMARK [0][-]{chapter.129}{5 Desarrollo realizado}{}% 42
+\BOOKMARK [1][-]{section.130}{5.1 Estado del proyecto T4AC}{chapter.129}% 43
+\BOOKMARK [2][-]{subsection.131}{5.1.1 ROS}{section.130}% 44
+\BOOKMARK [2][-]{subsection.132}{5.1.2 Docker}{section.130}% 45
+\BOOKMARK [2][-]{subsection.133}{5.1.3 Estructura del proyecto}{section.130}% 46
+\BOOKMARK [1][-]{section.134}{5.2 Implementaci\363n en CARLA}{chapter.129}% 47
+\BOOKMARK [2][-]{subsection.135}{5.2.1 CARLA}{section.134}% 48
+\BOOKMARK [2][-]{subsection.136}{5.2.2 Funcionamiento del LiDAR en CARLA}{section.134}% 49
+\BOOKMARK [2][-]{subsection.137}{5.2.3 Implementaci\363n del sistema cl\341sico utilizando LiDAR}{section.134}% 50
+\BOOKMARK [2][-]{subsection.138}{5.2.4 Implementaci\363n del sistema basado en Deep Learning utilizando LiDAR}{section.134}% 51
+\BOOKMARK [1][-]{section.139}{5.3 Fusi\363n sensorial}{chapter.129}% 52
+\BOOKMARK [1][-]{section.140}{5.4 Veh\355culo del proyecto T4AC}{chapter.129}% 53
+\BOOKMARK [1][-]{section.141}{5.5 Implementaci\363n sobre el veh\355culo T4AC}{chapter.129}% 54
+\BOOKMARK [0][-]{chapter.142}{6 AD DevKit}{}% 55
+\BOOKMARK [1][-]{section.143}{6.1 Estado del arte en evaluaci\363n de veh\355culos aut\363nomos}{chapter.142}% 56
+\BOOKMARK [1][-]{section.144}{6.2 Obtenci\363n del ground truth}{chapter.142}% 57
+\BOOKMARK [1][-]{section.145}{6.3 Evaluaci\363n de los modelos}{chapter.142}% 58
+\BOOKMARK [0][-]{chapter.146}{7 Resultados obtenidos}{}% 59
+\BOOKMARK [1][-]{section.147}{7.1 An\341lisis cuantitativo en Kitti}{chapter.146}% 60
+\BOOKMARK [1][-]{section.148}{7.2 An\341lisis cuantitativo en nuScenes}{chapter.146}% 61
+\BOOKMARK [1][-]{section.151}{7.3 An\341lisis cualitativo del modelo cl\341sico en CARLA}{chapter.146}% 62
+\BOOKMARK [1][-]{section.152}{7.4 An\341lisis cualitativo de CBGS en CARLA}{chapter.146}% 63
+\BOOKMARK [2][-]{subsection.153}{7.4.1 Comparativa con PointPillars en CARLA}{section.152}% 64
+\BOOKMARK [1][-]{section.154}{7.5 An\341lisis cuantitativo de CBGS en CARLA}{chapter.146}% 65
+\BOOKMARK [1][-]{section.156}{7.6 An\341lisis cualitativo de CBGS sobre el veh\355culo T4AC}{chapter.146}% 66
+\BOOKMARK [2][-]{subsection.157}{7.6.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{section.156}% 67
+\BOOKMARK [0][-]{chapter.158}{8 Conclusiones}{}% 68
+\BOOKMARK [1][-]{section.159}{8.1 Modelos estudiados}{chapter.158}% 69
+\BOOKMARK [1][-]{section.160}{8.2 Comparativas adicionales}{chapter.158}% 70
+\BOOKMARK [2][-]{subsection.161}{8.2.1 Ajuste de modelos basados en Kitti a nuScenes}{section.160}% 71
+\BOOKMARK [2][-]{subsection.162}{8.2.2 N\372mero de PCL de entrada en modelos evaluados sobre nuScenes}{section.160}% 72
+\BOOKMARK [2][-]{subsection.163}{8.2.3 Tama\361o del voxel en modelos basados en redes neuronales}{section.160}% 73
+\BOOKMARK [1][-]{section.164}{8.3 Futuros trabajos}{chapter.158}% 74
+\BOOKMARK [0][-]{chapter*.165}{Bibliograf\355a}{}% 75
+\BOOKMARK [0][-]{appendix.166}{A Herramientas y recursos}{}% 76

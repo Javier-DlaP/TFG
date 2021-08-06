@@ -233,6 +233,38 @@ R.~Q. Charles, H.~Su, M.~Kaichun, and L.~J. Guibas, ``Pointnet: Deep learning
   Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017, pp.
   77--85.
 
+\bibitem{openpcdet}
+O.~D. Team, ``Openpcdet: An open-source toolbox for 3d object detection from
+  point clouds,'' \url{https://github.com/open-mmlab/OpenPCDet}, 2020.
+
+\bibitem{pytorch}
+\BIBentryALTinterwordspacing
+A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
+  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~Kopf, E.~Yang, Z.~DeVito,
+  M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang, J.~Bai, and
+  S.~Chintala, ``Pytorch: An imperative style, high-performance deep learning
+  library,'' in \emph{Advances in Neural Information Processing Systems 32},
+  H.~Wallach, H.~Larochelle, A.~Beygelzimer, E.~Fox, and R.~Garnett, Eds.\hskip
+  1em plus 0.5em minus 0.4em\relax Curran Associates, Inc., 2019, pp.
+  8024--8035. [Online]. Available:
+  \url{http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{part-a2}
+S.~Shi, Z.~Wang, J.~Shi, X.~Wang, and H.~Li, ``From points to parts: 3d object
+  detection from point cloud with part-aware and part-aggregation network,''
+  2020.
+
+\bibitem{voxel_rcnn}
+J.~Deng, S.~Shi, P.~Li, W.~Zhou, Y.~Zhang, and H.~Li, ``Voxel r-cnn: Towards
+  high performance voxel-based 3d object detection,'' 2021.
+
+\bibitem{caddn}
+C.~Reading, A.~Harakeh, J.~Chae, and S.~L. Waslander, ``Categorical depth
+  distribution network for monocular 3d object detection,'' in
+  \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, June 2021, pp. 8555--8564.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso
