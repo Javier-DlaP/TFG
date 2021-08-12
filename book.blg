@@ -9,6 +9,10 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: biblio/biblio.bib
 Database file #2: biblio/biblio_TFG.bib
+Warning--entry type for "ros" isn't style-file defined
+--line 478 of file biblio/biblio_TFG.bib
+Warning--entry type for "unrealengine" isn't style-file defined
+--line 504 of file biblio/biblio_TFG.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -18,45 +22,45 @@ Warning--empty author in how_self_driving_vehicles_work
 Warning--missing institution in how_self_driving_vehicles_work
 
 Done.
-You've used 50 entries,
+You've used 62 entries,
             4087 wiz_defined-function locations,
-            1048 strings with 17627 characters,
-and the built_in function-call counts, 34277 in all, are:
-= -- 2413
-> -- 1078
-< -- 194
-+ -- 595
-- -- 230
-* -- 1598
-:= -- 4819
-add.period$ -- 101
-call.type$ -- 50
-change.case$ -- 58
-chr.to.int$ -- 483
-cite$ -- 54
-duplicate$ -- 2530
-empty$ -- 3012
-format.name$ -- 251
-if$ -- 8048
+            1099 strings with 19186 characters,
+and the built_in function-call counts, 39797 in all, are:
+= -- 2824
+> -- 1194
+< -- 207
++ -- 652
+- -- 256
+* -- 1825
+:= -- 5753
+add.period$ -- 125
+call.type$ -- 62
+change.case$ -- 70
+chr.to.int$ -- 507
+cite$ -- 66
+duplicate$ -- 2977
+empty$ -- 3545
+format.name$ -- 281
+if$ -- 9299
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 551
-newline$ -- 193
-num.names$ -- 40
-pop$ -- 1515
+int.to.str$ -- 62
+missing$ -- 653
+newline$ -- 243
+num.names$ -- 52
+pop$ -- 1809
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2596
+skip$ -- 3015
 stack$ -- 0
-substring$ -- 1222
-swap$ -- 1890
-text.length$ -- 33
+substring$ -- 1291
+swap$ -- 2163
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 50
+type$ -- 62
 warning$ -- 4
-while$ -- 100
-width$ -- 52
-write$ -- 459
-(There were 4 warnings)
+while$ -- 120
+width$ -- 64
+write$ -- 570
+(There were 6 warnings)

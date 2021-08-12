@@ -42,37 +42,43 @@
 \contentsline {subsection}{\numberline {4.2.5}CBGS}{35}{subsection.122}
 \contentsline {section}{\numberline {4.3}OpenPCDet}{36}{section.127}
 \contentsline {chapter}{\numberline {5}Desarrollo realizado}{39}{chapter.129}
-\contentsline {section}{\numberline {5.1}Estado del proyecto T4AC}{39}{section.130}
-\contentsline {subsection}{\numberline {5.1.1}ROS}{39}{subsection.131}
-\contentsline {subsection}{\numberline {5.1.2}Docker}{39}{subsection.132}
-\contentsline {subsection}{\numberline {5.1.3}Estructura del proyecto}{39}{subsection.133}
-\contentsline {section}{\numberline {5.2}Implementaci\'on en CARLA}{39}{section.134}
-\contentsline {subsection}{\numberline {5.2.1}CARLA}{39}{subsection.135}
-\contentsline {subsection}{\numberline {5.2.2}Funcionamiento del LiDAR en CARLA}{39}{subsection.136}
-\contentsline {subsection}{\numberline {5.2.3}Implementaci\'on del sistema cl\'asico utilizando LiDAR}{39}{subsection.137}
-\contentsline {subsection}{\numberline {5.2.4}Implementaci\'on del sistema basado en Deep Learning utilizando LiDAR}{39}{subsection.138}
-\contentsline {section}{\numberline {5.3}Fusi\'on sensorial}{39}{section.139}
-\contentsline {section}{\numberline {5.4}Veh\IeC {\'\i }culo del proyecto T4AC}{39}{section.140}
-\contentsline {section}{\numberline {5.5}Implementaci\'on sobre el veh\IeC {\'\i }culo T4AC}{39}{section.141}
-\contentsline {chapter}{\numberline {6}AD DevKit}{41}{chapter.142}
-\contentsline {section}{\numberline {6.1}Estado del arte en evaluaci\'on de veh\IeC {\'\i }culos aut\'onomos}{41}{section.143}
-\contentsline {section}{\numberline {6.2}Obtenci\'on del ground truth}{41}{section.144}
-\contentsline {section}{\numberline {6.3}Evaluaci\'on de los modelos}{41}{section.145}
-\contentsline {chapter}{\numberline {7}Resultados obtenidos}{43}{chapter.146}
-\contentsline {section}{\numberline {7.1}An\'alisis cuantitativo en Kitti}{43}{section.147}
-\contentsline {section}{\numberline {7.2}An\'alisis cuantitativo en nuScenes}{43}{section.148}
-\contentsline {section}{\numberline {7.3}An\'alisis cualitativo del modelo cl\'asico en CARLA}{43}{section.151}
-\contentsline {section}{\numberline {7.4}An\'alisis cualitativo de CBGS en CARLA}{43}{section.152}
-\contentsline {subsection}{\numberline {7.4.1}Comparativa con PointPillars en CARLA}{43}{subsection.153}
-\contentsline {section}{\numberline {7.5}An\'alisis cuantitativo de CBGS en CARLA}{43}{section.154}
-\contentsline {section}{\numberline {7.6}An\'alisis cualitativo de CBGS sobre el veh\IeC {\'\i }culo T4AC}{43}{section.156}
-\contentsline {subsection}{\numberline {7.6.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{43}{subsection.157}
-\contentsline {chapter}{\numberline {8}Conclusiones}{45}{chapter.158}
-\contentsline {section}{\numberline {8.1}Modelos estudiados}{45}{section.159}
-\contentsline {section}{\numberline {8.2}Comparativas adicionales}{45}{section.160}
-\contentsline {subsection}{\numberline {8.2.1}Ajuste de modelos basados en Kitti a nuScenes}{45}{subsection.161}
-\contentsline {subsection}{\numberline {8.2.2}N\'umero de PCL de entrada en modelos evaluados sobre nuScenes}{45}{subsection.162}
-\contentsline {subsection}{\numberline {8.2.3}Tama\~no del voxel en modelos basados en redes neuronales}{45}{subsection.163}
-\contentsline {section}{\numberline {8.3}Futuros trabajos}{45}{section.164}
-\contentsline {chapter}{Bibliograf\'{\i }a}{47}{chapter*.165}
-\contentsline {chapter}{\numberline {A}Herramientas y recursos}{51}{appendix.166}
+\contentsline {section}{\numberline {5.1}Estado del proyecto Techs4AgeCar}{39}{section.130}
+\contentsline {subsection}{\numberline {5.1.1}Robot Operating System}{39}{subsection.131}
+\contentsline {subsection}{\numberline {5.1.2}Docker}{41}{subsection.134}
+\contentsline {subsection}{\numberline {5.1.3}CARLA}{42}{subsection.136}
+\contentsline {subsection}{\numberline {5.1.4}Desarrollo en el proyecto Techs4AgeCar}{44}{subsection.139}
+\contentsline {subsection}{\numberline {5.1.5}Arquitectura del proyecto Techs4AgeCar}{46}{subsection.142}
+\contentsline {section}{\numberline {5.2}Implementaci\'on en CARLA}{47}{section.150}
+\contentsline {subsection}{\numberline {5.2.1}Funcionamiento del LiDAR en CARLA}{47}{subsection.151}
+\contentsline {subsection}{\numberline {5.2.2}Implementaci\'on del sistema cl\'asico utilizando LiDAR}{48}{subsection.153}
+\contentsline {subsection}{\numberline {5.2.3}Implementaci\'on del sistema basado en Deep Learning utilizando LiDAR}{50}{subsection.178}
+\contentsline {section}{\numberline {5.3}Fusi\'on sensorial}{52}{section.190}
+\contentsline {section}{\numberline {5.4}Veh\IeC {\'\i }culo del proyecto Techs4AgeCar}{52}{section.196}
+\contentsline {section}{\numberline {5.5}Implementaci\'on sobre el veh\IeC {\'\i }culo Techs4AgeCar}{53}{section.199}
+\contentsline {chapter}{\numberline {6}AD DevKit}{55}{chapter.201}
+\contentsline {section}{\numberline {6.1}Motivaci\'on para la creaci\'on del AD DevKit}{55}{section.202}
+\contentsline {section}{\numberline {6.2}Obtenci\'on del ground truth}{55}{section.203}
+\contentsline {section}{\numberline {6.3}Evaluaci\'on de los modelos}{55}{section.204}
+\contentsline {chapter}{\numberline {7}Resultados obtenidos}{57}{chapter.205}
+\contentsline {section}{\numberline {7.1}An\'alisis sobre datasets}{58}{section.206}
+\contentsline {subsection}{\numberline {7.1.1}An\'alisis cuantitativo en Kitti}{58}{subsection.207}
+\contentsline {subsection}{\numberline {7.1.2}An\'alisis cuantitativo en nuScenes}{58}{subsection.208}
+\contentsline {subsection}{\numberline {7.1.3}An\'alisis adicionales}{58}{subsection.211}
+\contentsline {subsubsection}{\numberline {7.1.3.1}Ajuste de modelos basados en Kitti a nuScenes}{58}{subsubsection.212}
+\contentsline {subsubsection}{\numberline {7.1.3.2}N\'umero de PCL de entrada en modelos evaluados sobre nuScenes}{58}{subsubsection.213}
+\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del voxel en modelos basados en redes neuronales}{58}{subsubsection.214}
+\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{58}{section.215}
+\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{58}{subsection.216}
+\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{58}{subsection.217}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{58}{subsubsection.218}
+\contentsline {subsection}{\numberline {7.2.3}An\'alisis cualitativo del sistema de fusi\'on sensorial en CARLA}{58}{subsection.219}
+\contentsline {subsection}{\numberline {7.2.4}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{58}{subsection.220}
+\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{58}{section.222}
+\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{58}{subsection.223}
+\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{58}{subsubsection.224}
+\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{58}{subsection.225}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{61}{chapter.226}
+\contentsline {section}{\numberline {8.1}Conclusiones}{61}{section.227}
+\contentsline {section}{\numberline {8.2}Trabajos futuros}{61}{section.228}
+\contentsline {chapter}{Bibliograf\'{\i }a}{63}{chapter*.229}
+\contentsline {chapter}{\numberline {A}Herramientas y recursos}{69}{appendix.230}

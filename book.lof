@@ -43,6 +43,20 @@
 \contentsline {figure}{\numberline {4.20}{\ignorespaces Arquitectura propuesta del detector CBGS.\relax }}{35}{figure.caption.123}
 \contentsline {figure}{\numberline {4.21}{\ignorespaces Dise\~no de OpenPCDet.\relax }}{36}{figure.caption.128}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Logo de ROS.\relax }}{40}{figure.caption.132}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ejemplo de uso de ROS\relax }}{40}{figure.caption.132}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Funcionamiento principal de ROS.\relax }}{41}{figure.caption.133}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Arquitectura de Docker.\relax }}{41}{figure.caption.135}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Unreal Engine 5.\relax }}{43}{figure.caption.137}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Modo de uso principal de CARLA.\relax }}{43}{figure.caption.138}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Estructura principal del proyecto Techs4AgeCar en Docker.\relax }}{44}{figure.caption.140}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Modo de uso en el proyecto Techs4AgeCar.\relax }}{45}{figure.caption.141}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Arquitectura T4AC.\relax }}{46}{figure.caption.143}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Estructura del repositorio para la detecci\'on con LiDAR en el proyecto refactorizado.\relax }}{50}{figure.caption.179}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Nueva estructura del repositorio para la detecci\'on con LiDAR en el proyecto.\relax }}{51}{figure.caption.189}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Chasis con el hardware necesario para la conducci\'on aut\'onoma.\relax }}{53}{figure.caption.197}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Veh\IeC {\'\i }culo T4AC.\relax }}{53}{figure.caption.198}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Arquitectura de la capa de percepci\'on.\relax }}{54}{figure.caption.200}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

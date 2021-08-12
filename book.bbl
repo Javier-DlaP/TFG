@@ -265,6 +265,74 @@ C.~Reading, A.~Harakeh, J.~Chae, and S.~L. Waslander, ``Categorical depth
   \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
   Recognition (CVPR)}, June 2021, pp. 8555--8564.
 
+\bibitem{ros}
+\BIBentryALTinterwordspacing
+{Stanford Artificial Intelligence Laboratory et al.}, ``Robotic operating
+  system.'' [Online]. Available: \url{https://www.ros.org}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ros_wiki}
+\BIBentryALTinterwordspacing
+R.~Community, ``Ros introduction,'' 2020. [Online]. Available:
+  \url{http://wiki.ros.org/ROS/Introduction}
+\BIBentrySTDinterwordspacing
+
+\bibitem{docker}
+D.~Merkel, ``Docker: lightweight linux containers for consistent development
+  and deployment,'' \emph{Linux journal}, vol. 2014, no. 239, p.~2, 2014.
+
+\bibitem{docker_wikipedia}
+\BIBentryALTinterwordspacing
+W.~Community, ``Docker (software),'' 2021. [Online]. Available:
+  \url{https://es.wikipedia.org/wiki/Docker_(software)}
+\BIBentrySTDinterwordspacing
+
+\bibitem{docker_docs}
+\BIBentryALTinterwordspacing
+D.~Team, ``Docker overview.'' [Online]. Available:
+  \url{https://docs.docker.com/get-started/overview/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{carla}
+A.~Dosovitskiy, G.~Ros, F.~Codevilla, A.~Lopez, and V.~Koltun, ``{CARLA}: {An}
+  open urban driving simulator,'' in \emph{Proceedings of the 1st Annual
+  Conference on Robot Learning}, 2017, pp. 1--16.
+
+\bibitem{unrealengine}
+\BIBentryALTinterwordspacing
+{Epic Games}, ``Unreal engine.'' [Online]. Available:
+  \url{https://www.unrealengine.com}
+\BIBentrySTDinterwordspacing
+
+\bibitem{opendrive}
+\BIBentryALTinterwordspacing
+A.~for Standarization~of Automation and M.~Systems, ``Asam opendrive®.''
+  [Online]. Available: \url{https://www.asam.net/standards/detail/opendrive/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{carla_intro}
+\BIBentryALTinterwordspacing
+C.~team, ``Carla introduction.'' [Online]. Available:
+  \url{https://carla.readthedocs.io/en/0.9.12/start_introduction/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{smartmot}
+C.~Gómez-Huélamo, J.~Del~Egido, L.~M. Bergasa, R.~Barea, M.~Ocaña, F.~Arango,
+  and R.~Gutiérrez-Moreno, ``Real-time bird?s eye view multi-object tracking
+  system based on fast encoders for object detection,'' in \emph{2020 IEEE 23rd
+  International Conference on Intelligent Transportation Systems (ITSC)}, 2020,
+  pp. 1--6.
+
+\bibitem{red_volumetrica}
+A.~Mousavian, D.~Anguelov, J.~Flynn, and J.~Kosecka, ``3d bounding box
+  estimation using deep learning and geometry,'' in \emph{Proceedings of the
+  IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, July
+  2017.
+
+\bibitem{tfm_felipe}
+J.~F.~A. Vargas, ``Diseño de un sistema drive-by-wire para un vehiculo
+  autónomo,'' Trabajo de Fin de Master, UAH Politécnica, 2020.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso

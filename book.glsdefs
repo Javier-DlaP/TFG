@@ -418,36 +418,6 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{dl}{}%
-{%
-\gls@defglossaryentry{dl}%
-{%
-name={DL},%
-sort={DL},%
-type={acronym},%
-first={Deep Learning\glsspace (DL)},%
-firstplural={Deep Learnings\glsspace (DLs)},%
-text={DL},%
-plural={DLs},%
-description={Deep Learning},%
-descriptionplural={Deep Learning\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Deep Learning},%
-longplural={Deep Learnings},%
-short={DL},%
-shortplural={DLs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
 \ifglsentryexists{kit}{}%
 {%
 \gls@defglossaryentry{kit}%
@@ -1043,6 +1013,246 @@ long={Region of Interest},%
 longplural={Region of Interests},%
 short={RoI},%
 shortplural={RoIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ros}{}%
+{%
+\gls@defglossaryentry{ros}%
+{%
+name={ROS},%
+sort={ROS},%
+type={acronym},%
+first={Robot Operating System\glsspace (ROS)},%
+firstplural={Robot Operating Systems\glsspace (ROSs)},%
+text={ROS},%
+plural={ROSs},%
+description={Robot Operating System},%
+descriptionplural={Robot Operating System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Robot Operating System},%
+longplural={Robot Operating Systems},%
+short={ROS},%
+shortplural={ROSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gpu}{}%
+{%
+\gls@defglossaryentry{gpu}%
+{%
+name={GPU},%
+sort={GPU},%
+type={acronym},%
+first={Graphics Processing Unit\glsspace (GPU)},%
+firstplural={Graphics Processing Units\glsspace (GPUs)},%
+text={GPU},%
+plural={GPUs},%
+description={Graphics Processing Unit},%
+descriptionplural={Graphics Processing Unit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Graphics Processing Unit},%
+longplural={Graphics Processing Units},%
+short={GPU},%
+shortplural={GPUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{api}{}%
+{%
+\gls@defglossaryentry{api}%
+{%
+name={API},%
+sort={API},%
+type={acronym},%
+first={Application Programming Interface\glsspace (API)},%
+firstplural={Application Programming Interfaces\glsspace (APIs)},%
+text={API},%
+plural={APIs},%
+description={Application Programming Interface},%
+descriptionplural={Application Programming Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Application Programming Interface},%
+longplural={Application Programming Interfaces},%
+short={API},%
+shortplural={APIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cli}{}%
+{%
+\gls@defglossaryentry{cli}%
+{%
+name={CLI},%
+sort={CLI},%
+type={acronym},%
+first={Command Line Interface\glsspace (CLI)},%
+firstplural={Command Line Interfaces\glsspace (CLIs)},%
+text={CLI},%
+plural={CLIs},%
+description={Command Line Interface},%
+descriptionplural={Command Line Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Command Line Interface},%
+longplural={Command Line Interfaces},%
+short={CLI},%
+shortplural={CLIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hmi}{}%
+{%
+\gls@defglossaryentry{hmi}%
+{%
+name={HMI},%
+sort={HMI},%
+type={acronym},%
+first={Human-Machine Interface\glsspace (HMI)},%
+firstplural={Human-Machine Interfaces\glsspace (HMIs)},%
+text={HMI},%
+plural={HMIs},%
+description={Human-Machine Interface},%
+descriptionplural={Human-Machine Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Human-Machine Interface},%
+longplural={Human-Machine Interfaces},%
+short={HMI},%
+shortplural={HMIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{oop}{}%
+{%
+\gls@defglossaryentry{oop}%
+{%
+name={OOP},%
+sort={OOP},%
+type={acronym},%
+first={Object-Oriented Programming\glsspace (OOP)},%
+firstplural={Object-Oriented Programmings\glsspace (OOPs)},%
+text={OOP},%
+plural={OOPs},%
+description={Object-Oriented Programming},%
+descriptionplural={Object-Oriented Programming\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Object-Oriented Programming},%
+longplural={Object-Oriented Programmings},%
+short={OOP},%
+shortplural={OOPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pcl}{}%
+{%
+\gls@defglossaryentry{pcl}%
+{%
+name={PCL},%
+sort={PCL},%
+type={acronym},%
+first={Point Cloud Library\glsspace (PCL)},%
+firstplural={Point Cloud Librarys\glsspace (PCLs)},%
+text={PCL},%
+plural={PCLs},%
+description={Point Cloud Library},%
+descriptionplural={Point Cloud Library\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Point Cloud Library},%
+longplural={Point Cloud Librarys},%
+short={PCL},%
+shortplural={PCLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ap}{}%
+{%
+\gls@defglossaryentry{ap}%
+{%
+name={AP},%
+sort={AP},%
+type={acronym},%
+first={Average Precision\glsspace (AP)},%
+firstplural={Average Precisions\glsspace (APs)},%
+text={AP},%
+plural={APs},%
+description={Average Precision},%
+descriptionplural={Average Precision\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Precision},%
+longplural={Average Precisions},%
+short={AP},%
+shortplural={APs},%
 counter={page},%
 parent={},%
 %

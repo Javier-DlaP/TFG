@@ -10,63 +10,491 @@
   \end{Fuente}
 \end{FraseCelebre}
 
+\noindent
+Tras el estudio teórico de los métodos clásicos y basados en Deep Learning se procede a explicar el desarrollo realizado en el contexto del proyecto Techs4AgeCar dentro del grupo Robesafe para la mejora del sistema de percepción, tanto utilizando unicamente el \acs{lidar} como en base a una fusión sensorial entre cámara y \acs{lidar}.
 
-\section{Estado del proyecto T4AC}
+\section{Estado del proyecto Techs4AgeCar}
 \label{sec:estado_del_proyecto_t4ac}
 
+El proyecto Techs4AgeCar trata de construir un sistema de conducción autónoma, con una arquitectura basada en múltiples capas como son: localización, planificación, control, mapeado, decisión y percepción. Para el desarrollo del software del vehículo se trabaja con \acs{ros} para comunicación con los sensores y entre capas, Docker para tener un entorno cerrado con todas las dependencias y software necesario para correr el proyecto y CARLA como entorno de simulación para las pruebas de los múltiples sistemas del vehículo.
 
-
-\subsection{ROS}
+\subsection{Robot Operating System}
 \label{sec:ros}
 
+\ac{ros} \cite{ros} es un conjunto de librerías software y herramientas Open-Source que ayudan con la construcción de aplicaciones en robots. Aunque el nombre indicaría que este es un sistema operativo, no lo es, sino que es un software middleware que provee de abstracción del hardware, control de dispositivos a bajo nivel, implementación de funcionalidades comúnmente utilizadas, paso de mensajes entre procesos y gestión de paquetes. Además de esto esto se proveen de herramientas y librerías para obtener, construir, escribir y correr código en diferentes ordenadores.\par
+La meta principal de \acs{ros} es la reutilización de código en robótica de investigación y desarrollo. \acs{ros} utiliza un marco distribuido de procesos que permite la ejecución de cada uno de forma individual
 
+\begin{figure}[H]
+	\begin{minipage}{0.48\textwidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/5_desarrollo_realizado/ros_logo.png}
+		\caption{Logo de ROS.}
+		\label{fig:Logo_de_ros}
+	\end{minipage}\hfill
+	\begin{minipage}{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/5_desarrollo_realizado/ros_example.png}
+		\caption{Ejemplo de uso de ROS}
+		\label{fig:Ejemplo_de_uso_de_ros}
+	\end{minipage}
+\end{figure}
+
+La forma de comunicación de \acs{ros} es mediante un modelo peer-to-peer de procesos que se encuentran débilmente acoplados. Los principales conceptos del grafo de computo de \acs{ros} son los siguientes:
+
+\begin{itemize}
+\item Nodos\par
+Los nodos suelen ser lo típicos procesos que realizan el computo. Dichos nodos son escritos mediante la librería del cliente de \acs{ros} utilizando roscpp para C++ o rospy para Python.
+\item Maestro\par
+El maestro permite que los nodos se pueden encontrar, intercambiar mensajes y permite invocar los servicios.
+\item Servidor de parámetros\par
+El servidor de parámetros permite almacenar los datos por clave, encontrándose este dentro del maestro.
+\item Mensajes\par
+Los mensajes son estructuras de datos con ciertos atributos, dichas estructuras son  utilizadas para la comunicación entre nodos y aún teniendo mensajes estándares es posible crear nuevos que se adapten a las necesidades de cada problema.
+\item Topics\par
+Mientras que un mensaje es unicamente la estructura de datos, los topics identifican los mensajes en función de un nombre. Estos topics son accedidos mediante suscripciones para la lectura de mensajes  y publicaciones para la escritura de mensajes, todo ello a través de topics. Por lo que son utilizados por los nodos para trabajar con los mensajes.
+\item Servicios\par
+El modelo de publicación y suscripción es utilizado para la comunicación bajo un modelo many-to-many, para utilizar un modelo en una dirección no es recomendable, por ello en ese caso se utilizan servicios. Los servicios se basan en cambio en un modelo de solicitud y respuesta, por lo que mientras un nodo ofrece un servicio bajo un nombre, otro nodo puede acceder a dicho servicio.
+\item Bags\par
+Los bags son el formato utilizado por \acs{ros} para guardar y recrear de nuevo los mensajes grabados. Estos son utilizados para la recreación, comparativa o evaluación a partir de los datos grabados.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/5_desarrollo_realizado/graph_ros.png}
+	\caption{Funcionamiento principal de ROS.}
+	\label{fig:Funcionamiento_principal_de_ros}
+\end{figure}
+
+De esta manera \acs{ros} consigue ser un sistema distribuido con múltiples aplicaciones. Solo es necesario tener en cuenta que se encuentra disponible en sistemas basados en Unix como Ubuntu y MacOS, aunque es sencillo encontrar soporte para otras distribuciones basadas en Linux \cite{ros_wiki}.
 
 \subsection{Docker}
 \label{sec:docker}
 
+Docker \cite{docker} es un proyecto Open-Source que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa de abstracción y automatización de la virtualización de aplicaciones en múltiples sistemas operativos \cite{docker_wikipedia}.\par
+El aislamiento y la seguridad son elementos principales de la herramienta, la cual permite la ejecución de múltiples contenedores en un único host. Dichos contenedores son ligeros y contienen todo lo necesario para la ejecución de las aplicaciones, por lo que no hay ninguna dependencia del host en el que se esté ejecutando. Además se pueden compartir los contenedores de forma muy sencilla haciendo uso de Docker Hub con un funcionamiento basado en push/pull.\par
+Docker es utilizado para agilizar el ciclo de desarrollo de software, permitiendo trabajar en entornos estandarizados utilizando contenedores locales que proporcionan las aplicaciones y servicios. Por lo tanto los contenedores de Docker son una gran herramienta para los flujos de trabajo de integración y entrega continua.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/5_desarrollo_realizado/docker_architecture.png}
+	\caption{Arquitectura de Docker.}
+	\label{fig:Arquitectura_de_docker}
+\end{figure}
 
-\subsection{Estructura del proyecto}
-\label{sec:estructura_del_proyecto}
+Docker utiliza una arquitectura cliente-servidor. El cliente habla con el daemon, el cual hace el trabajo de construir ejecutar y distribuir los contenedores. Tanto el cliente como el daemon suelen encontrarse en el mismo sistema, pero también se puede trabajar con un daemon de forma remota, para ello se utiliza una comunicación basada en una REST API sobre sockets UNIX u otra interfaz de red.\par
+Los principales componentes de la arquitectura de Docker son los siguientes:
 
+\begin{itemize}
+\item Daemon\par
+El daemon escucha a las peticiones de la \acs{api} de Docker y gestiona los objetos de Docker como imágenes, contenedores, redes y volúmenes. Además los daemons pueden comunicarse a otros daemons para controlar servicios.
+\item Cliente\par
+El cliente es el principal método de uso de Docker por muchos usuarios para trabajar con imágenes o contenedores. El cliente se conecta a un daemon pero también es posible su conexión a múltiples daemon diferentes.
+\item Registros\par
+Los registros son utilizados para guardar las imágenes de Docker. Un caso de registro público sería Docker Hub donde se pueden guardar y descargar las imágenes creadas.
+\item Imágenes\par
+Una imagen es una plantilla de solo lectura que se utiliza para crear un contenedor. A partir de una imagen se descarga e instala todo el software necesario para que el contenedor funcione correctamente, y en el caso de tener que crear una imagen propia se utilizan \textit{Dockerfiles} que son archivos con una sintaxis sencilla que definen los pasos necesarios para crear la imagen y correrla.
+\item Contenedores\par
+Un contenedor es una instancia ejecutable de una imagen. Sobre un contenedor se pueden aplicar las opciones de crear, ejecutar, pausa, mover y borrar utilizando la \acs{api} de Docker o \acs{cli}. Es posible la conexión a un contenedor en otra red o incluso crear imágenes de forma automática a partir del estado de un contenedor.
+\end{itemize}
 
-
-\section{Implementación en CARLA}
-\label{sec:implementacion_en_carla}
-
-
+Docker se encuentra escrito en lenguaje Go y utiliza múltiples características del kernel de Linux para ofrecer sus funcionalidades. Docker utiliza un sistema de \textit{namespaces} que proveen de una capa de aislamiento al contenedor respecto del host, por lo que los contenedores corren de forma separada a fuera de ese \textit{namespace} y su acceso se encuentra limitado al interior de este \cite{docker_docs}.
 
 \subsection{CARLA}
 \label{sec:CARLA}
 
+CARLA \cite{carla} es un simulador de conducción autónoma Open-Source. Este simulador sirve como un entorno en el que probar diversas técnicas necesarias para la conducción autónoma mediante el uso de la \acs{api} que se ofrece en Python y C++. CARLA se encuentra basado en el motor de videojuegos Unreal Engine \cite{unrealengine} para correr el mundo y utiliza el estándar OpenDRIVE \cite{opendrive} para la definición de carreteras y el entorno.\par
+Unreal Engine 4 es la versión utilizada por CARLA, este motor de videojuegos es desarrollado por Epic Games. Inicialmente para videojuegos, Unreal Engine se ha extendido en otras industrias como la televisión y el mercado cinematográfico. Escrito en C++, Unreal Engine ofrece gran portabilidad en una gran cantidad de dispositivos, con un modelo Open-Source pero con royalties en el uso comercial. Con el éxito de Fornite, muchos juegos están utilizando este motor gráfico lo que ha aumentado el desarrollo de la siguiente versión de Unreal Engine, la cual se espera en 2022 con una gran mejora gráfica.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\textwidth]{figures/5_desarrollo_realizado/unreal_engine_5.jpeg}
+	\caption{Unreal Engine 5.}
+	\label{fig:Unreal_engine_5}
+\end{figure}
+
+OpenDRIVE es un formato abierto para la creación de redes de carreteras que trata de convertirse en el estándar la creación de mapas y sistemas de carreteras para facilitar el uso de diferentes mapas y simuladores. Los mapas creados con OpenDRIVE utilizan la extensión \textit{.xodr} y dichos archivos utilizan un formato similar al \acs{xml} para su uso simplificado con herramientas ya creadas.\par
+Para la aceleración del proceso de desarrollo, entrenamiento y validación de los \acs{ads}, CARLA ha creado un ecosistema de proyectos a partir del simulador en conjunto con la comunidad que utiliza CARLA.\par
+CARLA utiliza un modelo cliente-servidor como arquitectura. El servidor es responsable de toda la simulación: renderización de los sensores, cálculo de las físicas, actualización del mundo etc. Con todos estos cálculos es recomendado el uso de una \acs{gpu}, sobre todo si se utilizan técnicas basadas en Deep Learning. Por otra parte, el cliente es aquel que controla la lógica de los actores en la escena y cambia las opciones del mundo, de esta manera se pueden tener múltiples clientes trabajando al mismo tiempo. La comunicación al servidor se realiza mediante la \acs{api} que provee CARLA, pero también es posible utilizar el CARLA-ROS bridge para utilizar los topics de ROS para la comunicación \cite{carla_intro}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/5_desarrollo_realizado/carla_modules.png}
+	\caption{Modo de uso principal de CARLA.}
+	\label{fig:Modo_de_uso_principal_de_carla}
+\end{figure}
+
+CARLA ofrece una comunicación entre este y ROS, dicho módulo que permite esto es el CARLA-ROS bridge. El funcionamiento de este se basa en el paso de la información que sería accesible a partir de la \acs{api} de CARLA mediante mensajes publicados en diversos topics en ROS. Dicho CARLA-ROS bridge funciona en ambas versiones de ROS y publica de forma continua:
+\begin{itemize}
+\item Información de diversos sensores del coche controlado como son: cámara (profundidad, segmentación a nivel de píxel y RGB), \acs{lidar}, \acs{radar}, \acs{gnss} e \acs{imu}
+\item Información de los objetos del entorno como: estado de los semáforos, indicadores de colisión, invasión de carril, etc.
+\item Control del vehículo autónomo como: dirección, aceleración y freno
+\item Control de los ajustes generales del simulador
+\end{itemize}
+
+CARLA ofrece por tanto un simulador Open-Source, con una gran comunidad de desarrolladores aportando al desarrollo de este, por lo que es una herramienta perfecta para la evaluación de los sistemas de conducción autónoma a desarrollar.
+
+\subsection{Desarrollo en el proyecto Techs4AgeCar}
+\label{sec:Desarrollo_en_el_proyecto_t4ac}
+
+El proyecto Techs4AgeCar trata de construir un vehículo autónomo que consiga una mejora para la seguridad de los conductores. Aún teniendo un gran desarrollo en la parte hardware del proyecto para la construcción del vehículo, el desarrollo de este TFG es software, por lo que se explica el uso de las diferentes herramientas utilizadas para el trabajo con un entorno estandarizado para todos los compañeros, y como se ha trabajado en el desarrollo de las diversas técnicas implementadas.
+
+\begin{figure}[H]
+	\begin{forest}
+	for tree={
+    	font=\ttfamily,
+        grow'=0,
+        child anchor=west,
+        parent anchor=south,
+        anchor=west,
+        calign=first,
+        inner xsep=7pt,
+        edge path={
+        	\noexpand\path [draw, \forestoption{edge}]
+          	(!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+        },
+        % style for your file node 
+        file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
+          	(!u.south west) +(7.5pt,0) |- (.child anchor) \forestoption{edge label};},
+        	inner xsep=2pt,font=\small\ttfamily
+                     },
+        before typesetting nodes={
+        	if n=1
+            {insert before={[,phantom]}}
+            {}
+        },
+        fit=band,
+        before computing xy={l=15pt},
+	}  
+    [/home/robesafe
+      [carla
+      ]
+      [libraries
+      ]
+      [models
+      ]
+      [shared\_home
+      ]
+      [t4ac\_ws
+      	[build
+      	]
+      	[devel
+      	]
+      	[src
+      	  [t4ac\_architecture
+      	  	[t4ac\_config\_layer
+      	  	]
+      	  	[t4ac\_control\_layer
+      	  	]
+      	  	[t4ac\_decision\_making\_layer
+      	  	]
+      	  	[t4ac\_localization\_layer
+      	  	]
+      	  	[t4ac\_mapping\_layer
+      	  	]
+      	  	[t4ac\_perception\_layer
+      	  	]
+      	  	[t4ac\_planning\_layer
+      	  	]
+    	  ]
+    	  [t4ac\_carla\_simulator
+    	  	[ad\_devkit
+    	  	]
+    	  	[t4ac\_carla\_ros\_bridge
+    	  	]
+    	  	[t4ac\_carla\_scenario\_runner
+    	  	]
+    	  ]
+		]
+	  ]
+    ]
+	\end{forest}
+\caption{Estructura principal del proyecto Techs4AgeCar en Docker.}
+\label{for:Estructura_principal_del_proyecto_t4ac_en_docker}
+\end{figure}
+
+Para uso de un entorno estandarizado para todos los usuario se utiliza un contenedor Docker alojado en Docker Hub que contiene todas las dependencias necesarias para correr el proyecto o sus componentes individuales. La única herramienta utilizada en el proyecto que se debe de encontrar fuera del contenedor es el simulador CARLA que es necesario descargarlo fuera de este.\par
+La figura \ref{for:Estructura_principal_del_proyecto_t4ac_en_docker} muestra de manera simplificada la estructura del docker del proyecto. En dicho contenedor se tiene instalado de base Ubuntu 18.04 LTS para trabajar sobre este sistema operativo. La estructura del contenedor consta del simulador CARLA, las librerías o repositorios necesarios, los modelos de las redes neuronales utilizadas y la estructura principal de los diferentes módulos del proyectos. Por una parte se encuentra la carpeta \textit{t4ac\_architecture}, la cual contiene los repositorios de las diferentes capas del vehículo junto con los ajustes de configuración de todas estas. En la carpeta \textit{t4ac\_carla\_simulator} se encuentran los ajustes de carla, el Carla-ROS bridge ajustado al proyecto y un proyecto basado en CARLA llamado ad\_devkit para evaluación de arquitecturas de conducción autónoma del que se hablará más en el capítulo \ref{cha:ad_devkit}.\par
+Las diferentes capas del proyecto contenidas en \textit{t4ac\_architecture} son construidos como repositorios Git alojados en GitHub y en un servidor propio del grupo RobeSafe. Cada uno de estos repositorios se encuentran divididos en diferentes repositorios, por ejemplo en la capa de control se dividen según el uso de técnicas clásica o basadas en Deep Learning, o en la capa de percepción se divide según el uso de técnicas de detección o seguimiento y en función de los diferentes sensores.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/5_desarrollo_realizado/funcionamiento_proyecto.png}
+	\caption{Modo de uso en el proyecto Techs4AgeCar.}
+	\label{fig:Modo_de_uso_en_el_proyecto_t4ac}
+\end{figure}
+
+Los repositorios de las diferentes capas se encuentran planteados como nodos de ROS para trabajar con el simulador CARLA se pueda controlar el vehículo, de esta manera como con el vehículo del grupo RobeSafe se obtiene la información de los sensores a partir de ROS, solo es necesario un cambio en el topic para que funcione de simulación al vehículo real. En la figura \ref{fig:Modo_de_uso_en_el_proyecto_t4ac} se puede ver el principal modo de uso del proyecto donde CARLA se corre en el host y el resto del proyecto se lanza en el contenedor Docker. Dentro del contenedor se pasa la información de CARLA a ROS, dicha información es visualizada con rviz y los nodos de las diferentes capas en Python o C++ son corridos trabajando con el modelo publisher/subscriber de ROS.
+
+\subsection{Arquitectura del proyecto Techs4AgeCar}
+\label{sec:Arquitectura_del_proyecto_t4ac}
+
+El grupo RobeSafe comienza a trabajar en la construcción de un vehículo autónomo en 2016 con el proyecto SmartElderlyCar con finalización en 2018, tras este se continua con el proyecto Techs4AgeCar con una duración del 2019 a 2021, y que pretende mejorar las técnicas de conducción autónoma que se consiguieron con el proyecto anterior.\par
+La lineas de investigación del grupo son por tanto: \acl{adas}, comprensión de la escena, comprensión del comportamiento del conductor, desarrollo de técnicas de percepción, localización, navegación y mapeado.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/5_desarrollo_realizado/arquitectura_t4ac.png}
+	\caption{Arquitectura T4AC.}
+	\label{fig:Arquitectura T4AC}
+\end{figure}
+
+La arquitectura definida en el proyecto consta de diferentes capas en la que cada una realiza una función diferente para el funcionamiento autónomo del vehículo:
+
+\begin{itemize}
+\item Control\par
+El control del vehículo consiste en sistema Drive-by-Wire, con parte del control hardware y parte software haciendo uso de ROS. Para el control del seguimiento de la ruta se utiliza una interpolación de splines y un perfilador de velocidad para la obtención de una trayectoria suave y continua a partir de un modelo basado en puntos de referencia.
+\item Mapeado y planificación\par
+En la generación de mapas de utiliza el estándar OpenDRIVE junto con el programa RoadRunner para generar además un entorno tridimensional con el que trabajar en CARLA. La planificación se encuentra basado en el algoritmo A* sobre un grafo dirigido de las carreteras a partir de un mapa con formato OpenDRIVE.
+\item Toma de decisiones\par
+La toma de decisiones de encuentra basada en redes de Petri para: seguir la ruta, control de crucero adaptativo y en casos de uso como pasos de peatones, ceda el paso, stops y adelantamientos, en conjunto con procesos de decisión de Markov parcialmente observables.
+\item Percepción\par
+El sistema de percepción se basa en la fusión sensorial de las detecciones provenientes de las cámaras y el \acs{lidar}, dichas detecciones entran en SmartMOT \cite{smartmot} un sistema de seguimiento para predicción en sistemas multiagente y entornos dinámicos, todo ello para obtener identificadores, el estado y la velocidad de los diferentes objetos del entorno en \acs{bev}.
+\item \ac{hmi}\par
+El sistema \acs{hmi} se basa en la creación de un sistema de visualización que permita entender el estado del vehículo y de un sistema de atención del conductor para la detección de la fatiga y el cambio automático de la conducción manual a la automática.
+\end{itemize}
+
+Tras la comprensión de la utilidad de las diferentes capas del vehículo, se presenta el flujo de funcionamiento del sistema completo, tal y como se ve en la figura \ref{fig:Arquitectura T4AC}:
+
+\begin{enumerate}
+\item Se obtiene la información de los diferentes sensores del vehículo
+\item Con la capa de percepción se analizan los datos y se trata de comprender el entorno del vehículo
+\item A partir del mapa, la información de los sensores y los objetos detectados del entorno se localiza el vehículo.
+\item Con la información de los pasos anteriores el sistema decide que acción tomar.
+\item La información del entorno y la acción a tomar se planifica de forma global y local la trayectoria del vehículo
+\item Finalmente la capa de control es la que se realiza las acciones pertinentes sobre el coche en función de la trayectoria decidida.
+\end{enumerate}
+
+Esta es la arquitectura sobre la que se van a diseñar las deferentes técnicas de detección con \acs{lidar}, para así mejorar la capa de percepción con una fusión sensorial junto con cámaras y utilizar esta como entrada para SmartMOT.
+
+\section{Implementación en CARLA}
+\label{sec:implementacion_en_carla}
+
+Antes de la puesta a punto de los diferentes algoritmos de detección en el coche del grupo RobeSafe, se comienza por implementar diversas técnicas en el simulador, comenzando por un acercamiento más clásico y después se acaba implementando un modelo basado en Deep Learning.
 
 \subsection{Funcionamiento del LiDAR en CARLA}
 \label{sec:funcionamiento_del_lidar_en_carla}
 
+Antes de comenzar a trabar con el \acs{lidar} que ofrece CARLA, es necesario comprender como funciona. Como la comunicación con CARLA es realizada mediante el CARLA-ROS bridge, la información de dicho sensor proviene del topic /carla/ego\_vehicle/lidar/lidar1/point\_cloud, que tiene contiene un mensaje del tipo sensor\_msgs/PointCloud2. Dicho mensaje es utilizado para guardar información de una colección de puntos en N dimensiones.
 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|p{2.5cm}|p{2cm}|}
+		\hline
+		\textbf{Tipo}&\textbf{Nombre}\\
+		\hline
+		Header&header\\
+		\hline
+		uint32&heigth\\
+		\hline
+		uint32&width\\
+		\hline
+		PointField[]&fields\\
+		\hline
+		bool&is\_bigendian\\
+		\hline
+		uint32&point\_step\\
+		\hline
+		uint32&row\_step\\
+		\hline
+		uint8[]&data\\
+		\hline
+		bool&is\_dense\\
+		\hline
+		\end{tabular}
+		\caption{Estructura del LiDAR en el CARLA-ROS bridge.}
+		\label{tab:Estructura_del_lidar_en_el_carla_ros_bridge}
+	\end{center}
+\end{table}
+
+La nube de puntos viene definida como una array de bytes en formato little endian, en la que cada 32 bits se obtiene un número, dichos número siguen la estructura: $x$, $y$, $z$, $intensity$. La nube de puntos por tanto se encuentra definida como un vector de 4 dimensiones con un sistema de coordenadas cartesiano que además incluye información de lo que sería el grado de reflectividad del láser con los objetos del entorno, pero todo ello de forma simulada.\par
+La colisión de los haces del \acs{lidar} con los objetos del entorno ha mejorado en gran medida con el avance en las versiones de CARLA, ya que los puntos generados no colisionan directamente con los modelos de los objetos del entorno, sino que colisionan con un modelo simplificado de estos.\par
+Lo mismo ocurre con el campo $intensity$, el cual es simulado en CARLA, para ello se guarda un valor proporcional a la distancia respecto del vehículo (d) y a un coeficiente de atenuación (a).
+
+\begin{center}
+$I/I_0=e^{-a*d}$
+\end{center}
+
+Al no tener una relación con el tipo de material con el que se colisiona, este campo es inútil en relación al funcionamiento que se tendría en un \acs{lidar} real, por lo que dicho campo no es utilizado en las diferentes implementaciones realizadas.
 
 \subsection{Implementación del sistema clásico utilizando LiDAR}
 \label{sec:implementacion_del_sistema_clasico_basado_en_lidar}
 
+Tras el estudio de diversas técnicas clásicas en el capítulo \ref{cha:sistemas_clasicos_de_percepcion_con_lidar}, se presenta una aplicación de detección en tiempo real sobre el simulador CARLA que detecta los objetos de importancia del entorno.\par
+En dicha implementación es utilizado el lenguaje C++ debido a su gran eficiencia y su \ac{oop}, por lo que para su comunicación con ROS es necesario el uso de roscpp. Para ello se crea un repositorio Git y se desarrolla de tal manera que el programa sea un nodo que se pueda suscribir y publicar en ROS. Dicho nodo tendrá que suscribirse al topic con la información del \acs{lidar} y generar un topic para la visualización de las bounding boxes 3D de los objetos del entorno detectados.\par
+Con los métodos estudiados teóricamente, el flujo de trabajo implementado es el siguiente:
 
+\begin{enumerate}
+\item Transformación del mensaje con la nube de puntos proveniente de ROS a una estructura en C++ de la librería \ac{pcl} que guarda la información de las coordenadas cartesianas y la intensidad
+\item Voxelización de la nube de puntos
+\item Filtrado de la nube de puntos voxelizada en función de la región de interés
+\item Aplicación del algoritmo RANSAC para la eliminación de los vóxeles pertenecientes al suelo
+\item Creación de un KD-tree con la nube de puntos, y se introducen los puntos en función de las coordenadas por lo que se construye un KD-tree tridimensional
+\item A partir del KD-tree se aplica un algoritmo \ref{alg:Cluster_por_distancia_en_KD_tree} para clusterizar de forma eficiente los vóxeles, fijando además una distancia máxima entre los vóxeles
+\item Filtrado de los clústeres en función del número de vóxeles en su interior, tamaño y volumen
+\item Creación de las bounding boxes 3D correspondientes a las detecciones
+\end{enumerate} 
+
+\begin{codefloat}
+\begin{lstlisting}[language=C++]
+struct Node{
+	std::vector<float> point;
+	int id;
+	Node* left;
+	Node* right;
+
+	Node(std::vector<float> arr, int setId){
+		point = arr;
+		id = setId;
+		left = NULL;
+		right = NULL;
+	}
+};
+\end{lstlisting}
+\caption{Estructura de los nodos utilizados en el KD-tree implementado}
+\label{cod:Estructura_de_los_nodos_utilizados_en_el_kd_tree_implementado}
+\end{codefloat}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|p{7cm}|c|}
+		\hline
+		\textbf{Tipo}&\textbf{Nombre}\\
+		\hline
+		Tamaño de los vóxeles&[0.3, 0.3, 0.3] m\\
+		\hline
+		Máximo punto de la región de interés&[50, 17, 10] m\\
+		\hline
+		Mínimo punto de la región de interés&[-40, -5, -10] m\\
+		\hline
+		Número de iteraciones del algoritmo RANSAC&50\\
+		\hline
+		Distancia máxima para el algoritmo RANSAC&0.3 m\\
+		\hline
+		Distancia máxima entre vóxeles al clusterizar&1.4 m\\
+		\hline
+		Máximo número de vóxeles por clúster&150\\
+		\hline
+		Mínimo número de vóxeles por clúster&20\\
+		\hline
+		Máximo volumen de un clúster&10 m$³$\\
+		\hline
+		Mínimo volumen de un clúster&1 m$³$\\
+		\hline
+		Máxima largura de los clústeres&6 m\\
+		\hline
+		Máxima anchura de los clústeres&6 m\\
+		\hline
+		Máxima altura de los clústeres&4 m\\
+		\hline
+		\end{tabular}
+		\caption{Parámetros del modelo clásico de detección con LiDAR.}
+		\label{tab:Parametros_del_modelo_clasico_de_deteccion_con_lidar}
+	\end{center}
+\end{table}
+
+
+Mientras que gran parte de las funciones han sido utilizadas de la librería \acs{pcl}, la estructura KD-tree ha sido creada de cero para una mejor comprensión de su funcionamiento además de para la construcción de la función \ref{alg:Cluster_por_distancia_en_KD_tree}. En dicha estructura los nodos del árbol son definidos tal y como se muestra en \ref{cod:Estructura_de_los_nodos_utilizados_en_el_kd_tree_implementado}.\par
+De esta manera al no utilizar las cuatro dimensiones de la nube de puntos se consigue una mejora en la complejidad al aplicar el algoritmo de clusterización al no utilizar este la intensidad.\par
+Las parámetros de ajuste manual utilizados en el flujo de ejecución, se han fijado para obtener un mejor rendimiento, en este caso, para su uso en CARLA con un \acs{lidar} de 32 haces, dichos parámetros son los que se pueden ver en la tabla \ref{tab:Parametros_del_modelo_clasico_de_deteccion_con_lidar}.\par
+Todo este desarrollo es accesible en GitHub de forma pública en \url{https://github.com/Javier-DlaP/3D_lidar_based_clustering}, los resultados de dicho algoritmo se muestran más adelante en el capítulo \ref{sec:analisis_cualitivo_del_modelo_clasico_en_carla}.
 
 \subsection{Implementación del sistema basado en Deep Learning utilizando LiDAR}
 \label{sec:implementacion_del_sistema_clasico_basado_en_lidar}
 
+Mientras que el desarrollo del modelo clásico se ha hecho de cero, el desarrollo del modelo basado en Deep Learning se hace a partir de un repositorio creado por Carlos Gómez Huélamo a partir del trabajo de Javier del Egido Sierra \cite{tfm_del_egido}. Dicho repositorio funciona a partir de un archivo \textit{launch} de ROS y un fichero en Python de casi 500 líneas, dicho fichero al ser tan grande no  aplica una buenas prácticas de programación, ya que es más difícil de mantener y no es reutilizable. La solución al repositorio antes de comenzar el desarrollo ha sido realizar una refactorización del código para poder así tener una mayor calidad en la estructura del código.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\textwidth]{figures/5_desarrollo_realizado/original_repo.png}
+	\caption{Estructura del repositorio para la detección con LiDAR en el proyecto refactorizado.}	\label{fig:Estructura_del_repositorio_para_la_deteccion_con_lidar_en_el_proyecto_refactorizado}
+\end{figure}
+
+Dicho desarrollo se realiza sobre un repositorio previamente creado ya que se utiliza la misma herramienta, como es OpenPCDet, para implementar los modelos, pero en vez de utilizar unicamente PointPillars se pretende utilizar el modelo PointPillars Multihead, el cual es el modelo CBGS pero con el backbone de PointPillars para una mejora en el rendimiento, ya que aún siendo más complejo y requiere una capacidad de computo mayor, tiene una precisión mayor, diferencia entre una mayor cantidad de clases, infiere las velocidades de los vehículos y trabaja con una cantidad de puntos mayor ya que utiliza 10 barridos para realizar las detecciones. Esto último es especialmente útil para la puesta en funcionamiento en el coche del proyecto, ya que se utiliza un \acs{lidar} con unicamente 16 haces, lo que consigue una menor cantidad de puntos y por lo tanto se puede extraer menos información, por lo que un aumento en la cantidad de puntos utilizados puede ser beneficioso al trabajar con un \acs{lidar} de estas características.\par
+La modularización del código es fundamental para el mantenimiento de dicho código y el ajuste en otros entornos, por ello se continua utilizando y mejorando el archivo \textit{launch}, ya que permite no solo llamar desde un mismo archivo \textit{launch} a todas las capas de forma simultanea, sino que cambiando el nombre de los topics referenciados es posible adaptar el repositorio a cualquier vehículo que trabaje con los mismos tipos de datos en ROS.\par
+Utilizando la herramienta roslaunch se lanza el código fuente del repositorio mientras que se tiene funcionando CARLA, con el CARLA-ROS bridge y un vehículo que controlar. Tras esto el funcionamiento del sistema basado en Deep Learning es el siguiente:
+
+\begin{enumerate}
+\item Cargado la red neuronal utilizada junto con los pesos en GPU
+\item Preparación de los publishers y subscribers utilizados
+\item Guardado de la información de la odometría del vehículo cada vez que el topic recibe un nuevo mensaje
+\item Guardado de la nube de puntos del \acs{lidar} en una cola de 10 posiciones tras la eliminación de los puntos que se encuentren sobre el propio vehículo junto con el tiempo en el que se ha obtenido dicha nube
+\item Unión de las nubes de puntos guardadas con una dimensión adicional que contiene el tiempo desde la nube de puntos más antigua
+\item Ejecución del modelo y obtención de las predicciones
+\item Filtrado de las predicciones en función de cada clase
+\item Transformación de la velocidad predicha relativa al coche a la velocidad absoluta a partir de la odometría guardada del vehículo
+\item Creación de bounding boxes 3D, flechas para la velocidad y publicación de estas
+\end{enumerate}
+
+Con todo este desarrollo terminado se obtiene una estructura bastante más compleja a la que se tenía tras la refactorización como se ve en la imagen \ref{fig:Nueva_estructura_del_repositorio_para_la_deteccion_con_lidar_en_el_proyecto}. Tras este nuevo modo de funcionamiento se ha creado un parámetro en el launcher para seleccionar si se quiere utilizar el modelo PointPillars o PointPillars Multihead para un sencillo intercambio entre ambos modelos.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/5_desarrollo_realizado/new_repo.png}
+	\caption{Nueva estructura del repositorio para la detección con LiDAR en el proyecto.}	\label{fig:Nueva_estructura_del_repositorio_para_la_deteccion_con_lidar_en_el_proyecto}
+\end{figure}
+
+Todo el desarrollo implementado se encuentra presente en GitHub, actualmente de forma privada, ya que es utilizado en el proyecto Tech4AgeCars, pero se puede pedir acceso al repositorio \url{https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros}. El análisis del rendimiento de dicha implementación se presenta más adelante en los capítulos \ref{sec:analisis_cualitativo_de_cbgs_en_carla} y \ref{sec:analisis_cuantitativo_de_cbgs_en_carla}.
 
 \section{Fusión sensorial}
 \label{sec:fusion_sensorial}
 
+La implementación del modelo PointPillars Multihead en el proyecto trae mejoras sustanciales en la detección respecto al modelo PointPillars, con ello y con otra mejora sustancial en la detección con cámara en el trabajo de Miguel Antunes García \cite{tfg_miguel} gracias a una red volumétrica \cite{red_volumetrica}, se presenta un método de late-fusion en el que a partir de las detecciones 3D obtenidas de ambos sensores se consigue una mejora en la robustez y en la precisión de estas.\par
+Con la ayuda de Carlos Gómez Huélamo, el cotutor de este trabajo, se realiza la implementación de la fusión sensorial a partir de las detecciones 3D de ambos métodos, el funcionamiento de esta es relativamente sencillo y es el siguiente:
 
+\begin{enumerate}
+\item Suscripción a los topics de las detecciones provenientes de la cámara y del \acs{lidar}
+\item Sincronización de los mensajes de ambas detecciones
+\item Cálculo del \acs{iou} 3D entre ambas detecciones
+\item En el caso de tener un \acs{iou} 3D mayor a 0 se crea una detección a partir de la bounding box del \acs{lidar} y el tipo de la cámara
+\item Dicha bounding box se publica en un topic
+\end{enumerate}
 
-\section{Vehículo del proyecto T4AC}
+De esta manera se consigue una detección de la parte frontal del vehículo mejorada a partir de las detecciones de ambos sensores, ya que se utiliza el mayor \ac{ap} del modelo que utiliza el \acs{lidar} para obtener las detecciones y la mayor precisión de las detecciones del modelo basado en cámara, obteniendo un número menor de falsos positivos, además de su mejor detección del tipo de objeto.\par
+Dicha implementación de fusión sensorial entre cámara y \acs{lidar} se encuentra disponible en \url{https://github.com/RobeSafe-UAH/t4ac_sensor_fusion_ros}. Los resultados de la fusión sensorial se analizan en los capítulos \ref{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_en_carla} y \ref{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_sobre_el_vehiculo_t4ac}.
+
+\section{Vehículo del proyecto Techs4AgeCar}
 \label{sec:vehiculo_del_proyecto_t4ac}
 
+El vehículo T4AC para el cual se están desarrollando las diferentes técnicas de percepción se encuentra basado en el chasis TABBY EVO, el cual está basado en una plataforma Open-Source para poder modificarlo como sea necesario. En el proyecto fueron añadidas baterías y un chasis que contiene el hardware necesario para la conducción autónoma \ref{fig:Chasis_con_el_hardware_necesario_para_la_conduccion_autonoma}.\par
+El hardware añadido al vehículo consta de:
+\begin{itemize}
+\item Sistema \acs{gnss} con aplicación de técnicas posicionamiento diferencial y \acs{rtk}
+\item Odometría basada en encoders en las ruedas traseras del vehículo
+\item \acs{lidar} de la compañía Velodyne modelo VLP-16
+\item Sistema de Radares 360º de Huawei
+\item Sistema estéreo de cámaras modelo ZED de StereoLabs
+\item Sistema de computo distribuido con 5 CPUs compuesto por 3 Raspberry Pi 3, 1 NVIDIA Jetson AGX Xavier y un portátil con una tarjeta gráfica GTX 1070
+\end{itemize}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/5_desarrollo_realizado/chasis_hardware.png}
+	\caption{Chasis con el hardware necesario para la conducción autónoma.}
+	\label{fig:Chasis_con_el_hardware_necesario_para_la_conduccion_autonoma}
+\end{figure}
 
-\section{Implementación sobre el vehículo T4AC}
+Con este sistema se procesa la localización, el sistema Drive-By-Wire y el HMI en las Raspberry Pi 3, para el procesamiento de las imágenes o la nube de puntos se utiliza la NVIDIA Jetson AGX Xavier, mientras que el portátil es de uso general relegando a este las aplicaciones del sistema computacionalmente más costosas haciendo uso de la aceleración por hardware de la GPU.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/5_desarrollo_realizado/vehiculo_t4ac.png}
+	\caption{Vehículo T4AC.}
+	\label{fig:Vehiculo_t4ac}
+\end{figure}
+
+Dicho vehículo y el sistema de Drive-By-Wire han sido diseñado por Juan Felipe Arango Vargas en tu Trabajo Fin de Master \cite{tfm_felipe}.
+
+\section{Implementación sobre el vehículo Techs4AgeCar}
 \label{sec:implementación_sobre_el_vehículo_t4ac}
 
+El aporte de este trabajo a la capa de percepción del sistema autónomo consta del estudio e implementación del modelo PointPillars Multihead y realización de la fusión sensorial con la cámara. Previamente en el vehículo se utilizaba un sistema donde se tenía el modelo PointPillars corriendo en la NVIDIA Jetson, pero debido a su baja precisión y alta tasa de falsos positivos no se utilizaba debido en gran medida al uso de unicamente los 16 haces del \acs{lidar}, mientras que dicho modelo suele ser entrenado con \acs{lidar} de 32 o 64 haces.\par
+En la arquitectura propuesta se utiliza el trabajo realizado en este Trabajo Fin de Grado junto con las mejoras de detección en cámara \cite{tfg_miguel}, para realizar una fusión sensorial entre ambos métodos. Tras la obtención de estas detecciones mejoradas, se introducen en el sistema SmartMOT \cite{smartmot} desarrollado en el grupo RobeSafe que realiza un seguimiento de los vehículos en \acs{bev}, de tal manera que se obtendría la posición, velocidad lineal, velocidad angular y tipo de objeto, mejorando además las detecciones al pasar por el modelo.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/5_desarrollo_realizado/implementacion_vehiculo.png}
+	\caption{Arquitectura de la capa de percepción.}
+	\label{fig:Arquitectura_de_la_capa_de_percepcion}
+\end{figure}
+
+Dicha mejora en el sistema será pasada en \acs{bev} a las siguientes capas de la arquitectura del proyecto para mejorar así también su funcionamiento.

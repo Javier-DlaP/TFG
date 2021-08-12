@@ -11,7 +11,7 @@
 \end{FraseCelebre}
 
 \noindent
-Mientras que se tienen múltiples tipos de técnicas de percepción tanto clásicas como basadas en \acs{dl}, el uso de técnicas clásicas utilizando unicamente \acs{lidar} no abundan, por lo que se presentan las técnicas estudiadas e implementadas en el simulador CARLA que permiten la detección de los objetos del entorno.
+Mientras que se tienen múltiples tipos de técnicas de percepción tanto clásicas como basadas en Deep Learning, el uso de técnicas clásicas utilizando unicamente \acs{lidar} no abundan, por lo que se presentan las técnicas estudiadas e implementadas en el simulador CARLA que permiten la detección de los objetos del entorno.
 
 \section{Voxelización}
 \label{sec:voxelizacion}
@@ -21,12 +21,10 @@ Para ello se utiliza la voxelización, esta no solo es utilizada en sistemas de p
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures/3_sistemas_clasicos_de_percepcion/entorno_voxelizado.png}
+	\includegraphics[width=0.55\textwidth]{figures/3_sistemas_clasicos_de_percepcion/entorno_voxelizado.png}
 	\caption{Entorno 3D voxelizado.}
 	\label{fig:Entorno_3d_voxelizado}
 \end{figure}
-
-\newpage
 
 Trabajando con nubes de puntos, la voxelización sigue los siguientes pasos:
 \begin{enumerate}
@@ -35,7 +33,7 @@ Trabajando con nubes de puntos, la voxelización sigue los siguientes pasos:
 	\item Si se encuentra un punto del \ac{lidar} dentro de un vóxel este de activa
 \end{enumerate}
 \par
-Esta técnica como se verá en el capítulo \ref{cha:sistemas_de_percepcion_con_lidar_basados_en_deep_learning}, también se utiliza en diversos modelos basados en \acs{dl}, esto se hace para trabajar de forma similar a lo que sería la estructura de una imagen que se encuentra compuesta por píxeles en vez de por vóxeles.
+Esta técnica como se verá en el capítulo \ref{cha:sistemas_de_percepcion_con_lidar_basados_en_deep_learning}, también se utiliza en diversos modelos basados en Deep Learning, esto se hace para trabajar de forma similar a lo que sería la estructura de una imagen que se encuentra compuesta por píxeles en vez de por vóxeles.
 
 \section{RANSAC-3D}
 \label{sec:ransac_3d}
