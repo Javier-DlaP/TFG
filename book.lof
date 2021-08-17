@@ -25,7 +25,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Veh\IeC {\'\i }culo utilizado en KITTI.\relax }}{21}{figure.caption.65}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Medidas del veh\IeC {\'\i }culo utilizado en KITTI\relax }}{21}{figure.caption.65}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Estructura del archivo tracklet\_labels.xml.\relax }}{22}{figure.caption.67}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Visualizaci\'on de una nube de puntos de KITTI junto con su ground truth.\relax }}{23}{figure.caption.68}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Visualizaci\'on de una nube de puntos de KITTI junto con su groundtruth.\relax }}{23}{figure.caption.68}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Veh\IeC {\'\i }culo utilizado en Waymo.\relax }}{23}{figure.caption.70}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Nube de puntos con las diferentes clases del dataset de Waymo.\relax }}{24}{figure.caption.71}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Veh\IeC {\'\i }culo utilizado en el dataset de nuScenes.\relax }}{25}{figure.caption.73}
@@ -58,6 +58,12 @@
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Veh\IeC {\'\i }culo T4AC.\relax }}{53}{figure.caption.198}
 \contentsline {figure}{\numberline {5.14}{\ignorespaces Arquitectura de la capa de percepci\'on.\relax }}{54}{figure.caption.200}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura del AD DevKit.\relax }}{55}{figure.caption.203}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces M\'etricas de control en el AD DevKit.\relax }}{56}{figure.caption.204}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Transformaciones mundo a c\'amara.\relax }}{58}{figure.caption.224}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \'Angulos alpha y rotation\_z del groundtruth del AD DevKit.\relax }}{60}{figure.caption.226}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Estructura del generador de groundtruth del AD DevKit.\relax }}{61}{figure.caption.229}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Ejemplo de curva de precision-recall.\relax }}{62}{figure.caption.231}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

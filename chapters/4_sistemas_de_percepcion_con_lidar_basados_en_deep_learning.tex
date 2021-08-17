@@ -154,9 +154,9 @@ En 2020 tras el éxito que ha sido este dataset se anuncia y se abre al uso KITTI
 \subsubsection{Análisis de la estructura del GT y las PCLs de KITTI}
 \label{sec:analisis_de_la_estructura_del_gt_y_las_pcls_de_kitti}
 
-Al estar basado este trabajo en la detección utilizando \acs{lidar}, se estudia la forma en la que se guardan los datos de las nubes de puntos junto con la representación del ground truth, para ello se analiza tanto la carpeta de velodyne\_points como el archivo tracklets.xml.\par
+Al estar basado este trabajo en la detección utilizando \acs{lidar}, se estudia la forma en la que se guardan los datos de las nubes de puntos junto con la representación del groundtruth, para ello se analiza tanto la carpeta de velodyne\_points como el archivo tracklets.xml.\par
 Para el trabajo con bounding boxes 3D, es posible utilizar unicamente el kit de detecciones 3D que contiene un conjunto de txt con la información de los objetos por cada barrido. La información de estos archivos contiene la información de: tipo, truncado, ocluido, bounding box 2D, dimensiones y localización, toda esta información se encuentra de la misma manera en el archivo tracklets.xml, pero la información de rotación se encuentra divida en un ángulo alpha y otro rotation\_y, en vez de rotación por cada uno de los tres ejes, de estos se estudiará más en profundidad en el capítulo \ref{cha:ad_devkit}.\par
-Se utiliza el archivo tracklets.xml ya define el ground truth de la escena pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en un estructura se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
+Se utiliza el archivo tracklets.xml ya define el groundtruth de la escena pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en un estructura se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
 Se ha decido crear un programa que lea la nube de puntos indicada y que marque en un entorno 3D donde se encuentran los objetos de la escena. Esto podría ser realizado mediante el devkit que KITTI ofrece, pero este se encuentra unicamente de forma oficial en Matlab, por lo que como los modelos de Deep Learning a utilizar se encuentran utilizando Pytorch, se deberían de analizar los datos utilizando Python.\par
 La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estructura de los principales atributos del archivo tracklet\_labels.xml analizado, en este encontramos el número de los diferentes objetos del escenario, tras esto se analiza cada objeto a través de los diferentes barridos, mostrando primero las características de los objetos que se mantienen en el tiempo, como las dimensiones o el tipo de objeto y tras esto se guarda la información de posición, rotación, etc.
 
@@ -238,12 +238,12 @@ La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estruct
 \end{figure}
 
 Tras dicho análisis, utilizando la librería MayaVi para la visualización del entorno 3D, NumPy para las transformaciones en el espacio y Beautiful Soup para la lectura del \acs{xml}, se visualizan múltiples escenas del dataset.\par
-Cabe destacar que como KITTI está realizado para que la parte de percepción se trabaje principalmente con la cámaras frontales del vehículo, aún teniendo información por los laterales y la parte trasera gracias al \acs{lidar}, esta no se tiene en cuenta en el ground truth, razón por la que en la imagen \ref{fig:Visualizacion_de_una_nube_de_puntos_de_kitti_junto_con_su_ground_truth} los vehículos de la parte trasera no se muestra.
+Cabe destacar que como KITTI está realizado para que la parte de percepción se trabaje principalmente con la cámaras frontales del vehículo, aún teniendo información por los laterales y la parte trasera gracias al \acs{lidar}, esta no se tiene en cuenta en el groundtruth, razón por la que en la imagen \ref{fig:Visualizacion_de_una_nube_de_puntos_de_kitti_junto_con_su_ground_truth} los vehículos de la parte trasera no se muestra.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.55\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/display_kitti_example.png}
-	\caption{Visualización de una nube de puntos de KITTI junto con su ground truth.}	\label{fig:Visualizacion_de_una_nube_de_puntos_de_kitti_junto_con_su_ground_truth}
+	\caption{Visualización de una nube de puntos de KITTI junto con su groundtruth.}	\label{fig:Visualizacion_de_una_nube_de_puntos_de_kitti_junto_con_su_ground_truth}
 \end{figure}
 
 Todo el código utilizado para la visualización de los objetos junto con unos escenarios de ejemplo son accesibles en: \url{https://github.com/Javier-DlaP/Display_kitti_pcl_annotations} 
@@ -321,7 +321,7 @@ El sistema de evaluación de nuScenes permite evaluación de múltiples sistemas a 
 	\item Predicción del movimiento y de la posición de los objetos.
 	\item Segmentación de la nube de puntos del \acs{lidar} a nivel de punto.
 \end{itemize}
-El dataset completo de nuScenes ocupa medio terabyte, esto es debido a la cantidad de información que este tiene, la cual es encuentra dividida en: mapas, información de los sensores en los frames que se tienen anotaciones, información de los sensores sin anotaciones y una carpeta v1.0-trainval que contiene todos los archivos json que relacionan todo el dataset además del ground truth \ref{for:Estructura_del_dataset_nuscenes}.
+El dataset completo de nuScenes ocupa medio terabyte, esto es debido a la cantidad de información que este tiene, la cual es encuentra dividida en: mapas, información de los sensores en los frames que se tienen anotaciones, información de los sensores sin anotaciones y una carpeta v1.0-trainval que contiene todos los archivos json que relacionan todo el dataset además del groundtruth \ref{for:Estructura_del_dataset_nuscenes}.
 
 \begin{figure}[H]
 	\begin{forest}

@@ -1258,6 +1258,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{ab4cogt}{}%
+{%
+\gls@defglossaryentry{ab4cogt}%
+{%
+name={AB4COGT},%
+sort={AB4COGT},%
+type={acronym},%
+first={A Baseline for CARLA Online Ground-Truth Generation\glsspace (AB4COGT)},%
+firstplural={A Baseline for CARLA Online Ground-Truth Generations\glsspace (AB4COGTs)},%
+text={AB4COGT},%
+plural={AB4COGTs},%
+description={A Baseline for CARLA Online Ground-Truth Generation},%
+descriptionplural={A Baseline for CARLA Online Ground-Truth Generation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={A Baseline for CARLA Online Ground-Truth Generation},%
+longplural={A Baseline for CARLA Online Ground-Truth Generations},%
+short={AB4COGT},%
+shortplural={AB4COGTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ave}{}%
+{%
+\gls@defglossaryentry{ave}%
+{%
+name={AVE},%
+sort={AVE},%
+type={acronym},%
+first={Average Velocity Error\glsspace (AVE)},%
+firstplural={Average Velocity Errors\glsspace (AVEs)},%
+text={AVE},%
+plural={AVEs},%
+description={Average Velocity Error},%
+descriptionplural={Average Velocity Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Velocity Error},%
+longplural={Average Velocity Errors},%
+short={AVE},%
+shortplural={AVEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{SOC}{}%
 {%
 \gls@defglossaryentry{SOC}%

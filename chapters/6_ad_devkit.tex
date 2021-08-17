@@ -10,18 +10,389 @@
   \end{Fuente}
 \end{FraseCelebre}
 
+\noindent
+El conjunto con el \acs{kit} se comienza a desarrollar el \ac{ad_devkit} un evaluador de sistemas de conducción autónoma basado en el simulador CARLA. Este trabajo es complementario al desarrollo principal del TFG, ya que con dicha herramienta se pretende evaluar el sistema de detección con \acs{lidar} implementado en CARLA, además de ofrecer al grupo RobeSafe una herramienta para la comparativa en el simulador CARLA de las diferentes técnicas de percepción implementadas y en futuro lanzar dicha herramienta Open-Source para los investigadores que utilicen CARLA.
 
 \section{Motivación para la creación del AD DevKit}
 \label{sec:Motivacion_para_la_creacion_del_ad_devkit}
 
+Durante el comienzo del desarrollo de este Trabajo Fin de Grado el cotutor Carlos Gómez Huélamo realiza un estancia en el \acs{kit} donde se propone la idea de creación de un sistema de evaluación de sistemas de conducción autónoma que no solo se reduzca a la parte de percepción sino que también afecte al control, planificación y al sistema de decisiones del vehículo.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/6_ad_devkit/estructura_ad_devkit.png}
+	\caption{Arquitectura del AD DevKit.}
+	\label{fig:Arquitectura_del_ad_devkit}
+\end{figure}
 
-\section{Obtención del ground truth}
-\label{sec:obtencion_del_ground_truth}
+Este acercamiento no ha sido visto nunca hasta ahora, por lo que el trabajo en este proyecto puede llegar a tener un gran impacto, ya no solo por el carácter multidisciplinar del evaluador sino por la creación de un evaluador en CARLA, aunque durante el desarrollo de este evaluador se han publicado desde un modelo entrenado sobre CARLA \cite{ramnets} al diseño de un evaluador de percepción para CARLA.\par
+El diseño del evaluador se encuentra dividido en 4 partes, cada una evaluando un apartado del sistema de conducción autónomo. Mientras que el grupo RobeSafe se encarga de la evaluación de percepción y el control, en el \acs{kit} se encargarían de la evaluación de la planificación y la toma de decisiones. Dentro del grupo RobeSafe, Carlos Gómez Huélamo, el cotutor del TFG, se ha encargado del evaluador de la capa de control, obteniendo el groundtruth necesario junto con métricas para puntuar a los modelos.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/6_ad_devkit/metricas_control.png}
+	\caption{Métricas de control en el AD DevKit.}
+	\label{fig:Metricas_de_control_en_el_ad_devkit}
+\end{figure}
 
+El apartado para la evaluación de la capa de percepción es la realizada en este trabajo, pero al ser un trabajo de gran complejidad se realiza en conjunto con Miguel Antunes García \cite{tfg_miguel}, ya que este desarrollo nos permite en ambos TFG el análisis de los métodos de percepción implementados en la arquitectura del proyecto Techs4AgeCar.\par
+Un sistema de evaluación de múltiples capas puede sufrir una menor valoración de un método de una capa de concreto, mientras que el problema puede provenir de otra capa, por ejemplo un fallo en la capa de planificación, puede resultar en una pobre valoración del sistema de control, para solucionar esto, se propone un sistema de evaluación online por capas en la que a la vez que se corre el simulador CARLA se realiza la evaluación. Para comenzar el desarrollo se propone un acercamiento offline, aunque con la obtención del groundtruth de forma online, para de esta manera obtener un sistema de evaluación para la capa de percepción.
+
+\section{Obtención del groundtruth}
+\label{sec:Obtencion_del_ground_truth}
+
+El simulador CARLA ofrece información a través de \acs{ros} de todo el entorno, esto quiere decir que se puede obtener la información del resto de objetos del entorno para crear un dataset de forma online u offline. Dicha información en \acs{ros} viene definida en el topic \textit{/carla/objects} en con un formato basado en un array de objetos, teniendo cada objeto la información del tipo, posición, velocidad, etc.\par
+Para el desarrollo de este apartado del \acs{ad_devkit} se parte del trabajo \ac{ab4cogt} \cite{ab4cogt}, pero al encontrar múltiples malas prácticas de programación que influirían en la ampliación y mantenimiento, se decide realizar una reingeniería del código para solucionar los problemas encontrados.
+
+\begin{table}[H]
+\parbox{.35\linewidth}{
+\centering
+\begin{tabular}{|p{2.5cm}|p{2cm}|}
+		\hline
+		\textbf{Tipo}&\textbf{Nombre}\\
+		\hline
+		Header&header\\
+		\hline
+		Object[]&objects\\
+		\hline
+\end{tabular}
+\caption{Formato de la lista de objetos de CARLA}
+\label{tab:Formato_de_la_lista_de_objetos_de_carla}
+}
+\hfill
+\parbox{.6\linewidth}{
+\centering
+\begin{tabular}{|p{4.5cm}|p{3.5cm}|}
+		\hline
+		\textbf{Tipo}&\textbf{Nombre}\\
+		\hline
+		Header&header\\
+		\hline
+		uint32&id\\
+		\hline
+		uint8&detection\_level\\
+		\hline
+		bool&object\_classified\\
+		\hline
+		geometry\_msgs/Pose&pose\\
+		\hline
+		geometry\_msgs/Twist&twist\\
+		\hline
+		geometry\_msgs/Accel&accel\\
+		\hline
+		geometry\_msgs/Polygon&polygon\\
+		\hline
+		shape\_msgs/SolidPrimitive&shape\\
+		\hline
+		uint8&classification\\
+		\hline
+		uint8&classification\_certainty\\
+		\hline
+		uint32&classification\_age\\
+		\hline
+\end{tabular}
+\caption{Formato objeto de CARLA}
+\label{tab:Formato_objeto_de_carla}
+}
+\end{table}
+
+El repositorio del que se parte \cite{ab4cogt} genera un archivo de texto que contiene la información de posición 3D de todos los objetos del entorno, su orientación y tipo. Dicho groundtruth generado solo sería apto para un sistema \acs{lidar} que tenga los objetos en su campo de visión. Para ello se propone un sistema de generación de groundtruth en tiempo real que publique las detecciones en \acs{ros} como un mensaje, analice la visibilidad de los objetos, genere las detecciones 2D para sistemas de cámara y guarde como un fichero CSV para comprender de mejor manera los datos guardados, todo ello junto con los datos provenientes de cámara, \acs{lidar} y \acs{radar}. Este primer apartado es desarrollado principalmente de forma individual, por lo que es necesario el estudio de diversas técnicas para la obtención del groundtruth.
+
+\subsection{Calculo de la visibilidad de los objetos}
+\label{sec:Calculo_de_la_visibilidad_de_los_objetos}
+
+Mientras que el proyecto \acs{ab4cogt} obtiene el groundtruth de los objetos cercanos al vehículo no se calcula la visibilidad de estos, esto es necesario ya que al proceder a la evaluación se reduciría la precisión de los modelos por no poder detectar dichos objetos ocluidos.
+
+\begin{codefloat}
+\begin{lstlisting}[language=Python]
+f_visible_bb = (lambda bb, points: np.logical_and( \
+		    np.logical_and(bb[0]-bb[3]/2 <= np.array(points[:,0]),
+				   np.array(points[:,0]) <= bb[0]+bb[3]/2,
+				   bb[1]-bb[4]/2 <= np.array(points[:,1])),
+		    np.logical_and(np.array(points[:,1]) <= bb[1]+bb[4]/2,
+				   bb[2]-bb[5]/2 <= np.array(points[:,2]),
+				   np.array(points[:,2]) <= bb[2]+bb[5]/2)))
+n_points_in_bb = 0
+if self.pointcloud is not None:
+	points_in_bb = f_visible_bb((obj.position_x, obj.position_y,
+				     obj.position_z, obj.l, obj.w, obj.h),
+				     self.pointcloud)
+	n_points_in_bb = np.add.reduce(points_in_bb)
+\end{lstlisting}
+\caption{Filtrado en función de la visibilidad de los objetos en el AD DevKit}
+\label{cod:Filtrado_en_funcion_de_la_visibilidad_de_los_objetos_en_el_ad_devkit}
+\end{codefloat}
+
+Una de las partes más importes y delicadas para el uso de esta aplicación en tiempo real es la eficiencia, por lo que hubo que analizar la manera en que se puede realizar un método similar al trazado de rayos, pero computacionalmente menos costoso, por ello se decide utilizar la última nube de puntos obtenida de \acs{ros} para filtrar los objetos del entorno en función de si se encuentra algún punto de dicha nube dentro de la bounding box 3D del groundtruth de CARLA. Este método es similar al utilizado en nuScenes donde solo se añaden una bounding box si se encuentra algún punto del \acs{lidar} sobre esta. Para la realización de esta operación es necesaria la vectorización de las operaciones ya que es necesario un computo en un tiempo menor a $10^{-2}$ segundos.
+
+\subsection{Geometría de la cámara}
+\label{sec:Geometria_de_la_camara}
+
+La generación de bounding boxes 2D para los sistemas de cámara a evaluar no son obtenidas directamente de ROS, por lo que es necesario realizar una serie de transformaciones para pasar de las coordenadas del mundo a los píxeles que contienen ese objeto dentro de la imagen generada por la cámara. Se analiza por tanto el funcionamiento de la geometría de la cámara.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/6_ad_devkit/funcionamiento_camara.png}
+	\caption{Transformaciones mundo a cámara.}
+	\label{fig:Transformaciones_mundo_a_camara}
+\end{figure}
+
+En las diferentes transformaciones ha realizar se trabaja con las coordenadas geométricas, lo que quiere decir que se agrega un cuarto componente a las coordenadas cartesianas.
+
+\begin{center}
+$(x, y, z) \rightarrow (x', y', z', w)$\\[10pt]
+$(x, y, z) = (x'/w, y'/w, z'/w)$
+\end{center}
+
+Se comienza realizando un cambio de referencia de cámara a imagen, por lo que es necesario realizar una traslación y una rotación del sistema de coordenadas, pero tiene que ser en este orden ya que la multiplicación de matrices no es conmutativa. Por lo que se aplica la traslación sobre las coordenadas.
+
+\begin{center}
+$
+\begin{bmatrix} wX_c \\ wY_c \\ wZ_c \\ w \end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 & T_X \\
+0 & 1 & 0 & T_Y \\
+0 & 0 & 1 & T_Z \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix}
+$
+\end{center}
+
+Tras aplicar la traslación se aplica la rotación en los ejes X, Y, Z.
+
+\begin{center}
+$R = R_X(\alpha) R_Y(\beta) R_Z(\gamma)$
+\end{center}
+
+\begin{center}
+$
+\begin{bmatrix} wX_c \\ wY_c \\ wZ_c \\ w \end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos \alpha & -\sin \alpha & 0 \\
+0 & \sin \alpha & \cos \alpha & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\cos \beta & 0 & \sin \beta & 0 \\
+0 & 1 & 0 & 0 \\
+- \sin \beta & 0 & \cos \beta & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\cos \gamma & - \sin \gamma & 0 & 0 \\
+\sin \gamma & \cos \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix}
+$
+\end{center}
+
+Ambos pasos de traslación y rotación se pueden unir en una matriz de parámetros extrínsecos de la cámara que es independiente al tipo de cámara utilizada.
+
+\begin{center}
+$
+\begin{bmatrix} wX_c \\ wY_c \\ wZ_c \\ w \end{bmatrix}
+=
+\begin{bmatrix}
+\cos \gamma \cos \beta & - \sin \gamma \cos \beta & \sin \beta & T_X \\
+\cos \gamma \sin \alpha \sin \beta + \sin \gamma \cos \alpha & \cos \gamma \cos \alpha - \sin \gamma \sin \alpha \sin \beta & - \sin \alpha \cos \beta & T_Y \\
+\sin \gamma \sin \alpha - \cos \gamma \cos \alpha \sin \beta & \sin \gamma \cos \alpha \sin \beta + \cos \gamma \sin \alpha & \cos \alpha \cos \beta & T_Z \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix}
+$
+$
+M_{ext}
+=
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} & t_X \\
+r_{21} & r_{22} & r_{23} & t_Y \\
+r_{31} & r_{32} & r_{33} & t_Z \\
+\end{bmatrix}
+$
+\end{center}
+
+Tras la trasformación de mundo a cámara se pasa de coordenadas tridimensionales de la cámara a bidimensionales de las imágenes, para ello es utilizada la distancia focal ($f$) entre el centro óptico de la lente y el punto focal.
+
+\begin{center}
+$
+\begin{bmatrix} wx \\ wy \\ w \end{bmatrix}
+=
+\begin{bmatrix}
+f & 0 & 0 & 0 \\
+0 & f & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix} X_c \\ Y_c \\ Z_c \\ 1 \end{bmatrix}
+$
+\end{center}
+
+Por último es necesario aplicar una transformación en la imagen, realizando una conversión de milímetros a píxeles y aplicando un offset para trasladar el centro de la imagen. Tras esta operación se pasa de las coordenadas de los ejes $x$ e $y$ $(dx, dy)$ a las coordenadas pixélicas $(u, v)$.
+
+\begin{center}
+$
+\begin{bmatrix} wu \\ wv \\ w \end{bmatrix}
+=
+\begin{bmatrix}
+1/dx & 0 & u_0 \\
+0 & 1/dy & v_0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix} wx \\ wy \\ w \end{bmatrix}
+$
+\end{center}
+
+De la misma forma que se puede obtener una matriz de parámetros extrínseca, se obtiene una matriz de parámetros intrínseca, la cual se encuentra compuesta de las transformaciones de cámara a imagen y de milímetros a píxeles.
+
+\begin{center}
+$
+M_{int}
+=
+\begin{bmatrix}
+1/dx & 0 & u_0 \\
+0 & 1/dy & v_0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+f & 0 & 0 \\
+0 & f & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+f/dx & 0 & u_0 \\
+0 & f/dy & v_0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$
+\end{center}
+
+Dicha matriz intrínseca no es necesario calcularla ya que es fija en función de las características de la cámara, por lo que CARLA ofrece esta matriz. Calculando unicamente la matriz extrínseca se hayan las coordenadas en pixélicas aplicando ambas matrices extrínseca e intrínseca sobre las coordenadas homogéneas.
+
+\begin{center}
+$
+\begin{bmatrix} wu \\ wv \\ w \end{bmatrix}
+=
+M_{int} M_{ext}
+\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix}
+$
+\end{center}
+
+Teniendo las bounding boxes 3D transformadas a bounding boxes 2D se marcan aquellas que son visibles desde la cámara y cuales no, para ello se define las bouding boxes 2D como (-1, -1, -1, -1) para identificar que hay un objeto visibles desde el vehículo pero no desde la posición de la cámara.
+
+\subsection{Formato del groundtruth obtenido}
+\label{sec:Formato_del_ground_truth_obtenido}
+
+El groundtruth utilizado en la evaluación de los sistemas de percepción consta de múltiples atributos como son: tiempo del groundtruth, tipo de objeto, bounding box 2D, posición, tamaño, rotación y velocidad. A partir de estos parámetros se crea el CSV necesario para la evaluación offline y los mensajes de ROS necesarios para la evaluación online.\par
+Dos de estos atributos son los denominados en el dataset KITTI: \textit{alpha} y \textit{rotation\_y}. Alpha identifica respecto de las coordenadas de cámara de KITTI el ángulo que se encuentra entre el eje X y la dirección del coche detectado, mientras que rotation\_y es el ángulo entre el eje X y la recta que una el vehículo propio y el detectado. Este último  ángulo es renombrado a rotation\_z en el groundtruth para aludir al sistema de coordenadas de CARLA y no el de KITTI.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/6_ad_devkit/alpha_rotation_y.png}
+	\caption{Ángulos alpha y rotation\_z del groundtruth del AD DevKit.}
+	\label{fig:Angulos_alpha_y_rotation_z_del_groundtruth_del_ad_devkit}
+\end{figure}
+
+El CSV contiene la información del groundtruth para la evaluación offline, mientras que para la evaluación de forma online se ha tenido que crear un nuevo tipo de mensaje haciendo uso de otros mensajes estandarizados por la comunidad de ROS.
+
+\begin{table}[H]
+\parbox{.4\linewidth}{
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|}
+		\hline
+		\textbf{Tipo}&\textbf{Nombre}\\
+		\hline
+		Header&header\\
+		\hline
+		GT\_3D\_Object[]&gt\_3d\_object\_list\\
+		\hline
+\end{tabular}
+\caption{Formato de la lista de detecciones en ROS}
+\label{tab:Formato_de_la_lista_de_detecciones_en_ros}
+}
+\hfill
+\parbox{.55\linewidth}{
+\centering
+\begin{tabular}{|p{4.5cm}|p{3cm}|}
+		\hline
+		\textbf{Tipo}&\textbf{Nombre}\\
+		\hline
+		string&type\\
+		\hline
+		uint32&object\_id\\
+		\hline
+		float32&alpha\\
+		\hline
+		vision\_msgs/BoundingBox2D&bounding\_box\_2D\\
+		\hline
+		geometry\_msgs/Point&position\\
+		\hline
+		geometry\_msgs/Vector3&dimensions\\
+		\hline
+		float32&rotation\_z\\
+		\hline
+		geometry\_msgs/Vector3&velocity\\
+		\hline
+\end{tabular}
+\caption{Formato de una detección en ROS}
+\label{tab:Formato_de_una_deteccion_en_ros}
+}
+\end{table}
+
+\subsection{Funcionamiento del generador de groundtruth}
+\label{sec:Funcionamiento_del_generador_de_ground_truth}
+
+El funcionamiento por tanto del sistema de obtención del groundtruth se basa un nodo que realiza todas las suscripciones necesarias para obtener dichos datos de la forma correcta y enviarlo como mensaje a ROS. Tras esto se suscribe al groundtruth recién publicado y se crea un archivo CSV con este. Por último se guarda la información proveniente de la cámara, \acs{lidar} y \acs{radar} para poder ejecutar los modelos con los mismos datos más adelante y realizar así la evaluación online.\par
+Para reproducir la información de la cámara se adjuntan a las imágenes RGB, la matriz de parámetros intrínsecos y el listado de tiempos en el que sido tomadas las imágenes. En el caso del \acs{lidar} y el \acs{radar} se guardan las nubes de puntos como un archivo binario, el cual tiene explicado el formato en un fichero de texto adjunto junto con otro archivo que incluye los tiempos en los que han sido obtenidas las nubes de puntos.\par
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/6_ad_devkit/perception_gt_architecture.png}
+	\caption{Estructura del generador de groundtruth del AD DevKit.}
+	\label{fig:Estructura_del_generador_de_gt_del_ad_devkit}
+\end{figure}
+
+En el desarrollo de la herramienta se adopta un acercamiento basado en \acs{oop} y paralelismo de acercamiento de las funciones a partir del uso de los diferentes objetos de forma paralela para obtener una mayor eficiencia, al ser esto un requisito tan importante en el desarrollo. Todo este desarrollo es accesible en GitHub en \url{https://github.com/RobeSafe-UAH/ad_devkit}.
 
 \section{Evaluación de los modelos}
 \label{sec:evaluacion_de_los_modelos}
 
+Con la obtención de los objetos del entorno que tiene que ser detectados, se crea el apartado para la evaluación offline de los modelos. Dicho apartado es realizado de forma offline y no online debido a las complicaciones que supone generar el grountruth, correr los modelos y evaluarlos en tiempo real, por lo que se decide comenzar evaluando de forma posterior a la ejecución. Esto se traduce en tres fases para la evaluación de un modelo: generación del groundtruth, ejecución del modelo para la obtención de los detecciones y evaluación de las detecciones respecto del groundtruth.\par
+Para la generación del archivo CSV de las detecciones procedentes del modelo PointPillars Multihead se ha añadido al repositorio \url{https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros} que contiene el modelo implementado sobre CARLA y un script que a partir del desarrollo realizado reutiliza sus funciones para correr el modelo y guardar las detecciones en un fichero CSV. Dicho script aún funcionando sin ningún ajuste, puede ser utilizado en otras arquitecturas ajustando ciertas flags antes de la ejecución.\par
+La evaluación de un modelo se realiza a partir de diferentes métricas utilizadas en datasets estudiados como son Kitti y nuScenes para así tratar de estandarizar aún más esta herramienta. Las métricas calculados en la evaluación son las siguientes:
 
+\begin{itemize}
+\item \acl{iou}\par
+En la evaluación es utilizado el \acs{iou} 2D y 3D para hacer una relación entre las detecciones y el groundtruth, utilizando la versión bidimensional para relacionar las bounding boxes 2D y la versión tridimensional para relacionar las bounding boxes 3D.
+\begin{center}
+$IoU\ 2D = \dfrac{Área\ de\ la\ intersección}{Área\ de\ la\ unión}$\\[10pt]
+$IoU\ 3D = \dfrac{Volumen\ de\ la\ intersección}{Volumen\ de\ la\ unión}$
+\end{center}
+\item Curva precision-recall\par
+La precision indica cuantas de las detecciones son verdaderas.
+\begin{center}
+$Precision = \dfrac{Verdaderos\ positivos}{Verdaderos\ positivos \cup Falsos\ positivos}$
+\end{center}
+Mientras que el recall indica cuanto del groundtruth es detectado.
+\begin{center}
+$Precision = \dfrac{Verdaderos\ positivos}{Verdaderos\ positivos \cup Falsos\ negativos}$
+\end{center}
+La curva de precision-recall por tanto representa la relación entre precion y recall.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/6_ad_devkit/precision_recall.jpg}
+	\caption{Ejemplo de curva de precision-recall.}
+	\label{fig:Ejemplo_de_curva_de_precision_recall}
+\end{figure}
+\item \acl{ap}\par
+Esta es una métrica muy importante ya que relaciona tanto la precision como el recall para medir como de preciso es un modelo. Para ello se calcula el área por debajo de la curva de precisión, teniendo esta un valor entre 0 y 1.\par
+No solo se calcula el \acs{ap} por cada clase sino que también se calcula el mAP que sería la media de precisión de todas las clases para la obtención de la precisión general del modelo.
+\item \ac{ave}\par
+La evaluación de los sistemas de seguimiento también se han tenido en cuenta por lo que se calcula una métrica como es el \acs{ave} para saber de que manera es estimada la velocidad de los objetos, pudiendo obtenerla tanto por clase como por la media de todas estas. Esta métrica es calculada como el error de velocidad absoluto en 2D trabajando en \acs{bev}.
+\end{itemize}
+Este apartado del evaluador ha sido realizado principalmente por Miguel Antunes García en su TFG \cite{tfg_miguel} para unido al generador de groundtruth, se consiga un funcionamiento básico de la capa de percepción del \acs{ad_devkit}.

@@ -114,7 +114,7 @@ Unreal Engine 4 es la versión utilizada por CARLA, este motor de videojuegos es 
 
 OpenDRIVE es un formato abierto para la creación de redes de carreteras que trata de convertirse en el estándar la creación de mapas y sistemas de carreteras para facilitar el uso de diferentes mapas y simuladores. Los mapas creados con OpenDRIVE utilizan la extensión \textit{.xodr} y dichos archivos utilizan un formato similar al \acs{xml} para su uso simplificado con herramientas ya creadas.\par
 Para la aceleración del proceso de desarrollo, entrenamiento y validación de los \acs{ads}, CARLA ha creado un ecosistema de proyectos a partir del simulador en conjunto con la comunidad que utiliza CARLA.\par
-CARLA utiliza un modelo cliente-servidor como arquitectura. El servidor es responsable de toda la simulación: renderización de los sensores, cálculo de las físicas, actualización del mundo etc. Con todos estos cálculos es recomendado el uso de una \acs{gpu}, sobre todo si se utilizan técnicas basadas en Deep Learning. Por otra parte, el cliente es aquel que controla la lógica de los actores en la escena y cambia las opciones del mundo, de esta manera se pueden tener múltiples clientes trabajando al mismo tiempo. La comunicación al servidor se realiza mediante la \acs{api} que provee CARLA, pero también es posible utilizar el CARLA-ROS bridge para utilizar los topics de ROS para la comunicación \cite{carla_intro}.
+CARLA utiliza un modelo cliente-servidor como arquitectura. El servidor es responsable de toda la simulación: renderización de los sensores, cálculo de las físicas, actualización del mundo etc. Con todos estos cálculos es recomendado el uso de una \acs{gpu}, sobre todo si se utilizan técnicas basadas en Deep Learning. Por otra parte, el cliente es aquel que controla la lógica de los actores en la escena y cambia las opciones del mundo, de esta manera se pueden tener múltiples clientes trabajando al mismo tiempo. La comunicación al servidor se realiza mediante la \acs{api} que provee CARLA, pero también es posible utilizar el CARLA-ROS bridge para utilizar los topics de \acs{ros} para la comunicación \cite{carla_intro}.
 
 \begin{figure}[H]
 	\centering
@@ -123,7 +123,7 @@ CARLA utiliza un modelo cliente-servidor como arquitectura. El servidor es respo
 	\label{fig:Modo_de_uso_principal_de_carla}
 \end{figure}
 
-CARLA ofrece una comunicación entre este y ROS, dicho módulo que permite esto es el CARLA-ROS bridge. El funcionamiento de este se basa en el paso de la información que sería accesible a partir de la \acs{api} de CARLA mediante mensajes publicados en diversos topics en ROS. Dicho CARLA-ROS bridge funciona en ambas versiones de ROS y publica de forma continua:
+CARLA ofrece una comunicación entre este y ROS, dicho módulo que permite esto es el CARLA-ROS bridge. El funcionamiento de este se basa en el paso de la información que sería accesible a partir de la \acs{api} de CARLA mediante mensajes publicados en diversos topics en ROS. Dicho CARLA-ROS bridge funciona en ambas versiones de \acs{ros} y publica de forma continua:
 \begin{itemize}
 \item Información de diversos sensores del coche controlado como son: cámara (profundidad, segmentación a nivel de píxel y RGB), \acs{lidar}, \acs{radar}, \acs{gnss} e \acs{imu}
 \item Información de los objetos del entorno como: estado de los semáforos, indicadores de colisión, invasión de carril, etc.
@@ -223,7 +223,7 @@ Las diferentes capas del proyecto contenidas en \textit{t4ac\_architecture} son 
 	\label{fig:Modo_de_uso_en_el_proyecto_t4ac}
 \end{figure}
 
-Los repositorios de las diferentes capas se encuentran planteados como nodos de ROS para trabajar con el simulador CARLA se pueda controlar el vehículo, de esta manera como con el vehículo del grupo RobeSafe se obtiene la información de los sensores a partir de ROS, solo es necesario un cambio en el topic para que funcione de simulación al vehículo real. En la figura \ref{fig:Modo_de_uso_en_el_proyecto_t4ac} se puede ver el principal modo de uso del proyecto donde CARLA se corre en el host y el resto del proyecto se lanza en el contenedor Docker. Dentro del contenedor se pasa la información de CARLA a ROS, dicha información es visualizada con rviz y los nodos de las diferentes capas en Python o C++ son corridos trabajando con el modelo publisher/subscriber de ROS.
+Los repositorios de las diferentes capas se encuentran planteados como nodos de \acs{ros} para trabajar con el simulador CARLA se pueda controlar el vehículo, de esta manera como con el vehículo del grupo RobeSafe se obtiene la información de los sensores a partir de ROS, solo es necesario un cambio en el topic para que funcione de simulación al vehículo real. En la figura \ref{fig:Modo_de_uso_en_el_proyecto_t4ac} se puede ver el principal modo de uso del proyecto donde CARLA se corre en el host y el resto del proyecto se lanza en el contenedor Docker. Dentro del contenedor se pasa la información de CARLA a ROS, dicha información es visualizada con rviz y los nodos de las diferentes capas en Python o C++ son corridos trabajando con el modelo publisher/subscriber de ROS.
 
 \subsection{Arquitectura del proyecto Techs4AgeCar}
 \label{sec:Arquitectura_del_proyecto_t4ac}
@@ -320,11 +320,11 @@ Al no tener una relación con el tipo de material con el que se colisiona, este c
 \label{sec:implementacion_del_sistema_clasico_basado_en_lidar}
 
 Tras el estudio de diversas técnicas clásicas en el capítulo \ref{cha:sistemas_clasicos_de_percepcion_con_lidar}, se presenta una aplicación de detección en tiempo real sobre el simulador CARLA que detecta los objetos de importancia del entorno.\par
-En dicha implementación es utilizado el lenguaje C++ debido a su gran eficiencia y su \ac{oop}, por lo que para su comunicación con ROS es necesario el uso de roscpp. Para ello se crea un repositorio Git y se desarrolla de tal manera que el programa sea un nodo que se pueda suscribir y publicar en ROS. Dicho nodo tendrá que suscribirse al topic con la información del \acs{lidar} y generar un topic para la visualización de las bounding boxes 3D de los objetos del entorno detectados.\par
+En dicha implementación es utilizado el lenguaje C++ debido a su gran eficiencia y su \ac{oop}, por lo que para su comunicación con \acs{ros} es necesario el uso de roscpp. Para ello se crea un repositorio Git y se desarrolla de tal manera que el programa sea un nodo que se pueda suscribir y publicar en ROS. Dicho nodo tendrá que suscribirse al topic con la información del \acs{lidar} y generar un topic para la visualización de las bounding boxes 3D de los objetos del entorno detectados.\par
 Con los métodos estudiados teóricamente, el flujo de trabajo implementado es el siguiente:
 
 \begin{enumerate}
-\item Transformación del mensaje con la nube de puntos proveniente de ROS a una estructura en C++ de la librería \ac{pcl} que guarda la información de las coordenadas cartesianas y la intensidad
+\item Transformación del mensaje con la nube de puntos proveniente de \acs{ros} a una estructura en C++ de la librería \ac{pcl} que guarda la información de las coordenadas cartesianas y la intensidad
 \item Voxelización de la nube de puntos
 \item Filtrado de la nube de puntos voxelizada en función de la región de interés
 \item Aplicación del algoritmo RANSAC para la eliminación de los vóxeles pertenecientes al suelo
@@ -401,7 +401,7 @@ Todo este desarrollo es accesible en GitHub de forma pública en \url{https://git
 \subsection{Implementación del sistema basado en Deep Learning utilizando LiDAR}
 \label{sec:implementacion_del_sistema_clasico_basado_en_lidar}
 
-Mientras que el desarrollo del modelo clásico se ha hecho de cero, el desarrollo del modelo basado en Deep Learning se hace a partir de un repositorio creado por Carlos Gómez Huélamo a partir del trabajo de Javier del Egido Sierra \cite{tfm_del_egido}. Dicho repositorio funciona a partir de un archivo \textit{launch} de ROS y un fichero en Python de casi 500 líneas, dicho fichero al ser tan grande no  aplica una buenas prácticas de programación, ya que es más difícil de mantener y no es reutilizable. La solución al repositorio antes de comenzar el desarrollo ha sido realizar una refactorización del código para poder así tener una mayor calidad en la estructura del código.
+Mientras que el desarrollo del modelo clásico se ha hecho de cero, el desarrollo del modelo basado en Deep Learning se hace a partir de un repositorio creado por Carlos Gómez Huélamo a partir del trabajo de Javier del Egido Sierra \cite{tfm_del_egido}. Dicho repositorio funciona a partir de un archivo \textit{launch} de \acs{ros} y un fichero en Python de casi 500 líneas, dicho fichero al ser tan grande no  aplica una buenas prácticas de programación, ya que es más difícil de mantener y no es reutilizable. La solución al repositorio antes de comenzar el desarrollo ha sido realizar una refactorización del código para poder así tener una mayor calidad en la estructura del código.
 
 \begin{figure}[H]
 	\centering
@@ -487,7 +487,7 @@ Dicho vehículo y el sistema de Drive-By-Wire han sido diseñado por Juan Felipe A
 \section{Implementación sobre el vehículo Techs4AgeCar}
 \label{sec:implementación_sobre_el_vehículo_t4ac}
 
-El aporte de este trabajo a la capa de percepción del sistema autónomo consta del estudio e implementación del modelo PointPillars Multihead y realización de la fusión sensorial con la cámara. Previamente en el vehículo se utilizaba un sistema donde se tenía el modelo PointPillars corriendo en la NVIDIA Jetson, pero debido a su baja precisión y alta tasa de falsos positivos no se utilizaba debido en gran medida al uso de unicamente los 16 haces del \acs{lidar}, mientras que dicho modelo suele ser entrenado con \acs{lidar} de 32 o 64 haces.\par
+El aporte de este trabajo a la capa de percepción del sistema autónomo consta del estudio e implementación del modelo PointPillars Multihead y realización de la fusión sensorial con la cámara. Previamente en el vehículo se utilizaba un sistema donde se tenía el modelo PointPillars corriendo en la NVIDIA Jetson, pero debido a su baja precisión y alta tasa de falsos positivos no se utilizaba debido en gran medida al uso de unicamente los 16 haces del \acs{lidar}, mientras que dicho modelo suele ser entrenado con \acs{lidar} de 32 o 64 haces. Actualmente con la mejora que ofrece el modelo PointPillars Multihead ya es utilizable en el vehículo T4AC con una precisión lo suficientemente buena.\par
 En la arquitectura propuesta se utiliza el trabajo realizado en este Trabajo Fin de Grado junto con las mejoras de detección en cámara \cite{tfg_miguel}, para realizar una fusión sensorial entre ambos métodos. Tras la obtención de estas detecciones mejoradas, se introducen en el sistema SmartMOT \cite{smartmot} desarrollado en el grupo RobeSafe que realiza un seguimiento de los vehículos en \acs{bev}, de tal manera que se obtendría la posición, velocidad lineal, velocidad angular y tipo de objeto, mejorando además las detecciones al pasar por el modelo.
 
 \begin{figure}[H]

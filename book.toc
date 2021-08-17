@@ -57,28 +57,32 @@
 \contentsline {section}{\numberline {5.5}Implementaci\'on sobre el veh\IeC {\'\i }culo Techs4AgeCar}{53}{section.199}
 \contentsline {chapter}{\numberline {6}AD DevKit}{55}{chapter.201}
 \contentsline {section}{\numberline {6.1}Motivaci\'on para la creaci\'on del AD DevKit}{55}{section.202}
-\contentsline {section}{\numberline {6.2}Obtenci\'on del ground truth}{55}{section.203}
-\contentsline {section}{\numberline {6.3}Evaluaci\'on de los modelos}{55}{section.204}
-\contentsline {chapter}{\numberline {7}Resultados obtenidos}{57}{chapter.205}
-\contentsline {section}{\numberline {7.1}An\'alisis sobre datasets}{58}{section.206}
-\contentsline {subsection}{\numberline {7.1.1}An\'alisis cuantitativo en Kitti}{58}{subsection.207}
-\contentsline {subsection}{\numberline {7.1.2}An\'alisis cuantitativo en nuScenes}{58}{subsection.208}
-\contentsline {subsection}{\numberline {7.1.3}An\'alisis adicionales}{58}{subsection.211}
-\contentsline {subsubsection}{\numberline {7.1.3.1}Ajuste de modelos basados en Kitti a nuScenes}{58}{subsubsection.212}
-\contentsline {subsubsection}{\numberline {7.1.3.2}N\'umero de PCL de entrada en modelos evaluados sobre nuScenes}{58}{subsubsection.213}
-\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del voxel en modelos basados en redes neuronales}{58}{subsubsection.214}
-\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{58}{section.215}
-\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{58}{subsection.216}
-\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{58}{subsection.217}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{58}{subsubsection.218}
-\contentsline {subsection}{\numberline {7.2.3}An\'alisis cualitativo del sistema de fusi\'on sensorial en CARLA}{58}{subsection.219}
-\contentsline {subsection}{\numberline {7.2.4}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{58}{subsection.220}
-\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{58}{section.222}
-\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{58}{subsection.223}
-\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{58}{subsubsection.224}
-\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{58}{subsection.225}
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{61}{chapter.226}
-\contentsline {section}{\numberline {8.1}Conclusiones}{61}{section.227}
-\contentsline {section}{\numberline {8.2}Trabajos futuros}{61}{section.228}
-\contentsline {chapter}{Bibliograf\'{\i }a}{63}{chapter*.229}
-\contentsline {chapter}{\numberline {A}Herramientas y recursos}{69}{appendix.230}
+\contentsline {section}{\numberline {6.2}Obtenci\'on del groundtruth}{56}{section.205}
+\contentsline {subsection}{\numberline {6.2.1}Calculo de la visibilidad de los objetos}{57}{subsection.207}
+\contentsline {subsection}{\numberline {6.2.2}Geometr\IeC {\'\i }a de la c\'amara}{58}{subsection.223}
+\contentsline {subsection}{\numberline {6.2.3}Formato del groundtruth obtenido}{60}{subsection.225}
+\contentsline {subsection}{\numberline {6.2.4}Funcionamiento del generador de groundtruth}{61}{subsection.228}
+\contentsline {section}{\numberline {6.3}Evaluaci\'on de los modelos}{61}{section.230}
+\contentsline {chapter}{\numberline {7}Resultados obtenidos}{63}{chapter.232}
+\contentsline {section}{\numberline {7.1}An\'alisis sobre datasets}{64}{section.233}
+\contentsline {subsection}{\numberline {7.1.1}An\'alisis cuantitativo en Kitti}{64}{subsection.234}
+\contentsline {subsection}{\numberline {7.1.2}An\'alisis cuantitativo en nuScenes}{64}{subsection.235}
+\contentsline {subsection}{\numberline {7.1.3}An\'alisis adicionales}{64}{subsection.238}
+\contentsline {subsubsection}{\numberline {7.1.3.1}Ajuste de modelos basados en Kitti a nuScenes}{64}{subsubsection.239}
+\contentsline {subsubsection}{\numberline {7.1.3.2}N\'umero de PCL de entrada en modelos evaluados sobre nuScenes}{64}{subsubsection.240}
+\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del voxel en modelos basados en redes neuronales}{64}{subsubsection.241}
+\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{64}{section.242}
+\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{64}{subsection.243}
+\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{64}{subsection.244}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{64}{subsubsection.245}
+\contentsline {subsection}{\numberline {7.2.3}An\'alisis cualitativo del sistema de fusi\'on sensorial en CARLA}{64}{subsection.246}
+\contentsline {subsection}{\numberline {7.2.4}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{64}{subsection.247}
+\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{64}{section.249}
+\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{64}{subsection.250}
+\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{64}{subsubsection.251}
+\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{64}{subsection.252}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{67}{chapter.253}
+\contentsline {section}{\numberline {8.1}Conclusiones}{67}{section.254}
+\contentsline {section}{\numberline {8.2}Trabajos futuros}{67}{section.255}
+\contentsline {chapter}{Bibliograf\'{\i }a}{69}{chapter*.256}
+\contentsline {chapter}{\numberline {A}Herramientas y recursos}{75}{appendix.257}

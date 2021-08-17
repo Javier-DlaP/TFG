@@ -9,9 +9,13 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Estructura del LiDAR en el CARLA-ROS bridge.\relax }}{48}{table.caption.152}
 \contentsline {table}{\numberline {5.2}{\ignorespaces Par\'ametros del modelo cl\'asico de detecci\'on con LiDAR.\relax }}{49}{table.caption.177}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Formato de la lista de objetos de CARLA\relax }}{57}{table.caption.206}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Formato objeto de CARLA\relax }}{57}{table.caption.206}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Formato de la lista de detecciones en ROS\relax }}{60}{table.caption.227}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Formato de una detecci\'on en ROS\relax }}{60}{table.caption.227}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Rendimiento medio de CBGS PointPillars Multihead en nuScenes.\relax }}{57}{table.caption.209}
-\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{58}{table.caption.210}
-\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en CARLA.\relax }}{59}{table.caption.221}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Rendimiento medio de CBGS PointPillars Multihead en nuScenes.\relax }}{63}{table.caption.236}
+\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{64}{table.caption.237}
+\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en CARLA.\relax }}{65}{table.caption.248}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

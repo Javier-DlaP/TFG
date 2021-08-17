@@ -333,6 +333,18 @@ A.~Mousavian, D.~Anguelov, J.~Flynn, and J.~Kosecka, ``3d bounding box
 J.~F.~A. Vargas, ``Diseño de un sistema drive-by-wire para un vehiculo
   autónomo,'' Trabajo de Fin de Master, UAH Politécnica, 2020.
 
+\bibitem{ramnets}
+D.~Gehrig, M.~Rüegg, M.~Gehrig, J.~Hidalgo-Carrió, and D.~Scaramuzza,
+  ``Combining events and frames using recurrent asynchronous multimodal
+  networks for monocular depth prediction,'' \emph{IEEE Robotics and Automation
+  Letters}, vol.~6, no.~2, pp. 2822--2829, 2021.
+
+\bibitem{ab4cogt}
+\BIBentryALTinterwordspacing
+J.~del Egido~Sierra, ``A baseline for carla online ground-truth generation.''
+  [Online]. Available: \url{https://github.com/JavierEgido/AB4COGT}
+\BIBentrySTDinterwordspacing
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso
