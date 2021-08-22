@@ -347,7 +347,15 @@ El CSV contiene la información del groundtruth para la evaluación offline, mient
 \subsection{Funcionamiento del generador de groundtruth}
 \label{sec:Funcionamiento_del_generador_de_ground_truth}
 
-El funcionamiento por tanto del sistema de obtención del groundtruth se basa un nodo que realiza todas las suscripciones necesarias para obtener dichos datos de la forma correcta y enviarlo como mensaje a ROS. Tras esto se suscribe al groundtruth recién publicado y se crea un archivo CSV con este. Por último se guarda la información proveniente de la cámara, \acs{lidar} y \acs{radar} para poder ejecutar los modelos con los mismos datos más adelante y realizar así la evaluación online.\par
+El funcionamiento por tanto del sistema de obtención del groundtruth se basa un nodo que realiza todas las suscripciones necesarias para obtener dichos datos de la forma correcta y enviarlo como mensaje a ROS. Tras esto se suscribe al groundtruth recién publicado y se crea un archivo CSV con este. Por último se guarda la información proveniente de la cámara, \acs{lidar} y \acs{radar} para poder ejecutar los modelos con los mismos datos más adelante y realizar así la evaluación online.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/6_ad_devkit/groundtruth.png}
+	\caption{Archivo CSV con los datos del groundtruth obtenidos.}
+	\label{fig:Archivo_csv_con_los_datos_del_groundtruth_obtenidos}
+\end{figure}
+
 Para reproducir la información de la cámara se adjuntan a las imágenes RGB, la matriz de parámetros intrínsecos y el listado de tiempos en el que sido tomadas las imágenes. En el caso del \acs{lidar} y el \acs{radar} se guardan las nubes de puntos como un archivo binario, el cual tiene explicado el formato en un fichero de texto adjunto junto con otro archivo que incluye los tiempos en los que han sido obtenidas las nubes de puntos.\par
 
 \begin{figure}[H]
@@ -389,6 +397,9 @@ La curva de precision-recall por tanto representa la relación entre precion y re
 	\caption{Ejemplo de curva de precision-recall.}
 	\label{fig:Ejemplo_de_curva_de_precision_recall}
 \end{figure}
+
+\newpage
+
 \item \acl{ap}\par
 Esta es una métrica muy importante ya que relaciona tanto la precision como el recall para medir como de preciso es un modelo. Para ello se calcula el área por debajo de la curva de precisión, teniendo esta un valor entre 0 y 1.\par
 No solo se calcula el \acs{ap} por cada clase sino que también se calcula el mAP que sería la media de precisión de todas las clases para la obtención de la precisión general del modelo.

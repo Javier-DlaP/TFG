@@ -345,6 +345,10 @@ J.~del Egido~Sierra, ``A baseline for carla online ground-truth generation.''
   [Online]. Available: \url{https://github.com/JavierEgido/AB4COGT}
 \BIBentrySTDinterwordspacing
 
+\bibitem{pointpainting}
+S.~Vora, A.~H. Lang, B.~Helou, and O.~Beijbom, ``Pointpainting: Sequential
+  fusion for 3d object detection,'' 2020.
+
 \bibitem{gnulinux}
 ``Información sobre gnu/linux en wikipedia,''
   \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso

@@ -62,8 +62,13 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces M\'etricas de control en el AD DevKit.\relax }}{56}{figure.caption.204}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Transformaciones mundo a c\'amara.\relax }}{58}{figure.caption.224}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces \'Angulos alpha y rotation\_z del groundtruth del AD DevKit.\relax }}{60}{figure.caption.226}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Estructura del generador de groundtruth del AD DevKit.\relax }}{61}{figure.caption.229}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Ejemplo de curva de precision-recall.\relax }}{62}{figure.caption.231}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Archivo CSV con los datos del groundtruth obtenidos.\relax }}{61}{figure.caption.229}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Estructura del generador de groundtruth del AD DevKit.\relax }}{61}{figure.caption.230}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Ejemplo de curva de precision-recall.\relax }}{62}{figure.caption.232}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Modelo PointPillars sobre KITTI.\relax }}{70}{figure.caption.247}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Modelo PointPillars sobre KITTI con detecci\'on 360\IeC {\textordmasculine }.\relax }}{71}{figure.caption.248}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Modelo PointPillars sobre nuScenes con detecci\'on 360\IeC {\textordmasculine }.\relax }}{71}{figure.caption.249}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces An\'alisis del rendimiento de los modelos basados en CBGS seg\'un el n\'umero de barridos.\relax }}{72}{figure.caption.251}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

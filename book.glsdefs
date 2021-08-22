@@ -1318,6 +1318,186 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{aos}{}%
+{%
+\gls@defglossaryentry{aos}%
+{%
+name={AOS},%
+sort={AOS},%
+type={acronym},%
+first={Average Orientation Similarity\glsspace (AOS)},%
+firstplural={Average Orientation Similaritys\glsspace (AOSs)},%
+text={AOS},%
+plural={AOSs},%
+description={Average Orientation Similarity},%
+descriptionplural={Average Orientation Similarity\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Orientation Similarity},%
+longplural={Average Orientation Similaritys},%
+short={AOS},%
+shortplural={AOSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ate}{}%
+{%
+\gls@defglossaryentry{ate}%
+{%
+name={ATE},%
+sort={ATE},%
+type={acronym},%
+first={Average Translation Error\glsspace (ATE)},%
+firstplural={Average Translation Errors\glsspace (ATEs)},%
+text={ATE},%
+plural={ATEs},%
+description={Average Translation Error},%
+descriptionplural={Average Translation Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Translation Error},%
+longplural={Average Translation Errors},%
+short={ATE},%
+shortplural={ATEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ase}{}%
+{%
+\gls@defglossaryentry{ase}%
+{%
+name={ASE},%
+sort={ASE},%
+type={acronym},%
+first={Average Scale Error\glsspace (ASE)},%
+firstplural={Average Scale Errors\glsspace (ASEs)},%
+text={ASE},%
+plural={ASEs},%
+description={Average Scale Error},%
+descriptionplural={Average Scale Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Scale Error},%
+longplural={Average Scale Errors},%
+short={ASE},%
+shortplural={ASEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{aoe}{}%
+{%
+\gls@defglossaryentry{aoe}%
+{%
+name={AOE},%
+sort={AOE},%
+type={acronym},%
+first={Average Orientation Error\glsspace (AOE)},%
+firstplural={Average Orientation Errors\glsspace (AOEs)},%
+text={AOE},%
+plural={AOEs},%
+description={Average Orientation Error},%
+descriptionplural={Average Orientation Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Orientation Error},%
+longplural={Average Orientation Errors},%
+short={AOE},%
+shortplural={AOEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{aae}{}%
+{%
+\gls@defglossaryentry{aae}%
+{%
+name={AAE},%
+sort={AAE},%
+type={acronym},%
+first={Average Attribute Error\glsspace (AAE)},%
+firstplural={Average Attribute Errors\glsspace (AAEs)},%
+text={AAE},%
+plural={AAEs},%
+description={Average Attribute Error},%
+descriptionplural={Average Attribute Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Average Attribute Error},%
+longplural={Average Attribute Errors},%
+short={AAE},%
+shortplural={AAEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nds}{}%
+{%
+\gls@defglossaryentry{nds}%
+{%
+name={NDS},%
+sort={NDS},%
+type={acronym},%
+first={nuScenes Deteccion Score\glsspace (NDS)},%
+firstplural={nuScenes Deteccion Scores\glsspace (NDSs)},%
+text={NDS},%
+plural={NDSs},%
+description={nuScenes Deteccion Score},%
+descriptionplural={nuScenes Deteccion Score\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={nuScenes Deteccion Score},%
+longplural={nuScenes Deteccion Scores},%
+short={NDS},%
+shortplural={NDSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{SOC}{}%
 {%
 \gls@defglossaryentry{SOC}%
