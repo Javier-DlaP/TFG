@@ -68,19 +68,19 @@
 \BOOKMARK [2][-]{subsection.245}{7.1.3 An\341lisis adicionales}{section.234}% 68
 \BOOKMARK [3][-]{subsubsection.246}{7.1.3.1 Ajuste de modelos basados en Kitti a nuScenes}{subsection.245}% 69
 \BOOKMARK [3][-]{subsubsection.250}{7.1.3.2 N\372mero de nubes de puntos de entrada en modelos evaluados sobre nuScenes}{subsection.245}% 70
-\BOOKMARK [3][-]{subsubsection.253}{7.1.3.3 Tama\361o del v\363xel en modelos basados en redes neuronales}{subsection.245}% 71
-\BOOKMARK [1][-]{section.255}{7.2 An\341lisis sobre el simulador CARLA}{chapter.233}% 72
-\BOOKMARK [2][-]{subsection.256}{7.2.1 An\341lisis cualitativo del modelo cl\341sico en CARLA}{section.255}% 73
-\BOOKMARK [2][-]{subsection.257}{7.2.2 An\341lisis cualitativo de Pointpillars Multihead en CARLA}{section.255}% 74
-\BOOKMARK [3][-]{subsubsection.258}{7.2.2.1 Comparativa con PointPillars en CARLA}{subsection.257}% 75
-\BOOKMARK [2][-]{subsection.259}{7.2.3 An\341lisis cualitativo del sistema de fusi\363n sensorial en CARLA}{section.255}% 76
-\BOOKMARK [2][-]{subsection.260}{7.2.4 An\341lisis cuantitativo de Pointpillars Multihead en CARLA}{section.255}% 77
-\BOOKMARK [1][-]{section.262}{7.3 An\341lisis sobre el veh\355culo T4AC}{chapter.233}% 78
-\BOOKMARK [2][-]{subsection.263}{7.3.1 An\341lisis cualitativo de Pointpillars Multihead sobre el veh\355culo T4AC}{section.262}% 79
-\BOOKMARK [3][-]{subsubsection.264}{7.3.1.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{subsection.263}% 80
-\BOOKMARK [2][-]{subsection.265}{7.3.2 An\341lisis cualitativo del sistema de fusi\363n sensorial sobre el veh\355culo T4AC}{section.262}% 81
-\BOOKMARK [0][-]{chapter.266}{8 Conclusiones y trabajos futuros}{}% 82
-\BOOKMARK [1][-]{section.267}{8.1 Conclusiones}{chapter.266}% 83
-\BOOKMARK [1][-]{section.268}{8.2 Trabajos futuros}{chapter.266}% 84
-\BOOKMARK [0][-]{chapter*.269}{Bibliograf\355a}{}% 85
-\BOOKMARK [0][-]{appendix.270}{A Herramientas y recursos}{}% 86
+\BOOKMARK [3][-]{subsubsection.254}{7.1.3.3 Tama\361o del v\363xel en modelos basados en redes neuronales}{subsection.245}% 71
+\BOOKMARK [1][-]{section.256}{7.2 An\341lisis sobre el simulador CARLA}{chapter.233}% 72
+\BOOKMARK [2][-]{subsection.258}{7.2.1 An\341lisis cualitativo del modelo cl\341sico en CARLA}{section.256}% 73
+\BOOKMARK [2][-]{subsection.260}{7.2.2 An\341lisis cualitativo de Pointpillars Multihead en CARLA}{section.256}% 74
+\BOOKMARK [3][-]{subsubsection.262}{7.2.2.1 Comparativa con PointPillars en CARLA}{subsection.260}% 75
+\BOOKMARK [2][-]{subsection.264}{7.2.3 An\341lisis cualitativo del sistema de fusi\363n sensorial en CARLA}{section.256}% 76
+\BOOKMARK [2][-]{subsection.265}{7.2.4 An\341lisis cuantitativo de Pointpillars Multihead en CARLA}{section.256}% 77
+\BOOKMARK [1][-]{section.268}{7.3 An\341lisis sobre el veh\355culo T4AC}{chapter.233}% 78
+\BOOKMARK [2][-]{subsection.269}{7.3.1 An\341lisis cualitativo de Pointpillars Multihead sobre el veh\355culo T4AC}{section.268}% 79
+\BOOKMARK [3][-]{subsubsection.271}{7.3.1.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{subsection.269}% 80
+\BOOKMARK [2][-]{subsection.273}{7.3.2 An\341lisis cualitativo del sistema de fusi\363n sensorial sobre el veh\355culo T4AC}{section.268}% 81
+\BOOKMARK [0][-]{chapter.274}{8 Conclusiones y trabajos futuros}{}% 82
+\BOOKMARK [1][-]{section.275}{8.1 Conclusiones}{chapter.274}% 83
+\BOOKMARK [1][-]{section.276}{8.2 Trabajos futuros}{chapter.274}% 84
+\BOOKMARK [0][-]{chapter*.277}{Bibliograf\355a}{}% 85
+\BOOKMARK [0][-]{appendix.278}{A Herramientas y recursos}{}% 86

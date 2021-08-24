@@ -70,5 +70,11 @@
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Modelo PointPillars sobre KITTI con detecci\'on 360\IeC {\textordmasculine }.\relax }}{71}{figure.caption.248}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Modelo PointPillars sobre nuScenes con detecci\'on 360\IeC {\textordmasculine }.\relax }}{71}{figure.caption.249}
 \contentsline {figure}{\numberline {7.4}{\ignorespaces An\'alisis del rendimiento de los modelos basados en CBGS seg\'un el n\'umero de barridos.\relax }}{72}{figure.caption.251}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Modelo cl\'asico en CARLA.\relax }}{74}{figure.caption.259}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces PointPillars Multihead en CARLA.\relax }}{75}{figure.caption.261}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces PointPillars en CARLA.\relax }}{76}{figure.caption.263}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Curvas de precision-recall para la clase coche de PointPillars Multihead en CARLA.\relax }}{77}{figure.caption.266}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces PointPillars Multihead en el veh\IeC {\'\i }culo T4AC.\relax }}{78}{figure.caption.270}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces PointPillars en el veh\IeC {\'\i }culo T4AC.\relax }}{79}{figure.caption.272}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

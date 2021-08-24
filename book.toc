@@ -5,10 +5,10 @@
 \contentsline {chapter}{Resumen extendido}{xiii}{chapter*.4}
 \contentsline {chapter}{\'{I}ndice general}{xv}{chapter*.5}
 \contentsline {chapter}{\'{I}ndice de figuras}{xix}{chapter*.6}
-\contentsline {chapter}{\'Indice de tablas}{xxi}{chapter*.7}
-\contentsline {chapter}{\'Indice de listados de c\'odigo fuente}{xxiii}{chapter*.8}
-\contentsline {chapter}{\'Indice de algoritmos}{xxv}{chapter*.9}
-\contentsline {chapter}{Lista de acr\'onimos}{xxviii}{chapter*.11}
+\contentsline {chapter}{\'Indice de tablas}{xxiii}{chapter*.7}
+\contentsline {chapter}{\'Indice de listados de c\'odigo fuente}{xxv}{chapter*.8}
+\contentsline {chapter}{\'Indice de algoritmos}{xxvii}{chapter*.9}
+\contentsline {chapter}{Lista de acr\'onimos}{xxx}{chapter*.11}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.12}
 \contentsline {section}{\numberline {1.1}Sistemas de conducci\'on aut\'onomos}{1}{section.13}
 \contentsline {section}{\numberline {1.2}Sistemas de percepci\'on}{2}{section.16}
@@ -70,19 +70,19 @@
 \contentsline {subsection}{\numberline {7.1.3}An\'alisis adicionales}{70}{subsection.245}
 \contentsline {subsubsection}{\numberline {7.1.3.1}Ajuste de modelos basados en Kitti a nuScenes}{70}{subsubsection.246}
 \contentsline {subsubsection}{\numberline {7.1.3.2}N\'umero de nubes de puntos de entrada en modelos evaluados sobre nuScenes}{72}{subsubsection.250}
-\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del v\'oxel en modelos basados en redes neuronales}{73}{subsubsection.253}
-\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{74}{section.255}
-\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{74}{subsection.256}
-\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{74}{subsection.257}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{74}{subsubsection.258}
-\contentsline {subsection}{\numberline {7.2.3}An\'alisis cualitativo del sistema de fusi\'on sensorial en CARLA}{74}{subsection.259}
-\contentsline {subsection}{\numberline {7.2.4}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{74}{subsection.260}
-\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{74}{section.262}
-\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{74}{subsection.263}
-\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{74}{subsubsection.264}
-\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{74}{subsection.265}
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{75}{chapter.266}
-\contentsline {section}{\numberline {8.1}Conclusiones}{75}{section.267}
-\contentsline {section}{\numberline {8.2}Trabajos futuros}{75}{section.268}
-\contentsline {chapter}{Bibliograf\'{\i }a}{77}{chapter*.269}
-\contentsline {chapter}{\numberline {A}Herramientas y recursos}{83}{appendix.270}
+\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del v\'oxel en modelos basados en redes neuronales}{73}{subsubsection.254}
+\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{74}{section.256}
+\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{74}{subsection.258}
+\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{75}{subsection.260}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{76}{subsubsection.262}
+\contentsline {subsection}{\numberline {7.2.3}An\'alisis cualitativo del sistema de fusi\'on sensorial en CARLA}{76}{subsection.264}
+\contentsline {subsection}{\numberline {7.2.4}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{76}{subsection.265}
+\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{77}{section.268}
+\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{78}{subsection.269}
+\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{78}{subsubsection.271}
+\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{79}{subsection.273}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{81}{chapter.274}
+\contentsline {section}{\numberline {8.1}Conclusiones}{81}{section.275}
+\contentsline {section}{\numberline {8.2}Trabajos futuros}{82}{section.276}
+\contentsline {chapter}{Bibliograf\'{\i }a}{83}{chapter*.277}
+\contentsline {chapter}{\numberline {A}Herramientas y recursos}{89}{appendix.278}

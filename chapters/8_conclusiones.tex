@@ -10,12 +10,18 @@
   \end{Fuente}
 \end{FraseCelebre}
 
-
+\noindent
+Como finalización del Trabajo Fin de Grado se va a recapitular el trabajo realizado para ofrecer así unas conclusiones y mostrar el futuro trabajo que se va a realizar como continuación al estudio, implementación y desarrollo de todo lo descrito en este TFG. 
 
 \section{Conclusiones}
 \label{sec:mconclusiones}
 
-
+El objetivo principal de este trabajo, ha sido el estudio de técnicas clásicas de detección con \acs{lidar} y los modelos \acs{sota} basados en Deep Learning que ofrecen la mayor precisión para la detección de objetos 3D. Tras esto se implementaría el mejor modelo encontrado, para que en el proyecto Techs4AgeCar del grupo RobeSafe se mejore el sistema de detección con \acs{lidar} en el vehículo T4AC.\par
+Antes de comienzo del estudio y el desarrollo, ha sido necesario aprender a utilizar las herramientas como ROS, Docker o CARLA que son utilizadas en el proyecto, para así poder comprender el funcionamiento del sistema de conducción completo actual y ayudar a mejorarlo.\par
+Se han estudiado múltiples técnicas como la voxelización, \acs{ransac} 3D o KD-tree para la aplicación en modelos clásicos. Con todo esto se ha construido un modelo de detección 3D basado en \acs{lidar} a partir de unicamente técnicas clásicas, programado en C++ como un nodo de ROS para así poder utilizar dicho modelo en CARLA.\par
+Tras esto se han analizado diferentes datasets como Kitti, nuScenes y Waymo, además de los modelos \acs{sota} que más adelante han sido evaluados. Con dicho estudio se ha implementado en el proyecto Techs4AgeCar un sistema de detección 3D con \acs{lidar} basado en el modelo CBGS con un backbone cambiado al de PointPillars.\par
+Con esto se habría terminado la base del TFG pero no se ha dejado ahí, en conjunto con Carlos Gómez Huélamo y Miguel Antunes García se ha diseñado un sistema de fusión sensorial que mejore las detecciones 3D haciendo uso de las detección provenientes de la cámara y el \acs{lidar}. Y eso no ha sido todo, ya que al finalizar esto se ha desarrollado el comienzo de lo que será la capa de percepción del \acs{ad_devkit} para permitir la evaluación de los sistemas de percepción en CARLA.\par
+Este trabajo ha conseguido obtener todo lo propuesto en términos teóricos y prácticos, además de haber continuado trabajando con lo aprendido en este TFG para conseguir así un trabajo mucho más completo al realizar nuevas tareas, obteniendo durante todo el trabajo un mayor conocimiento de los sistemas de percepción y esperando que el trabajo aporte un valor al grupo RobeSafe.
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}

@@ -23,7 +23,9 @@
 \contentsline {table}{\numberline {7.7}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{69}{table.243}
 \contentsline {table}{\numberline {7.8}{\ignorespaces Comparativa de los modelos basados en CBGS en nuScenes.\relax }}{70}{table.244}
 \contentsline {table}{\numberline {7.9}{\ignorespaces An\'alisis de la precisi\'on de SECOND Multihead seg\'un el n\'umero de barridos.\relax }}{72}{table.252}
-\contentsline {table}{\numberline {7.10}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.254}
-\contentsline {table}{\numberline {7.11}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en CARLA.\relax }}{74}{table.caption.261}
+\contentsline {table}{\numberline {7.10}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.253}
+\contentsline {table}{\numberline {7.11}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.255}
+\contentsline {table}{\numberline {7.12}{\ignorespaces Par\'amtros del LiDAR en CARLA.\relax }}{74}{table.caption.257}
+\contentsline {table}{\numberline {7.13}{\ignorespaces M\'etricas para la clase coche de PointPillars Multihead en CARLA.\relax }}{77}{table.caption.267}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

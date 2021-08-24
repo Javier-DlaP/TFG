@@ -565,6 +565,47 @@ La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun
 \end{longtable}
 \end{center}
 
+\begin{center}
+\begin{longtable}{|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Barridos}&\textbf{mATE}&\textbf{mASE}&\textbf{mAOE}&\textbf{mAVE}&\textbf{mAAE}&\textbf{mAP}&\textbf{NDS}\\
+\hline
+\hline
+\endfirsthead
+\multicolumn{8}{c}%
+{\tablename\ \thetable\ -- \textit{Continua en la página anterior}} \\
+\hline
+\textbf{Barridos}&\textbf{mATE}&\textbf{mASE}&\textbf{mAOE}&\textbf{mAVE}&\textbf{mAAE}&\textbf{mAP}&\textbf{NDS}\\
+\hline
+\endhead
+\hline \multicolumn{8}{r}{\textit{Continua en la próxima página}} \\
+\endfoot
+\endlastfoot
+1 & 0.347 & 0.27 & 0.63 & 1.74 & 0.33 & 0.31 & 0.39 \\
+\hline
+2 & 0.36 & 0.26 & 0.42 & 0.89 & 0.23 & 0.36 & 0.47 \\
+\hline
+3 & 0.35 & 0.26 & 0.37 & 0.61 & 0.21 & 0.39 & 0.52 \\
+\hline
+4 & 0.35 & 0.26 & 0.34 & 0.47 & 0.21 & 0.41 & 0.54 \\
+\hline
+5 & 0.34 & 0.26 & 0.34 & 0.39 & 0.20 & 0.42 & 0.56 \\
+\hline
+6 & 0.34 & 0.26 & 0.33 & 0.36 & 0.20 & 0.43 & 0.57 \\
+\hline
+7 & 0.34 & 0.26 & 0.33 & 0.33 & 0.20 & 0.44 & 0.57 \\
+\hline
+8 & 0.34 & 0.26 & 0.33 & 0.31 & 0.20 & 0.44 & 0.58 \\
+\hline
+9 & 0.34 & 0.26 & 0.32 & 0.30 & 0.20 & 0.45 & 0.58 \\
+\hline
+10 & 0.34 & 0.26 & 0.32 & 0.29 & 0.20 & 0.45 & 0.58 \\
+\hline
+\caption{Análisis de la precisión de PointPillars Multihead según el número de barridos.}
+\label{tab:Analisis_de_la_precision_de_pointpillars_multihead_segun_el_numero_de_barridos}
+\end{longtable}
+\end{center}
+
 El uso de 2 barridos con SECOND Multihead no supera en precisión a PointPillars Multihead con los 10 barridos por lo que este modelo sería descartado, por otra parte en el caso de PointPillars Multihead sería recomendable el uso de 8 barridos en vez de 10 ya que la precisión no se ve apenas reducida, mientras que el rendimiento consigue una mejora de poco más del 4\%, que aunque sea poco puede definir en un caso extremo si una nube de puntos es analizada o no por la velocidad de inferencia del modelo.
 
 \subsubsection{Tamaño del vóxel en modelos basados en redes neuronales}
@@ -604,81 +645,249 @@ Al utilizar el modelo base de PointPillars Multihead reduciendo el tamaño de vóx
 \section{Análisis sobre el simulador CARLA}
 \label{sec:analisis_sobre_el_simulador_carla}
 
+El análisis de los modelos en los datasets sobre los que han sido entrenados solo muestra la precisión dentro de estos, con datos provenientes de otras fuentes como sería el simulador CARLA, se analiza como de buenos son estos modelos en otros entornos para su posterior implementación en el vehículo T4AC el cual incorpora un \acs{lidar} diferente al utilizado en los datasets.
+En los resultados obtenidos se ha simulado un vehículo con un \acs{lidar} de 32 haces con una velocidad de barrido de 20 Hz.
 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|} 
+		\hline
+		\textbf{Parámetro} & \textbf{Valor}\\ 
+		\hline
+		Posición & [0, 0, 1.95] m\\ 
+		\hline
+		Distancia & 50 m\\
+		\hline
+		Haces & 32\\
+		\hline
+		Puntos por segundo & 320000\\
+		\hline
+		Campo de visión & 2º/-26.8º\\
+		\hline
+		\end{tabular}
+		\caption{Parámtros del LiDAR en CARLA.}
+		\label{tab:Parametros_del_lidar_en_carla}
+	\end{center}
+\end{table}
 
 \subsection{Análisis cualitativo del modelo clásico en CARLA}
 \label{sec:analisis_cualitivo_del_modelo_clasico_en_carla}
 
+El estudio realizado en el capítulo \ref{cha:sistemas_clasicos_de_percepcion_con_lidar} desemboca en la implementación en un sistema basado en técnicas clásicas que fue presentado en el capítulo \ref{sec:implementacion_del_sistema_clasico_basado_en_lidar}. Dicho sistema ha sido construido como un nodo de \acs{ros} en C++ que tiene de entrada la nube de puntos del simulador y publica las detecciones. Este sistema ha sido probado en múltiples escenarios para su análisis cualitativo.
 
+\begin{figure}[H]
+  \begin{subfigure}[t]{.325\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/classic_algorithm_pedestrian_crossing_simulation.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.325\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/classic_algorithm_uwubag_simulation_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.325\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/classic_algorithm_uwubag_simulation_2.jpg}
+  \end{subfigure}
+\caption{Modelo clásico en CARLA.}
+\label{fig:Modelo_clasico_en_carla}
+\end{figure}
+
+La velocidad de inferencia de este sistema es de 13.14 milisegundos de media, teniendo como funciones más demandantes: la aplicación del algoritmo \acs{ransac} 3D con 9.57 milisegundos y la función de clustering basada en KD-tree con 2.14 milisegundos, esto resulta en un sistema con un sistema con una capacidad de inferencia de 76 Hz.\par
+El funcionamiento de este algoritmo como se ve en la figura \ref{fig:Modelo_clasico_en_carla} es bastante bueno, con pocos falsos positivos. El mayor problema que tiene dicho algoritmo es la incapacidad de detectar otra tipo de objeto que no sean coches, ya que si tienen que ser detectados los peatones, aparecerían problemas de muchos falsos positivos con farolas, semáforos, etc. La diferenciación de cada objeto en función de su clase no es posible en este método ya que aunque se analizase el tamaño de los objetos se encontrarían muchos fallos en función del número de puntos sobre cada objeto.
 
 \subsection{Análisis cualitativo de Pointpillars Multihead en CARLA}
 \label{sec:analisis_cualitativo_de_cbgs_en_carla}
 
+El modelo finalmente implementado en el proyecto ha sido PointPillars Multihead, este modelo es probado en simulación antes de su prueba en el vehículo T4AC. Uno de los problemas principales que se encuentran con el uso en simulación es la intensidad simulada del \acs{lidar} como se explica en el capítulo \ref{sec:funcionamiento_del_lidar_en_carla}, esto provoca que se use una intensidad fija de 0 en todos los puntos.
 
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulation_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulation_2.jpg}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_uwubag_simulation_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_uwubag_simulation_2.jpg}
+  \end{subfigure}
+\caption{PointPillars Multihead en CARLA.}
+\label{fig:Pointpillars_multihead_en_carla}
+\end{figure}
+
+Las pruebas se han desarrollado sobre un mapa creado dentro del grupo RobeSafe que simula la Universidad de Alcalá, en el que se ha colaborado, y en un mapa proporcionado por CARLA. Este modelo ya no solo ajusta mejor las bounding boxes de los coches sino que detecta a los peatones del escenario respecto del modelo clásico.\par
+Aún obteniendo estos resultados tan buenos hay que tener en cuenta que la intensidad no se utiliza, por lo que la asociación de objetos entre barridos es más difícil. Durante la implementación de dicho modelo se ha detectado un fallo en CARLA en el que el frame del \acs{lidar} se encuentra vibrando, lo cual es el culpable de la mala inferencia de velocidad obtenida, por lo que ha sido reportado dicho error. Se observa además que debido a este problema del simulador se obtiene una precisión mucho mejor con el vehículo parado o a velocidades bajas.
 
 \subsubsection{Comparativa con PointPillars en CARLA}
 \label{sec:comparatica_con_pointpillars_en_carla}
 
+Para ver la mejora en precisión de la implementación del modelo PointPillars Multihead sobre la arquitectura del proyecto Techs4AgeCar respecto de la anterior implementación de PointPillars se realiza el siguiente análisis cualitativo sobre CARLA en el que se muestran las mismas escenas que las vistas en la figura \ref{fig:Pointpillars_multihead_en_carla}
+
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_pedestrian_crossing_simulation_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_pedestrian_crossing_simulation_2.jpg}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_uwubag_simulation_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_uwubag_simulation_2.jpg}
+  \end{subfigure}
+\caption{PointPillars en CARLA.}
+\label{fig:Pointpillars_en_carla}
+\end{figure}
+
+La implementación actual no solo mejora como se ve claramente en la precisión de las detecciones de los coches al producir menos falsos positivos, sino que ahora también se detectar peatones, cosa que en la anterior implementación esto no era posible.
 
 
 \subsection{Análisis cualitativo del sistema de fusión sensorial en CARLA}
 \label{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_en_carla}
 
 
-
 \subsection{Análisis cuantitativo de Pointpillars Multihead en CARLA}
 \label{sec:analisis_cuantitativo_de_cbgs_en_carla}
 
+Haciendo uso del \acs{ad_devkit} desarrollado en este TFG, se evalúa el modelo PointPillars Multihead. Este kit de evaluación es capaz de evaluar las clases definidas en \acs{ros} por CARLA, como son: peatón, bicicleta, coche, camión, barrera, señal u otro vehículo, dichas clases no coinciden directamente con las detectadas por el modelo por lo que se pueden reducir las clases detectadas. El mayor problema surge cuando se estudia que CARLA identifica todos los vehículo que no son peatones como coches y además se ha observado que al grabar un rosbag con toda la información del entorno sobre la que evaluar, \acs{ros} no es capaz de guardar toda esta información en tiempo real, lo cual produce que las marcas de tiempo se encuentren parcialmente desplazadas, esto impide la asociación con los peatones al tener un \acs{iou} muy pequeño o nulo por la diferencia entre los tiempos de la información de los sensores y de los objetos del entorno.\par
+El \acs{ad_devkit} para la generación de los datos de evaluación utiliza un rosbag que contenga la información de los sensores y del entorno necesaria, con esto se obtiene el groundtruth con el que se evalúa el modelo. Para ello se han utilizado dos rosbag creados en el grupo RobeSafe que son usados para la evaluación cualitativa y ambos rosbag son de 30 segundos aproximadamente. Al utilizar grabaciones de tan corta duración se obtiene métricas diferentes pero que no sufren apenas del problema de \acs{ros} con los retrasos en las marcas de tiempo.
+
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/ad_devkit_give_way.png}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/ad_devkit_pedestrian_crossing.png}
+  \end{subfigure}
+  \caption{Curvas de precision-recall para la clase coche de PointPillars Multihead en CARLA.}
+  \label{tab:curvas_de_precision_reacall_para_coches_de_pointpillars_multihead_en_carla}
+\end{figure}
+
 \begin{table}[H]
-	\begin{center}
-		\begin{tabular}{|p{3.5cm}||p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
- 			\hline
- 			\textbf{Tipo de objeto}&\textbf{AP}&\textbf{IoU}&\textbf{AVE}\\
- 			\hline
- 			Unknown&0.0&0.0&0.0\\
- 			\hline
- 			Unknown\_Small&0.0&0.0&0.0\\
- 			\hline
- 			Unknown\_Medium&0.0&0.0&0.0\\
- 			\hline
- 			Unknown\_Big&0.0&0.0&0.0\\
- 			\hline
- 			Pedestrian&0.0&0.0&0.0\\
- 			\hline
- 			Bike&0.0&0.0&0.0\\
- 			\hline
- 			Car&0.731&0.491&0.715\\
- 			\hline
- 			Truck&0.0&0.0&0.0\\
- 			\hline
- 			Motorcycle&0.0&0.0&0.0\\
- 			\hline
- 			Other\_Vehicle&0.0&0.0&0.0\\
- 			\hline
- 			Barrier&0.0&0.0&0.0\\
- 			\hline
- 			Sign&0.0&0.0&0.0\\
- 			\hline
-		\end{tabular}
-		\caption{Análisis por clase de CBGS PointPillars Multihead en CARLA.}
-		\label{tab:analisis_por_clase_de_cbgs_pointpillars_multihead_en_carla}
-	\end{center}
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{AP}&\textbf{mIoU}&\textbf{mAVE}\\
+		\hline
+		0.34&0.49&1.49\\
+		\hline
+\end{tabular}
+\end{subfigure}
+\hspace{\fill}
+\begin{subfigure}[b]{0.48\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{AP}&\textbf{mIoU}&\textbf{mAVE}\\
+		\hline
+		0.37&0.48&0.79\\
+		\hline
+\end{tabular}
+\end{subfigure}
+\caption{Métricas para la clase coche de PointPillars Multihead en CARLA.}
+\label{tab:curva_de_precision_reacall_para_coches_de_pointpillars_multihead_en_carla}
 \end{table}
+
+Con estas métricas se obtiene una precisión aproximada de la clase coche, la cual es el principal objeto a detectar que se va a utilizar en el sistema que usa el modelo PointPillars Multihead. Esto es lo que se permite ahora en el \acs{ad_devkit} para la evaluación de objetos 3D debido a las limitaciones con \acs{ros} y CARLA.
 
 \section{Análisis sobre el vehículo T4AC}
 \label{sec:analisis_sobre_el_vehiculo_t4ac}
 
-
+Tras una evaluación en CARLA de la implementación realizada, se evalúa en el vehículo T4AC la precisión del modelo implementado para realizar la detección 3D con \acs{lidar}. Teniendo en cuenta que el modelo se ejecuta en el portátil de abordo del vehículo, se espera un rendimiento muy similar al obtenido previamente.\par
+El análisis por tanto se produce en los alrededores de la Universidad de Alcalá donde diversos coches aparecen en ambos sentidos, se producen adelantamientos y aparecen gran cantidad de árboles lo cual puede producir múltiples falsos positivos.
 
 \subsection{Análisis cualitativo de Pointpillars Multihead sobre el vehículo T4AC}
 \label{sec:analisis_cualitativo_de_cbgs_sobre_el_vehiculo_t4ac}
 
+Al no poder evaluar de forma cuantitativa la precisión, se analizan de forma cualitativa los resultados obtenidos de la prueba con la nueva implementación en el vehículo T4AC.
 
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_overtaking_real_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_overtaking_real_2.jpg}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_overtaking_real_3.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_multihead_overtaking_real_4.jpg}
+  \end{subfigure}
+\caption{PointPillars Multihead en el vehículo T4AC.}
+\label{fig:Pointpillars_multihead_en_el_vehiculo_t4ac}
+\end{figure}
+
+Tras el ajuste para la detección de unicamente ciertas clases, se puede observar una precisión muy buena donde todos los coches cercanos al propio vehículo son detectados, incluso en situaciones donde hay coches con muy pocos puntos al ser ocluidos por múltiples árboles, el sistema es capaz de detectarlos. Aún trabajando en un sistema real donde hay muchos puntos de colisión con árboles, con los ajustes realizados no se obtienen apenas falsos positivos lo cual es un gran beneficio para su uso en otras capas del proyecto Techs4AgeCar, aunque la detección de objetos pequeños como conos o peatones sigue produciendo falsos positivos debido a que se tiene la mitad de puntos en la nube respecto de las nubes de puntos utilizadas en el entrenamiento del modelo.
 
 \subsubsection{Comparativa con PointPillars sobre el vehículo T4AC}
 \label{sec:comparatica_con_pointpillars_sobre el vehículo T4AC}
 
+El mismo recorrido con el sistema que integra el modelo PointPillars Multihead ha sido integrado en el anterior sistema del proyecto que incorpora el modelo Pointpillars, de esta manera se pueden observar las mejoras que el nuevo sistema implementado en este TFG ha beneficiado al proyecto del grupo RobeSafe.
 
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_overtaking_real_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_overtaking_real_2.jpg}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_overtaking_real_3.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/pointpillars_overtaking_real_4.jpg}
+  \end{subfigure}
+\caption{PointPillars en el vehículo T4AC.}
+\label{fig:Pointpillars_en_el_vehiculo_t4ac}
+\end{figure}
+
+La ventaja que se tenía antes con este modelo es la ejecución sobre la NVIDIA Jetson AGX Xavier incorporada en el vehículo T4AC, lo cual aligeraba la carga de trabajo del portátil que se lleva a bordo. Pero de la misma manera que se veía en el simulador CARLA, con el sistema previo al implementado en este Trabajo Fin de Grado se obtenían multitud de falsos positivos además de que no es capaz de detectar tantos vehículos en situaciones complejas como aquellos ocluidos parcialmente por árboles. Por lo que el trabajo de detección 3D con \acs{lidar} de este TFG ha servido para mejorar el sistema de percepción del vehículo como se ha visto en múltiples escenarios.
 
 \subsection{Análisis cualitativo del sistema de fusión sensorial sobre el vehículo T4AC}
 \label{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_sobre_el_vehiculo_t4ac}
