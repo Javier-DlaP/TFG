@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.3.1)  24 AUG 2021 21:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.3.1)  25 AUG 2021 19:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1833,12 +1833,12 @@ Package babel Info: Redefining spanish shorthand "?
 
 [6
 
-] (./additionalContributors.txt)) (./acronyms/defacronymsgl.tex
+]) (./acronyms/defacronymsgl.tex
 \@gls@deffile=\write9
 \openout9 = `book.glsdefs'.
 
-)
-(./symbols/defsymbolsgl.tex) (./abstract/resumen.tex
+) (./symbols/defsymbolsgl.tex)
+(./abstract/resumen.tex
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 30.
 Package babel Info: Redefining spanish shorthand >>
@@ -1879,10 +1879,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 34.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 45.
-)
-(./abstract/abstract.tex
+) (./abstract/abstract.tex
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 30.
 Package babel Info: Redefining spanish shorthand >>
@@ -1923,7 +1920,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 33.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 33.
-) (./abstract/resumen-extendido.tex
+)
+(./abstract/resumen-extendido.tex
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand >>
@@ -1949,8 +1947,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 44.
-
-[12
+ [12
 
 ]
 Package babel Info: Redefining spanish shorthand <<
@@ -1991,7 +1988,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 31.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 31.
- [14
+
+[14
 
 ]
 Package babel Info: Redefining spanish shorthand <<
@@ -2009,6 +2007,8 @@ Package babel Info: Redefining spanish shorthand "?
  (./book.toc
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 13.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand >>
@@ -2082,8 +2082,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 34.
-
-(./book.lof
+ (./book.lof
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
 Package babel Info: Redefining spanish shorthand <<
@@ -2159,7 +2158,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 37.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 37.
- (./book.lot
+
+(./book.lot
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
 )
@@ -2179,8 +2179,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 40.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 40.
-
-[23]
+ [23]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 40.
 Package babel Info: Redefining spanish shorthand >>
@@ -2251,12 +2250,12 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 68.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 68.
- (./book.loa)
+
+(./book.loa)
 \tf@loa=\write14
 \openout14 = `book.loa'.
 
-) (./acronyms/acronymsgl.tex
-(./book.acr
+) (./acronyms/acronymsgl.tex (./book.acr
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand >>
@@ -2327,7 +2326,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 167.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 167.
- [30] (./chapters/1_introduccion.tex
+ [30]
+(./chapters/1_introduccion.tex
 Cap\'{\i }tulo 1.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -5457,7 +5457,7 @@ Package babel Info: Redefining spanish shorthand "?
  [91
 
 ]
-<./logos/uah/01_logo-vA_pant293.pdf, id=2138, 607.48354pt x 209.12729pt>
+<./logos/uah/01_logo-vA_pant293.pdf, id=2144, 607.48354pt x 209.12729pt>
 File: ./logos/uah/01_logo-vA_pant293.pdf Graphic file (type pdf)
 <use ./logos/uah/01_logo-vA_pant293.pdf>
 Package pdftex.def Info: ./logos/uah/01_logo-vA_pant293.pdf  used on input line
@@ -5506,10 +5506,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
  ) 
 Here is how much of TeX's memory you used:
- 55803 strings out of 494747
- 1148054 string characters out of 6176208
- 1254888 words of memory out of 5000000
- 57656 multiletter control sequences out of 15000+600000
+ 55799 strings out of 494747
+ 1147963 string characters out of 6176208
+ 1254759 words of memory out of 5000000
+ 57655 multiletter control sequences out of 15000+600000
  624130 words of font info for 83 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
  165i,16n,190p,10466b,5353s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -5527,10 +5527,10 @@ nts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb
 are/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on book.pdf (122 pages, 15733262 bytes).
+Output written on book.pdf (122 pages, 15733554 bytes).
 PDF statistics:
- 2321 PDF objects out of 2487 (max. 8388607)
- 2028 compressed objects within 21 object streams
+ 2327 PDF objects out of 2487 (max. 8388607)
+ 2034 compressed objects within 21 object streams
  516 named destinations out of 1000 (max. 500000)
  1117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
