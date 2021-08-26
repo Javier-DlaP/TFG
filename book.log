@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.3.1)  25 AUG 2021 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.3.1)  26 AUG 2021 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1962,20 +1962,21 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 44.
-) (./cover/toc+lof+lot.tex
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 31.
- [13]
+(babel)             in language  on input line 52.
+ [13]) (./cover/toc+lof+lot.tex
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 31.
 Package babel Info: Redefining spanish shorthand >>
@@ -1989,9 +1990,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 31.
 
-[14
-
-]
+[14]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 31.
 Package babel Info: Redefining spanish shorthand >>
@@ -2021,7 +2020,9 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 27.
- [15]
+ [15
+
+]
 LaTeX Info: Redefining \. on input line 61.
 LaTeX Info: Redefining \% on input line 61.
 Package babel Info: Redefining spanish shorthand <<
@@ -2354,7 +2355,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 16.
 <figures/1_introduccion/Ejemplo_de_arquitectura_de_un_sistema_de_conduccion_aut
-onoma.png, id=1007, 735.74875pt x 386.44376pt>
+onoma.png, id=1005, 735.74875pt x 386.44376pt>
 File: figures/1_introduccion/Ejemplo_de_arquitectura_de_un_sistema_de_conduccio
 n_autonoma.png Graphic file (type png)
 <use figures/1_introduccion/Ejemplo_de_arquitectura_de_un_sistema_de_conduccion
@@ -2379,7 +2380,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures/1_introduccion/Ejemplo_de_arquitectura_de_un_sistema_de_conduccion_
 autonoma.png>]
-<figures/1_introduccion/Niveles_de_autonomia.png, id=1018, 782.925pt x 383.9343
+<figures/1_introduccion/Niveles_de_autonomia.png, id=1016, 782.925pt x 383.9343
 7pt>
 File: figures/1_introduccion/Niveles_de_autonomia.png Graphic file (type png)
 <use figures/1_introduccion/Niveles_de_autonomia.png>
@@ -2437,13 +2438,13 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 57.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 57.
-<figures/1_introduccion/Camara.jpg, id=1033, 359.3425pt x 360.34625pt>
+<figures/1_introduccion/Camara.jpg, id=1031, 359.3425pt x 360.34625pt>
 File: figures/1_introduccion/Camara.jpg Graphic file (type jpg)
 <use figures/1_introduccion/Camara.jpg>
 Package pdftex.def Info: figures/1_introduccion/Camara.jpg  used on input line 
 64.
 (pdftex.def)             Requested size: 91.04742pt x 91.30148pt.
-<figures/1_introduccion/Lluvia_camara.jpg, id=1035, 602.25pt x 401.5pt>
+<figures/1_introduccion/Lluvia_camara.jpg, id=1033, 602.25pt x 401.5pt>
 File: figures/1_introduccion/Lluvia_camara.jpg Graphic file (type jpg)
 <use figures/1_introduccion/Lluvia_camara.jpg>
 Package pdftex.def Info: figures/1_introduccion/Lluvia_camara.jpg  used on inpu
@@ -2478,7 +2479,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 81.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 81.
-<figures/1_introduccion/Radar.png, id=1044, 703.62875pt x 481.8pt>
+<figures/1_introduccion/Radar.png, id=1042, 703.62875pt x 481.8pt>
 File: figures/1_introduccion/Radar.png Graphic file (type png)
 <use figures/1_introduccion/Radar.png>
 Package pdftex.def Info: figures/1_introduccion/Radar.png  used on input line 8
@@ -2496,7 +2497,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 97.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 97.
-<figures/1_introduccion/Lidar.jpg, id=1053, 482.80376pt x 482.80376pt>
+<figures/1_introduccion/Lidar.jpg, id=1051, 482.80376pt x 482.80376pt>
 File: figures/1_introduccion/Lidar.jpg Graphic file (type jpg)
 <use figures/1_introduccion/Lidar.jpg>
 Package pdftex.def Info: figures/1_introduccion/Lidar.jpg  used on input line 1
@@ -2529,7 +2530,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 113.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 113.
-<figures/1_introduccion/Detecciones_2D.png, id=1069, 623.32875pt x 187.70125pt>
+<figures/1_introduccion/Detecciones_2D.png, id=1067, 623.32875pt x 187.70125pt>
 
 File: figures/1_introduccion/Detecciones_2D.png Graphic file (type png)
 <use figures/1_introduccion/Detecciones_2D.png>
@@ -2552,7 +2553,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 127.
  [5 <./figures/1_introduccion/Lidar.jpg> <./figures/1_introduccion/Detecciones_
 2D.png>]
-<figures/1_introduccion/Detecciones_3D.png, id=1080, 697.60625pt x 597.23125pt>
+<figures/1_introduccion/Detecciones_3D.png, id=1078, 697.60625pt x 597.23125pt>
 
 File: figures/1_introduccion/Detecciones_3D.png Graphic file (type png)
 <use figures/1_introduccion/Detecciones_3D.png>
@@ -2571,7 +2572,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 138.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 138.
-<figures/1_introduccion/Seguimiento.png, id=1091, 513.92pt x 286.06876pt>
+<figures/1_introduccion/Seguimiento.png, id=1089, 513.92pt x 286.06876pt>
 File: figures/1_introduccion/Seguimiento.png Graphic file (type png)
 <use figures/1_introduccion/Seguimiento.png>
 Package pdftex.def Info: figures/1_introduccion/Seguimiento.png  used on input 
@@ -2607,7 +2608,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 153.
-<figures/1_introduccion/Fusion.png, id=1103, 648.92438pt x 283.0575pt>
+<figures/1_introduccion/Fusion.png, id=1101, 648.92438pt x 283.0575pt>
 File: figures/1_introduccion/Fusion.png Graphic file (type png)
 <use figures/1_introduccion/Fusion.png>
 Package pdftex.def Info: figures/1_introduccion/Fusion.png  used on input line 
@@ -2641,7 +2642,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 170.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 170.
-<figures/1_introduccion/CNN.png, id=1114, 1405.25pt x 660.4675pt>
+<figures/1_introduccion/CNN.png, id=1112, 1405.25pt x 660.4675pt>
 File: figures/1_introduccion/CNN.png Graphic file (type png)
 <use figures/1_introduccion/CNN.png>
 Package pdftex.def Info: figures/1_introduccion/CNN.png  used on input line 178
@@ -2733,7 +2734,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 16.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 16.
-<figures/3_sistemas_clasicos_de_percepcion/entorno_voxelizado.png, id=1146, 853
+<figures/3_sistemas_clasicos_de_percepcion/entorno_voxelizado.png, id=1144, 853
 .1875pt x 461.725pt>
 File: figures/3_sistemas_clasicos_de_percepcion/entorno_voxelizado.png Graphic 
 file (type png)
@@ -2766,7 +2767,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 38.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 38.
-<figures/3_sistemas_clasicos_de_percepcion/ransac.png, id=1154, 462.528pt x 346
+<figures/3_sistemas_clasicos_de_percepcion/ransac.png, id=1152, 462.528pt x 346
 .896pt>
 File: figures/3_sistemas_clasicos_de_percepcion/ransac.png Graphic file (type p
 ng)
@@ -2794,7 +2795,7 @@ Overfull \hbox (15.0pt too wide) detected at line 95
 [][] 
  []
 
-<figures/3_sistemas_clasicos_de_percepcion/ransac_3d.jpg, id=1168, 494.84875pt 
+<figures/3_sistemas_clasicos_de_percepcion/ransac_3d.jpg, id=1166, 494.84875pt 
 x 490.83376pt>
 File: figures/3_sistemas_clasicos_de_percepcion/ransac_3d.jpg Graphic file (typ
 e jpg)
@@ -2852,7 +2853,7 @@ Overfull \hbox (15.0pt too wide) detected at line 148
 [][] 
  []
 
-<figures/3_sistemas_clasicos_de_percepcion/binary_tree.png, id=1188, 1204.5pt x
+<figures/3_sistemas_clasicos_de_percepcion/binary_tree.png, id=1186, 1204.5pt x
  1003.75pt>
 File: figures/3_sistemas_clasicos_de_percepcion/binary_tree.png Graphic file (t
 ype png)
@@ -2879,7 +2880,7 @@ Overfull \hbox (15.0pt too wide) detected at line 198
 [][] 
  []
 
-<figures/3_sistemas_clasicos_de_percepcion/kd_space.png, id=1203, 371.3875pt x 
+<figures/3_sistemas_clasicos_de_percepcion/kd_space.png, id=1201, 371.3875pt x 
 369.38pt>
 File: figures/3_sistemas_clasicos_de_percepcion/kd_space.png Graphic file (type
  png)
@@ -2887,7 +2888,7 @@ File: figures/3_sistemas_clasicos_de_percepcion/kd_space.png Graphic file (type
 Package pdftex.def Info: figures/3_sistemas_clasicos_de_percepcion/kd_space.png
   used on input line 205.
 (pdftex.def)             Requested size: 196.66235pt x 195.60136pt.
-<figures/3_sistemas_clasicos_de_percepcion/kd_tree.png, id=1204, 371.3875pt x 1
+<figures/3_sistemas_clasicos_de_percepcion/kd_tree.png, id=1202, 371.3875pt x 1
 77.66376pt>
 File: figures/3_sistemas_clasicos_de_percepcion/kd_tree.png Graphic file (type 
 png)
@@ -3040,7 +3041,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 131.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/kittis_car
-.png, id=1272, 513.92pt x 442.65375pt>
+.png, id=1270, 513.92pt x 442.65375pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/kitti
 s_car.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/kittis
@@ -3049,7 +3050,7 @@ Package pdftex.def Info: figures/4_sistemas_de_percepcion_con_lidar_basados_en_
 deep_learning/kittis_car.png  used on input line 139.
 (pdftex.def)             Requested size: 218.51521pt x 188.21652pt.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/kittis_car
-_measures.png, id=1273, 513.92pt x 235.88126pt>
+_measures.png, id=1271, 513.92pt x 235.88126pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/kitti
 s_car_measures.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/kittis
@@ -3102,7 +3103,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 241.
  [22]
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/display_ki
-tti_example.png, id=1297, 893.3375pt x 562.1pt>
+tti_example.png, id=1295, 893.3375pt x 562.1pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/displ
 ay_kitti_example.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/displa
@@ -3123,7 +3124,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 251.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/waymos_car
-.png, id=1300, 780.9175pt x 507.8975pt>
+.png, id=1298, 780.9175pt x 507.8975pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/waymo
 s_car.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/waymos
@@ -3152,7 +3153,7 @@ n_deep_learning/waymos_car.png>]
 LaTeX Warning: Command \' invalid in math mode on input line 280.
 
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/classes_wa
-ymo.png, id=1315, 1606.0pt x 902.37125pt>
+ymo.png, id=1313, 1606.0pt x 902.37125pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/class
 es_waymo.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/classe
@@ -3189,7 +3190,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 297.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuscenes_c
-ar.png, id=1330, 2461.195pt x 1305.87875pt>
+ar.png, id=1328, 2461.195pt x 1305.87875pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nusce
 nes_car.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuscen
@@ -3214,7 +3215,7 @@ Package babel Info: Redefining spanish shorthand "?
  [25 <./figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nus
 cenes_car.png>]
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuscenes_s
-chema.png, id=1344, 813.0375pt x 898.35625pt>
+chema.png, id=1342, 813.0375pt x 898.35625pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nusce
 nes_schema.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuscen
@@ -3223,7 +3224,7 @@ Package pdftex.def Info: figures/4_sistemas_de_percepcion_con_lidar_basados_en_
 deep_learning/nuscenes_schema.png  used on input line 423.
 (pdftex.def)             Requested size: 218.51521pt x 241.43538pt.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuimages_s
-chema.png, id=1345, 809.0225pt x 729.72626pt>
+chema.png, id=1343, 809.0225pt x 729.72626pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuima
 ges_schema.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/nuimag
@@ -3262,7 +3263,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 437.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/lidar_segm
-entation.png, id=1350, 517.935pt x 297.11pt>
+entation.png, id=1348, 517.935pt x 297.11pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/lidar
 _segmentation.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/lidar_
@@ -3346,7 +3347,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 511.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second.png
-, id=1391, 1854.93pt x 472.76625pt>
+, id=1389, 1854.93pt x 472.76625pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/secon
 d.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second
@@ -3370,7 +3371,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 522.
  [29]
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse_con
-volutional_extractor.png, id=1401, 1171.37625pt x 675.52374pt>
+volutional_extractor.png, id=1399, 1171.37625pt x 675.52374pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/spars
 e_convolutional_extractor.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse
@@ -3408,7 +3409,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 548.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pointpilla
-rs.png, id=1419, 1491.5725pt x 455.7025pt>
+rs.png, id=1417, 1491.5725pt x 455.7025pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/point
 pillars.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pointp
@@ -3445,7 +3446,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 575.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pointrcnn.
-png, id=1436, 1201.48875pt x 571.13374pt>
+png, id=1434, 1201.48875pt x 571.13374pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/point
 rcnn.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pointr
@@ -3470,7 +3471,7 @@ Package babel Info: Redefining spanish shorthand "?
  [32 <./figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/poi
 ntrcnn.png>]
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/region_poo
-ling_pointrcnn.png, id=1449, 1001.7425pt x 400.49625pt>
+ling_pointrcnn.png, id=1447, 1001.7425pt x 400.49625pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/regio
 n_pooling_pointrcnn.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/region
@@ -3508,7 +3509,7 @@ Package babel Info: Redefining spanish shorthand "?
 [33 <./figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/regi
 on_pooling_pointrcnn.png>]
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pvrcnn.png
-, id=1469, 1564.84625pt x 560.0925pt>
+, id=1467, 1564.84625pt x 560.0925pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pvrcn
 n.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pvrcnn
@@ -3517,7 +3518,7 @@ Package pdftex.def Info: figures/4_sistemas_de_percepcion_con_lidar_basados_en_
 deep_learning/pvrcnn.png  used on input line 614.
 (pdftex.def)             Requested size: 364.19667pt x 130.34834pt.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pkw_pvrcnn
-.png, id=1474, 1052.93375pt x 500.87125pt>
+.png, id=1472, 1052.93375pt x 500.87125pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pkw_p
 vrcnn.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pkw_pv
@@ -3555,7 +3556,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 637.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/cbgs.png, 
-id=1490, 1103.12125pt x 361.35pt>
+id=1487, 1103.12125pt x 361.35pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/cbgs.
 png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/cbgs.p
@@ -3592,7 +3593,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 663.
 <figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/openpcdet.
-png, id=1507, 1445.4pt x 567.11874pt>
+png, id=1505, 1445.4pt x 567.11874pt>
 File: figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/openp
 cdet.png Graphic file (type png)
 <use figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/openpc
@@ -3684,13 +3685,13 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 21.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 21.
-<figures/5_desarrollo_realizado/ros_logo.png, id=1548, 240.9pt x 63.5976pt>
+<figures/5_desarrollo_realizado/ros_logo.png, id=1546, 240.9pt x 63.5976pt>
 File: figures/5_desarrollo_realizado/ros_logo.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/ros_logo.png>
 Package pdftex.def Info: figures/5_desarrollo_realizado/ros_logo.png  used on i
 nput line 30.
 (pdftex.def)             Requested size: 152.95998pt x 40.38206pt.
-<figures/5_desarrollo_realizado/ros_example.png, id=1549, 803.0pt x 414.54875pt
+<figures/5_desarrollo_realizado/ros_example.png, id=1547, 803.0pt x 414.54875pt
 >
 File: figures/5_desarrollo_realizado/ros_example.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/ros_example.png>
@@ -3710,7 +3711,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 41.
 [39]
-<figures/5_desarrollo_realizado/graph_ros.png, id=1559, 677.53125pt x 262.9825p
+<figures/5_desarrollo_realizado/graph_ros.png, id=1557, 677.53125pt x 262.9825p
 t>
 File: figures/5_desarrollo_realizado/graph_ros.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/graph_ros.png>
@@ -3745,7 +3746,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 70.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 70.
-<figures/5_desarrollo_realizado/docker_architecture.png, id=1570, 1204.5pt x 73
+<figures/5_desarrollo_realizado/docker_architecture.png, id=1568, 1204.5pt x 73
 7.75626pt>
 File: figures/5_desarrollo_realizado/docker_architecture.png Graphic file (type
  png)
@@ -3781,7 +3782,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 102.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 102.
-<figures/5_desarrollo_realizado/unreal_engine_5.jpeg, id=1587, 903.375pt x 542.
+<figures/5_desarrollo_realizado/unreal_engine_5.jpeg, id=1585, 903.375pt x 542.
 025pt>
 File: figures/5_desarrollo_realizado/unreal_engine_5.jpeg Graphic file (type jp
 g)
@@ -3805,7 +3806,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 114.
 
 [42]
-<figures/5_desarrollo_realizado/carla_modules.png, id=1602, 803.0pt x 276.03125
+<figures/5_desarrollo_realizado/carla_modules.png, id=1600, 803.0pt x 276.03125
 pt>
 File: figures/5_desarrollo_realizado/carla_modules.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/carla_modules.png>
@@ -3855,7 +3856,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 215.
  [44]
-<figures/5_desarrollo_realizado/funcionamiento_proyecto.png, id=1622, 714.67pt 
+<figures/5_desarrollo_realizado/funcionamiento_proyecto.png, id=1620, 714.67pt 
 x 333.245pt>
 File: figures/5_desarrollo_realizado/funcionamiento_proyecto.png Graphic file (
 type png)
@@ -3893,7 +3894,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 231.
  [45 <./figures/5_desarrollo_realizado/funcionamiento_proyecto.png>]
-<figures/5_desarrollo_realizado/arquitectura_t4ac.png, id=1631, 1059.96pt x 714
+<figures/5_desarrollo_realizado/arquitectura_t4ac.png, id=1629, 1059.96pt x 714
 .67pt>
 File: figures/5_desarrollo_realizado/arquitectura_t4ac.png Graphic file (type p
 ng)
@@ -4023,7 +4024,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 401.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 401.
-<figures/5_desarrollo_realizado/original_repo.png, id=1704, 573.14125pt x 312.1
+<figures/5_desarrollo_realizado/original_repo.png, id=1702, 573.14125pt x 312.1
 6624pt>
 File: figures/5_desarrollo_realizado/original_repo.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/original_repo.png>
@@ -4045,7 +4046,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 413.
 [50 <./figures/5_desarrollo_realizado/original_repo.png>]
-<figures/5_desarrollo_realizado/new_repo.png, id=1715, 994.71625pt x 372.39125p
+<figures/5_desarrollo_realizado/new_repo.png, id=1713, 994.71625pt x 372.39125p
 t>
 File: figures/5_desarrollo_realizado/new_repo.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/new_repo.png>
@@ -4106,7 +4107,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 467.
  [52]
-<figures/5_desarrollo_realizado/chasis_hardware.png, id=1760, 833.1125pt x 624.
+<figures/5_desarrollo_realizado/chasis_hardware.png, id=1758, 833.1125pt x 624.
 3325pt>
 File: figures/5_desarrollo_realizado/chasis_hardware.png Graphic file (type png
 )
@@ -4114,7 +4115,7 @@ File: figures/5_desarrollo_realizado/chasis_hardware.png Graphic file (type png
 Package pdftex.def Info: figures/5_desarrollo_realizado/chasis_hardware.png  us
 ed on input line 471.
 (pdftex.def)             Requested size: 227.62206pt x 170.5726pt.
-<figures/5_desarrollo_realizado/vehiculo_t4ac.png, id=1761, 602.25pt x 315.1775
+<figures/5_desarrollo_realizado/vehiculo_t4ac.png, id=1759, 602.25pt x 315.1775
 pt>
 File: figures/5_desarrollo_realizado/vehiculo_t4ac.png Graphic file (type png)
 <use figures/5_desarrollo_realizado/vehiculo_t4ac.png>
@@ -4149,7 +4150,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 492.
  [53 <./figures/5_desarrollo_realizado/chasis_hardware.png> <./figures/5_desarr
 ollo_realizado/vehiculo_t4ac.png>]
-<figures/5_desarrollo_realizado/implementacion_vehiculo.png, id=1775, 1346.0287
+<figures/5_desarrollo_realizado/implementacion_vehiculo.png, id=1773, 1346.0287
 5pt x 365.365pt>
 File: figures/5_desarrollo_realizado/implementacion_vehiculo.png Graphic file (
 type png)
@@ -4199,7 +4200,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 16.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 16.
-<figures/6_ad_devkit/estructura_ad_devkit.png, id=1786, 1691.31876pt x 932.4837
+<figures/6_ad_devkit/estructura_ad_devkit.png, id=1784, 1691.31876pt x 932.4837
 5pt>
 File: figures/6_ad_devkit/estructura_ad_devkit.png Graphic file (type png)
 <use figures/6_ad_devkit/estructura_ad_devkit.png>
@@ -4221,7 +4222,7 @@ Package babel Info: Redefining spanish shorthand "?
 [55
 
  <./figures/6_ad_devkit/estructura_ad_devkit.png>]
-<figures/6_ad_devkit/metricas_control.png, id=1795, 1390.19376pt x 762.85pt>
+<figures/6_ad_devkit/metricas_control.png, id=1793, 1390.19376pt x 762.85pt>
 File: figures/6_ad_devkit/metricas_control.png Graphic file (type png)
 <use figures/6_ad_devkit/metricas_control.png>
 Package pdftex.def Info: figures/6_ad_devkit/metricas_control.png  used on inpu
@@ -4303,7 +4304,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 128.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 128.
-<figures/6_ad_devkit/funcionamiento_camara.png, id=1835, 1466.47874pt x 465.74p
+<figures/6_ad_devkit/funcionamiento_camara.png, id=1833, 1466.47874pt x 465.74p
 t>
 File: figures/6_ad_devkit/funcionamiento_camara.png Graphic file (type png)
 <use figures/6_ad_devkit/funcionamiento_camara.png>
@@ -4352,7 +4353,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 291.
  [59]
-<figures/6_ad_devkit/alpha_rotation_y.png, id=1845, 551.05875pt x 418.56375pt>
+<figures/6_ad_devkit/alpha_rotation_y.png, id=1843, 551.05875pt x 418.56375pt>
 File: figures/6_ad_devkit/alpha_rotation_y.png Graphic file (type png)
 <use figures/6_ad_devkit/alpha_rotation_y.png>
 Package pdftex.def Info: figures/6_ad_devkit/alpha_rotation_y.png  used on inpu
@@ -4398,13 +4399,13 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 351.
  [60 <./figures/6_ad_devkit/alpha_rotation_y.png>]
-<figures/6_ad_devkit/groundtruth.png, id=1853, 1206.5075pt x 383.4325pt>
+<figures/6_ad_devkit/groundtruth.png, id=1851, 1206.5075pt x 383.4325pt>
 File: figures/6_ad_devkit/groundtruth.png Graphic file (type png)
 <use figures/6_ad_devkit/groundtruth.png>
 Package pdftex.def Info: figures/6_ad_devkit/groundtruth.png  used on input lin
 e 354.
 (pdftex.def)             Requested size: 409.71692pt x 130.20735pt.
-<figures/6_ad_devkit/perception_gt_architecture.png, id=1856, 703.62875pt x 362
+<figures/6_ad_devkit/perception_gt_architecture.png, id=1854, 703.62875pt x 362
 .35374pt>
 File: figures/6_ad_devkit/perception_gt_architecture.png Graphic file (type png
 )
@@ -4458,7 +4459,7 @@ LaTeX Warning: Command \' invalid in math mode on input line 382.
 
 LaTeX Warning: Command \' invalid in math mode on input line 382.
 
-<figures/6_ad_devkit/precision_recall.jpg, id=1869, 1198.4775pt x 798.985pt>
+<figures/6_ad_devkit/precision_recall.jpg, id=1867, 1198.4775pt x 798.985pt>
 File: figures/6_ad_devkit/precision_recall.jpg Graphic file (type jpg)
 <use figures/6_ad_devkit/precision_recall.jpg>
 Package pdftex.def Info: figures/6_ad_devkit/precision_recall.jpg  used on inpu
@@ -4656,14 +4657,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 480.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 480.
-<figures/7_resultados/pointpillars_180_kitti.png, id=1922, 1101.11375pt x 736.7
+<figures/7_resultados/pointpillars_180_kitti.png, id=1920, 1101.11375pt x 736.7
 525pt>
 File: figures/7_resultados/pointpillars_180_kitti.png Graphic file (type png)
 <use figures/7_resultados/pointpillars_180_kitti.png>
 Package pdftex.def Info: figures/7_resultados/pointpillars_180_kitti.png  used 
 on input line 487.
 (pdftex.def)             Requested size: 227.62206pt x 152.29433pt.
-<figures/7_resultados/pointpillars_360_kitti.png, id=1923, 815.045pt x 762.85pt
+<figures/7_resultados/pointpillars_360_kitti.png, id=1921, 815.045pt x 762.85pt
 >
 File: figures/7_resultados/pointpillars_360_kitti.png Graphic file (type png)
 <use figures/7_resultados/pointpillars_360_kitti.png>
@@ -4685,7 +4686,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 500.
  [70 <./figures/7_resultados/pointpillars_180_kitti.png>]
-<figures/7_resultados/pointpillars_360_nuscenes.png, id=1930, 1363.0925pt x 622
+<figures/7_resultados/pointpillars_360_nuscenes.png, id=1927, 1363.0925pt x 622
 .325pt>
 File: figures/7_resultados/pointpillars_360_nuscenes.png Graphic file (type png
 )
@@ -4724,7 +4725,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 517.
  [71 <./figures/7_resultados/pointpillars_360_kitti.png> <./figures/7_resultado
 s/pointpillars_360_nuscenes.png>]
-<figures/7_resultados/frames_per_sweep.png, id=1941, 810.02625pt x 450.68375pt>
+<figures/7_resultados/frames_per_sweep.png, id=1939, 810.02625pt x 450.68375pt>
 
 File: figures/7_resultados/frames_per_sweep.png Graphic file (type png)
 <use figures/7_resultados/frames_per_sweep.png>
@@ -4799,7 +4800,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 673.
 <figures/7_resultados/classic_algorithm_pedestrian_crossing_simulation.jpg, id=
-1961, 401.5pt x 481.8pt>
+1959, 401.5pt x 481.8pt>
 File: figures/7_resultados/classic_algorithm_pedestrian_crossing_simulation.jpg
  Graphic file (type jpg)
 <use figures/7_resultados/classic_algorithm_pedestrian_crossing_simulation.jpg>
@@ -4807,7 +4808,7 @@ File: figures/7_resultados/classic_algorithm_pedestrian_crossing_simulation.jpg
 Package pdftex.def Info: figures/7_resultados/classic_algorithm_pedestrian_cros
 sing_simulation.jpg  used on input line 681.
 (pdftex.def)             Requested size: 147.95294pt x 177.54274pt.
-<figures/7_resultados/classic_algorithm_uwubag_simulation_1.jpg, id=1962, 501.8
+<figures/7_resultados/classic_algorithm_uwubag_simulation_1.jpg, id=1960, 501.8
 75pt x 602.25pt>
 File: figures/7_resultados/classic_algorithm_uwubag_simulation_1.jpg Graphic fi
 le (type jpg)
@@ -4815,7 +4816,7 @@ le (type jpg)
 Package pdftex.def Info: figures/7_resultados/classic_algorithm_uwubag_simulati
 on_1.jpg  used on input line 686.
 (pdftex.def)             Requested size: 147.95294pt x 177.54274pt.
-<figures/7_resultados/classic_algorithm_uwubag_simulation_2.jpg, id=1963, 501.8
+<figures/7_resultados/classic_algorithm_uwubag_simulation_2.jpg, id=1961, 501.8
 75pt x 602.25pt>
 File: figures/7_resultados/classic_algorithm_uwubag_simulation_2.jpg Graphic fi
 le (type jpg)
@@ -4853,7 +4854,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 700.
 <figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulation_1.j
-pg, id=1972, 803.0pt x 602.25pt>
+pg, id=1970, 803.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulatio
 n_1.jpg Graphic file (type jpg)
 <use figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulation
@@ -4862,7 +4863,7 @@ Package pdftex.def Info: figures/7_resultados/pointpillars_multihead_pedestrian
 _crossing_simulation_1.jpg  used on input line 708.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
 <figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulation_2.j
-pg, id=1973, 803.0pt x 602.25pt>
+pg, id=1971, 803.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulatio
 n_2.jpg Graphic file (type jpg)
 <use figures/7_resultados/pointpillars_multihead_pedestrian_crossing_simulation
@@ -4875,7 +4876,7 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 706--715
 [][]  [] 
  []
 
-<figures/7_resultados/pointpillars_multihead_uwubag_simulation_1.jpg, id=1974, 
+<figures/7_resultados/pointpillars_multihead_uwubag_simulation_1.jpg, id=1972, 
 803.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_uwubag_simulation_1.jpg Graph
 ic file (type jpg)
@@ -4883,7 +4884,7 @@ ic file (type jpg)
 Package pdftex.def Info: figures/7_resultados/pointpillars_multihead_uwubag_sim
 ulation_1.jpg  used on input line 720.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
-<figures/7_resultados/pointpillars_multihead_uwubag_simulation_2.jpg, id=1975, 
+<figures/7_resultados/pointpillars_multihead_uwubag_simulation_2.jpg, id=1973, 
 803.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_uwubag_simulation_2.jpg Graph
 ic file (type jpg)
@@ -4928,7 +4929,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 734.
 <figures/7_resultados/pointpillars_pedestrian_crossing_simulation_1.jpg, id=198
-2, 803.0pt x 602.25pt>
+0, 803.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_pedestrian_crossing_simulation_1.jpg Gr
 aphic file (type jpg)
 <use figures/7_resultados/pointpillars_pedestrian_crossing_simulation_1.jpg>
@@ -4936,7 +4937,7 @@ Package pdftex.def Info: figures/7_resultados/pointpillars_pedestrian_crossing_
 simulation_1.jpg  used on input line 742.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
 <figures/7_resultados/pointpillars_pedestrian_crossing_simulation_2.jpg, id=198
-3, 803.0pt x 602.25pt>
+1, 803.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_pedestrian_crossing_simulation_2.jpg Gr
 aphic file (type jpg)
 <use figures/7_resultados/pointpillars_pedestrian_crossing_simulation_2.jpg>
@@ -4948,7 +4949,7 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 740--749
 [][]  [] 
  []
 
-<figures/7_resultados/pointpillars_uwubag_simulation_1.jpg, id=1984, 803.0pt x 
+<figures/7_resultados/pointpillars_uwubag_simulation_1.jpg, id=1982, 803.0pt x 
 602.25pt>
 File: figures/7_resultados/pointpillars_uwubag_simulation_1.jpg Graphic file (t
 ype jpg)
@@ -4956,7 +4957,7 @@ ype jpg)
 Package pdftex.def Info: figures/7_resultados/pointpillars_uwubag_simulation_1.
 jpg  used on input line 754.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
-<figures/7_resultados/pointpillars_uwubag_simulation_2.jpg, id=1985, 803.0pt x 
+<figures/7_resultados/pointpillars_uwubag_simulation_2.jpg, id=1983, 803.0pt x 
 602.25pt>
 File: figures/7_resultados/pointpillars_uwubag_simulation_2.jpg Graphic file (t
 ype jpg)
@@ -5011,14 +5012,14 @@ Package babel Info: Redefining spanish shorthand "?
 <./figures/7_resultados/pointpillars_pedestrian_crossing_simulation_2.jpg> <./f
 igures/7_resultados/pointpillars_uwubag_simulation_1.jpg> <./figures/7_resultad
 os/pointpillars_uwubag_simulation_2.jpg>]
-<figures/7_resultados/ad_devkit_give_way.png, id=1996, 571.13374pt x 439.6425pt
+<figures/7_resultados/ad_devkit_give_way.png, id=1994, 571.13374pt x 439.6425pt
 >
 File: figures/7_resultados/ad_devkit_give_way.png Graphic file (type png)
 <use figures/7_resultados/ad_devkit_give_way.png>
 Package pdftex.def Info: figures/7_resultados/ad_devkit_give_way.png  used on i
 nput line 781.
 (pdftex.def)             Requested size: 227.62206pt x 175.21658pt.
-<figures/7_resultados/ad_devkit_pedestrian_crossing.png, id=1997, 578.16pt x 44
+<figures/7_resultados/ad_devkit_pedestrian_crossing.png, id=1995, 578.16pt x 44
 6.66875pt>
 File: figures/7_resultados/ad_devkit_pedestrian_crossing.png Graphic file (type
  png)
@@ -5071,7 +5072,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 826.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 826.
-<figures/7_resultados/pointpillars_multihead_overtaking_real_1.jpg, id=2007, 80
+<figures/7_resultados/pointpillars_multihead_overtaking_real_1.jpg, id=2005, 80
 3.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_overtaking_real_1.jpg Graphic
  file (type jpg)
@@ -5079,7 +5080,7 @@ File: figures/7_resultados/pointpillars_multihead_overtaking_real_1.jpg Graphic
 Package pdftex.def Info: figures/7_resultados/pointpillars_multihead_overtaking
 _real_1.jpg  used on input line 834.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
-<figures/7_resultados/pointpillars_multihead_overtaking_real_2.jpg, id=2008, 80
+<figures/7_resultados/pointpillars_multihead_overtaking_real_2.jpg, id=2006, 80
 3.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_overtaking_real_2.jpg Graphic
  file (type jpg)
@@ -5092,7 +5093,7 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 832--841
 [][]  [] 
  []
 
-<figures/7_resultados/pointpillars_multihead_overtaking_real_3.jpg, id=2009, 80
+<figures/7_resultados/pointpillars_multihead_overtaking_real_3.jpg, id=2007, 80
 3.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_overtaking_real_3.jpg Graphic
  file (type jpg)
@@ -5100,7 +5101,7 @@ File: figures/7_resultados/pointpillars_multihead_overtaking_real_3.jpg Graphic
 Package pdftex.def Info: figures/7_resultados/pointpillars_multihead_overtaking
 _real_3.jpg  used on input line 846.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
-<figures/7_resultados/pointpillars_multihead_overtaking_real_4.jpg, id=2010, 80
+<figures/7_resultados/pointpillars_multihead_overtaking_real_4.jpg, id=2008, 80
 3.0pt x 602.25pt>
 File: figures/7_resultados/pointpillars_multihead_overtaking_real_4.jpg Graphic
  file (type jpg)
@@ -5125,7 +5126,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 859.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 859.
-<figures/7_resultados/pointpillars_overtaking_real_1.jpg, id=2011, 803.0pt x 60
+<figures/7_resultados/pointpillars_overtaking_real_1.jpg, id=2009, 803.0pt x 60
 2.25pt>
 File: figures/7_resultados/pointpillars_overtaking_real_1.jpg Graphic file (typ
 e jpg)
@@ -5133,7 +5134,7 @@ e jpg)
 Package pdftex.def Info: figures/7_resultados/pointpillars_overtaking_real_1.jp
 g  used on input line 867.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
-<figures/7_resultados/pointpillars_overtaking_real_2.jpg, id=2012, 803.0pt x 60
+<figures/7_resultados/pointpillars_overtaking_real_2.jpg, id=2010, 803.0pt x 60
 2.25pt>
 File: figures/7_resultados/pointpillars_overtaking_real_2.jpg Graphic file (typ
 e jpg)
@@ -5146,7 +5147,7 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 865--874
 [][]  [] 
  []
 
-<figures/7_resultados/pointpillars_overtaking_real_3.jpg, id=2013, 803.0pt x 60
+<figures/7_resultados/pointpillars_overtaking_real_3.jpg, id=2011, 803.0pt x 60
 2.25pt>
 File: figures/7_resultados/pointpillars_overtaking_real_3.jpg Graphic file (typ
 e jpg)
@@ -5154,7 +5155,7 @@ e jpg)
 Package pdftex.def Info: figures/7_resultados/pointpillars_overtaking_real_3.jp
 g  used on input line 879.
 (pdftex.def)             Requested size: 227.62206pt x 170.71487pt.
-<figures/7_resultados/pointpillars_overtaking_real_4.jpg, id=2014, 803.0pt x 60
+<figures/7_resultados/pointpillars_overtaking_real_4.jpg, id=2012, 803.0pt x 60
 2.25pt>
 File: figures/7_resultados/pointpillars_overtaking_real_4.jpg Graphic file (typ
 e jpg)
@@ -5457,7 +5458,7 @@ Package babel Info: Redefining spanish shorthand "?
  [91
 
 ]
-<./logos/uah/01_logo-vA_pant293.pdf, id=2144, 607.48354pt x 209.12729pt>
+<./logos/uah/01_logo-vA_pant293.pdf, id=2142, 607.48354pt x 209.12729pt>
 File: ./logos/uah/01_logo-vA_pant293.pdf Graphic file (type pdf)
 <use ./logos/uah/01_logo-vA_pant293.pdf>
 Package pdftex.def Info: ./logos/uah/01_logo-vA_pant293.pdf  used on input line
@@ -5506,10 +5507,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
  ) 
 Here is how much of TeX's memory you used:
- 55799 strings out of 494747
- 1147963 string characters out of 6176208
+ 55798 strings out of 494747
+ 1147940 string characters out of 6176208
  1254759 words of memory out of 5000000
- 57655 multiletter control sequences out of 15000+600000
+ 57654 multiletter control sequences out of 15000+600000
  624130 words of font info for 83 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
  165i,16n,190p,10466b,5353s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -5527,10 +5528,10 @@ nts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb
 are/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on book.pdf (122 pages, 15733554 bytes).
+Output written on book.pdf (122 pages, 15736410 bytes).
 PDF statistics:
- 2327 PDF objects out of 2487 (max. 8388607)
- 2034 compressed objects within 21 object streams
+ 2325 PDF objects out of 2487 (max. 8388607)
+ 2032 compressed objects within 21 object streams
  516 named destinations out of 1000 (max. 500000)
  1117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
