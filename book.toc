@@ -85,4 +85,16 @@
 \contentsline {section}{\numberline {8.1}Conclusiones}{81}{section.275}
 \contentsline {section}{\numberline {8.2}Trabajos futuros}{82}{section.276}
 \contentsline {chapter}{Bibliograf\'{\i }a}{83}{chapter*.277}
-\contentsline {chapter}{\numberline {A}Herramientas y recursos}{89}{appendix.278}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{87}{appendix.278}
+\contentsline {section}{\numberline {A.1}Sistema de detecciones basado en t\'ecnicas cl\'asicas}{87}{section.279}
+\contentsline {section}{\numberline {A.2}Muestra de nubes de puntos en KITTI}{87}{section.289}
+\contentsline {section}{\numberline {A.3}Modelo de detecciones basado en Deep Learning}{88}{section.295}
+\contentsline {section}{\numberline {A.4}Sistema de detecciones mediante fusi\'on sensorial}{88}{section.302}
+\contentsline {section}{\numberline {A.5}Uso del AD Devkit para la evaluaci\'on de la capa de percepci\'on}{88}{section.316}
+\contentsline {chapter}{\numberline {B}Pliego de condiciones}{91}{appendix.361}
+\contentsline {section}{\numberline {B.1}Recursos hardware}{91}{section.362}
+\contentsline {section}{\numberline {B.2}Recursos software}{91}{section.363}
+\contentsline {chapter}{\numberline {C}Presupuesto}{93}{appendix.364}
+\contentsline {section}{\numberline {C.1}Coste de hardware y software}{93}{section.365}
+\contentsline {section}{\numberline {C.2}Coste de personal}{93}{section.367}
+\contentsline {section}{\numberline {C.3}Coste total}{94}{section.369}

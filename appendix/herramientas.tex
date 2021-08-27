@@ -27,22 +27,310 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Herramientas y recursos}
-\label{cha:herr-y-recurs}
+\chapter{Manual de usuario}
+\label{cha:Manual_de_usuario}
 
-Las herramientas necesarias para la elaboración del proyecto han sido:
+Se presenta el manual de usuario de las implementaciones realizadas en este Trabajo Fin de Grado para su posterior replicación, fijando el uso principal sobre el proyecto Techs4AgeCar en el contenedor Docker que contiene toda al arquitectura del vehículo.
+
+\section{Sistema de detecciones basado en técnicas clásicas}
+\label{sec:Sistema_de_detecciones_basado_en_tecnicas_clasicas}
+
+El sistema de detección mediante el uso de técnicas clásicas presentado en el capítulo \ref{sec:implementacion_del_sistema_clasico_basado_en_lidar} se crea para su uso dentro del contenedor Docker del proyecto. Por ello se crea como un nodo para ROS vía rosbuild que utiliza las nubes de puntos proveídas por CARLA.
+
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/
+git clone https://github.com/Javier-DlaP/3D_lidar_based_clustering.git
+
+cd 3D_lidar_based_clustering/
+cmake .
+make
+
+rosrun 3D_lidar_based_clustering subscriber
+\end{lstlisting}
+
+Al ejecutar dichos comandos dentro del contenedor Docker, este sistema publica bounding boxes 3D que pueden ser visualizadas en rviz tal y como se ve en la figura \ref{fig:Modelo_clasico_en_carla}.
+
+\section{Muestra de nubes de puntos en KITTI}
+\label{sec:Muestra_de_nubes_de_puntos_en_kitti}
+
+Para el estudio del dataset KITTI y como se guarda el groundtruth junto con las nubes de puntos como se ve en el capítulo \ref{sec:analisis_de_la_estructura_del_gt_y_las_pcls_de_kitti} se crea un repositorio en el que se muestra en un entorno tridimensional los objetos del entorno sobre las nubes de puntos diferenciando las diferentes clases por colores.
+
+\begin{lstlisting}[language=bash]
+git clone https://github.com/Javier-DlaP/Display_kitti_pcl_annotations.git
+
+cd Display_kitti_pcl_annotations/
+python display_pcl.py -f 0
+\end{lstlisting}
+
+Para su uso solo es necesario utilizar el flag 'frame' para indicar la nube de puntos a mostrar. En dicho repositorio se adjuntan 11 barridos para su estudio junto con su archivo \textit{tracklet\_labels.xml}.
+
+\section{Modelo de detecciones basado en Deep Learning}
+\label{sec:Modelo_de_detecciones_basado_en_deep_learning}
+
+El sistema de detección 3D basado en el modelo CBGS (PointPillars Multihead) presentado en el capítulo \ref{sec:implementacion_del_sistema_basado_en_deep_learning_utilizando_lidar} para su uso en el vehículo T4AC, e implementado dentro del contendor Docker del proyecto Techs4AgeCar, se crea como un nodo de ROS vía rospy que en el que se reutiliza y reestructura el repositorio creado para la detección de objetos 3D utilizando OpenPCDet.
+
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/
+git clone https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros.git
+
+roslaunch t4ac_openpcdet_ros t4ac_openpcdet_ros.launch \
+lidar_camera_fusion:=false multihead:=true
+\end{lstlisting}
+
+Tras la instalación dentro del contenedor del proyecto se puede ejecutar para inferir los objetos 3D del entorno junto con sus velocidades asociadas.
+
+\section{Sistema de detecciones mediante fusión sensorial}
+\label{sec:Sistema_de_detecciones_mediante_fusion_sensorial}
+
+El funcionamiento del sistema de fusión sensorial como se explica en el capítulo \ref{sec:fusion_sensorial} usa los sistemas de detección 3D basados en cámara y en \acs{lidar} para construir un sistema de detección más robusto.
+
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_config_layer/
+git clone https://github.com/RobeSafe-UAH/t4ac_utils_ros.git
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/
+git clone https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros.git
+cd ../camera/
+git clone https://github.com/RobeSafe-UAH/t4ac_yolov5_ros.git
+git clone https://github.com/RobeSafe-UAH/t4ac_3d_estimation_ros.git
+cd ../sensor_fusion/
+git clone https://github.com/RobeSafe-UAH/t4ac_sensor_fusion_ros.git
+
+roslaunch t4ac_utils t4ac_config.launch perception:=true multihead:=true \
+lidar_camera_fusion:=true
+\end{lstlisting}
+
+El uso de este sistema requiere de uso de gran parte de la arquitectura del proyecto que es necesario descargar para poder lanzar los diferentes nodos y obtener las detecciones provenientes de la fusión sensorial.
+
+\section{Uso del AD Devkit para la evaluación de la capa de percepción}
+\label{sec:Uso_del_ad_devkit_para_la_evaluación_de_la_capa_de_percepcion}
+
+El uso del \acs{ad_devkit} para la evaluación de sistemas de percepción consta de múltiples pasos:
+
+\begin{enumerate}
+\item Obtención de un conjunto de datos
+\begin{enumerate}
+\item Correr el simulador CARLA
+\begin{lstlisting}[language=bash]
+cd ~/carla/Dist/CARLA_Shipping_0.9.10.1/LinuxNoEditor/
+./CarlaUE4.sh
+\end{lstlisting}
+\item Añadir vehículos y peatones con un comportamiento autónomo
+\begin{lstlisting}[language=bash]
+cd ~/carla/PythonAPI/examples/
+python spawn_npc.py
+\end{lstlisting}
+\item Lanzar el CARLA-ROS bridge
+\begin{lstlisting}[language=bash]
+Bridge
+\end{lstlisting}
+Tras esto se abre una ventana con un vehículo a controlar y se elige si se controla manualmente o de forma automática.
+\item Grabación del rosbag\\
+Se graban unicamente los topics utilizados para reducir el retraso en las marcas de tiempo por parte de ROS.
+\begin{lstlisting}[language=bash]
+rosbag record /carla/ego_vehicle/camera/rgb/front/camera_info \
+/carla/ego_vehicle/camera/rgb/front/image_color \
+/carla/ego_vehicle/lidar/lidar1/point_cloud \
+/carla/ego_vehicle/odometry \
+/carla/ego_vehicle/radar/front/radar_points \
+/carla/objects \
+/t4ac/localization/pose \
+/tf
+\end{lstlisting}
+\end{enumerate}
+\item Generación del groundtruth
+\begin{enumerate}
+\item Descarga del \acs{ad_devkit}
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_carla_simulator/
+git clone https://github.com/RobeSafe-UAH/ad_devkit.git
+\end{lstlisting}
+\item Modificación del launcher\\
+Dentro del repositorio descargado es necesario cambiar en el archivo \textit{launch/ad\_devkit.launch} la ruta en la que se encuentra guardado el rosbag recién creado, esta ruta es cambiada en el apartado \textit{Rosbag} del launcher.
+\item Ejecución del generador de groundtruth de forma online
+\begin{lstlisting}[language=bash]
+roslaunch ad_devkit ad_devkit.launch
+\end{lstlisting}
+\end{enumerate}
+\item Evaluación del modelo
+\begin{enumerate}
+\item Descarga del sistema de ejemplo a evaluar
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/
+git clone https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros.git
+\end{lstlisting}
+\item Ejecución del modelo y creación del CSV con las detecciones\\
+El sistema de percepción descargado es el desarrollado en este TFG en el cual se ha incluido la opción de generación de un CSV con las detecciones obtenidas, reutilizando el código realizado y pudiendo de esta manera automatizar más el proceso de evaluación dentro del proyecto.
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/t4ac_openpcdet_ros/src/
+python ad_devkit_CSV_creator.py
+\end{lstlisting}
+Dicho archivo ejecutado permite el uso en diferentes arquitecturas mediante el uso de diferentes flags, pero por defecto no es necesario realizar ningún ajuste en el contenedor del proyecto.
+\item Evaluación offline del modelo
+\begin{lstlisting}[language=bash]
+cd ~/t4ac_ws/src/t4ac_carla_simulator/ad_devkit/src/perception/evaluator/
+python evaluate.py
+\end{lstlisting}
+\end{enumerate}
+\end{enumerate}
+
+Con todo esto se consiguen las curvas de precision-recall por clase además de las métricas de AP, mIoU y AVE, con las que se consigue una evaluación del modelo en función del rosbag grabado y de las características del escenario utilizado.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Pliego de condiciones}
+\label{cha:Pliego_de_condiciones}
+
+Durante la realización de este trabajo de han utilizado diversos recursos hardware como software para su compleción.
+
+\section{Recursos hardware}
+\label{sec:Recursos_harware}
+
+El hardware utilizado en este Trabajo Fin de Grado consiste en:
 
 \begin{itemize}
-\item PC compatible 
-\item Sistema operativo GNU/Linux \cite{gnulinux}
-\item Entorno de desarrollo Emacs \cite{emacs}
-\item Entorno de desarrollo KDevelop \cite{kdevelop}
-\item Procesador de textos \LaTeX \cite{lamport94}
-\item Lenguaje de procesamiento matemático Octave  \cite{octave}
-\item Control de versiones CVS \cite{cvs}
-\item Compilador C/C++ gcc \cite{gcc}
-\item Gestor de compilaciones make \cite{make}
+\item Ordenador personal con la capacidad suficiente para correr el simulador CARLA y los modelos de detección
+\begin{itemize}
+\item AMD Ryzen 3700X
+\item NVIDIA RTX 3060 Super
+\item 32 GB de RAM DDR4 a 3200 MHz CL16
+\item 500 GB de SSD NVME
+\item 500 GB de SSD SATA
+\item 1 TB de HDD
 \end{itemize}
+\item Vehículo T4AC del grupo RobeSafe utilizado para recabar los datos utilizados en el análisis de los algoritmos
+\end{itemize}
+
+\section{Recursos software}
+\label{sec:Recursos_software}
+
+El sofware utilizado para el estudio e implementación del trabajo realizado ha sido el siguiente:
+
+\begin{itemize}
+\item Sistema operativo Ubuntu versión 18.04 LTS
+\item Docker
+\item Unreal Engine
+\item Simulador CARLA
+\item ROS
+\item Lenguaje C++
+\begin{itemize}
+\item Roscpp
+\item Point Cloud Library
+\end{itemize}
+\item Lenguaje Python
+\begin{itemize}
+\item Rospy
+\item Pytorch
+\item Mayavi
+\item Numpy
+\item OpenCV
+\end{itemize}
+\item OpenPCDet
+\item Gestor de versiones Git
+\item Procesador de textos \LaTeX
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Presupuesto}
+\label{cha:Presupuesto}
+
+En este anexo se define el coste del trabajo completo presentado en este Trabajo Fin de Grado, en relación al hardware, software y coste de personal.
+
+\section{Coste de hardware y software}
+\label{sec:Coste_de_hardware_y_software}
+
+Los costes del hardware constan unicamente del valor del ordenador utilizado ya que al necesitar solo el vehículo T4AC para la extracción de datos se ha omitido su coste. Por otra parte, todo el software utilizado en el TFG ha sido Open Source por lo que no ha sido necesario ningún gasto.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|} 
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Concepto}}&\textbf{Precio}\\ 
+		\hline\hline
+		\multirow{2}{*}{Hardware} & Ordenador personal & 1.600 \euro \\ 
+		\cline{2-3}
+		 & Vehículo T4AC & 0 \euro \\ 
+		\hline
+		\hline
+		\multirow{5}{*}{Software} & Docker & 0 \euro \\ 
+		\cline{2-3}
+		 & Unreal Engine & 0 \euro \\ 
+		\cline{2-3}
+		 & CARLA & 0 \euro \\ 
+		\cline{2-3}
+		 & Ubuntu 18.04 & 0 \euro \\ 
+		\cline{2-3}
+		 & OpenPCDet & 0 \euro \\ 
+		\hline
+		\hline
+		\multicolumn{2}{|c|}{\textbf{TOTAL}} & \textbf{1.600 \euro} \\ 
+		\hline
+		\end{tabular}
+		\caption{Coste del hardware y software utilizado.}
+		\label{tab:Coste_del_hardware_y_sofware_utilizado}
+	\end{center}
+\end{table}
+
+\section{Coste de personal}
+\label{sec:Coste_de_parsonal}
+
+Este Trabajo Fin de Grado ha tenido una duración de ocho meses, se ha comenzado a finales de diciembre de 2020 y terminado de redactar a finales de agosto. El tiempo dedicado ha sido diferentes en función del estado del TFG, mientras que en los primeros seis meses y medio se ha trabajo una media de doce horas semanales, mientras que los últimos dos meses y medio finales se ha trabajado seis horas diarias para terminar todo el trabajo. Asumiendo un precio de 20 euros la hora, este sería el desglose del gasto de personal:
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|m{3.1cm}|c|c|c|c|} 
+		\hline
+		\textbf{Tarea}&\textbf{Tiempo transcurrido}&\textbf{Dedicación}&\textbf{Tiempo trabajado}&\textbf{Precio}\\ 
+		\hline\hline
+		Estudio de técnicas de detección e implementación de sistemas de detección& 6,5 meses & 12 horas/semana & 340 horas & 6.800 \euro \\ 
+		\hline
+		Desarrollo del AD DevKit & 1 mes & 6 horas/día & 183 horas & 3.660 \euro \\ 
+		\hline
+		Refinamiento del desarrollo, obtención de resultados y documentación & 1,5 meses & 6 horas/día & 274,5 horas & 5.490 \euro \\ 
+		\hline
+		\hline
+		\multicolumn{3}{|c|}{\textbf{TOTAL}}&797,5 horas&15.950 \euro \\
+		\hline
+		\end{tabular}
+		\caption{Coste del trabajo personal realizado.}
+		\label{tab:Coste_del_trabajo_personal_realizado}
+	\end{center}
+\end{table}
+
+\section{Coste total}
+\label{sec:Coste_total}
+
+Por último se calcula el coste total de todo el trabajo realizado e ilustrado en este documento.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|} 
+		\hline
+		\textbf{Concepto}&\textbf{Precio}\\ 
+		\hline\hline
+		Coste del hardware y software & 1.600 \euro \\ 
+		\hline
+		Coste del personal & 15.950 \euro \\ 
+		\hline
+		\hline
+		Coste bruto & 17.550 \euro \\
+		\hline
+		IVA (21 \%) & 3.685,5 \euro \\
+		\hline
+		\hline
+		\textbf{TOTAL} & 21.235,5 \euro \\
+		\hline
+		\end{tabular}
+		\caption{Coste total del TFG.}
+		\label{tab:Coste_total_del_tfg}
+	\end{center}
+\end{table}
+
+El coste estimado por tanto del Trabajo Fin de Grado asciende a la cantidad de 17.550 \euro , que incluyendo el IVA aumenta a 21.235,5 \euro.
 
 %%% Local Variables:
 %%% TeX-master: "../book"

@@ -10,7 +10,8 @@
 		\setentrycounter[]{page}\glsnumberformat{55\delimN 56}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{63}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{76\delimN 77}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{81\delimN 82}}}%
+		\setentrycounter[]{page}\glsnumberformat{81\delimN 82}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{88\delimN 89}}}%
 \glossentry{adas}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
@@ -132,7 +133,8 @@
 		\setentrycounter[]{page}\glsnumberformat{71\delimR 75}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{77}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{79}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{81\delimN 82}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{81\delimN 82}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{88}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
 \glossentry{nds}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{69}}}%

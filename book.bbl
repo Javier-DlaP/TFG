@@ -349,38 +349,4 @@ J.~del Egido~Sierra, ``A baseline for carla online ground-truth generation.''
 S.~Vora, A.~H. Lang, B.~Helou, and O.~Beijbom, ``Pointpainting: Sequential
   fusion for 3d object detection,'' 2020.
 
-\bibitem{gnulinux}
-``Información sobre gnu/linux en wikipedia,''
-  \url{http://es.wikipedia.org/wiki/GNU/Linux} [Último acceso
-  1/noviembre/2013].
-
-\bibitem{emacs}
-``Página de la aplicación emacs,''
-  \url{http://savannah.gnu.org/projects/emacs/} [Último acceso
-  1/noviembre/2013].
-
-\bibitem{kdevelop}
-``Página de la aplicación kdevelop,'' \url{http://www.kdevelop.org} [Último
-  acceso 1/noviembre/2013].
-
-\bibitem{lamport94}
-L.~Lamport, \emph{LaTeX: A Document Preparation System, 2nd edition}.\hskip 1em
-  plus 0.5em minus 0.4em\relax Addison Wesley Professional, 1994.
-
-\bibitem{octave}
-``Página de la aplicación octave,'' \url{http://www.octave.org} [Último acceso
-  1/noviembre/2013].
-
-\bibitem{cvs}
-``Página de la aplicación cvs,'' \url{http://savannah.nongnu.org/projects/cvs/}
-  [Último acceso 1/noviembre/2013].
-
-\bibitem{gcc}
-``Página de la aplicación gcc,'' \url{http://savannah.gnu.org/projects/gcc/}
-  [Último acceso 1/noviembre/2013].
-
-\bibitem{make}
-``Página de la aplicación make,'' \url{http://savannah.gnu.org/projects/make/}
-  [Último acceso 1/noviembre/2013].
-
 \end{thebibliography}
