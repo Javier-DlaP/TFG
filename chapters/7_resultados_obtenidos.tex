@@ -12,7 +12,7 @@
 
 \noindent
 Este capítulo muestra los resultados de los diferentes modelos y algoritmos presentados para la detección 3D con \acs{lidar} sobre: datasets, el simulador CARLA y el vehículo T4AC.\par
-Las métricas de tiempo de todos los modelos son realizadas sobre un ordenador con un Ryzen 3700X y un RTX 2060 Super.
+Las métricas de tiempo de todos los modelos son realizadas sobre un ordenador con un procesador AMD Ryzen 3700X y una tarjeta gráfica NVIDIA RTX 2060 Super.
 
 \section{Análisis sobre datasets}
 \label{sec:analisis_sobre_datasets}
@@ -28,7 +28,7 @@ KITTI requiere de un \acs{iou} del 70\% para la clase coche, mientras que para l
 El cálculo del \acs{ap} es realizado a partir del área bajo la curva de precision-recall, construida con 40 límites para su mayor precisión en la evaluación.
 
 \begin{center}
-$AOS = \dfrac{1}{11} \displaystyle\sum_{r \in {0,0.1,...,1}} \max_{\bar{r} : \bar{r} \geq r} s(\bar{r})$\\[10pt]
+$AOS = \dfrac{1}{40} \displaystyle\sum_{r \in {0,0 \centerdot 25, \dots ,1}} \max_{\bar{r} : \bar{r} \geq r} s(\bar{r})$\\[10pt]
 recall: $r = \dfrac{TP}{TP+FN}$\\[10pt]
 $s(r) = \dfrac{1}{|\mathcal{D}(r)|} \displaystyle\sum_{i \in \mathcal{D}(r)} \dfrac{1+\cos{\Delta_{\theta}^{(i)}}}{2} \delta _{i}$
 \end{center}
@@ -241,8 +241,7 @@ Las clases de peatón y ciclista como se puede ver principalmente en los modelos 
 \endfoot
 \endlastfoot
 SECOND & Detección & 0.7 - 0.5 & 84.96 \% & 67.94 \% & 66.6 \% & 18.59 Hz\\
-\cline{2-3}
-\cline{4-6}
+\hline
 \multirow{5}{*}{SECOND}
 & \multirow{2}{*}{Vista de pájaro} & 0.7 - 0.5 & 54.02 \% & 39.57 \% & 37.65 \% &
 \multirow{5}{*}{18.59 Hz}\\
@@ -442,7 +441,7 @@ Barrera& 0.50 & 0.34 & 0.29 & 0.07 & nan & nan \\
 & mASE & \textbf{0.2552} &\\
 \cline{2-3}
 & mAOE & \textbf{0.2625} &\\
-\cline{2-3}
+\hline
 \multirow{3}{*}{SECOND Multihead}
 & mAVE & \textbf{0.2616} &
 \multirow{3}{*}{9.18 Hz}\\
@@ -513,7 +512,7 @@ Tras el reentrenamiento probando con múltiples configuraciones de parámetros y d
 \subsubsection{Número de nubes de puntos de entrada en modelos evaluados sobre nuScenes}
 \label{sec:numero_de_pcl_de_entrada_en_modelos_evaluados_sobre_nuscenes}
 
-En el dataset nuScenes se recomienda el uso de múltiples barrido del \acs{lidar} para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto es recomendado un uso de 10 barridos. Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo cuantos menos barridos se utilicen.
+En el dataset nuScenes se recomienda el uso de múltiples barrido del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto es recomendado un uso de 10 barridos. Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo cuantos menos barridos se utilicen.
 
 \begin{figure}[H]
 	\centering
@@ -729,12 +728,12 @@ El modelo finalmente implementado en el proyecto ha sido PointPillars Multihead,
 \end{figure}
 
 Las pruebas se han desarrollado sobre un mapa creado dentro del grupo RobeSafe que simula la Universidad de Alcalá, en el que se ha colaborado, y en un mapa proporcionado por CARLA. Este modelo ya no solo ajusta mejor las bounding boxes de los coches sino que detecta a los peatones del escenario respecto del modelo clásico.\par
-Aún obteniendo estos resultados tan buenos hay que tener en cuenta que la intensidad no se utiliza, por lo que la asociación de objetos entre barridos es más difícil. Durante la implementación de dicho modelo se ha detectado un fallo en CARLA en el que el frame del \acs{lidar} se encuentra vibrando, lo cual es el culpable de la mala inferencia de velocidad obtenida, por lo que ha sido reportado dicho error. Se observa además que debido a este problema del simulador se obtiene una precisión mucho mejor con el vehículo parado o a velocidades bajas.
+Aún obteniendo estos resultados tan buenos hay que tener en cuenta que la intensidad no se utiliza, por lo que la asociación de objetos entre barridos es más difícil. Durante la implementación de dicho modelo se ha detectado un fallo en CARLA en el que el frame del \acs{lidar} se encuentra vibrando, lo cual es el culpable de la mala inferencia de velocidad obtenida, por lo que ha sido reportado dicho error. Se observa además que debido a este problema del simulador, se obtiene una precisión mucho mejor con el vehículo parado o a velocidades bajas.
 
 \subsubsection{Comparativa con PointPillars en CARLA}
 \label{sec:comparatica_con_pointpillars_en_carla}
 
-Para ver la mejora en precisión de la implementación del modelo PointPillars Multihead sobre la arquitectura del proyecto Techs4AgeCar respecto de la anterior implementación de PointPillars se realiza el siguiente análisis cualitativo sobre CARLA en el que se muestran las mismas escenas que las vistas en la figura \ref{fig:Pointpillars_multihead_en_carla}
+Para ver la mejora en precisión de la implementación del modelo PointPillars Multihead sobre la arquitectura del proyecto Techs4AgeCar respecto de la anterior implementación de PointPillars se realiza el siguiente análisis cualitativo sobre CARLA, en el que se muestran las mismas escenas que las vistas en la figura \ref{fig:Pointpillars_multihead_en_carla}
 
 \begin{figure}[H]
   \begin{subfigure}[t]{.5\textwidth}

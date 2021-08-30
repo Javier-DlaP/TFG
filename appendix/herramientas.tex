@@ -155,19 +155,22 @@ roslaunch ad_devkit ad_devkit.launch
 \begin{enumerate}
 \item Descarga del sistema de ejemplo a evaluar
 \begin{lstlisting}[language=bash]
-cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/
+cd detection/lidar/
 git clone https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros.git
 \end{lstlisting}
 \item Ejecución del modelo y creación del CSV con las detecciones\\
 El sistema de percepción descargado es el desarrollado en este TFG en el cual se ha incluido la opción de generación de un CSV con las detecciones obtenidas, reutilizando el código realizado y pudiendo de esta manera automatizar más el proceso de evaluación dentro del proyecto.
 \begin{lstlisting}[language=bash]
-cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/lidar/t4ac_openpcdet_ros/src/
+cd ~/t4ac_ws/src/t4ac_architecture/t4ac_perception_layer/detection/
+cd lidar/t4ac_openpcdet_ros/src/
 python ad_devkit_CSV_creator.py
 \end{lstlisting}
 Dicho archivo ejecutado permite el uso en diferentes arquitecturas mediante el uso de diferentes flags, pero por defecto no es necesario realizar ningún ajuste en el contenedor del proyecto.
 \item Evaluación offline del modelo
 \begin{lstlisting}[language=bash]
-cd ~/t4ac_ws/src/t4ac_carla_simulator/ad_devkit/src/perception/evaluator/
+cd ~/t4ac_ws/src/t4ac_carla_simulator/ad_devkit/src/
+cd perception/evaluator/
 python evaluate.py
 \end{lstlisting}
 \end{enumerate}
@@ -222,7 +225,7 @@ El sofware utilizado para el estudio e implementación del trabajo realizado ha s
 \begin{itemize}
 \item Rospy
 \item Pytorch
-\item Mayavi
+\item MayaVi
 \item Numpy
 \item OpenCV
 \end{itemize}
@@ -286,14 +289,14 @@ Este Trabajo Fin de Grado ha tenido una duración de ocho meses, se ha comenzado 
 		\hline
 		\textbf{Tarea}&\textbf{Tiempo transcurrido}&\textbf{Dedicación}&\textbf{Tiempo trabajado}&\textbf{Precio}\\ 
 		\hline\hline
-		Estudio de técnicas de detección e implementación de sistemas de detección& 6,5 meses & 12 horas/semana & 340 horas & 6.800 \euro \\ 
+		Estudio de técnicas de detección e implementación de sistemas de detección& 5,5 meses & 12 horas/semana & 287,5 horas & 5.750 \euro \\ 
 		\hline
 		Desarrollo del AD DevKit & 1 mes & 6 horas/día & 183 horas & 3.660 \euro \\ 
 		\hline
 		Refinamiento del desarrollo, obtención de resultados y documentación & 1,5 meses & 6 horas/día & 274,5 horas & 5.490 \euro \\ 
 		\hline
 		\hline
-		\multicolumn{3}{|c|}{\textbf{TOTAL}}&797,5 horas&15.950 \euro \\
+		\multicolumn{3}{|c|}{\textbf{TOTAL}}&745 horas&14.900 \euro \\
 		\hline
 		\end{tabular}
 		\caption{Coste del trabajo personal realizado.}
@@ -314,15 +317,15 @@ Por último se calcula el coste total de todo el trabajo realizado e ilustrado en
 		\hline\hline
 		Coste del hardware y software & 1.600 \euro \\ 
 		\hline
-		Coste del personal & 15.950 \euro \\ 
+		Coste del personal & 14.900 \euro \\ 
 		\hline
 		\hline
-		Coste bruto & 17.550 \euro \\
+		\textbf{Coste bruto} & 16.500 \euro \\
 		\hline
-		IVA (21 \%) & 3.685,5 \euro \\
+		IVA (21 \%) & 3.465 \euro \\
 		\hline
 		\hline
-		\textbf{TOTAL} & 21.235,5 \euro \\
+		\textbf{TOTAL} & 19.965 \euro \\
 		\hline
 		\end{tabular}
 		\caption{Coste total del TFG.}
@@ -330,7 +333,7 @@ Por último se calcula el coste total de todo el trabajo realizado e ilustrado en
 	\end{center}
 \end{table}
 
-El coste estimado por tanto del Trabajo Fin de Grado asciende a la cantidad de 17.550 \euro , que incluyendo el IVA aumenta a 21.235,5 \euro.
+El coste estimado por tanto del Trabajo Fin de Grado asciende a la cantidad de 16.500 \euro , que incluyendo el IVA aumenta a 19.965 \euro.
 
 %%% Local Variables:
 %%% TeX-master: "../book"

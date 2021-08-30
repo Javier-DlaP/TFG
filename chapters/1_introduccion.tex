@@ -16,9 +16,9 @@ Para el pleno entendimiento del trabajo desarrollado se explica el funcionamient
 \section{Sistemas de conducción autónomos}
 \label{sec:sistemas-de-conduccion-autonomos}
 
-En los últimos años gracias a una mejora en los sensores, en la capacidad de computo principalmente por la aceleración por hardware, la visión por computador, el Deep Learning \ref{sec:deep_learning} y el desarrollo de técnicas de comunicación, ha propiciado que nos encontremos en una carrera por la creación de sistemas de conducción autónomos.
+En los últimos años gracias a una mejora en los sensores, la capacidad de computo principalmente por la aceleración por hardware, la visión por computador, el Deep Learning \ref{sec:deep_learning} y el desarrollo de técnicas de comunicación, ha propiciado que nos encontremos en una carrera por la creación de sistemas de conducción autónomos.
 Empresas de sectores de la automoción y la tecnológicas como ArgoAI, Audi, Baidu, Cruise, Mercedes-Benz, Tesla, Uber o Waymo entre otras, invierten enormes cantidades de dinero para el desarrollo de estas tecnologías \cite{computing_system_for_autonomous_driving}.\par
-Para la obtención de sistemas de conducción autónoma es necesario tener un buen entendimiento del entorno y hacer uso de un buen control en tiempo real, para ello son utilizados sensores que puedan aportar información al vehículo como son cámaras, \acs{lidar}, \acs{radar}, \acs{imu}, \acs{gps} o hasta \acs{sonar}.
+Para la obtención de sistemas de conducción autónoma es necesario tener un buen entendimiento del entorno y hacer uso de un buen control en tiempo real, para ello son utilizados sensores que puedan aportar información al vehículo como son cámaras, \acs{lidar}, \acs{radar}, \acs{imu}, \acs{gps} o incluso \acs{sonar}.
 
 \begin{figure}[H]
 	\centering
@@ -27,7 +27,7 @@ Para la obtención de sistemas de conducción autónoma es necesario tener un buen 
 	\label{fig:Arquitectura_de_un_sistema_de_conduccion_autonoma}
 \end{figure}
 
-En adición a los sensores también es necesario la utilización de sistemas de localización tanto global como local, mapeado del entorno, toma de decisiones y control del vehículo.\par
+En adición a los sensores también es necesaria la utilización de sistemas de localización tanto global como local, mapeado del entorno, toma de decisiones y control del vehículo.\par
 La evolución continua de estos sistemas trata de ofrecer un mayor nivel de seguridad al volante con \ac{adas}, para que en un futuro puedan ser remplazados por \ac{ads}.\par
 Para analizar el avance de estos sistemas y para poder compararlos, se ha dividido según su nivel de autonomía, por lo que se tiene desde un nivel 0 a un nivel 5. El nivel 0 indica que el coche no tiene ningún tipo de autonomía, en el nivel 1 el vehiculo sigue siendo controlado por el conductor pero ciertas características de ayuda a la conducción son añadidas, en el siguiente nivel el vehículo es capaz de acelerar, frenar y hasta dirigir el vehículo pero con el conductor siempre atento, en el nivel 3 el conductor es necesario pero no es requerimiento la atención al entorno, pero debe de estar listo para tomar en control en todo momento, el nivel 4 permite un nivel de autonomía donde el vehículo no requiere de atención pero unicamente en ciertos escenarios y el último nivel es el que habilita la conducción autónoma completa \cite{automated_vehicles_for_safety}.
 
@@ -38,12 +38,12 @@ Para analizar el avance de estos sistemas y para poder compararlos, se ha dividi
 	\label{fig:Niveles_de_autonomia}
 \end{figure}
 
-El desarrollo de este tipo de sistemas no es una tarea sencilla, múltiples empresas involucradas en el desarrollo de vehículos autónomos pretendían tener vehículos en el nivel 4 de autonomía en poco tiempo, pero como se ha visto esto no es posible, actualmente nos encontramos en el mercado con sistemas que se encuentran entre el nivel 2 y el 3, por lo que aún queda un largo camino antes de llegar a conducción autónoma completa.
+El desarrollo de este tipo de sistemas no es una tarea sencilla, múltiples empresas involucradas en el desarrollo de vehículos autónomos pretendían tener vehículos en el nivel 4 de autonomía en poco tiempo, pero como se ha visto esto no es posible, actualmente nos encontramos en el mercado con sistemas que se encuentran entre el nivel 2 y el 3, por lo que aún queda un largo camino antes de llegar a una conducción autónoma completa.
 
 \section{Sistemas de percepción}
 \label{sec:sistemas-de-percepcion}
 
-Los sistemas de \acs{ads}/\acs{adas} requieren de un entendimiento del entorno para poder funcionar correctamente, para ello es necesario añadir diversos sensores a los largo del vehículo que nos permitan obtener la mayor información del exterior posible. A partir de este conocimiento es posible la toma de decisiones y la planificación, por lo que en este apartado se va a explicar de que manera se puede configurar un sistema de percepción, cuales son los principales sensores y que información se puede obtener de cada uno de ellos.
+Los sistemas de \acs{ads}/\acs{adas} requieren de un entendimiento del entorno para poder funcionar correctamente, para ello es necesario añadir diversos sensores a los largo del vehículo que nos permitan obtener la mayor información del exterior posible. A partir de este conocimiento es posible la toma de decisiones y la planificación, por lo que en este apartado se va a explicar de que manera se puede configurar un sistema de percepción, cuales son los principales sensores utilizados y que información se puede obtener de cada uno de ellos.
 
 \newpage
 
@@ -82,7 +82,7 @@ Aún conociendo las desventajas de estos sensores la gran mayoría de enfoques inc
 \label{sec:radar}
 
 Los \acs{radar} son utilizados en múltiples aplicaciones como la previsión meteorológica, la astronomía, las comunicaciones, la navegación oceánica y la conducción autónoma entre otras.\par
-Este sensor emite ondas de radio, las cuales son reflejadas devuelta a este, lo cual da una información de donde se hayan los objetos en el espacio tridimensional, lo que implica la distancia a estos junto con los dos ángulos necesarios, además gracias al efecto Doppler se puede inferir la velocidad de los objetos a partir de un fenómeno que hace variar la frecuencia de la onda enviada si hay algún tipo de movimiento local relativo respecto del propio \acs{radar} \cite{how_self_driving_vehicles_work, doppler}.
+Este sensor emite ondas de radio, las cuales son reflejadas devuelta a este, lo cual da una información de donde se hayan los objetos en un espacio tridimensional, lo que implica la distancia a estos junto con los dos ángulos necesarios utizando un sistema de coordenadas esféricas, además gracias al efecto Doppler se puede inferir la velocidad de los objetos a partir de un fenómeno que hace variar la frecuencia de la onda enviada si hay algún tipo de movimiento local relativo respecto del propio \acs{radar} \cite{how_self_driving_vehicles_work, doppler}.
 
 \begin{figure}[H]
 	\centering
@@ -139,7 +139,7 @@ Las técnicas que realizan detecciones en un sistema tridimensional tienen un cos
 \label{sec:sistemas-de-seguimiento}
 
 Mientras que en los sistemas de detección se suele utilizar un único estado discretizado del entorno percibido por los sensores, el seguimiento o tracking utiliza múltiples estados para el reconocimiento de los objetos en múltiples escenas, con su posterior asociación y el calculo de la trayectoria de estos.\par
-En este campo se pueden tomar diversos acercamientos al problema, utilizando técnicas clásicas como \ac{kf}, \ac{ekf} o \ac{ukf}, modelos neuronales como en \cite{tracking_based_on_rnn} o modelos end-to-end que incorporan detección y tracking en un mismo modelo neuronal como es el caso de PointTrackNet \cite{pointtracknet} o modelos que realizan tracking de forma implícita como CBGS \cite{cbgs} que calculan la velocidad de los objetos sin devolver identificadores de estos \ref{sec:cbgs}.
+En este campo se pueden tomar diversos acercamientos al problema, utilizando técnicas clásicas como \ac{kf}, \ac{ekf} o \ac{ukf}, modelos neuronales como en \cite{tracking_based_on_rnn}, modelos end-to-end que incorporan detección y tracking en un mismo modelo neuronal como es el caso de PointTrackNet \cite{pointtracknet} o modelos que realizan tracking de forma implícita como CBGS \cite{cbgs} que calculan la velocidad de los objetos sin devolver identificadores de estos \ref{sec:cbgs}.
 
 \begin{figure}[H]
 	\centering
@@ -148,12 +148,12 @@ En este campo se pueden tomar diversos acercamientos al problema, utilizando téc
 	\label{fig:Tracking_como_vista_de_pajaro_sobre_una_nube_de_puntos}
 \end{figure}
 
-Los sistemas de detección suelen trabajar a partir de modelos en dos dimensiones que trabajan en vista de pájaro lo cual elimina lidiar con movimientos verticales, en estos se detecta la posición actual, velocidad lineal, velocidad angular y se puede definir el movimiento todo lo complejo que se desee. Tras esto también se predice los futuros estados de los objetos, manteniendo un identificador asociado a estos a los luargo de los frames analizados.
+Los sistemas de detección suelen trabajar a partir de modelos en dos dimensiones que trabajan en vista de pájaro lo cual elimina lidiar con movimientos verticales, en estos se detecta la posición actual, velocidad lineal, velocidad angular y se puede definir el movimiento todo lo complejo que se desee. Tras esto también se predice el futuro estado de los objetos, manteniendo un identificador asociado a estos a los largo de los frames analizados.
 
 \subsection{Fusión sensorial}
 \label{sec:fusion-sensorial}
 
-Los sistemas de fusión sensorial son necesario para aumentar la precisión en los sistemas de detección y tracking, como se ha visto en \ref{sec:principales-sensores-para-la-percepcion-en-vehiculos-autonomos}, los sensores ofrecen información diferente al resto, por lo que el aumento de precisión es producido por el aumento en la cantidad de datos proveniente de todos los sensores. La complejidad de estas técnicas radica en el uso eficiente de todos los sensores.
+Los sistemas de fusión sensorial son necesarios para el aumento de la precisión en los sistemas de detección y tracking, como se ha visto en \ref{sec:principales-sensores-para-la-percepcion-en-vehiculos-autonomos}, los sensores ofrecen información diferente al resto, por lo que el aumento de precisión es producido por el aumento en la cantidad de datos proveniente de todos los sensores. La complejidad de estas técnicas radica en el uso eficiente de todos los sensores.
 
 \begin{figure}[H]
 	\centering

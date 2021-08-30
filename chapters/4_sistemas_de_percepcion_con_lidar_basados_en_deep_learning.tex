@@ -16,7 +16,7 @@ Los sistemas de percepción pertenecientes al estado del arte o \ac{sota} se encu
 \section{Principales datasets}
 \label{sec:principales_datasets}
 
-Para el desarrollo de un modelo de percepción basado en Deep Learning, es siempre necesario un conjunto de datos anotados o dataset sobre el que un modelo pueda aprender a partir de estos. En los últimos años muchas compañías han lanzado datasets para poder entrenar y validar sus modelos, además de que se muchos de estos datasets han sido publicados Open-Source para fomentar el desarrollo de nuevas técnicas.\par
+Para el desarrollo de un modelo de percepción basado en Deep Learning, es siempre necesario un conjunto de datos anotados o dataset sobre el que un modelo pueda aprender a partir de los datos. En los últimos años muchas compañías han lanzado datasets para poder entrenar y validar sus modelos, además de que muchos de estos datasets han sido publicados de manera Open-Source para fomentar el desarrollo de nuevas técnicas.\par
 Entre los datasets para conducción autónoma encontramos: A2D2 Dataset \cite{a2d2_dataset}, Argoverse Dataset \cite{argoverse_dataset}, CityScapes Dataset \cite{cityscapes_dataset}, KITTI Vision Benchmark Suite \cite{kitti_dataset}, Level 5 Open Data \cite{level_5_dataset}, nuScenes Dataset \cite{nuscenes_dataset} o Waymo Open Dataset \cite{waymo_dataset} entre otros.\par
 En este apartado se van a presentar tres de los datasets más importante en la industria del automóvil, como son KITTI, nuScenes y Waymo dataset.
 
@@ -149,14 +149,14 @@ El sistema de percepción del vehículo utilizado para la grabación de los datos s
 \end{figure}
 
 La estructura del dataset es tal y como se muestra en la figura \ref{for:Estructura_del_dataset_kitti}. Dentro de este los datos se dividen según el día de grabación y la escena, y dentro de cada escena se tienen las imágenes de la cámara estéreo monocromática (image\_00, image\_01) y RGB (image\_02, image\_03), información de todo el sistema de locación del vehículo (oxts) y las nubes de puntos provenientes del \acs{lidar} (velodyne\_points).\par
-En 2020 tras el éxito que ha sido este dataset se anuncia y se abre al uso KITTI-360 \cite{kitti_360_dataset} la evolución del dataset KITTI, el cual trae mejoras añadiendo dos cámaras de ojo de pez para una obtención de visión 2D en todos los ángulos del vehículo, y una unidad láser adicional SICK. Además se incluyen en el dataset bounding boxes 3D de todo el entorno, anotaciones de instancia a partir de la información del \acs{lidar} y anotaciones de confianza sobre el vídeo tomado por las cámaras, entre otras.
+En 2020 tras el éxito que ha sido este dataset se anuncia y se abre al uso KITTI-360 \cite{kitti_360_dataset}, la evolución del dataset KITTI, el cual trae mejoras añadiendo dos cámaras de ojo de pez para una obtención de visión 2D en todos los ángulos del vehículo, y una unidad láser adicional SICK. Además se incluyen en el dataset bounding boxes 3D de todo el entorno, anotaciones de instancia a partir de la información del \acs{lidar} y anotaciones de confianza sobre el vídeo tomado por las cámaras, entre otras.
 
 \subsubsection{Análisis de la estructura del GT y las PCLs de KITTI}
 \label{sec:analisis_de_la_estructura_del_gt_y_las_pcls_de_kitti}
 
 Al estar basado este trabajo en la detección utilizando \acs{lidar}, se estudia la forma en la que se guardan los datos de las nubes de puntos junto con la representación del groundtruth, para ello se analiza tanto la carpeta de velodyne\_points como el archivo tracklets.xml.\par
 Para el trabajo con bounding boxes 3D, es posible utilizar unicamente el kit de detecciones 3D que contiene un conjunto de txt con la información de los objetos por cada barrido. La información de estos archivos contiene la información de: tipo, truncado, ocluido, bounding box 2D, dimensiones y localización, toda esta información se encuentra de la misma manera en el archivo tracklets.xml, pero la información de rotación se encuentra divida en un ángulo alpha y otro rotation\_y, en vez de rotación por cada uno de los tres ejes, de estos se estudiará más en profundidad en el capítulo \ref{cha:ad_devkit}.\par
-Se utiliza el archivo tracklets.xml ya define el groundtruth de la escena pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en un estructura se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
+Se utiliza el archivo \textit{tracklets.xml} ya que define el groundtruth de la escena pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en un estructura que se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
 Se ha decido crear un programa que lea la nube de puntos indicada y que marque en un entorno 3D donde se encuentran los objetos de la escena. Esto podría ser realizado mediante el devkit que KITTI ofrece, pero este se encuentra unicamente de forma oficial en Matlab, por lo que como los modelos de Deep Learning a utilizar se encuentran utilizando Pytorch, se deberían de analizar los datos utilizando Python.\par
 La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estructura de los principales atributos del archivo tracklet\_labels.xml analizado, en este encontramos el número de los diferentes objetos del escenario, tras esto se analiza cada objeto a través de los diferentes barridos, mostrando primero las características de los objetos que se mantienen en el tiempo, como las dimensiones o el tipo de objeto y tras esto se guarda la información de posición, rotación, etc.
 
@@ -252,7 +252,7 @@ Todo el código utilizado para la visualización de los objetos junto con unos esc
 \label{sec:waymo}
 
 Waymo Open Dataset \cite{waymo_dataset} es el dataset liberado de forma Open-Source por parte de Waymo y Google para la aceleración del desarrollo de tecnologías de conducción autónoma.\par
-La propuesta de este dataset es la oferta de un gran número de anotaciones de alta calidad tanto 2D como 3D,  que además contienen información de seguimiento. Se han utilizado múltiples ciudades para sus escenario grabados, como son: San Francisco, Mountain View, Los Angeles, Detroit, Seattle y Phoenix. Además se trabaja con multitud de entornos y condiciones ambientales como son: construcciones, atardeceres, noches, días lluviosos, etc.
+La propuesta de este dataset es la oferta de un gran número de anotaciones de alta calidad tanto 2D como 3D,  que además contienen información de seguimiento. Se han utilizado múltiples ciudades para sus escenarios grabados, como son: San Francisco, Mountain View, Los Angeles, Detroit, Seattle y Phoenix. Además se trabaja con multitud de entornos y condiciones ambientales como son: construcciones, atardeceres, noches, días lluviosos, etc.
 
 \begin{figure}[H]
 	\centering
@@ -438,7 +438,7 @@ Las estructuras de estas versiones del dataset, no son sencillas de trabajar con
 \label{sec:nuscenes_devkit}
 
 Promover el uso de un dataset es importante en la medida que sino se tienen características nuevas en este o es difícil de utilizar, este no destacará y desaparecerá entre la cantidad de datasets que se encuentran hoy en día. Para ello, nuScenes desarrolla y lanza de forma Open-Source nuScenes devkit.\par
-NuScenes devkit, ofrece un uso muy simplificado del dataset de nuScenes y nuImages. Ambos datasets incorporan a partir de json una estructura similar a la de una base de datos relacional en la que a partir de claves primarias, externas e índices se consigue tener un conjunto de datos normalizado, para así minimizar al máximo la redundancia de datos.\par
+NuScenes devkit, ofrece un uso muy simplificado del dataset de nuScenes y nuImages. Ambos datasets incorporan a partir de archivos json una estructura similar a la de una base de datos relacional en la que a partir de claves primarias, externas e índices se consigue tener un conjunto de datos normalizado, para así minimizar al máximo la redundancia de datos.\par
 Al ofrecer una gran cantidad de datos no solo de los sensores sino de la escenas, configuraciones de calibración, visibilidad, categorías, etc. Se ha estructurado en diferentes archivos json para no tener que repetir datos por cada imagen o nube de puntos. El devkit ha sido programado para su uso en Python 3 y los tutoriales para aprender a utilizar dicho devkit se encuentran en Jupyter Notebooks, aunque también se recomienda su uso en Google Colab.\par
 Para el aprendizaje del devkit de nuScenes se descarga la versión mini del dataset, el cual tiene la misma estructura que el dataset completo. Junto con Jupyter se estudia todo el dataset siguiendo los diferentes tutoriales que ofrece. Tras trabajar con la herramienta y acostumbrase al uso de los tokens que relacionan los diferentes archivos json, es muy sencillo obtener toda la obtener los datos requeridos.\par
 A partir del devkit es muy sencillo realizar tareas como filtrado de clases, agrupaciones, transformaciones mundo a cámara, seguimiento de objetos individualizado, etc. De esta manera se ahorra mucho tiempo en la construcción de complejas funciones ya  que se encuentran insertadas en el kit de desarrollo, además de que permite ver de forma analítica el comportamiento del dataset.
@@ -478,8 +478,8 @@ nusc.render_pointcloud_in_image(my_sample['token'],
 \label{sec:comparativa_entre_los_diferentes_datasets}
 
 Tras el estudio y análisis de los datasets de KITTI, Waymo y nuScenes se obtiene un conocimiento de las arquitecturas hardware utilizadas en el estado de arte del campo de los datasets de conducción autónoma, además de los sistemas de evaluación utilizados.\par
-Mientras que KITTI fue el primero en desarrollo en un dataset para conducción autónoma, hasta hace muy poco estaba casi estandarizado en la comparativa de modelos  aplicables a conducción autónoma. Waymo y nuScenes aparecieron años más tarde con una apuesta clara en el uso de más sensores, además del estudio de los 360º del entorno y no solo de la parte frontal del vehículo como realiza KITTI.\par
-En la parte del hardware, se ha visto que el acercamiento por parte de KITTI de tener 4 cámaras es un enfoque equivocado para un coche real, ya que se necesita tener un rango de visión mayor en el sistema de cámaras. Por parte del uso del \acs{lidar}, se encuentra con que KITTI solo se usa la parte frontal de la nube de puntos, mientras que Waymo y nuScenes utilizan toda la nube de puntos para generar las detecciones. Entre estos dos datasets encontramos diferencias en la cantidad de \acs{lidar} utilizados, ya que mientras nuScenes utiliza solo uno, Waymo utiliza cinco, lo cual obtiene mucha más información del entorno y una nube de puntos más densa, pero aumenta en mayor medida el precio de un prototipo con estas características. El \acs{radar} es un sensor desaparecido tanto en KITTI como en Waymo pero que se encuentra en nuScenes ofreciendo una nube de puntos de 360º que es capaz de inferir la velocidad de los objetos pero con una menor cantidad de puntos que una proveniente del \acs{lidar}.
+Mientras que KITTI fue el primero en el desarrollo de un dataset para conducción autónoma, hasta hace muy poco, este se encontraba casi estandarizado para la comparativa de modelos aplicables a conducción autónoma. Waymo y nuScenes aparecieron años más tarde con una apuesta clara en el uso de más sensores, además del estudio de los 360º del entorno y no solo de la parte frontal del vehículo como realiza KITTI.\par
+En la parte del hardware, se ha visto que el acercamiento por parte de KITTI de tener 4 cámaras frontales es un enfoque equivocado para un coche real, ya que se necesita tener un rango de visión mayor en el sistema de cámaras. Por parte del uso del \acs{lidar}, se encuentra con que KITTI solo se usa la parte frontal de la nube de puntos, mientras que Waymo y nuScenes utilizan toda la nube de puntos para generar las detecciones. Entre estos dos datasets encontramos diferencias en el número de \acs{lidar} utilizados, ya que mientras nuScenes utiliza solo uno, Waymo utiliza cinco, lo cual obtiene mucha más información del entorno y una nube de puntos más densa, pero aumenta en mayor medida el precio de un prototipo con estas características. El \acs{radar} es un sensor desaparecido tanto en KITTI como en Waymo pero que se encuentra en nuScenes ofreciendo una nube de puntos de 360º que es capaz de inferir la velocidad de los objetos pero con una menor cantidad de puntos que una proveniente del \acs{lidar}.
 
 \begin{table}[H]
 	\begin{center}
@@ -500,8 +500,8 @@ En la parte del hardware, se ha visto que el acercamiento por parte de KITTI de 
 \end{table}
 
 En relación a la cantidad de situaciones y de datos Waymo y nuScenes se encuentran en un estado similar con una gran cantidad de datos del entorno, mientras que KITTI se queda más atrás debido a la longevidad del dataset.\par
-Unicamente KITTI y nuScenes cuentan con un devkit, este es utilizado para uso más simplificado del dataset, aunque en el caso de nuScenes es casi requerido su uso. El problema de KITTI en este aspecto es el uso de Matlab para el uso del devkit ya que la mayoría de la comunidad investigadora no utiliza este lenguaje para la creación de los modelos de detección, aunque se pueden encontrar de forma no oficial, repositorios Open-Source que ofrecen variantes del devkit de KITTI en otros lenguajes.\par
-En conclusión, KITTI ha sido una gran base para la generación de la siguiente generación de datasets, aunque para sistemas de percepción algo más complejos se puede quedar corto, lo cual se ha ido mejorando con el tiempo y por esto mismo se está desarrollando KITII-360. Por otra parte, Waymo y nuScenes ofrecen un dataset más completo, aunque nuScenes ofrece información de un sensor más y contiene la información de los mapas. Debido a esto se ha decidido estudiar más en profundidad y trabajar con los dataset de KITTI y nuScenes.
+Unicamente KITTI y nuScenes cuentan con un devkit, este es utilizado para un uso más simplificado del dataset, aunque en el caso de nuScenes es casi requerido su uso. El problema de KITTI en este aspecto es el uso de Matlab para el uso del devkit ya que la mayoría de la comunidad investigadora no utiliza este lenguaje para la creación de los modelos de detección, aunque se pueden encontrar de forma no oficial, repositorios Open-Source que ofrecen variantes del devkit de KITTI en otros lenguajes.\par
+En conclusión, KITTI ha sido una gran base para el desarrollo de la siguiente generación de datasets, aunque para sistemas de percepción algo más complejo se puede quedar corto, lo cual se ha ido mejorando con el tiempo y por esto mismo se está desarrollando KITII-360. Por otra parte, Waymo y nuScenes ofrecen un dataset más completo, aunque nuScenes ofrece información de un sensor más y contiene la información de los mapas. Debido a esto se ha decidido estudiar más en profundidad y trabajar con los dataset de KITTI y nuScenes.
 
 \section{Estado del arte en detección utilizando LiDAR}
 \label{sec:estado_del_arte_en_deteccion_utilizando_lidar}
@@ -515,7 +515,7 @@ SECOND (Sparsely Embedded CONvolutional Detector) \cite{second} se publica en 20
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second.png}
+	\includegraphics[width=0.8\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second.png}
 	\caption{Arquitectura propuesta del detector SECOND.}
 	\label{fig:Arquitectura_propuesta_del_detector_second}
 \end{figure}
@@ -531,7 +531,7 @@ El uso de Sparse Convolutional Networks  ofrece una mejora en rendimiento de al 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse_convolutional_extractor.png}
+	\includegraphics[width=0.55\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse_convolutional_extractor.png}
 	\caption{Algoritmo de convolución disperso propuesto en SECOND.}
 	\label{fig:Algoritmo_de_convolucion_disperso_propuesto_en_second}
 \end{figure}

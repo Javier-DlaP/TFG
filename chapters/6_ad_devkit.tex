@@ -11,7 +11,7 @@
 \end{FraseCelebre}
 
 \noindent
-El conjunto con el \acs{kit} se comienza a desarrollar el \ac{ad_devkit} un evaluador de sistemas de conducción autónoma basado en el simulador CARLA. Este trabajo es complementario al desarrollo principal del TFG, ya que con dicha herramienta se pretende evaluar el sistema de detección con \acs{lidar} implementado en CARLA, además de ofrecer al grupo RobeSafe una herramienta para la comparativa en el simulador CARLA de las diferentes técnicas de percepción implementadas y en futuro lanzar dicha herramienta Open-Source para los investigadores que utilicen CARLA.
+En conjunto con el \acs{kit} se comienza a desarrollar el \ac{ad_devkit}, un evaluador de sistemas de conducción autónoma basado en el simulador CARLA. Este trabajo es complementario al desarrollo principal del TFG, ya que con dicha herramienta se pretende evaluar el sistema de detección con \acs{lidar} implementado en CARLA, además de ofrecer al grupo RobeSafe una herramienta para la comparativa en el simulador CARLA de las diferentes técnicas de percepción implementadas y en futuro lanzar dicha herramienta Open-Source para los investigadores que utilicen CARLA.
 
 \section{Motivación para la creación del AD DevKit}
 \label{sec:Motivacion_para_la_creacion_del_ad_devkit}
@@ -101,7 +101,7 @@ El repositorio del que se parte \cite{ab4cogt} genera un archivo de texto que co
 \subsection{Calculo de la visibilidad de los objetos}
 \label{sec:Calculo_de_la_visibilidad_de_los_objetos}
 
-Mientras que el proyecto \acs{ab4cogt} obtiene el groundtruth de los objetos cercanos al vehículo no se calcula la visibilidad de estos, esto es necesario ya que al proceder a la evaluación se reduciría la precisión de los modelos por no poder detectar dichos objetos ocluidos.
+Mientras que el proyecto \acs{ab4cogt} obtiene el groundtruth de los objetos cercanos al vehículo no se calcula la visibilidad de estos, es necesario realizar dicho cálculo de la visibilidad ya que al proceder a la evaluación se reduciría la precisión de los modelos por no poder detectar dichos objetos ocluidos.
 
 \begin{codefloat}
 \begin{lstlisting}[language=Python]
@@ -247,7 +247,7 @@ $
 $
 \end{center}
 
-De la misma forma que se puede obtener una matriz de parámetros extrínseca, se obtiene una matriz de parámetros intrínseca, la cual se encuentra compuesta de las transformaciones de cámara a imagen y de milímetros a píxeles.
+De la misma forma que se puede obtener una matriz de parámetros extrínsecos, se obtiene una matriz de parámetros intrínsecos, la cual se encuentra compuesta de las transformaciones de cámara a imagen y de milímetros a píxeles.
 
 \begin{center}
 $
@@ -288,8 +288,8 @@ Teniendo las bounding boxes 3D transformadas a bounding boxes 2D se marcan aquel
 \subsection{Formato del groundtruth obtenido}
 \label{sec:Formato_del_ground_truth_obtenido}
 
-El groundtruth utilizado en la evaluación de los sistemas de percepción consta de múltiples atributos como son: tiempo del groundtruth, tipo de objeto, bounding box 2D, posición, tamaño, rotación y velocidad. A partir de estos parámetros se crea el CSV necesario para la evaluación offline y los mensajes de ROS necesarios para la evaluación online.\par
-Dos de estos atributos son los denominados en el dataset KITTI: \textit{alpha} y \textit{rotation\_y}. Alpha identifica respecto de las coordenadas de cámara de KITTI el ángulo que se encuentra entre el eje X y la dirección del coche detectado, mientras que rotation\_y es el ángulo entre el eje X y la recta que una el vehículo propio y el detectado. Este último  ángulo es renombrado a rotation\_z en el groundtruth para aludir al sistema de coordenadas de CARLA y no el de KITTI.
+El groundtruth utilizado en la evaluación de los sistemas de percepción consta de múltiples atributos, como son: tiempo del groundtruth, tipo de objeto, bounding box 2D, posición, tamaño, rotación y velocidad. A partir de estos parámetros se crea el CSV necesario para la evaluación offline y los mensajes de ROS necesarios para la evaluación online.\par
+Dos de estos atributos son los denominados en el dataset KITTI: \textit{alpha} y \textit{rotation\_y}. Alpha identifica respecto de las coordenadas de cámara de KITTI el ángulo que se encuentra entre el eje X y la dirección del coche detectado, mientras que rotation\_y es el ángulo entre el eje X y la recta que una el vehículo propio y el detectado. Este último  ángulo es renombrado a rotation\_z en el groundtruth para aludir al sistema de coordenadas de CARLA y no al de KITTI.
 
 \begin{figure}[H]
 	\centering
@@ -356,7 +356,7 @@ El funcionamiento por tanto del sistema de obtención del groundtruth se basa un 
 	\label{fig:Archivo_csv_con_los_datos_del_groundtruth_obtenidos}
 \end{figure}
 
-Para reproducir la información de la cámara se adjuntan a las imágenes RGB, la matriz de parámetros intrínsecos y el listado de tiempos en el que sido tomadas las imágenes. En el caso del \acs{lidar} y el \acs{radar} se guardan las nubes de puntos como un archivo binario, el cual tiene explicado el formato en un fichero de texto adjunto junto con otro archivo que incluye los tiempos en los que han sido obtenidas las nubes de puntos.\par
+Para reproducir la información de la cámara se adjuntan a las imágenes RGB, la matriz de parámetros intrínsecos y el listado de tiempos en el que han sido tomadas las imágenes. En el caso del \acs{lidar} y el \acs{radar} se guardan las nubes de puntos como un archivo binario, el cual tiene explicado el formato en un fichero de texto adjunto junto con otro archivo que incluye los tiempos en los que han sido obtenidas las nubes de puntos.\par
 
 \begin{figure}[H]
 	\centering
@@ -365,13 +365,13 @@ Para reproducir la información de la cámara se adjuntan a las imágenes RGB, la m
 	\label{fig:Estructura_del_generador_de_gt_del_ad_devkit}
 \end{figure}
 
-En el desarrollo de la herramienta se adopta un acercamiento basado en \acs{oop} y paralelismo de acercamiento de las funciones a partir del uso de los diferentes objetos de forma paralela para obtener una mayor eficiencia, al ser esto un requisito tan importante en el desarrollo. Todo este desarrollo es accesible en GitHub en \url{https://github.com/RobeSafe-UAH/ad_devkit}.
+En el desarrollo de la herramienta se adopta un acercamiento basado en \acs{oop} y paralelismo en la ejecución de las funciones a partir del uso de los diferentes objetos de forma paralela para obtener una mayor eficiencia, al ser esto un requisito tan importante en el desarrollo. Todo este desarrollo es accesible en GitHub en \url{https://github.com/RobeSafe-UAH/ad_devkit}.
 
 \section{Evaluación de los modelos}
 \label{sec:evaluacion_de_los_modelos}
 
 Con la obtención de los objetos del entorno que tiene que ser detectados, se crea el apartado para la evaluación offline de los modelos. Dicho apartado es realizado de forma offline y no online debido a las complicaciones que supone generar el grountruth, correr los modelos y evaluarlos en tiempo real, por lo que se decide comenzar evaluando de forma posterior a la ejecución. Esto se traduce en tres fases para la evaluación de un modelo: generación del groundtruth, ejecución del modelo para la obtención de los detecciones y evaluación de las detecciones respecto del groundtruth.\par
-Para la generación del archivo CSV de las detecciones procedentes del modelo PointPillars Multihead se ha añadido al repositorio \url{https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros} que contiene el modelo implementado sobre CARLA y un script que a partir del desarrollo realizado reutiliza sus funciones para correr el modelo y guardar las detecciones en un fichero CSV. Dicho script aún funcionando sin ningún ajuste, puede ser utilizado en otras arquitecturas ajustando ciertas flags antes de la ejecución.\par
+Para la generación del archivo CSV de las detecciones procedentes del modelo PointPillars Multihead se ha añadido al repositorio \url{https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros} que contiene el modelo implementado sobre CARLA y un script que a partir del desarrollo realizado reutiliza sus funciones para correr el modelo y guardar las detecciones en un fichero CSV. Dicho script aún funcionando sin ningún ajuste, puede ser utilizado en otras arquitecturas ajustando ciertos flags antes de la ejecución.\par
 La evaluación de un modelo se realiza a partir de diferentes métricas utilizadas en datasets estudiados como son Kitti y nuScenes para así tratar de estandarizar aún más esta herramienta. Las métricas calculados en la evaluación son las siguientes:
 
 \begin{itemize}
