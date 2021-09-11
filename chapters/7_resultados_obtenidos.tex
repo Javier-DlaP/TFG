@@ -12,20 +12,20 @@
 
 \noindent
 Este capítulo muestra los resultados de los diferentes modelos y algoritmos presentados para la detección 3D con \acs{lidar} sobre: datasets, el simulador CARLA y el vehículo T4AC.\par
-Las métricas de tiempo de todos los modelos son realizadas sobre un ordenador con un procesador AMD Ryzen 3700X y una tarjeta gráfica NVIDIA RTX 2060 Super.
+Las métricas de tiempo de todos los modelos han sido realizadas sobre un ordenador con un procesador AMD Ryzen 3700X y una tarjeta gráfica NVIDIA RTX 2060 Super.
 
 \section{Análisis sobre datasets}
 \label{sec:analisis_sobre_datasets}
 
-Los modelos explicados en el capítulo \ref{sec:estado_del_arte_en_deteccion_utilizando_lidar} se evalúan en este apartado, cada uno en el dataset donde han sido entrenados para mostrar así la precisión de dichos modelos.\par
+Los modelos explicados en el capítulo \ref{sec:estado_del_arte_en_deteccion_utilizando_lidar} se evalúan en este apartado, cada uno en el dataset donde han sido entrenados: SECOND, PointPillars, PointRCNN y PV-RCNN en KITTI, y CBGS en nuScenes, para mostrar de esta manera la precisión de dichos modelos.\par
 Para la evaluación de ambos modelos se han descargado las versiones completas de KITTI y nuScenes junto con los modelos y sus pesos, analizando en cada uno las métricas utilizadas en su respectivo dataset.
 
 \subsection{Análisis cuantitativo en Kitti}
 \label{sec:analisis_cuantitativo_en_kitti}
 
-La evaluación sobre el dataset KITTI consta de los modelos: SECOND, PointPillars, PointRCNNy PV-RCNN. Dichos modelos son evaluados en los benchmark de detección, orientación, detección 3D y \acs{bev}, tanto como análisis general del modelo como análisis por clase en cada uno de los modelos.\par
-KITTI requiere de un \acs{iou} del 70\% para la clase coche, mientras que para los ciclistas y peatones solo se requiere de un \acs{iou} del 50\%. Es necesario tener en cuenta que en este dataset se utilizan 3 dificultades diferentes donde en la evaluación fácil se utilizan los objetos con un máximo de 15\% de oclusión, en la evaluación moderada un máximo del 30\% y en la evaluación difícil un máximo del 50\%.\par
-El cálculo del \acs{ap} es realizado a partir del área bajo la curva de precision-recall, construida con 40 límites para su mayor precisión en la evaluación.
+La evaluación sobre el dataset KITTI consta de los modelos: SECOND, PointPillars, PointRCNNy PV-RCNN. Dichos modelos se evalúan en los benchmark de detección, orientación, detección 3D y \acs{bev}, tanto como análisis general del modelo como análisis por clase en cada uno de los modelos.\par
+KITTI requiere de un \acs{iou} mínimo del 70\% para dar por correcta una detección con la clase coche, mientras que para los ciclistas y peatones solo se requiere de un \acs{iou} del 50\%. Es necesario tener en cuenta que en este dataset se utilizan 3 dificultades diferentes, donde en la evaluación fácil se utilizan los objetos con un máximo de 15\% de oclusión, en la evaluación moderada un máximo del 30\% y en la evaluación difícil un máximo del 50\%.\par
+El cálculo del \acs{ap} para los benchmark de detección 2D, vista de pájaro y detección 3D, es realizado a partir del área bajo la curva de precision-recall, construida con 40 límites para su mayor precisión en la evaluación.
 
 \begin{center}
 $AOS = \dfrac{1}{40} \displaystyle\sum_{r \in {0,0 \centerdot 25, \dots ,1}} \max_{\bar{r} : \bar{r} \geq r} s(\bar{r})$\\[10pt]
@@ -36,46 +36,47 @@ $s(r) = \dfrac{1}{|\mathcal{D}(r)|} \displaystyle\sum_{i \in \mathcal{D}(r)} \df
 Mientras que para la estimación de la orientación se utiliza la métrica \ac{aos} con un valor que oscila entre 0 y 1, siendo 1 la orientación perfecta.
 
 \begin{center}
-\begin{longtable}{|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|}
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \hline
 \endfirsthead
-\multicolumn{4}{c}%
+\multicolumn{5}{c}%
 {\tablename\ \thetable\ -- \textit{Continua en la página anterior}} \\
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \endhead
-\hline \multicolumn{4}{r}{\textit{Continua en la próxima página}} \\
+\hline \multicolumn{5}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-Coche (Detección) & 95.61 \% & 75.39 \% & 77.47 \%\\
+\multirow{4}{*}{Coche}
+& Detección & 95.61 \% & 75.39 \% & 77.47 \%\\
+\cline{2-5}
+& Vista de pájaro & 84.62 \% & 65.57 \% & 63.14 \%\\
+\cline{2-5}
+& Detección 3D & 74.15 \% & 54.27 \% & 50.98 \%\\
+\cline{2-5}
+& Orientación & 95.58 \% & 75.31 \% & 77.31 \%\\
 \hline
-Coche (Vista de pájaro) & 84.62 \% & 65.57 \% & 63.14 \%\\
+\multirow{4}{*}{Peatón}
+& Detección & 68.12 \% & 63.66 \% & 60.34 \%\\
+\cline{2-5}
+& Vista de pájaro & 10.14 \% & 9.62 \% & 8.55 \%\\
+\cline{2-5}
+& Detección 3D & 5.57 \% & 5.09 \% & 4.49 \%\\
+\cline{2-5}
+& Orientación & 63.55 \% & 58.45 \% & 55.06 \%\\
 \hline
-Coche (Detección 3D) & 74.15 \% & 54.27 \% & 50.98 \%\\
-\hline
-Coche (Orientación) & 95.58 \% & 75.31 \% & 77.31 \%\\
-\hline
-\hline
-Peatón (Detección) & 68.12 \% & 63.66 \% & 60.34 \%\\
-\hline
-Peatón (Vista de pájaro) & 10.14 \% & 9.62 \% & 8.55 \%\\
-\hline
-Peatón (Detección 3D) & 5.57 \% & 5.09 \% & 4.49 \%\\
-\hline
-Peatón (Orientación) & 63.55 \% & 58.45 \% & 55.06 \%\\
-\hline
-\hline
-Ciclista (Detección) & 91.14 \% & 64.77 \% & 61.99 \%\\
-\hline
-Ciclista (Vista de pájaro) & 67.30 \% & 43.51 \% & 41.26 \%\\
-\hline
-Ciclista (Detección 3D) & 54.98 \% & 34.98 \% & 33.29 \%\\
-\hline
-Ciclista (Orientación) & 90.99 \% & 64.59 \% & 61.77 \%\\
+\multirow{4}{*}{Ciclista}
+& Detección & 91.14 \% & 64.77 \% & 61.99 \%\\
+\cline{2-5}
+& Vista de pájaro & 67.30 \% & 43.51 \% & 41.26 \%\\
+\cline{2-5}
+& Detección 3D & 54.98 \% & 34.98 \% & 33.29 \%\\
+\cline{2-5}
+& Orientación & 90.99 \% & 64.59 \% & 61.77 \%\\
 \hline
 \caption{Análisis por clase de SECOND en KITTI.}
 \label{tab:analisis_por_clase_de_sencond_en_kitti}
@@ -83,46 +84,47 @@ Ciclista (Orientación) & 90.99 \% & 64.59 \% & 61.77 \%\\
 \end{center}
 
 \begin{center}
-\begin{longtable}{|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|}
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \hline
 \endfirsthead
-\multicolumn{4}{c}%
+\multicolumn{5}{c}%
 {\tablename\ \thetable\ -- \textit{Continua en la página anterior}} \\
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \endhead
-\hline \multicolumn{4}{r}{\textit{Continua en la próxima página}} \\
+\hline \multicolumn{5}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-Coche (Detección) & 95.54 \% & 74.76 \% & 75.24 \%\\
+\multirow{4}{*}{Coche}
+& Detección & 95.54 \% & 74.76 \% & 75.24 \%\\
+\cline{2-5}
+& Vista de pájaro & 87.12 \% & 67.08 \% & 64.68 \%\\
+\cline{2-5}
+& Detección 3D & 78.07 \% & 57.58 \% & 52.85 \%\\
+\cline{2-5}
+& Orientación & 95.52 \% & 74.67 \% & 75.06 \%\\
 \hline
-Coche (Vista de pájaro) & 87.12 \% & 67.08 \% & 64.68 \%\\
+\multirow{4}{*}{Peatón}
+& Detección & 66.39 \% & 61.58 \% & 58.21 \%\\
+\cline{2-5}
+& Vista de pájaro & 24.56 \% & 23.77 \% & 21.33 \%\\
+\cline{2-5}
+& Detección 3D & 15.86 \% & 15.03 \% & 13.47 \%\\
+\cline{2-5}
+& Orientación & 45.76 \% & 42.35 \% & 39.46 \%\\
 \hline
-Coche (Detección 3D) & 78.07 \% & 57.58 \% & 52.85 \%\\
-\hline
-Coche (Orientación) & 95.52 \% & 74.67 \% & 75.06 \%\\
-\hline
-\hline
-Peatón (Detección) & 66.39 \% & 61.58 \% & 58.21 \%\\
-\hline
-Peatón (Vista de pájaro) & 24.56 \% & 23.77 \% & 21.33 \%\\
-\hline
-Peatón (Detección 3D) & 15.86 \% & 15.03 \% & 13.47 \%\\
-\hline
-Peatón (Orientación) & 45.76 \% & 42.35 \% & 39.46 \%\\
-\hline
-\hline
-Ciclista (Detección) & 88.41 \% & 60.70 \% & 57.32 \%\\
-\hline
-Ciclista (Vista de pájaro) & 76.76 \% & 48.92 \% & 46.30 \%\\
-\hline
-Ciclista (Detección 3D) & 68.06 \% & 43.23 \% & 40.46 \%\\
-\hline
-Ciclista (Orientación) & 87.81 \% & 59.64 \% & 56.26 \%\\
+\multirow{4}{*}{Ciclista}
+& Detección & 88.41 \% & 60.70 \% & 57.32 \%\\
+\cline{2-5}
+& Vista de pájaro & 76.76 \% & 48.92 \% & 46.30 \%\\
+\cline{2-5}
+& Detección 3D & 68.06 \% & 43.23 \% & 40.46 \%\\
+\cline{2-5}
+& Orientación & 87.81 \% & 59.64 \% & 56.26 \%\\
 \hline
 \caption{Análisis por clase de PointPillars en KITTI.}
 \label{tab:analisis_por_clase_de_pointpillars_en_kitti}
@@ -130,46 +132,47 @@ Ciclista (Orientación) & 87.81 \% & 59.64 \% & 56.26 \%\\
 \end{center}
 
 \begin{center}
-\begin{longtable}{|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|}
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \hline
 \endfirsthead
-\multicolumn{4}{c}%
+\multicolumn{5}{c}%
 {\tablename\ \thetable\ -- \textit{Continua en la página anterior}} \\
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \endhead
-\hline \multicolumn{4}{r}{\textit{Continua en la próxima página}} \\
+\hline \multicolumn{5}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-Coche (Detección) & 96.51 \% & 78.63 \% & 78.68 \%\\
+\multirow{4}{*}{Coche}
+& Detección & 96.51 \% & 78.63 \% & 78.68 \%\\
+\cline{2-5}
+& Vista de pájaro & 93.26 \% & 75.47 \% & 75.46 \%\\
+\cline{2-5}
+& Detección 3D & 91.71 \% & 69.82 \% & 69.54 \%\\
+\cline{2-5}
+& Orientación & 96.49 \% & 78.59 \% & 78.60 \%\\
 \hline
-Coche (Vista de pájaro) & 93.26 \% & 75.47 \% & 75.46 \%\\
+\multirow{4}{*}{Peatón}
+& Detección & 74.73 \% & 66.59 \% & 61.16 \%\\
+\cline{2-5}
+& Vista de pájaro & 64.49 \% & 58.17 \% & 51.48 \%\\
+\cline{2-5}
+& Detección 3D & 60.53 \% & 54.28 \% & 47.50 \%\\
+\cline{2-5}
+& Orientación & 71.76 \% & 63.17 \% & 57.71 \%\\
 \hline
-Coche (Detección 3D) & 91.71 \% & 69.82 \% & 69.54 \%\\
-\hline
-Coche (Orientación) & 96.49 \% & 78.59 \% & 78.60 \%\\
-\hline
-\hline
-Peatón (Detección) & 74.73 \% & 66.59 \% & 61.16 \%\\
-\hline
-Peatón (Vista de pájaro) & 64.49 \% & 58.17 \% & 51.48 \%\\
-\hline
-Peatón (Detección 3D) & 60.53 \% & 54.28 \% & 47.50 \%\\
-\hline
-Peatón (Orientación) & 71.76 \% & 63.17 \% & 57.71 \%\\
-\hline
-\hline
-Ciclista (Detección) & 96.91 \% & 66.66 \% & 63.89 \%\\
-\hline
-Ciclista (Vista de pájaro) & 92.35 \% & 62.41 \% & 59.39 \%\\
-\hline
-Ciclista (Detección 3D) & 88.98 \% & 61.01 \% & 56.88 \%\\
-\hline
-Ciclista (Orientación) & 96.82 \% & 66.23 \% & 63.45 \%\\
+\multirow{4}{*}{Ciclista}
+& Detección & 96.91 \% & 66.66 \% & 63.89 \%\\
+\cline{2-5}
+& Vista de pájaro & 92.35 \% & 62.41 \% & 59.39 \%\\
+\cline{2-5}
+& Detección 3D & 88.98 \% & 61.01 \% & 56.88 \%\\
+\cline{2-5}
+& Orientación & 96.82 \% & 66.23 \% & 63.45 \%\\
 \hline
 \caption{Análisis por clase de PointRCNN en KITTI.}
 \label{tab:analisis_por_clase_de_pointrcnn_en_kitti}
@@ -177,53 +180,54 @@ Ciclista (Orientación) & 96.82 \% & 66.23 \% & 63.45 \%\\
 \end{center}
 
 \begin{center}
-\begin{longtable}{|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|}
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \hline
 \endfirsthead
-\multicolumn{4}{c}%
+\multicolumn{5}{c}%
 {\tablename\ \thetable\ -- \textit{Continua en la página anterior}} \\
 \hline
-\textbf{Benchmark} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
+\multicolumn{2}{|c|}{\textbf{Benchmark}} & \textbf{Fácil} & \textbf{Moderado} & \textbf{Difícil}\\
 \hline
 \endhead
-\hline \multicolumn{4}{r}{\textit{Continua en la próxima página}} \\
+\hline \multicolumn{5}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-Coche (Detección) & 97.21 \% & 77.30 \% & 77.69 \%\\
+\multirow{4}{*}{Coche}
+& Detección & 97.21 \% & 77.30 \% & 77.69 \%\\
+\cline{2-5}
+& Vista de pájaro & 92.48 \% & 73.67 \% & 74.08 \%\\
+\cline{2-5}
+& Detección 3D & 89.46 \% & 69.74 \% & 70.02 \%\\
+\cline{2-5}
+& Orientación & 97.17 \% & 77.19 \% & 77.49 \%\\
 \hline
-Coche (Vista de pájaro) & 92.48 \% & 73.67 \% & 74.08 \%\\
+\multirow{4}{*}{Peatón}
+& Detección & 46.47 \% & 46.87 \% & 47.41 \%\\
+\cline{2-5}
+& Vista de pájaro & 32.67 \% & 32.47 \% & 31.59 \%\\
+\cline{2-5}
+& Detección 3D & 29.42 \% & 29.07 \% & 27.87 \%\\
+\cline{2-5}
+& Orientación & 41.55 \% & 41.21 \% & 41.47 \%\\
 \hline
-Coche (Detección 3D) & 89.46 \% & 69.74 \% & 70.02 \%\\
-\hline
-Coche (Orientación) & 97.17 \% & 77.19 \% & 77.49 \%\\
-\hline
-\hline
-Peatón (Detección) & 46.47 \% & 46.87 \% & 47.41 \%\\
-\hline
-Peatón (Vista de pájaro) & 32.67 \% & 32.47 \% & 31.59 \%\\
-\hline
-Peatón (Detección 3D) & 29.42 \% & 29.07 \% & 27.87 \%\\
-\hline
-Peatón (Orientación) & 41.55 \% & 41.21 \% & 41.47 \%\\
-\hline
-\hline
-Ciclista (Detección) & 89.72 \% & 64.60 \% & 62.31 \%\\
-\hline
-Ciclista (Vista de pájaro) & 85.62 \% & 56.86 \% & 53.10 \%\\
-\hline
-Ciclista (Detección 3D) & 80.93 \% & 53.25 \% & 49.52 \%\\
-\hline
-Ciclista (Orientación) & 88.62 \% & 63.66 \% & 61.40 \%\\
+\multirow{4}{*}{Ciclista}
+& Detección & 89.72 \% & 64.60 \% & 62.31 \%\\
+\cline{2-5}
+& Vista de pájaro & 85.62 \% & 56.86 \% & 53.10 \%\\
+\cline{2-5}
+& Detección 3D & 80.93 \% & 53.25 \% & 49.52 \%\\
+\cline{2-5}
+& Orientación & 88.62 \% & 63.66 \% & 61.40 \%\\
 \hline
 \caption{Análisis por clase de PV-RCNN en KITTI.}
 \label{tab:analisis_por_clase_de_pv_rcnn_en_kitti}
 \end{longtable}
 \end{center}
 
-Las clases de peatón y ciclista como se puede ver principalmente en los modelos SECOND y PointPillars al ser valuados sobre KITTI obtienen una precisión muy baja, esto es debido a que dichas clases son detectadas con muy pocos puntos de la nube de puntos correspondiente, por lo que no es muy preciso en dichas clases. Para evaluar de forma más significativa y comparar los diferentes modelos se evalúan las tareas de detección 3D y \acs{bev} con un \acs{iou} de 0.7 y 0.5 en coches, y para el caso de peatones y ciclistas de  de 0.5 y 0.25.
+Las clases de peatón y ciclista, como se puede ver principalmente en los modelos SECOND y PointPillars, al ser valuados sobre KITTI obtienen una precisión muy baja, esto es debido a que dichas clases son detectadas con muy pocos puntos de la nube de puntos correspondiente, por lo que no es muy preciso en dichas clases. Para evaluar de forma más significativa y comparar los diferentes modelos se evalúan las tareas de detección 3D y \acs{bev} con un \acs{iou} de 0.7 y 0.5 en coches, y para el caso de peatones y ciclistas de  de 0.5 y 0.25.
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|c|c|c|}
@@ -315,8 +319,8 @@ SECOND & Detección & 0.7 - 0.5 & 84.96 \% & 67.94 \% & 66.6 \% & 18.59 Hz\\
 \subsection{Análisis cuantitativo en nuScenes}
 \label{sec:analisis_cuantitativo_en_nuscenes}
 
-La evaluación sobre el dataset nuScenes consta unicamente del modelo CBGS, pero este modelo es utilizado con dos backbone diferentes: uno basado en SECOND y otro en PointPillars.\par
-Sobre nuScenes se evalua unicamente sobre el benchmark de detección 3D, dicha evaluación consta no solo del \acs{ap} como realiza KITTI sino que también utiliza técnicas como:
+La evaluación sobre el dataset nuScenes consta unicamente del modelo CBGS, pero este modelo se utiliza con dos backbone diferentes: uno basado en SECOND y otro en PointPillars.\par
+Los modelos entrenados sonre nuScenes se evaluan unicamente sobre el benchmark de detección 3D, dicha evaluación consta no solo del \acs{ap}, como realiza KITTI, sino que también utiliza las siguientes métricas:
 
 \begin{itemize}
 \item \textbf{\ac{ate}}: Distancia euclídea en \acs{bev} medido en metros
@@ -326,7 +330,7 @@ Sobre nuScenes se evalua unicamente sobre el benchmark de detección 3D, dicha ev
 \item \textbf{\ac{aae}}: Calculado como 1 - \textit{acc}, donde \textit{acc} es la precisión de la clasificación de atributos
 \end{itemize}
 
-Para la evaluación general del modelo se define \ac{nds} que indica la precisión respecto de todas las métricas calculadas del modelo.
+Para la evaluación general del modelo se define el parámetro \ac{nds} que indica la precisión respecto de todas las métricas calculadas del modelo.
 
 \begin{center}
 $NDS = \dfrac{1}{2} - \dfrac{mATE + mASE + mAOE + mATE + mAAE}{10} + \dfrac{mAP}{2}$
@@ -476,10 +480,10 @@ Barrera& 0.50 & 0.34 & 0.29 & 0.07 & nan & nan \\
 
 Tras el estudio de la precisión y el rendimiento de los modelos, se deciden realizar diferentes estudios de los modelos sobre ambos datasets para: evaluar todos los modelos sobre el mismo dataset, tratar de reducir el tiempo de computo y aumentar la precisión del modelo CBGS.
 
-\subsubsection{Ajuste de modelos basados en Kitti a nuScenes}
+\subsubsection{Transferencia de modelos basados en Kitti a nuScenes}
 \label{sec:ajuste_de_modelos_basados_en_kitti_a_nuscenes}
 
-La evaluación realizada en KITTI para la detección 3D se aplica unicamente en la parte frontal del vehículo para que las cámaras se han capaces de detectar todos los objetos, por esto mismo los modelos entrenados sobre este dataset ha sido entrenados para que su detección se ajuste unicamente a la parte frontal.
+La evaluación realizada en KITTI para la detección 3D se aplica unicamente en la parte frontal del vehículo para que las cámaras sean capaces de detectar todos los objetos, por ello los modelos entrenados sobre este dataset ha sido entrenados para que su detección se ajuste unicamente a la parte frontal.
 
 \begin{figure}[H]
 	\centering
@@ -488,7 +492,7 @@ La evaluación realizada en KITTI para la detección 3D se aplica unicamente en la
 	\label{fig:Modelo_pointpillars_sobre_kitti}
 \end{figure}
 
-Con los modelos basados en Deep Learning se ha modificado el entrada de la red para que permita una detección en 360º sin necesidad de un reentrenamiento, todo ello con una buena precisión. El problema es que para el uso de estos modelos en 360º de la mejor forma, sería necesaria la información de todo el entorno del vehículo para el entrenamiento de los modelos, cosa que no se puede hacer por tanto con KITTI.
+Con los modelos basados en Deep Learning se ha modificado el entrada de la red para que permita una detección en 360º sin necesidad de un reentrenamiento, todo ello con una buena precisión. El problema es que para el uso de estos modelos en 360º de la mejor forma, sería necesaria la información de todo el entorno del vehículo para el entrenamiento de los modelos, cosa que no se puede hacer con KITTI.
 
 \begin{figure}[H]
 	\centering
@@ -507,12 +511,12 @@ La evaluación de todos los modelos sobre el mismo dataset sería lo más convenien
 \end{figure}
 
 El problema del entrenamiento sobre nuScenes es la cantidad de clases que tiene y que el modelo debe de ser capaz de detectar. El modelo sin reentrenar no funciona de forma correcta ya que no tiene los mismos niveles de intensidad del \acs{lidar} además de que nuScenes utiliza un \acs{lidar} de 32 haces en vez de 64 como se tiene en KITTI.\par
-Tras el reentrenamiento probando con múltiples configuraciones de parámetros y de capas congeladas, se llega al resultado de que solo se produce un aprendizaje para la clase coche ya que esta es la más abundante en el dataset, mientras que el resto no terminan de funcionar o funcionan de forma peor, como sería el caso de los peatones que no son detectados al tener la mitad de puntos que el dataset sobre el que se fue entrenado además de ser confundidos con conos de tráfico. Así que en conjunto con las pobres detecciones y el uso exclusivo de un barrido del \acs{lidar} lo que produce una incapacidad para inferir las velocidades, se decide no entrenar los modelos de KITTI a nuScenes por las diferencias entre ambos datasets.
+Tras el reentrenamiento probando con múltiples configuraciones de parámetros y de capas congeladas, se llega al resultado de que solo se produce un aprendizaje para la clase coche, ya que esta es la más abundante en el dataset, mientras que el resto no terminan de funcionar o funcionan de forma peor, como sería el caso de los peatones que no son detectados al tener la mitad de puntos que el dataset sobre el que fue entrenado, además de ser confundidos con conos de tráfico. Por lo que tanto se concluye que debido a las pobres detecciones obtenidas y el uso de un único barrido del \acs{lidar}, lo que se traduce en una incapacidad para la inferencia de las velocidades de los objetos, por lo que no se entrenan los modelos propuestos sobre KITTI en nuScenes, debido a las diferencias entre ambos datasets.
 
 \subsubsection{Número de nubes de puntos de entrada en modelos evaluados sobre nuScenes}
 \label{sec:numero_de_pcl_de_entrada_en_modelos_evaluados_sobre_nuscenes}
 
-En el dataset nuScenes se recomienda el uso de múltiples barrido del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto es recomendado un uso de 10 barridos. Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo cuantos menos barridos se utilicen.
+En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto se recomienda un uso de 10 barridos. Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo cuantos menos barridos se utilicen.
 
 \begin{figure}[H]
 	\centering
@@ -605,12 +609,12 @@ La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun
 \end{longtable}
 \end{center}
 
-El uso de 2 barridos con SECOND Multihead no supera en precisión a PointPillars Multihead con los 10 barridos por lo que este modelo sería descartado, por otra parte en el caso de PointPillars Multihead sería recomendable el uso de 8 barridos en vez de 10 ya que la precisión no se ve apenas reducida, mientras que el rendimiento consigue una mejora de poco más del 4\%, que aunque sea poco puede definir en un caso extremo si una nube de puntos es analizada o no por la velocidad de inferencia del modelo.
+El uso de 2 barridos con SECOND Multihead no supera en precisión a PointPillars Multihead con los 10 barridos por lo que este modelo sería descartado. Por otra parte en el caso de PointPillars Multihead sería recomendable el uso de 8 barridos en vez de 10 ya que la precisión no se ve apenas reducida, mientras que el rendimiento consigue una mejora de poco más del 4\%, que aunque sea poco puede definir en un caso extremo si una nube de puntos es analizada o no por la velocidad de inferencia del modelo.
 
 \subsubsection{Tamaño del vóxel en modelos basados en redes neuronales}
 \label{sec:tamaño_del_voxel_en_modelos_basados_en_redes_neuronales}
 
-Basándose en múltiples papers que utilizan la reducción del tamaño del vóxel para el aumento de la precisión a costa de rendimiento como ocurre con el modelo PointPillars+ \cite{pointpainting} junto con otras técnicas, se decide entrenar el modelo PointPillars Multihead ya que es el utilizando actualmente en el proyecto Techs4AgeCar para utilizar un tamaño de vóxel menor. Esto se espera que mejore la precisión del modelo, a la vez que reduzca la distancia de detección, la cual puede empeorar ya que se trabaja con un \acs{lidar} en el vehículo T4AC de 16 haces que tiene poca distancia para hallar las detección.
+Basándose en múltiples papers que utilizan la reducción del tamaño del vóxel para el aumento de la precisión a costa del rendimiento, como ocurre con el modelo PointPillars+ \cite{pointpainting} junto con otras técnicas, se decide entrenar el modelo PointPillars Multihead ya que es el utilizando actualmente en el proyecto Techs4AgeCar y permite usar un tamaño de vóxel menor. De esta forma se espera que mejore la precisión del modelo, a la vez que reduzca la distancia de detección, la cual puede empeorar ya que se trabaja con un \acs{lidar} en el vehículo T4AC de 16 haces.
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|c|c|c|c|c|c|}
@@ -634,17 +638,17 @@ Modelo base & [0.2, 0.1, 8.0] & [102.4, 51.2, 8.0] & 0.2391 \\
 \hline
 Modelo base + 5 epochs & [0.2, 0.1, 8.0] & [102.4, 51.2, 8.0] & 0.3550 \\
 \hline
-\caption{Análisis de la precisión de PointPillars Multihead según el número de barridos.}
-\label{tab:Analisis_de_la_precision_de_pointpillars_multihead_segun_el_numero_de_barridos}
+\caption{Análisis de la precisión de PointPillars Multihead según el tamaño del voxel.}
+\label{tab:Analisis_de_la_precision_de_pointpillars_multihead_segun_el_tamano_del_voxel}
 \end{longtable}
 \end{center}
 
-Al utilizar el modelo base de PointPillars Multihead reduciendo el tamaño de vóxel para que se centre el análisis de la escena principalmente en la parte frontal y trasera del vehículo, se obtiene una precisión mucho menor, la cual no es utilizable de la misma manera que se podía disminuir el número de barridos. Por ello mismo se ha reentrenado la red con 5 iteraciones para mejorar la precisión, tras esto se observa una mejora sustancial en la precisión de las detecciones del modelo, como se ha visto el problema puede recaer en el ajuste de los tamaños de los objetos a detectar con el tamaño en vóxeles del modelo base. La solución sería el entrenamiento de la red de nuevo para que no tenga este problema, pero para cada iteración en el entrenamiento de esta red en nuScenes han sido necesarias entre 10 y 12 horas, por lo que es inviable con el hardware que se dispone.
+Al utilizar el modelo base de PointPillars Multihead reduciendo el tamaño de vóxel para que se centre el análisis de la escena principalmente en la parte frontal y trasera del vehículo, se obtiene una precisión mucho menor, la cual no es utilizable de la misma manera que disminuyendo el número de barridos. Se ha reentrenado la red con 5 iteraciones para mejorar la precisión, tras esto se observa una mejora sustancial en la precisión de las detecciones del modelo. Como se ha visto, el problema puede encontrarse en el ajuste de los tamaños de los objetos a detectar en función del tamaño de los vóxeles del modelo base. La solución sería el entrenamiento de la red de nuevo para solucionar este problema, pero para cada iteración en el entrenamiento de esta red en nuScenes han sido necesarias entre 10 y 12 horas, por lo que resulta inviable con el hardware que se dispone.
 
 \section{Análisis sobre el simulador CARLA}
 \label{sec:analisis_sobre_el_simulador_carla}
 
-El análisis de los modelos en los datasets sobre los que han sido entrenados solo muestra la precisión dentro de estos, con datos provenientes de otras fuentes como sería el simulador CARLA, se analiza como de buenos son estos modelos en otros entornos para su posterior implementación en el vehículo T4AC el cual incorpora un \acs{lidar} diferente al utilizado en los datasets.
+El análisis de los modelos en los datasets sobre los que han sido entrenados solo muestra la precisión dentro de estos, con datos provenientes de otras fuentes como sería el simulador CARLA, se analiza cómo de buenos son estos modelos en otros entornos para su posterior implementación en el vehículo T4AC el cual incorpora un \acs{lidar} diferente al utilizado en los datasets.
 En los resultados obtenidos se ha simulado un vehículo con un \acs{lidar} de 32 haces con una velocidad de barrido de 20 Hz.
 
 \begin{table}[H]
@@ -664,7 +668,7 @@ En los resultados obtenidos se ha simulado un vehículo con un \acs{lidar} de 32 
 		Campo de visión & 2º/-26.8º\\
 		\hline
 		\end{tabular}
-		\caption{Parámtros del LiDAR en CARLA.}
+		\caption{Parámetros del LiDAR en CARLA.}
 		\label{tab:Parametros_del_lidar_en_carla}
 	\end{center}
 \end{table}
@@ -693,13 +697,13 @@ El estudio realizado en el capítulo \ref{cha:sistemas_clasicos_de_percepcion_con
 \label{fig:Modelo_clasico_en_carla}
 \end{figure}
 
-La velocidad de inferencia de este sistema es de 13.14 milisegundos de media, teniendo como funciones más demandantes: la aplicación del algoritmo \acs{ransac} 3D con 9.57 milisegundos y la función de clustering basada en KD-tree con 2.14 milisegundos, esto resulta en un sistema con un sistema con una capacidad de inferencia de 76 Hz.\par
-El funcionamiento de este algoritmo como se ve en la figura \ref{fig:Modelo_clasico_en_carla} es bastante bueno, con pocos falsos positivos. El mayor problema que tiene dicho algoritmo es la incapacidad de detectar otra tipo de objeto que no sean coches, ya que si tienen que ser detectados los peatones, aparecerían problemas de muchos falsos positivos con farolas, semáforos, etc. La diferenciación de cada objeto en función de su clase no es posible en este método ya que aunque se analizase el tamaño de los objetos se encontrarían muchos fallos en función del número de puntos sobre cada objeto.
+La velocidad de inferencia de este sistema es de 13.14 milisegundos de media, teniendo como funciones más demandantes: la aplicación del algoritmo \acs{ransac} 3D con 9.57 milisegundos y la función de clustering basada en KD-tree con 2.14 milisegundos, esto resulta en un sistema con una capacidad de inferencia de 76 Hz.\par
+El funcionamiento de este algoritmo como se ve en la figura \ref{fig:Modelo_clasico_en_carla} es bastante bueno, con pocos falsos positivos. El mayor problema que tiene dicho algoritmo es la incapacidad de detectar otro tipo de objeto que no sean coches, ya que si tienen que ser detectados los peatones, aparecerían problemas de muchos falsos positivos con farolas, semáforos, etc. La diferenciación de cada objeto en función de su clase no es posible en este método ya que aunque se analizase el tamaño de los objetos se encontrarían muchos fallos en función del número de puntos incidentes sobre cada objeto, ya que farolas, arbustos, conos, semáforos y peatones serían incluidos en el mismo grupo.
 
 \subsection{Análisis cualitativo de Pointpillars Multihead en CARLA}
 \label{sec:analisis_cualitativo_de_cbgs_en_carla}
 
-El modelo finalmente implementado en el proyecto ha sido PointPillars Multihead, este modelo es probado en simulación antes de su prueba en el vehículo T4AC. Uno de los problemas principales que se encuentran con el uso en simulación es la intensidad simulada del \acs{lidar} como se explica en el capítulo \ref{sec:funcionamiento_del_lidar_en_carla}, esto provoca que se use una intensidad fija de 0 en todos los puntos.
+El modelo finalmente implementado en el proyecto ha sido PointPillars Multihead, este modelo es probado en simulación antes de su prueba en el vehículo T4AC. Uno de los problemas principales que se encuentran con el uso en simulación es la intensidad simulada del \acs{lidar}, como se explica en el capítulo \ref{sec:funcionamiento_del_lidar_en_carla}, esto provoca que se use una intensidad fija de 0 en todos los puntos.
 
 \begin{figure}[H]
   \begin{subfigure}[t]{.5\textwidth}
@@ -771,8 +775,8 @@ La implementación actual no solo mejora como se ve claramente en la precisión de
 \subsection{Análisis cuantitativo de Pointpillars Multihead en CARLA}
 \label{sec:analisis_cuantitativo_de_cbgs_en_carla}
 
-Haciendo uso del \acs{ad_devkit} desarrollado en este TFG, se evalúa el modelo PointPillars Multihead. Este kit de evaluación es capaz de evaluar las clases definidas en \acs{ros} por CARLA, como son: peatón, bicicleta, coche, camión, barrera, señal u otro vehículo, dichas clases no coinciden directamente con las detectadas por el modelo por lo que se pueden reducir las clases detectadas. El mayor problema surge cuando se estudia que CARLA identifica todos los vehículo que no son peatones como coches y además se ha observado que al grabar un rosbag con toda la información del entorno sobre la que evaluar, \acs{ros} no es capaz de guardar toda esta información en tiempo real, lo cual produce que las marcas de tiempo se encuentren parcialmente desplazadas, esto impide la asociación con los peatones al tener un \acs{iou} muy pequeño o nulo por la diferencia entre los tiempos de la información de los sensores y de los objetos del entorno.\par
-El \acs{ad_devkit} para la generación de los datos de evaluación utiliza un rosbag que contenga la información de los sensores y del entorno necesaria, con esto se obtiene el groundtruth con el que se evalúa el modelo. Para ello se han utilizado dos rosbag creados en el grupo RobeSafe que son usados para la evaluación cualitativa y ambos rosbag son de 30 segundos aproximadamente. Al utilizar grabaciones de tan corta duración se obtiene métricas diferentes pero que no sufren apenas del problema de \acs{ros} con los retrasos en las marcas de tiempo.
+Haciendo uso del \acs{ad_devkit} desarrollado en este TFG, se evalúa el modelo PointPillars Multihead. Este kit de evaluación es capaz de evaluar las clases definidas en \acs{ros} por CARLA, como son: peatón, bicicleta, coche, camión, barrera, señal u otro vehículo, dichas clases no coinciden directamente con las detectadas por el modelo por lo que se pueden reducir las clases detectadas. El mayor problema surge cuando se ve que CARLA identifica todos los vehículo que no son peatones como coches y además se ha observado que al grabar un rosbag con toda la información del entorno sobre la que evaluar, \acs{ros} no es capaz de guardar toda esta información en tiempo real, lo cual produce que las marcas de tiempo se encuentren parcialmente desplazadas. Esto impide la asociación con los peatones al tener un \acs{iou} muy pequeño o nulo por la diferencia entre los tiempos de la información de los sensores y de los objetos del entorno.\par
+El \acs{ad_devkit} para la generación de los datos de evaluación utiliza un rosbag que contiene la información de los sensores y del entorno necesaria, con esto se obtiene el groundtruth con el que se evalúa el modelo. Para ello se han utilizado dos rosbag creados en el grupo RobeSafe que son usados para la evaluación cualitativa y ambos rosbag son de 30 segundos aproximadamente. Al utilizar grabaciones de tan corta duración se obtiene métricas diferentes pero que no se ven afectados apenas del problema de \acs{ros} con los retrasos en las marcas de tiempo.
 
 \begin{figure}[H]
   \begin{subfigure}[t]{.5\textwidth}
@@ -814,13 +818,13 @@ El \acs{ad_devkit} para la generación de los datos de evaluación utiliza un rosb
 \label{tab:curva_de_precision_reacall_para_coches_de_pointpillars_multihead_en_carla}
 \end{table}
 
-Con estas métricas se obtiene una precisión aproximada de la clase coche, la cual es el principal objeto a detectar que se va a utilizar en el sistema que usa el modelo PointPillars Multihead. Esto es lo que se permite ahora en el \acs{ad_devkit} para la evaluación de objetos 3D debido a las limitaciones con \acs{ros} y CARLA.
+Con estas métricas se obtiene una precisión aproximada de la clase coche, la cual es el principal objeto a detectar que se va a utilizar en el sistema que usa el modelo PointPillars Multihead. Este es por tanto el rendimiento actual del \acs{ad_devkit} para la evaluación de objetos 3D debido a las limitaciones con \acs{ros} y CARLA.
 
 \section{Análisis sobre el vehículo T4AC}
 \label{sec:analisis_sobre_el_vehiculo_t4ac}
 
 Tras una evaluación en CARLA de la implementación realizada, se evalúa en el vehículo T4AC la precisión del modelo implementado para realizar la detección 3D con \acs{lidar}. Teniendo en cuenta que el modelo se ejecuta en el portátil de abordo del vehículo, se espera un rendimiento muy similar al obtenido previamente.\par
-El análisis por tanto se produce en los alrededores de la Universidad de Alcalá donde diversos coches aparecen en ambos sentidos, se producen adelantamientos y aparecen gran cantidad de árboles lo cual puede producir múltiples falsos positivos.
+El análisis por tanto se produce en el campus de la Universidad de Alcalá donde diversos coches aparecen en ambos sentidos, se producen adelantamientos y aparecen gran cantidad de árboles lo cual puede producir múltiples falsos positivos.
 
 \subsection{Análisis cualitativo de Pointpillars Multihead sobre el vehículo T4AC}
 \label{sec:analisis_cualitativo_de_cbgs_sobre_el_vehiculo_t4ac}
@@ -858,7 +862,7 @@ Tras el ajuste para la detección de unicamente ciertas clases, se puede observar
 \subsubsection{Comparativa con PointPillars sobre el vehículo T4AC}
 \label{sec:comparatica_con_pointpillars_sobre el vehículo T4AC}
 
-El mismo recorrido con el sistema que integra el modelo PointPillars Multihead ha sido integrado en el anterior sistema del proyecto que incorpora el modelo Pointpillars, de esta manera se pueden observar las mejoras que el nuevo sistema implementado en este TFG ha beneficiado al proyecto del grupo RobeSafe.
+El mismo recorrido con el sistema que integra el modelo PointPillars Multihead ha sido integrado en el anterior sistema del proyecto que incorpora el modelo Pointpillars, de esta manera se pueden observar las mejoras que el nuevo sistema implementado en este TFG ha beneficiado al proyecto del grupo RobeSafe. Para ello se muestran en la figura \ref{fig:Pointpillars_en_el_vehiculo_t4ac} los mismos instantes de tiempo que en la figura \ref{fig:Pointpillars_multihead_en_el_vehiculo_t4ac} para de esta manera resaltar la mejora en la precisión del nuevo sistema de detección.
 
 \begin{figure}[H]
   \begin{subfigure}[t]{.5\textwidth}
@@ -886,7 +890,7 @@ El mismo recorrido con el sistema que integra el modelo PointPillars Multihead h
 \label{fig:Pointpillars_en_el_vehiculo_t4ac}
 \end{figure}
 
-La ventaja que se tenía antes con este modelo es la ejecución sobre la NVIDIA Jetson AGX Xavier incorporada en el vehículo T4AC, lo cual aligeraba la carga de trabajo del portátil que se lleva a bordo. Pero de la misma manera que se veía en el simulador CARLA, con el sistema previo al implementado en este Trabajo Fin de Grado se obtenían multitud de falsos positivos además de que no es capaz de detectar tantos vehículos en situaciones complejas como aquellos ocluidos parcialmente por árboles. Por lo que el trabajo de detección 3D con \acs{lidar} de este TFG ha servido para mejorar el sistema de percepción del vehículo como se ha visto en múltiples escenarios.
+La ventaja que se tenía antes con este modelo es la ejecución sobre la NVIDIA Jetson AGX Xavier incorporada en el vehículo T4AC, lo cual aligeraba la carga de trabajo del portátil que se lleva a bordo. Pero de la misma manera que se veía en el simulador CARLA, con el sistema previo al implementado en este Trabajo Fin de Grado se obtenían multitud de falsos positivos, además de que no es capaz de detectar tantos vehículos en situaciones complejas como aquellos ocluidos parcialmente por árboles. Por lo que el trabajo de detección 3D con \acs{lidar} de este TFG ha servido para mejorar el sistema de percepción del vehículo como ha quedado validado en múltiples escenarios.
 
 \subsection{Análisis cualitativo del sistema de fusión sensorial sobre el vehículo T4AC}
 \label{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_sobre_el_vehiculo_t4ac}

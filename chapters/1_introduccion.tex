@@ -11,14 +11,14 @@
 \end{FraseCelebre}
 
 \noindent
-Para el pleno entendimiento del trabajo desarrollado se explica el funcionamiento de los sistemas de conducción autónoma, para centrarse en la parte de percepción del vehículo y comprender que gracias al Deep Learning se consigue el estado del arte en este campo.
+Para el pleno entendimiento del trabajo desarrollado se explica el funcionamiento de los sistemas de conducción autónoma, para centrarse en la parte de percepción del vehículo y comprender que gracias al Deep Learning se consiguen los mejores resultados del estado del arte en este campo.
 
 \section{Sistemas de conducción autónomos}
 \label{sec:sistemas-de-conduccion-autonomos}
 
 En los últimos años gracias a una mejora en los sensores, la capacidad de computo principalmente por la aceleración por hardware, la visión por computador, el Deep Learning \ref{sec:deep_learning} y el desarrollo de técnicas de comunicación, ha propiciado que nos encontremos en una carrera por la creación de sistemas de conducción autónomos.
 Empresas de sectores de la automoción y la tecnológicas como ArgoAI, Audi, Baidu, Cruise, Mercedes-Benz, Tesla, Uber o Waymo entre otras, invierten enormes cantidades de dinero para el desarrollo de estas tecnologías \cite{computing_system_for_autonomous_driving}.\par
-Para la obtención de sistemas de conducción autónoma es necesario tener un buen entendimiento del entorno y hacer uso de un buen control en tiempo real, para ello son utilizados sensores que puedan aportar información al vehículo como son cámaras, \acs{lidar}, \acs{radar}, \acs{imu}, \acs{gps} o incluso \acs{sonar}.
+Para la obtención de sistemas de conducción autónoma es necesario tener un buen entendimiento del entorno y hacer uso de un buen control en tiempo real, para ello se utilizan sensores que puedan aportar información al vehículo como son cámaras, \acs{lidar}, \acs{radar}, \acs{imu}, \acs{gps} o incluso \acs{sonar}.
 
 \begin{figure}[H]
 	\centering
@@ -27,9 +27,9 @@ Para la obtención de sistemas de conducción autónoma es necesario tener un buen 
 	\label{fig:Arquitectura_de_un_sistema_de_conduccion_autonoma}
 \end{figure}
 
-En adición a los sensores también es necesaria la utilización de sistemas de localización tanto global como local, mapeado del entorno, toma de decisiones y control del vehículo.\par
-La evolución continua de estos sistemas trata de ofrecer un mayor nivel de seguridad al volante con \ac{adas}, para que en un futuro puedan ser remplazados por \ac{ads}.\par
-Para analizar el avance de estos sistemas y para poder compararlos, se ha dividido según su nivel de autonomía, por lo que se tiene desde un nivel 0 a un nivel 5. El nivel 0 indica que el coche no tiene ningún tipo de autonomía, en el nivel 1 el vehiculo sigue siendo controlado por el conductor pero ciertas características de ayuda a la conducción son añadidas, en el siguiente nivel el vehículo es capaz de acelerar, frenar y hasta dirigir el vehículo pero con el conductor siempre atento, en el nivel 3 el conductor es necesario pero no es requerimiento la atención al entorno, pero debe de estar listo para tomar en control en todo momento, el nivel 4 permite un nivel de autonomía donde el vehículo no requiere de atención pero unicamente en ciertos escenarios y el último nivel es el que habilita la conducción autónoma completa \cite{automated_vehicles_for_safety}.
+En adición a los sensores también es necesaria la utilización de sistemas de localización tanto global como local, mapeado del entorno, toma de decisiones y control del vehículo. Un esquema de una arquitectura de conducción autónoma se muestra en la figura \ref{fig:Arquitectura_de_un_sistema_de_conduccion_autonoma}.\par
+La evolución continua de estos sistemas trata de ofrecer un mayor nivel de seguridad al volante mediante el desarrollo de los \ac{adas}, para que en un futuro puedan ser remplazados por \ac{ads}.\par
+Para analizar el avance de estos sistemas y para poder compararlos, se han dividido según su nivel de autonomía, por lo que se tiene desde un nivel 0 a un nivel 5. El nivel 0 indica que el coche no tiene ningún tipo de autonomía (conducción manual), en el nivel 1 el vehiculo sigue siendo controlado por el conductor pero se añaden ciertas características de ayuda a la conducción. En el siguiente nivel el vehículo es capaz de acelerar, frenar y hasta dirigir el vehículo pero con el conductor siempre atento, en el nivel 3 el conductor es necesario pero no es requerimiento la atención al entorno, pero el conductor debe de estar listo para tomar el control en todo momento. El nivel 4 permite un nivel de autonomía donde el vehículo no requiere la atención del conductor, pero unicamente en ciertos escenarios, y el último nivel (nivel 5) es el que habilita la conducción autónoma completa \cite{automated_vehicles_for_safety}.
 
 \begin{figure}[H]
 	\centering
@@ -38,7 +38,7 @@ Para analizar el avance de estos sistemas y para poder compararlos, se ha dividi
 	\label{fig:Niveles_de_autonomia}
 \end{figure}
 
-El desarrollo de este tipo de sistemas no es una tarea sencilla, múltiples empresas involucradas en el desarrollo de vehículos autónomos pretendían tener vehículos en el nivel 4 de autonomía en poco tiempo, pero como se ha visto esto no es posible, actualmente nos encontramos en el mercado con sistemas que se encuentran entre el nivel 2 y el 3, por lo que aún queda un largo camino antes de llegar a una conducción autónoma completa.
+El desarrollo de este tipo de sistemas no es una tarea sencilla, múltiples empresas involucradas en el desarrollo de vehículos autónomos pretendían tener vehículos en el nivel 4 de autonomía en poco tiempo, pero como se ha visto esto no es posible, actualmente nos encontramos en el mercado con sistemas que se encuentran entre el nivel 2 y el 3, pero aún queda un largo camino antes de llegar a una conducción autónoma completa.
 
 \section{Sistemas de percepción}
 \label{sec:sistemas-de-percepcion}
@@ -50,9 +50,9 @@ Los sistemas de \acs{ads}/\acs{adas} requieren de un entendimiento del entorno p
 \subsection{Principales sensores para la percepción en vehículos autónomos}
 \label{sec:principales-sensores-para-la-percepcion-en-vehiculos-autonomos}
 
-Para la creación un sistema de percepción robusto es necesario el uso de diversos tipos de sensores que ofrezcan una información de relevancia de manera diferente al resto, por ello se utilizan sensores como cámaras, \acs{radar}, \acs{lidar}, sensores de ultrasonidos, \acs{gps}, \acs{gnss}, \acs{imu} etc.\par
-Estos ofrecen información de localización, velocidad, distancia de objetos en el entorno, e incluso información del propio vehículo, como su propia localización, la velocidad lineal y angular que este tiene.\par
-También es necesario tener en cuenta que no todos los sensores funcionan de la misma manera en distintos escenario por lo que en situaciones donde un sensor es incapaz de obtener buenos datos otro sensor puede suplir esta carencia, por lo que la redundancia de sensores aporta otro nivel de seguridad al vehículo ya no solo un nivel mayor de detección del entorno.
+Para la creación de un sistema de percepción robusto es necesario el uso de diversos tipos de sensores que ofrezcan una información de relevancia de manera diferente al resto, por ello se utilizan sensores como cámaras, \acs{radar}, \acs{lidar}, ultrasonidos, \acs{gps}, \acs{gnss}, \acs{imu} etc.\par
+Estos ofrecen información de localización, velocidad, distancia de objetos en el entorno, e incluso información del propio vehículo, como su propia localización, o la velocidad lineal y angular que este tiene.\par
+También es necesario tener en cuenta que no todos los sensores funcionan de la misma manera en distintos escenarios por lo que en situaciones donde un sensor es incapaz de obtener buenos datos otro sensor puede suplir esta carencia, por lo que la redundancia de sensores aporta otro nivel de seguridad al vehículo ya no solo un nivel mayor de detección del entorno.
 
 \subsubsection{Cámara}
 \label{sec:camara}
@@ -67,7 +67,7 @@ Uno de los sensores más utilizados es la cámara, este es el más extendido debido
 \end{figure}
 
 El problema de este sensor recae en el computo que es necesario para obtener información a partir de las imágenes, ya que estas no son más que píxeles en escala de grises o con un sistema de colores como el RGB. Por ello no solo es necesario tener el cuenta el coste del sensor, sino que también hay que aumentar la capacidad de computo del ordenador de abordo para que pueda analizar en tiempo real las imágenes.\par
-Por último es necesario conocer las limitaciones de la cámara, esta funciona de forma correcta en situaciones de buena luminosidad y sin reflejos, por lo que en situaciones con lluvia \ref{fig:Uso_de_camara_con_lluvia}, niebla, durante la noche y otros escenarios climatológicos adversos, no es capaz de obtener toda la información que esta obtendría en situaciones más favorables, lo cual hace que otros sensores sean usados en estas condiciones adversas para lidiar con estar limitaciones.
+Por último es necesario conocer las limitaciones de la cámara, funciona de forma correcta en situaciones de buena luminosidad y sin reflejos, pero en situaciones con lluvia \ref{fig:Uso_de_camara_con_lluvia}, niebla, durante la noche y otros escenarios climatológicos adversos, no es capaz de obtener toda la información que esta obtendría en situaciones más favorables, lo cual hace que otros sensores sean usados en estas condiciones adversas para lidiar con estar limitaciones.
 
 \begin{figure}[H]
 	\centering
@@ -82,7 +82,7 @@ Aún conociendo las desventajas de estos sensores la gran mayoría de enfoques inc
 \label{sec:radar}
 
 Los \acs{radar} son utilizados en múltiples aplicaciones como la previsión meteorológica, la astronomía, las comunicaciones, la navegación oceánica y la conducción autónoma entre otras.\par
-Este sensor emite ondas de radio, las cuales son reflejadas devuelta a este, lo cual da una información de donde se hayan los objetos en un espacio tridimensional, lo que implica la distancia a estos junto con los dos ángulos necesarios utizando un sistema de coordenadas esféricas, además gracias al efecto Doppler se puede inferir la velocidad de los objetos a partir de un fenómeno que hace variar la frecuencia de la onda enviada si hay algún tipo de movimiento local relativo respecto del propio \acs{radar} \cite{how_self_driving_vehicles_work, doppler}.
+Este sensor emite ondas de radio, las cuales son reflejadas devuelta a este, lo cual da una información de donde se hayan los objetos en un espacio tridimensional, lo que implica la distancia a estos junto con los dos ángulos necesarios utilizando un sistema de coordenadas esféricas. Además gracias al efecto Doppler se puede inferir la velocidad de los objetos a partir de un fenómeno que hace variar la frecuencia de la onda enviada si hay algún tipo de movimiento local relativo respecto del propio \acs{radar} \cite{how_self_driving_vehicles_work, doppler}.
 
 \begin{figure}[H]
 	\centering
@@ -91,14 +91,14 @@ Este sensor emite ondas de radio, las cuales son reflejadas devuelta a este, lo 
 	\label{fig:Radar_utilizado_en_vehiculos_autonomos}
 \end{figure}
 
-Como se ha visto este sensor al contrario que la cámara obtiene directamente información utilizable para el entendimiento del entorno de forma directa, el problema radica en la escasa cantidad de datos que provee. Aunque se obtenga información de localización 3D y de velocidad, la cantidad de la nube de puntos producida es muy pequeña, por lo que es necesario de otros sensores para obtener una información completa del entorno.\par
-Por otra parte, una de las principales ventajas del \acs{radar} es que se puede utilizar en cualquier situación meteorológica, unicamente podría verse afectado por lluvias muy intensas. Por lo que es un sensor muy completo y una gran adición para obtener información adicional de posición 3D y velocidad a un precio inferior a un \acs{lidar} y por ello es adoptado por gran cantidad de sistemas \acs{adas} en conjunto con sistemas de cámaras 360 alrededor del vehículo.
+Como se ha visto, este sensor, al contrario que la cámara, obtiene directamente información utilizable para el entendimiento del entorno de forma directa, el problema radica en la escasa cantidad de datos que provee. Aunque se obtenga información de localización 3D y de velocidad, la cantidad de la nube de puntos producida es muy pequeña, por lo que se necesitan otros sensores para obtener una información completa del entorno.\par
+Por otra parte, una de las principales ventajas del \acs{radar} es que se puede utilizar en cualquier situación meteorológica, unicamente podría verse afectado por lluvias muy intensas. Por lo que es un sensor muy completo y supone una buena elección para obtener información adicional de posición 3D y velocidad a un precio inferior a un \acs{lidar}. Por ello es adoptado por gran cantidad de sistemas \acs{adas} en conjunto con sistemas de cámaras 360 alrededor del vehículo.
 
 \subsubsection{LiDAR}
 \label{sec:lidar}
 
-De formo similar al \acs{radar}, los sistemas \acs{lidar} basan su funcionamiento en el escaneo del entorno a partir de el envío de láseres y el cálculo del tiempo desde su envío hasta su retorno. Con esta información de distancia y el ángulo de inclinación del haz que envió esa señal, se construye una nube de puntos que consta de valores x, y, z de posición y otro valor que es el coeficiente de reflectividad del rayo de luz con el objeto incidido \cite{how_self_driving_vehicles_work}.\par
-Actualmente los \acs{lidar} más utilizados son de 64 canales, lo cual indica que se tienen 64 láseres funcionando al mismo tiempo lo que da una gran resolución del entorno, además la nube de puntos generada es de hasta 120 metros alrededor del vehículo lo cual permite detectar objetos a una distancia considerable y saber de manera casi perfecta su distancia en un entorno tridimensional gracias a los alrededor de 2.000.000 de puntos que se generan por segundo del entorno \cite{velodyne_hdl_64}.
+De forma similar al \acs{radar}, los sistemas \acs{lidar} basan su funcionamiento en el escaneo del entorno a partir de el envío de láseres y el cálculo del tiempo desde su envío hasta su retorno. Con esta información de distancia y el ángulo de inclinación del haz que envió esa señal, se construye una nube de puntos que consta de valores x, y, z de posición y otro valor que es el coeficiente de reflectividad del rayo de luz con el objeto incidido \cite{how_self_driving_vehicles_work}.\par
+Actualmente los \acs{lidar} más utilizados son de 64 canales, lo cual indica que se tienen 64 láseres funcionando al mismo tiempo, lo que da una gran resolución del entorno. Además la nube de puntos generada es de hasta 120 metros alrededor del vehículo, lo que permite detectar objetos a una distancia considerable y saber de manera casi perfecta su distancia en un entorno tridimensional gracias a los alrededor de 2.000.000 de puntos que se generan por segundo del entorno \cite{velodyne_hdl_64}.
 
 \begin{figure}[H]
 	\centering
@@ -107,14 +107,14 @@ Actualmente los \acs{lidar} más utilizados son de 64 canales, lo cual indica que
 	\label{fig:Lidar_utilizado_en_vehiculos_autonomos}
 \end{figure}
 
-Los sistemas \acs{lidar} tienen la ventaja de ser un sensor que aporta mucha información del entorno, pero tienen el mismo problema que las cámaras, en condiciones de lluvia, nieve, granizo o niebla, la efectividad de este sensor decae aunque se trata de minimizar ajustando la longitud de onda del láser utilizado \cite{lidar_adverse_weather_conditions}.\par
-Aún siendo un sensor muy útil, que puede aumentar el nivel de redundancia del sistema además de la seguridad, múltiples compañías como Tesla tratan de evitar su uso utilizando unicamente cámaras y \acs{radar}, esto es debido a que un \acs{lidar} suele costar entre 8.000 y 100.000 dólares si se requiere de un resolución similar al estado del arte entre 16 y 128 haces \cite{computing_system_for_autonomous_driving}.
+Los sistemas \acs{lidar} tienen la ventaja de ser un sensor que aporta mucha información del entorno, pero tienen el mismo problema que las cámaras, en condiciones de lluvia, nieve, granizo o niebla, la efectividad de este sensor decae aunque se puede minimizar ajustando la longitud de onda del láser utilizado \cite{lidar_adverse_weather_conditions}.\par
+Aún siendo un sensor muy útil, que puede aumentar el nivel de redundancia del sistema, además de su seguridad, múltiples compañías como Tesla tratan de evitar su uso utilizando unicamente cámaras y \acs{radar}. Esto es debido a que un \acs{lidar} suele costar entre 8.000 y 100.000 dólares si se requiere de un resolución similar al estado del arte entre 16 y 128 haces \cite{computing_system_for_autonomous_driving}.
 
 \subsection{Sistemas de detección}
 \label{sec:sistemas-de-deteccion}
 
-Unicamente con un sistema de sensores no es posible la comprensión del entorno, también es necesario de un procesamiento de los datos, mientras que la cámara no da ninguna información de forma directa, el \acs{lidar} y el \acs{radar} son capaces de obtener la posición de obstáculos alrededor del vehículo, y además el \acs{radar} es capaz de inferir la velocidad de los objetos sin necesidad de un seguimiento.\par
-Principalmente en los sistemas de detección para conducción autónoma se trata de obtener las posiciones de los diferentes objetos de interés del entorno. Estas detecciones pueden ser tanto en 2D como en 3D, pero el problema radica en como obtener un rectángulo u ortoedro que identifique donde se encuentran dicho objetos del entorno.
+Unicamente con un sistema de sensores no es posible la comprensión del entorno, también es necesario de un procesamiento de los datos. Mientras que la cámara no da ninguna información de forma directa, el \acs{lidar} y el \acs{radar} son capaces de obtener la posición de obstáculos alrededor del vehículo, y además el \acs{radar} es capaz de inferir la velocidad de los objetos sin necesidad de un seguimiento.\par
+Principalmente, en los sistemas de detección para conducción autónoma se trata de obtener las posiciones de los diferentes objetos de interés del entorno. Estas detecciones pueden ser tanto en 2D como en 3D, pero el problema radica en como obtener un rectángulo u ortoedro que identifique donde se encuentran dicho objetos del entorno.
 
 \begin{figure}[H]
 	\centering
@@ -123,7 +123,7 @@ Principalmente en los sistemas de detección para conducción autónoma se trata de
 	\label{fig:Detecciones_2d_utilizando_camara}
 \end{figure}
 
-Una de las formas de detección del entorno es a partir de cámaras, esto puede ser conseguido con un sistema de una cámara o de un sistema multicámara que abarque los 360 grados alrededor del coche, con esto instalado en el coche se puede generar rectángulos sobre las imágenes de los objetos del entorno como coches, peatones, bicicletas, motocicletas... Con esto se obtendría un listado de objetos detectados en 2D, lo cual es obtenible con un modelo basado en redes neuronales como \acs{yolo} \cite{yolo} que es capaz de hacerlo en tiempo real, y que funciona tal y como se ve en \ref{fig:Detecciones_2d_utilizando_camara}.
+Una de las formas de detección del entorno es a partir de cámaras, esto se consigue con un sistema de una cámara o de un sistema multicámara que abarque los 360 grados alrededor del coche, con esto instalado en el coche se pueden generar rectángulos sobre las imágenes de los objetos del entorno como coches, peatones, bicicletas, motocicletas... Con esto se obtendría un listado de objetos detectados en 2D, lo cual es obtenible con un modelo basado en redes neuronales como \acs{yolo} \cite{yolo} que es capaz de hacerlo en tiempo real, y que funciona tal y como se ve en la figura \ref{fig:Detecciones_2d_utilizando_camara}.
 
 \begin{figure}[H]
 	\centering
@@ -132,14 +132,14 @@ Una de las formas de detección del entorno es a partir de cámaras, esto puede se
 	\label{fig:Detecciones_3d_utilizando_lidar}
 \end{figure}
 
-Unicamente con detecciones 2D no se puede obtener la distancia a los vehículos, como mucho una aproximación a partir del tamaño de la bounding box 2D, aparte de la dirección en la que se encuentran respecto del coche. Por lo que termina trabajando con detecciones 3D, las cuales pueden tener como paso intermedio una detección 2D o ser obtenidas directamente con un sistema estéreo de cámaras o a partir de las nubes de nubes del \acs{radar} o del \acs{lidar}.\par
-Las técnicas que realizan detecciones en un sistema tridimensional tienen un coste computacional mayor al trabajar con una dimensión añadida, por lo que es necesaria la utilización de técnicas que permitan realizar estas detecciones en tiempo real, como es el caso de PointPillars \cite{pointpillars}, modelo que se explicará más adelante en \ref{sec:pointpillars}, y que como se ve en \ref{fig:Detecciones_3d_utilizando_lidar} es capaz de realizar las detecciones en un entorno tridimensional utilizando unicamente el \acs{lidar}.
+Unicamente con detecciones 2D no se puede obtener la distancia a los vehículos, como mucho una aproximación a partir del tamaño de la bounding box 2D, aparte de la dirección en la que se encuentran respecto del coche. Es por ello que se termina trabajando con detecciones 3D, las cuales pueden tener como paso intermedio una detección 2D o ser obtenidas directamente con un sistema estéreo de cámaras o a partir de las nubes de puntos del \acs{radar} o del \acs{lidar}.\par
+Las técnicas que realizan detecciones en un sistema tridimensional tienen un coste computacional mayor al trabajar con una dimensión añadida, por lo que es necesaria la utilización de técnicas que permitan realizar estas detecciones en tiempo real, como es el caso de PointPillars \cite{pointpillars}, modelo que se explicará más adelante en la sección \ref{sec:pointpillars}, y que como se ve en el punto \ref{fig:Detecciones_3d_utilizando_lidar} es capaz de realizar las detecciones en un entorno tridimensional utilizando unicamente el \acs{lidar}.
 
 \subsection{Sistemas de seguimiento}
 \label{sec:sistemas-de-seguimiento}
 
-Mientras que en los sistemas de detección se suele utilizar un único estado discretizado del entorno percibido por los sensores, el seguimiento o tracking utiliza múltiples estados para el reconocimiento de los objetos en múltiples escenas, con su posterior asociación y el calculo de la trayectoria de estos.\par
-En este campo se pueden tomar diversos acercamientos al problema, utilizando técnicas clásicas como \ac{kf}, \ac{ekf} o \ac{ukf}, modelos neuronales como en \cite{tracking_based_on_rnn}, modelos end-to-end que incorporan detección y tracking en un mismo modelo neuronal como es el caso de PointTrackNet \cite{pointtracknet} o modelos que realizan tracking de forma implícita como CBGS \cite{cbgs} que calculan la velocidad de los objetos sin devolver identificadores de estos \ref{sec:cbgs}.
+Mientras que en los sistemas de detección se suele utilizar un único estado discretizado del entorno percibido por los sensores, el seguimiento o tracking utiliza múltiples estados para el reconocimiento de los objetos en múltiples escenas, con su posterior asociación y el calculo de la trayectoria de los mismos.\par
+En este campo se pueden tomar diversos acercamientos al problema, utilizando técnicas clásicas como \ac{kf}, \ac{ekf} o \ac{ukf}, modelos neuronales como en \cite{tracking_based_on_rnn}, modelos end-to-end que incorporan detección y tracking en un mismo modelo neuronal como es el caso de PointTrackNet \cite{pointtracknet} o modelos que realizan tracking de forma implícita como CBGS \cite{cbgs} que calculan la velocidad de los objetos sin devolver identificadores de estos (como se verá en el punto \ref{sec:cbgs}).
 
 \begin{figure}[H]
 	\centering
@@ -148,12 +148,12 @@ En este campo se pueden tomar diversos acercamientos al problema, utilizando téc
 	\label{fig:Tracking_como_vista_de_pajaro_sobre_una_nube_de_puntos}
 \end{figure}
 
-Los sistemas de detección suelen trabajar a partir de modelos en dos dimensiones que trabajan en vista de pájaro lo cual elimina lidiar con movimientos verticales, en estos se detecta la posición actual, velocidad lineal, velocidad angular y se puede definir el movimiento todo lo complejo que se desee. Tras esto también se predice el futuro estado de los objetos, manteniendo un identificador asociado a estos a los largo de los frames analizados.
+Los sistemas de detección suelen trabajar a partir de modelos en dos dimensiones que trabajan en vista de pájaro lo cual evita lidiar con movimientos verticales. En estos se detecta la posición actual, velocidad lineal, velocidad angular y se puede definir el movimiento todo lo complejo que se desee. Tras la detección también se predice el futuro estado de los objetos, manteniendo un identificador asociado a los objetos a lo largo de los frames analizados.
 
 \subsection{Fusión sensorial}
 \label{sec:fusion-sensorial}
 
-Los sistemas de fusión sensorial son necesarios para el aumento de la precisión en los sistemas de detección y tracking, como se ha visto en \ref{sec:principales-sensores-para-la-percepcion-en-vehiculos-autonomos}, los sensores ofrecen información diferente al resto, por lo que el aumento de precisión es producido por el aumento en la cantidad de datos proveniente de todos los sensores. La complejidad de estas técnicas radica en el uso eficiente de todos los sensores.
+Los sistemas de fusión sensorial son necesarios para el aumento de la precisión en los sistemas de detección y tracking, como se ha visto en el apartado \ref{sec:principales-sensores-para-la-percepcion-en-vehiculos-autonomos}, los sensores ofrecen información diferente al resto, por lo que el aumento de precisión se produce por el aumento en la cantidad de datos proveniente de todos los sensores. La complejidad de estas técnicas radica en el uso eficiente de todos los sensores.
 
 \begin{figure}[H]
 	\centering
@@ -181,4 +181,4 @@ Las redes neuronales profundas o Deep Learning son aquellas redes neuronales con
 \end{figure}
 
 En el campo de la visión artificial las Redes Neuronales Convolucionales o \ac{cnn} han conseguido una mejora importante en la precisión de los modelos. Estas redes son utilizadas principalmente para su uso con cámaras ya que su estructura tridimensional funciona de forma muy buena con las \acs{cnn}. Un modelo típico para uso con imágenes sería \ref{fig:Convolutional_neural_network}.\par
-Para los sistemas de detección con \acs{lidar} basados Deep Learning son utilizadas principalmente las \acs{cnn} junto con capas \ac{fc}, ya que son las que obtienen un mejor rendimiento como se verá en el capítulo \ref{cha:sistemas_de_percepcion_con_lidar_basados_en_deep_learning}.
+Para los sistemas de detección con \acs{lidar} basados en Deep Learning se utilizan principalmente las \acs{cnn} junto con capas \ac{fc}, ya que son las que obtienen un mejor rendimiento como se verá en el capítulo \ref{cha:sistemas_de_percepcion_con_lidar_basados_en_deep_learning}.
