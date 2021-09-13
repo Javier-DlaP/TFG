@@ -12,7 +12,8 @@
 
 \noindent
 Este capítulo muestra los resultados de los diferentes modelos y algoritmos presentados para la detección 3D con \acs{lidar} sobre: datasets, el simulador CARLA y el vehículo T4AC.\par
-Las métricas de tiempo de todos los modelos han sido realizadas sobre un ordenador con un procesador AMD Ryzen 3700X y una tarjeta gráfica NVIDIA RTX 2060 Super.
+Las métricas de tiempo de todos los modelos han sido realizadas sobre un ordenador con un procesador AMD Ryzen 3700X y una tarjeta gráfica NVIDIA RTX 2060 Super.\par
+Para la visualización de los resultados sobre CARLA y sobre el vehículo T4AC en el campus de la Universidad de Alcalá, se presenta un vídeo en \url{https://youtu.be/9vLnA27dmns} con en el desarrollo realizado sobre la arquitectura del proyecto Techs4AgeCar.
 
 \section{Análisis sobre datasets}
 \label{sec:analisis_sobre_datasets}
@@ -82,6 +83,8 @@ Mientras que para la estimación de la orientación se utiliza la métrica \ac{aos}
 \label{tab:analisis_por_clase_de_sencond_en_kitti}
 \end{longtable}
 \end{center}
+
+\vspace{-1cm}
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|c|}
@@ -360,7 +363,7 @@ Camión& 0.52 & 0.34 & 0.19 & 0.06 & 0.21 & 0.24 \\
 \hline
 Bus& 0.67 & 0.35 & 0.18 & 0.04 & 0.38 & 0.26 \\
 \hline
-Remolque& 0.37 & 0.52 & 0.21 & 0.28 & 0.18 & 0.18 \\
+Tráiler& 0.37 & 0.52 & 0.21 & 0.28 & 0.18 & 0.18 \\
 \hline
 Vehículo de construcción& 0.15 & 0.75 & 0.45 & 0.78 & 0.12 & 0.34 \\
 \hline
@@ -401,7 +404,7 @@ Camión& 0.50 & 0.35 & 0.19 & 0.09 & 0.22 & 0.24 \\
 \hline
 Bus& 0.64 & 0.37 & 0.18 & 0.05 & 0.44 & 0.29 \\
 \hline
-Remolque& 0.35 & 0.61 & 0.21 & 0.39 & 0.18 & 0.16 \\
+Tráiler& 0.35 & 0.61 & 0.21 & 0.39 & 0.18 & 0.16 \\
 \hline
 Vehículo de construcción& 0.12 & 0.76 & 0.45 & 0.77 & 0.12 & 0.33 \\
 \hline
@@ -417,6 +420,49 @@ Barrera& 0.50 & 0.34 & 0.29 & 0.07 & nan & nan \\
 \hline
 \caption{Análisis por clase de CBGS PointPillars Multihead en nuScenes.}
 \label{tab:analisis_por_clase_de_cbgs_pointpillars_multihead_en_nuscenes}
+\end{longtable}
+\end{center}
+
+Al utilizar el modelo CBGS para la mejora del sistema de detección en el vehículo T4AC que utiliza el modelo PointPillars, se muestran los resultados del modelo PointPillars proporcionado por nuScenes como baseline para su benchmark de detección. Estos resultados son recogidos del propio ranking de detección al ser una versión modificada para su uso en nuScenes, que usa 10 barridos del \acs{lidar} para la inferencia de las velocidades, se ajusta a las características de intensidad del \acs{lidar} y realiza una detección en los 360º.
+
+\begin{center}
+\begin{longtable}{|c||c|c|c|c|c|c|}
+\hline
+\textbf{Tipo de objeto}&\textbf{AP}&\textbf{ATE}&\textbf{ASE}&\textbf{AOE}&\textbf{AVE}&\textbf{AAE}\\
+\hline
+\hline
+\endfirsthead
+\multicolumn{7}{c}%
+{\tablename\ \thetable\ -- \textit{Continua en la página anterior}} \\
+\hline
+\textbf{Tipo de objeto}&\textbf{AP}&\textbf{ATE}&\textbf{ASE}&\textbf{AOE}&\textbf{AVE}&\textbf{AAE}\\
+\hline
+\endhead
+\hline \multicolumn{7}{r}{\textit{Continua en la próxima página}} \\
+\endfoot
+\endlastfoot
+Coche& 0.68 & 0.28 & 0.16 & 0.20 & 0.24 & 0.36 \\
+\hline
+Camión& 0.23 & 0.50 & 0.23 & 0.18 & 0.26 & 0.41 \\
+\hline
+Bus& 0.28 & 0.56 & 0.20 & 0.25 & 0.42 & 0.34 \\
+\hline
+Tráiler& 0.23 & 0.89 & 0.20 & 0.83 & 0.20 & 0.21 \\
+\hline
+Vehículo de construcción& 0.04 & 0.89 & 0.49 & 1.26 & 0.11 & 0.15 \\
+\hline
+Peatón& 0.60 & 0.28 & 0.31 & 0.37 & 0.25 & 0.16 \\
+\hline
+Motocicleta& 0.27 & 0.36 & 0.29 & 0.79 & 0.63 & 0.64 \\
+\hline
+Bicicleta& 0.01 & 0.31 & 0.32 & 0.54 & 0.43 & 0.68 \\
+\hline
+Cono de tráfico& 0.31 & 0.40 & 0.39 & nan & nan & nan \\
+\hline
+Barrera& 0.39 & 0.71 & 0.30 & 0.08 & nan & nan \\
+\hline
+\caption{Análisis por clase de PointPillars en nuScenes.}
+\label{tab:analisis_por_clase_de_pointpillars_en_nuscenes}
 \end{longtable}
 \end{center}
 
@@ -436,25 +482,23 @@ Barrera& 0.50 & 0.34 & 0.29 & 0.07 & nan & nan \\
 \hline \multicolumn{4}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-\multirow{4}{*}{SECOND Multihead}
+\multirow{7}{*}{SECOND Multihead (CBGS)}
 & mAP & \textbf{0.5066} &
-\multirow{4}{*}{9.18 Hz}\\
+\multirow{7}{*}{9.18 Hz}\\
 \cline{2-3}
 & mATE & \textbf{0.3126} &\\
 \cline{2-3}
 & mASE & \textbf{0.2552} &\\
 \cline{2-3}
 & mAOE & \textbf{0.2625} &\\
-\hline
-\multirow{3}{*}{SECOND Multihead}
-& mAVE & \textbf{0.2616} &
-\multirow{3}{*}{9.18 Hz}\\
+\cline{2-3}
+& mAVE & \textbf{0.2616} &\\
 \cline{2-3}
 & mAAE & 0.2031 &\\
 \cline{2-3}
 & NDS & \textbf{0.6238} &\\
 \hline
-\multirow{7}{*}{PointPillars Multihead}
+\multirow{7}{*}{PointPillars Multihead (CBGS)}
 & mAP & 0.4474 &
 \multirow{7}{*}{\textbf{12.84 Hz}}\\
 \cline{2-3}
@@ -470,10 +514,28 @@ Barrera& 0.50 & 0.34 & 0.29 & 0.07 & nan & nan \\
 \cline{2-3}
 & NDS & 0.5832 &\\
 \hline
-\caption{Comparativa de los modelos basados en CBGS en nuScenes.}
-\label{tab:Comparativa_de_los_modelos_basados_en_cbgs_en_nuscenes}
+\multirow{7}{*}{PointPillars}
+& mAP & 0.3050 &
+\multirow{7}{*}{-}\\
+\cline{2-3}
+& mATE & 0.5169 &\\
+\cline{2-3}
+& mASE & 0.2900 &\\
+\cline{2-3}
+& mAOE & 0.4950 &\\
+\cline{2-3}
+& mAVE & 0.3163 &\\
+\cline{2-3}
+& mAAE & 0.3675 &\\
+\cline{2-3}
+& NDS & 0.4539 &\\
+\hline
+\caption{Comparativa de los modelos entrenados sobre nuScenes.}
+\label{tab:Comparativa_de_los_modelos_entrenados_sobre_nuscenes}
 \end{longtable}
 \end{center}
+
+El modelo PointPillars es claramente superado en nuScenes por los modelos basados en CBGS, por lo que se ve la mejora en precisión que el nuevo sistema de percepción va a recibir.
 
 \subsection{Análisis adicionales}
 \label{sec:analisis_adicionales}
@@ -516,7 +578,7 @@ Tras el reentrenamiento probando con múltiples configuraciones de parámetros y d
 \subsubsection{Número de nubes de puntos de entrada en modelos evaluados sobre nuScenes}
 \label{sec:numero_de_pcl_de_entrada_en_modelos_evaluados_sobre_nuscenes}
 
-En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto se recomienda un uso de 10 barridos. Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo cuantos menos barridos se utilicen.
+En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto se recomienda un uso de 10 barridos.
 
 \begin{figure}[H]
 	\centering
@@ -525,6 +587,7 @@ En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar
 \label{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos}
 \end{figure}
 
+Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo cuantos menos barridos se utilicen.\par
 La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos} muestra el rendimiento sobre todo el dataset de nuScenes, mostrando la mediana, cuartiles y deciles de la velocidad de inferencia de los modelos. Se puede ver de esta manera que a partir del uso único de 3 barridos se consigue una mejora en el rendimiento, mientras que con el aumento hasta 10, la velocidad de inferencia no se mejora. Por otra parte revisando los deciles del rendimiento se observa que unicamente PointPillars Multihead consigue un rendimiento siempre superior a los 10 Hz, requisito indispensable para la implementación el proyecto Techs4AgeCar.
 
 \begin{center}
@@ -768,10 +831,6 @@ Para ver la mejora en precisión de la implementación del modelo PointPillars Mul
 La implementación actual no solo mejora como se ve claramente en la precisión de las detecciones de los coches al producir menos falsos positivos, sino que ahora también se detectar peatones, cosa que en la anterior implementación esto no era posible.
 
 
-\subsection{Análisis cualitativo del sistema de fusión sensorial en CARLA}
-\label{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_en_carla}
-
-
 \subsection{Análisis cuantitativo de Pointpillars Multihead en CARLA}
 \label{sec:analisis_cuantitativo_de_cbgs_en_carla}
 
@@ -895,4 +954,34 @@ La ventaja que se tenía antes con este modelo es la ejecución sobre la NVIDIA Je
 \subsection{Análisis cualitativo del sistema de fusión sensorial sobre el vehículo T4AC}
 \label{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_sobre_el_vehiculo_t4ac}
 
+Los sistemas de detección basados en \acs{lidar} tienen el inconveniente de la cantidad de falsos positivos que producen al no tener la información suficiente para hallar los objetos del entorno de una forma sencilla, mientras que gracias a este sensor es conseguido un ajuste muy bueno de las bounding boxes entorno a los objetos. Por otra parte los sistemas de detección basados en cámara monocular ofrecen un muy buen reconocimiento de los objetos en un entorno 2D, mientras que no son capaces de obtener detecciones 3D muy precisas.\par
+Basado en estas características, se consiguen utilizar las detecciones 3D aproximadas provenientes del sistema basado en cámara, mientras que se aprovecha del sistema basado en \acs{lidar} para su ajuste.
 
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/sensor_fusion_lidar_camera_1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/sensor_fusion_1.jpg}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/sensor_fusion_lidar_camera_2.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/7_resultados/sensor_fusion_2.jpg}
+  \end{subfigure}
+\caption{Fusión sensorial en el vehículo T4AC.}
+\label{fig:Fusion_sensorial_en_el_vehiculo_t4ac}
+\end{figure}
+
+En la figura \ref{fig:Fusion_sensorial_en_el_vehiculo_t4ac} se muestran las detecciones producidas por el sistema de fusión sensorial, donde en las imágenes de la izquierda se muestran las detecciones de los sistemas de cámara y \acs{lidar}, siendo las detecciones rojas aquellas producidas por la cámara y las detecciones azules las generadas por el sistema basado en \acs{lidar}, por otra parte a la derecha se muestra el resultado de la fusión sensorial como detecciones de color negro.\par
+Se puede observar como las detecciones de la cámara solo se encuentran en la parte frontal y las producidas por el \acs{lidar} alrededor del vehículo, esto consigue un sistema donde se mejoran las detecciones frontales, ya que es necesario una detección en ambos sistemas sobre un objeto para darse como correcta dicha detección.

@@ -4,33 +4,34 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Comparativa entre los principales datasets.\relax }}{31}{table.caption.96}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Comparativa entre los principales datasets.\relax }}{29}{table.caption.96}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Estructura del LiDAR en el CARLA-ROS bridge.\relax }}{50}{table.caption.152}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Par\'ametros del modelo cl\'asico de detecci\'on con LiDAR.\relax }}{51}{table.caption.177}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Estructura del LiDAR en el CARLA-ROS bridge.\relax }}{48}{table.caption.152}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Par\'ametros del modelo cl\'asico de detecci\'on con LiDAR.\relax }}{49}{table.caption.177}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Formato de la lista de objetos de CARLA\relax }}{59}{table.caption.206}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Formato objeto de CARLA\relax }}{59}{table.caption.206}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Formato de la lista de detecciones en ROS\relax }}{62}{table.caption.227}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Formato de una detecci\'on en ROS\relax }}{62}{table.caption.227}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Formato de la lista de objetos de CARLA\relax }}{57}{table.caption.206}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Formato objeto de CARLA\relax }}{57}{table.caption.206}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Formato de la lista de detecciones en ROS\relax }}{60}{table.caption.227}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Formato de una detecci\'on en ROS\relax }}{60}{table.caption.227}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces An\'alisis por clase de SECOND en KITTI.\relax }}{68}{table.236}
-\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de PointPillars en KITTI.\relax }}{68}{table.237}
-\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de PointRCNN en KITTI.\relax }}{69}{table.238}
-\contentsline {table}{\numberline {7.4}{\ignorespaces An\'alisis por clase de PV-RCNN en KITTI.\relax }}{69}{table.239}
-\contentsline {table}{\numberline {7.5}{\ignorespaces Comparativa de los modelos entrenados sobre KITTI.\relax }}{70}{table.240}
-\contentsline {table}{\numberline {7.6}{\ignorespaces An\'alisis por clase de CBGS SECOND Multihead en nuScenes.\relax }}{71}{table.242}
-\contentsline {table}{\numberline {7.7}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{71}{table.243}
-\contentsline {table}{\numberline {7.8}{\ignorespaces Comparativa de los modelos basados en CBGS en nuScenes.\relax }}{72}{table.244}
-\contentsline {table}{\numberline {7.9}{\ignorespaces An\'alisis de la precisi\'on de SECOND Multihead seg\'un el n\'umero de barridos.\relax }}{74}{table.252}
-\contentsline {table}{\numberline {7.10}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{75}{table.253}
-\contentsline {table}{\numberline {7.11}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el tama\~no del voxel.\relax }}{75}{table.255}
-\contentsline {table}{\numberline {7.12}{\ignorespaces Par\'ametros del LiDAR en CARLA.\relax }}{76}{table.caption.257}
-\contentsline {table}{\numberline {7.13}{\ignorespaces M\'etricas para la clase coche de PointPillars Multihead en CARLA.\relax }}{79}{table.caption.267}
+\contentsline {table}{\numberline {7.1}{\ignorespaces An\'alisis por clase de SECOND en KITTI.\relax }}{66}{table.236}
+\contentsline {table}{\numberline {7.2}{\ignorespaces An\'alisis por clase de PointPillars en KITTI.\relax }}{66}{table.237}
+\contentsline {table}{\numberline {7.3}{\ignorespaces An\'alisis por clase de PointRCNN en KITTI.\relax }}{67}{table.238}
+\contentsline {table}{\numberline {7.4}{\ignorespaces An\'alisis por clase de PV-RCNN en KITTI.\relax }}{67}{table.239}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Comparativa de los modelos entrenados sobre KITTI.\relax }}{68}{table.240}
+\contentsline {table}{\numberline {7.6}{\ignorespaces An\'alisis por clase de CBGS SECOND Multihead en nuScenes.\relax }}{69}{table.242}
+\contentsline {table}{\numberline {7.7}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{69}{table.243}
+\contentsline {table}{\numberline {7.8}{\ignorespaces An\'alisis por clase de PointPillars en nuScenes.\relax }}{70}{table.244}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Comparativa de los modelos entrenados sobre nuScenes.\relax }}{70}{table.245}
+\contentsline {table}{\numberline {7.10}{\ignorespaces An\'alisis de la precisi\'on de SECOND Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.253}
+\contentsline {table}{\numberline {7.11}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.254}
+\contentsline {table}{\numberline {7.12}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el tama\~no del voxel.\relax }}{74}{table.256}
+\contentsline {table}{\numberline {7.13}{\ignorespaces Par\'ametros del LiDAR en CARLA.\relax }}{74}{table.caption.258}
+\contentsline {table}{\numberline {7.14}{\ignorespaces M\'etricas para la clase coche de PointPillars Multihead en CARLA.\relax }}{78}{table.caption.267}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Coste del hardware y software utilizado.\relax }}{97}{table.caption.369}
-\contentsline {table}{\numberline {C.2}{\ignorespaces Coste del trabajo personal realizado.\relax }}{98}{table.caption.371}
-\contentsline {table}{\numberline {C.3}{\ignorespaces Coste total del TFG.\relax }}{98}{table.caption.373}
+\contentsline {table}{\numberline {C.1}{\ignorespaces Coste del hardware y software utilizado.\relax }}{97}{table.caption.370}
+\contentsline {table}{\numberline {C.2}{\ignorespaces Coste del trabajo personal realizado.\relax }}{98}{table.caption.372}
+\contentsline {table}{\numberline {C.3}{\ignorespaces Coste total del TFG.\relax }}{98}{table.caption.374}

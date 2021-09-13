@@ -515,7 +515,7 @@ SECOND (Sparsely Embedded CONvolutional Detector) \cite{second} se publica en 20
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second.png}
+	\includegraphics[width=0.9\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/second.png}
 	\caption{Arquitectura propuesta del detector SECOND.}
 	\label{fig:Arquitectura_propuesta_del_detector_second}
 \end{figure}
@@ -527,16 +527,17 @@ Se comienza con la voxelización de la nube de puntos haciendo uso de una tabla h
 \item Extractor de características a nivel de vóxel\par
 Se utiliza una capa \ac{vfe} tal como se presenta en el detector VoxelNet \cite{voxelnet} para extraer las características. Para ello se utiliza una \ac{fcn} compuesta de capas \acs{fc}, una capa que aplica batch nomalization y una \ac{relu} de salida para extraer las características a nivel de punto y se aplica max pooling para la obtención de las características a nivel de vóxel.
 \item Extractor convolucional disperso\par
-El uso de Sparse Convolutional Networks ofrece una mejora en rendimiento al no computar una salida si no hay una entrada dada. Al trabajar con una nube de puntos voxelizada se consigue una mejora en el rendimiento al no utilizar aquellos vóxeles que no contienen ningún punto. Para poder aplicar este tipo de redes es necesario hallar qué indices del kernel van a ser utilizados, y para ello se necesita un algoritmo que contenga las reglas para indicar que parte del kernel es utilizado.
+El uso de Sparse Convolutional Networks ofrece una mejora en rendimiento al no computar una salida si no hay una entrada dada. Al trabajar con una nube de puntos voxelizada se consigue una mejora en el rendimiento al no utilizar aquellos vóxeles que no contienen ningún punto. Para poder aplicar este tipo de redes es necesario hallar qué indices del kernel van a ser utilizados, y para ello se necesita un algoritmo que contenga las reglas para indicar que parte del kernel es utilizado.\par
+Para ello se construye una tabla de matrices de reglas para guardar los indices utilizados. Con esto en cuenta, hace falta el algoritmo que genere las reglas, SparseConvNet \cite{sparseconvnet} es el modelo original que ofrece la implementación del Submanifold Convolution, una técnica dentro del campo de las Sparse Convolutional Networks que realiza la generación de reglas en CPU.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.55\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse_convolutional_extractor.png}
+	\includegraphics[width=0.6\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/sparse_convolutional_extractor.png}
 	\caption{Algoritmo de convolución disperso propuesto en SECOND.}
 	\label{fig:Algoritmo_de_convolucion_disperso_propuesto_en_second}
 \end{figure}
 
-Para ello se construye una tabla de matrices de reglas para guardar los indices utilizados. Con esto en cuenta, hace falta el algoritmo que genere las reglas, SparseConvNet \cite{sparseconvnet} es el modelo original que ofrece la implementación del Submanifold Convolution, una técnica dentro del campo de las Sparse Convolutional Networks que realiza la generación de reglas en CPU. En este trabajo se implementa un generador de reglas en GPU aprovechando la aceleración por hardware y el procesamiento paralelo para conseguir una generación de reglas en la mitad de tiempo que SparseConvNet. Este extractor se utiliza para convertir la información 3D en un formato similar a una imagen \ac{bev}.
+En este trabajo se implementa un generador de reglas en GPU aprovechando la aceleración por hardware y el procesamiento paralelo para conseguir una generación de reglas en la mitad de tiempo que SparseConvNet. Este extractor se utiliza para convertir la información 3D en un formato similar a una imagen \ac{bev}.
 \item \acl{rpn}\par
 Las \acs{rpn} fueron presentadas junto con el detector Fast R-CNN \cite{fast_rcnn} y son utilizadas en este modelo para que a partir del mapa de características extraído de la fase anterior, obtenga las predicciones del modelo.
 \item Obtención de las detecciones\par
@@ -557,8 +558,6 @@ Para la obtención de esta velocidad de inferencia, PointPillars elimina el uso d
 	\caption{Arquitectura propuesta del detector PointPillars.}
 	\label{fig:Arquitectura_propuesta_del_detector_pointpillars}
 \end{figure}
-
-\newpage
 
 \begin{enumerate}
 \item Nube de puntos a pseudo imágenes\par
@@ -606,8 +605,6 @@ Al estar basado este método en dos subredes, sufre de un tiempo de computo mayor
 \label{sec:pv_rcnn}
 
 PV-RCNN \cite{pv_rcnn} unifica los beneficios de las dos principales técnicas de detección de objetos utilizando \acs{lidar}, como son: el uso de técnicas de voxelización junto con Sparse Convolutional Networks y el uso de backbones como el de PointNet \cite{pointnet} o métodos similares. Para ello se construye un modelo basado en tres pasos:
-
-\newpage
 
 \begin{figure}[H]
 	\centering
