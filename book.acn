@@ -74,10 +74,10 @@
 \glossaryentry{SOTA?\glossentry{sota}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{SLAM?\glossentry{slam}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{KIT?\glossentry{kit}|setentrycounter[]{page}\glsnumberformat}{20}
-\glossaryentry{TTIC?\glossentry{ttic}|setentrycounter[]{page}\glsnumberformat}{20}
-\glossaryentry{ADAS?\glossentry{adas}|setentrycounter[]{page}\glsnumberformat}{20}
-\glossaryentry{ADS?\glossentry{ads}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{KIT?\glossentry{kit}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{TTIC?\glossentry{ttic}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{ADAS?\glossentry{adas}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{ADS?\glossentry{ads}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{21}
 \glossaryentry{SOTA?\glossentry{sota}|setentrycounter[]{page}\glsnumberformat}{21}
 \glossaryentry{GPS?\glossentry{gps}|setentrycounter[]{page}\glsnumberformat}{21}
@@ -231,7 +231,6 @@
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{AD DevKit?\glossentry{ad_devkit}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{AB4COGT?\glossentry{ab4cogt}|setentrycounter[]{page}\glsnumberformat}{56}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{57}
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{57}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{57}
@@ -266,29 +265,29 @@
 \glossaryentry{ASE?\glossentry{ase}|setentrycounter[]{page}\glsnumberformat}{68}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{68}
 \glossaryentry{AOE?\glossentry{aoe}|setentrycounter[]{page}\glsnumberformat}{68}
-\glossaryentry{AVE?\glossentry{ave}|setentrycounter[]{page}\glsnumberformat}{68}
-\glossaryentry{AAE?\glossentry{aae}|setentrycounter[]{page}\glsnumberformat}{68}
+\glossaryentry{AVE?\glossentry{ave}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{AAE?\glossentry{aae}|setentrycounter[]{page}\glsnumberformat}{69}
 \glossaryentry{NDS?\glossentry{nds}|setentrycounter[]{page}\glsnumberformat}{69}
 \glossaryentry{AP?\glossentry{ap}|setentrycounter[]{page}\glsnumberformat}{69}
-\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{69}
-\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{70}
+\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{74}
-\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{74}
-\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{75}
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{75}
 \glossaryentry{RANSAC?\glossentry{ransac}|setentrycounter[]{page}\glsnumberformat}{75}
-\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{76}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{76}
 \glossaryentry{AD DevKit?\glossentry{ad_devkit}|setentrycounter[]{page}\glsnumberformat}{77}
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{77}
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{77}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{77}
-\glossaryentry{AD DevKit?\glossentry{ad_devkit}|setentrycounter[]{page}\glsnumberformat}{77}
-\glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{77}
+\glossaryentry{AD DevKit?\glossentry{ad_devkit}|setentrycounter[]{page}\glsnumberformat}{78}
+\glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{78}
 \glossaryentry{AD DevKit?\glossentry{ad_devkit}|setentrycounter[]{page}\glsnumberformat}{78}
 \glossaryentry{ROS?\glossentry{ros}|setentrycounter[]{page}\glsnumberformat}{78}
 \glossaryentry{LiDAR?\glossentry{lidar}|setentrycounter[]{page}\glsnumberformat}{78}

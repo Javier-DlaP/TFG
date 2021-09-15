@@ -63,37 +63,37 @@
 \contentsline {subsection}{\numberline {6.2.3}Formato del groundtruth obtenido}{60}{subsection.225}
 \contentsline {subsection}{\numberline {6.2.4}Funcionamiento del generador de groundtruth}{61}{subsection.228}
 \contentsline {section}{\numberline {6.3}Evaluaci\'on de los modelos}{61}{section.231}
-\contentsline {chapter}{\numberline {7}Resultados obtenidos}{65}{chapter.233}
-\contentsline {section}{\numberline {7.1}An\'alisis sobre datasets}{65}{section.234}
-\contentsline {subsection}{\numberline {7.1.1}An\'alisis cuantitativo en Kitti}{65}{subsection.235}
-\contentsline {subsection}{\numberline {7.1.2}An\'alisis cuantitativo en nuScenes}{68}{subsection.241}
-\contentsline {subsection}{\numberline {7.1.3}An\'alisis adicionales}{71}{subsection.246}
-\contentsline {subsubsection}{\numberline {7.1.3.1}Transferencia de modelos basados en Kitti a nuScenes}{71}{subsubsection.247}
-\contentsline {subsubsection}{\numberline {7.1.3.2}N\'umero de nubes de puntos de entrada en modelos evaluados sobre nuScenes}{72}{subsubsection.251}
-\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del v\'oxel en modelos basados en redes neuronales}{74}{subsubsection.255}
-\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{74}{section.257}
-\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{75}{subsection.259}
-\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{75}{subsection.261}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{76}{subsubsection.263}
-\contentsline {subsection}{\numberline {7.2.3}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{77}{subsection.265}
-\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{78}{section.268}
-\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{78}{subsection.269}
-\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{79}{subsubsection.271}
-\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{80}{subsection.273}
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{83}{chapter.275}
-\contentsline {section}{\numberline {8.1}Conclusiones}{83}{section.276}
-\contentsline {section}{\numberline {8.2}Trabajos futuros}{84}{section.277}
-\contentsline {chapter}{Bibliograf\'{\i }a}{85}{chapter*.278}
-\contentsline {chapter}{\numberline {A}Manual de usuario}{91}{appendix.279}
-\contentsline {section}{\numberline {A.1}Sistema de detecciones basado en t\'ecnicas cl\'asicas}{91}{section.280}
-\contentsline {section}{\numberline {A.2}Muestra de nubes de puntos en KITTI}{91}{section.290}
-\contentsline {section}{\numberline {A.3}Modelo de detecciones basado en Deep Learning}{92}{section.296}
-\contentsline {section}{\numberline {A.4}Sistema de detecciones mediante fusi\'on sensorial}{92}{section.303}
-\contentsline {section}{\numberline {A.5}Uso del AD Devkit para la evaluaci\'on de la capa de percepci\'on}{92}{section.317}
-\contentsline {chapter}{\numberline {B}Pliego de condiciones}{95}{appendix.365}
-\contentsline {section}{\numberline {B.1}Recursos hardware}{95}{section.366}
-\contentsline {section}{\numberline {B.2}Recursos software}{95}{section.367}
-\contentsline {chapter}{\numberline {C}Presupuesto}{97}{appendix.368}
-\contentsline {section}{\numberline {C.1}Coste de hardware y software}{97}{section.369}
-\contentsline {section}{\numberline {C.2}Coste de personal}{97}{section.371}
-\contentsline {section}{\numberline {C.3}Coste total}{98}{section.373}
+\contentsline {chapter}{\numberline {7}Resultados obtenidos}{65}{chapter.234}
+\contentsline {section}{\numberline {7.1}An\'alisis sobre datasets}{65}{section.235}
+\contentsline {subsection}{\numberline {7.1.1}An\'alisis cuantitativo en Kitti}{65}{subsection.236}
+\contentsline {subsection}{\numberline {7.1.2}An\'alisis cuantitativo en nuScenes}{68}{subsection.242}
+\contentsline {subsection}{\numberline {7.1.3}An\'alisis adicionales}{71}{subsection.247}
+\contentsline {subsubsection}{\numberline {7.1.3.1}Transferencia de modelos basados en Kitti a nuScenes}{71}{subsubsection.248}
+\contentsline {subsubsection}{\numberline {7.1.3.2}N\'umero de nubes de puntos de entrada en modelos evaluados sobre nuScenes}{72}{subsubsection.252}
+\contentsline {subsubsection}{\numberline {7.1.3.3}Tama\~no del v\'oxel en modelos basados en redes neuronales}{74}{subsubsection.256}
+\contentsline {section}{\numberline {7.2}An\'alisis sobre el simulador CARLA}{75}{section.258}
+\contentsline {subsection}{\numberline {7.2.1}An\'alisis cualitativo del modelo cl\'asico en CARLA}{75}{subsection.260}
+\contentsline {subsection}{\numberline {7.2.2}An\'alisis cualitativo de Pointpillars Multihead en CARLA}{76}{subsection.262}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Comparativa con PointPillars en CARLA}{77}{subsubsection.264}
+\contentsline {subsection}{\numberline {7.2.3}An\'alisis cuantitativo de Pointpillars Multihead en CARLA}{77}{subsection.266}
+\contentsline {section}{\numberline {7.3}An\'alisis sobre el veh\IeC {\'\i }culo T4AC}{78}{section.269}
+\contentsline {subsection}{\numberline {7.3.1}An\'alisis cualitativo de Pointpillars Multihead sobre el veh\IeC {\'\i }culo T4AC}{78}{subsection.270}
+\contentsline {subsubsection}{\numberline {7.3.1.1}Comparativa con PointPillars sobre el veh\IeC {\'\i }culo T4AC}{79}{subsubsection.272}
+\contentsline {subsection}{\numberline {7.3.2}An\'alisis cualitativo del sistema de fusi\'on sensorial sobre el veh\IeC {\'\i }culo T4AC}{80}{subsection.274}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{83}{chapter.276}
+\contentsline {section}{\numberline {8.1}Conclusiones}{83}{section.277}
+\contentsline {section}{\numberline {8.2}Trabajos futuros}{84}{section.278}
+\contentsline {chapter}{Bibliograf\'{\i }a}{85}{chapter*.279}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{91}{appendix.280}
+\contentsline {section}{\numberline {A.1}Sistema de detecciones basado en t\'ecnicas cl\'asicas}{91}{section.281}
+\contentsline {section}{\numberline {A.2}Muestra de nubes de puntos en KITTI}{91}{section.291}
+\contentsline {section}{\numberline {A.3}Modelo de detecciones basado en Deep Learning}{92}{section.297}
+\contentsline {section}{\numberline {A.4}Sistema de detecciones mediante fusi\'on sensorial}{92}{section.304}
+\contentsline {section}{\numberline {A.5}Uso del AD Devkit para la evaluaci\'on de la capa de percepci\'on}{92}{section.318}
+\contentsline {chapter}{\numberline {B}Pliego de condiciones}{95}{appendix.366}
+\contentsline {section}{\numberline {B.1}Recursos hardware}{95}{section.367}
+\contentsline {section}{\numberline {B.2}Recursos software}{95}{section.368}
+\contentsline {chapter}{\numberline {C}Presupuesto}{97}{appendix.369}
+\contentsline {section}{\numberline {C.1}Coste de hardware y software}{97}{section.370}
+\contentsline {section}{\numberline {C.2}Coste de personal}{97}{section.372}
+\contentsline {section}{\numberline {C.3}Coste total}{98}{section.374}

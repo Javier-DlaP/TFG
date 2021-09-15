@@ -61,37 +61,37 @@
 \BOOKMARK [2][-]{subsection.225}{6.2.3 Formato del groundtruth obtenido}{section.205}% 61
 \BOOKMARK [2][-]{subsection.228}{6.2.4 Funcionamiento del generador de groundtruth}{section.205}% 62
 \BOOKMARK [1][-]{section.231}{6.3 Evaluaci\363n de los modelos}{chapter.201}% 63
-\BOOKMARK [0][-]{chapter.233}{7 Resultados obtenidos}{}% 64
-\BOOKMARK [1][-]{section.234}{7.1 An\341lisis sobre datasets}{chapter.233}% 65
-\BOOKMARK [2][-]{subsection.235}{7.1.1 An\341lisis cuantitativo en Kitti}{section.234}% 66
-\BOOKMARK [2][-]{subsection.241}{7.1.2 An\341lisis cuantitativo en nuScenes}{section.234}% 67
-\BOOKMARK [2][-]{subsection.246}{7.1.3 An\341lisis adicionales}{section.234}% 68
-\BOOKMARK [3][-]{subsubsection.247}{7.1.3.1 Transferencia de modelos basados en Kitti a nuScenes}{subsection.246}% 69
-\BOOKMARK [3][-]{subsubsection.251}{7.1.3.2 N\372mero de nubes de puntos de entrada en modelos evaluados sobre nuScenes}{subsection.246}% 70
-\BOOKMARK [3][-]{subsubsection.255}{7.1.3.3 Tama\361o del v\363xel en modelos basados en redes neuronales}{subsection.246}% 71
-\BOOKMARK [1][-]{section.257}{7.2 An\341lisis sobre el simulador CARLA}{chapter.233}% 72
-\BOOKMARK [2][-]{subsection.259}{7.2.1 An\341lisis cualitativo del modelo cl\341sico en CARLA}{section.257}% 73
-\BOOKMARK [2][-]{subsection.261}{7.2.2 An\341lisis cualitativo de Pointpillars Multihead en CARLA}{section.257}% 74
-\BOOKMARK [3][-]{subsubsection.263}{7.2.2.1 Comparativa con PointPillars en CARLA}{subsection.261}% 75
-\BOOKMARK [2][-]{subsection.265}{7.2.3 An\341lisis cuantitativo de Pointpillars Multihead en CARLA}{section.257}% 76
-\BOOKMARK [1][-]{section.268}{7.3 An\341lisis sobre el veh\355culo T4AC}{chapter.233}% 77
-\BOOKMARK [2][-]{subsection.269}{7.3.1 An\341lisis cualitativo de Pointpillars Multihead sobre el veh\355culo T4AC}{section.268}% 78
-\BOOKMARK [3][-]{subsubsection.271}{7.3.1.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{subsection.269}% 79
-\BOOKMARK [2][-]{subsection.273}{7.3.2 An\341lisis cualitativo del sistema de fusi\363n sensorial sobre el veh\355culo T4AC}{section.268}% 80
-\BOOKMARK [0][-]{chapter.275}{8 Conclusiones y trabajos futuros}{}% 81
-\BOOKMARK [1][-]{section.276}{8.1 Conclusiones}{chapter.275}% 82
-\BOOKMARK [1][-]{section.277}{8.2 Trabajos futuros}{chapter.275}% 83
-\BOOKMARK [0][-]{chapter*.278}{Bibliograf\355a}{}% 84
-\BOOKMARK [0][-]{appendix.279}{A Manual de usuario}{}% 85
-\BOOKMARK [1][-]{section.280}{A.1 Sistema de detecciones basado en t\351cnicas cl\341sicas}{appendix.279}% 86
-\BOOKMARK [1][-]{section.290}{A.2 Muestra de nubes de puntos en KITTI}{appendix.279}% 87
-\BOOKMARK [1][-]{section.296}{A.3 Modelo de detecciones basado en Deep Learning}{appendix.279}% 88
-\BOOKMARK [1][-]{section.303}{A.4 Sistema de detecciones mediante fusi\363n sensorial}{appendix.279}% 89
-\BOOKMARK [1][-]{section.317}{A.5 Uso del AD Devkit para la evaluaci\363n de la capa de percepci\363n}{appendix.279}% 90
-\BOOKMARK [0][-]{appendix.365}{B Pliego de condiciones}{}% 91
-\BOOKMARK [1][-]{section.366}{B.1 Recursos hardware}{appendix.365}% 92
-\BOOKMARK [1][-]{section.367}{B.2 Recursos software}{appendix.365}% 93
-\BOOKMARK [0][-]{appendix.368}{C Presupuesto}{}% 94
-\BOOKMARK [1][-]{section.369}{C.1 Coste de hardware y software}{appendix.368}% 95
-\BOOKMARK [1][-]{section.371}{C.2 Coste de personal}{appendix.368}% 96
-\BOOKMARK [1][-]{section.373}{C.3 Coste total}{appendix.368}% 97
+\BOOKMARK [0][-]{chapter.234}{7 Resultados obtenidos}{}% 64
+\BOOKMARK [1][-]{section.235}{7.1 An\341lisis sobre datasets}{chapter.234}% 65
+\BOOKMARK [2][-]{subsection.236}{7.1.1 An\341lisis cuantitativo en Kitti}{section.235}% 66
+\BOOKMARK [2][-]{subsection.242}{7.1.2 An\341lisis cuantitativo en nuScenes}{section.235}% 67
+\BOOKMARK [2][-]{subsection.247}{7.1.3 An\341lisis adicionales}{section.235}% 68
+\BOOKMARK [3][-]{subsubsection.248}{7.1.3.1 Transferencia de modelos basados en Kitti a nuScenes}{subsection.247}% 69
+\BOOKMARK [3][-]{subsubsection.252}{7.1.3.2 N\372mero de nubes de puntos de entrada en modelos evaluados sobre nuScenes}{subsection.247}% 70
+\BOOKMARK [3][-]{subsubsection.256}{7.1.3.3 Tama\361o del v\363xel en modelos basados en redes neuronales}{subsection.247}% 71
+\BOOKMARK [1][-]{section.258}{7.2 An\341lisis sobre el simulador CARLA}{chapter.234}% 72
+\BOOKMARK [2][-]{subsection.260}{7.2.1 An\341lisis cualitativo del modelo cl\341sico en CARLA}{section.258}% 73
+\BOOKMARK [2][-]{subsection.262}{7.2.2 An\341lisis cualitativo de Pointpillars Multihead en CARLA}{section.258}% 74
+\BOOKMARK [3][-]{subsubsection.264}{7.2.2.1 Comparativa con PointPillars en CARLA}{subsection.262}% 75
+\BOOKMARK [2][-]{subsection.266}{7.2.3 An\341lisis cuantitativo de Pointpillars Multihead en CARLA}{section.258}% 76
+\BOOKMARK [1][-]{section.269}{7.3 An\341lisis sobre el veh\355culo T4AC}{chapter.234}% 77
+\BOOKMARK [2][-]{subsection.270}{7.3.1 An\341lisis cualitativo de Pointpillars Multihead sobre el veh\355culo T4AC}{section.269}% 78
+\BOOKMARK [3][-]{subsubsection.272}{7.3.1.1 Comparativa con PointPillars sobre el veh\355culo T4AC}{subsection.270}% 79
+\BOOKMARK [2][-]{subsection.274}{7.3.2 An\341lisis cualitativo del sistema de fusi\363n sensorial sobre el veh\355culo T4AC}{section.269}% 80
+\BOOKMARK [0][-]{chapter.276}{8 Conclusiones y trabajos futuros}{}% 81
+\BOOKMARK [1][-]{section.277}{8.1 Conclusiones}{chapter.276}% 82
+\BOOKMARK [1][-]{section.278}{8.2 Trabajos futuros}{chapter.276}% 83
+\BOOKMARK [0][-]{chapter*.279}{Bibliograf\355a}{}% 84
+\BOOKMARK [0][-]{appendix.280}{A Manual de usuario}{}% 85
+\BOOKMARK [1][-]{section.281}{A.1 Sistema de detecciones basado en t\351cnicas cl\341sicas}{appendix.280}% 86
+\BOOKMARK [1][-]{section.291}{A.2 Muestra de nubes de puntos en KITTI}{appendix.280}% 87
+\BOOKMARK [1][-]{section.297}{A.3 Modelo de detecciones basado en Deep Learning}{appendix.280}% 88
+\BOOKMARK [1][-]{section.304}{A.4 Sistema de detecciones mediante fusi\363n sensorial}{appendix.280}% 89
+\BOOKMARK [1][-]{section.318}{A.5 Uso del AD Devkit para la evaluaci\363n de la capa de percepci\363n}{appendix.280}% 90
+\BOOKMARK [0][-]{appendix.366}{B Pliego de condiciones}{}% 91
+\BOOKMARK [1][-]{section.367}{B.1 Recursos hardware}{appendix.366}% 92
+\BOOKMARK [1][-]{section.368}{B.2 Recursos software}{appendix.366}% 93
+\BOOKMARK [0][-]{appendix.369}{C Presupuesto}{}% 94
+\BOOKMARK [1][-]{section.370}{C.1 Coste de hardware y software}{appendix.369}% 95
+\BOOKMARK [1][-]{section.372}{C.2 Coste de personal}{appendix.369}% 96
+\BOOKMARK [1][-]{section.374}{C.3 Coste total}{appendix.369}% 97

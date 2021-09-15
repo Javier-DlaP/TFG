@@ -11,7 +11,7 @@
 \end{FraseCelebre}
 
 \noindent
-En conjunto con el \acs{kit} se ha comenzado a desarrollar la herramienta el \ac{ad_devkit}, un evaluador de sistemas de conducción autónoma basado en el simulador CARLA. Este trabajo es complementario al desarrollo principal del TFG, ya que con dicha herramienta se pretende evaluar el sistema de detección con \acs{lidar} implementado en CARLA, además de ofrecer al grupo RobeSafe una herramienta para la comparativa en el simulador CARLA de las diferentes técnicas de percepción implementadas y en uns futuro lanzar dicha herramienta Open-Source para los investigadores que utilicen CARLA.
+En conjunto con el \acs{kit} se ha comenzado a desarrollar la herramienta el \ac{ad_devkit}, un evaluador de sistemas de conducción autónoma basado en el simulador CARLA. Este trabajo es complementario al desarrollo principal del TFG, ya que con dicha herramienta se pretende evaluar el sistema de detección con \acs{lidar} implementado en CARLA, además de ofrecer al grupo RobeSafe una herramienta para la comparativa en el simulador CARLA de las diferentes técnicas de percepción implementadas y en un futuro lanzar dicha herramienta Open-Source para los investigadores que utilicen CARLA.
 
 \section{Motivación para la creación del AD DevKit}
 \label{sec:Motivacion_para_la_creacion_del_ad_devkit}
@@ -35,14 +35,15 @@ El diseño del evaluador se encuentra dividido en 4 partes, cada una evaluando un
 	\label{fig:Metricas_de_control_en_el_ad_devkit}
 \end{figure}
 
-El apartado para la evaluación de la capa de percepción es la realizada en este trabajo, pero al ser un trabajo de gran complejidad se realiza de forma conjutna con Miguel Antunes García \cite{tfg_miguel}, ya que este desarrollo permite realizar en ambos TFGs el análisis de los métodos de percepción implementados en la arquitectura del proyecto Techs4AgeCar.\par
-Un sistema de evaluación de múltiples capas puede sufrir una menor valoración que un método de una capa en concreto, ya que el problema puede provenir de otra capa. Por ejemplo, un fallo en la capa de planificación, puede resultar en una pobre valoración del sistema de control, para solucionar esto, se propone un sistema de evaluación online por capas en la que a la vez que se corre el simulador CARLA se realiza la evaluación. El desarrollo propuesto para la realización dentro de este TFG, se encuentra compuesto de la generación de groundtruth en tiempo real, mientras que la evaluación se realiza a posteriori, para de esta manera obtener una primera versión funcional del sistema de evaluación.
+El apartado para la evaluación de la capa de percepción es la abordada en este trabajo, pero al ser un trabajo de gran complejidad se realiza de forma conjutna con Miguel Antunes García \cite{tfg_miguel}, ya que este desarrollo permite realizar en ambos TFGs el análisis de los métodos de percepción implementados en la arquitectura del proyecto Techs4AgeCar.\par
+Un sistema de evaluación de múltiples capas puede sufrir una menor valoración que un método de una capa en concreto, ya que el problema puede provenir de otra capa. Por ejemplo, un fallo en la capa de planificación, puede resultar en una pobre valoración del sistema de control. Para solucionar esto, se propone un sistema de evaluación online por capas en la que a la vez que se corre el simulador CARLA se realiza la evaluación. El desarrollo propuesto para la realización dentro de este TFG, se encuentra compuesto de la generación de groundtruth en tiempo real, mientras que la evaluación se realiza a posteriori, para de esta manera obtener una primera versión funcional del sistema de evaluación.
 
 \section{Obtención del groundtruth}
 \label{sec:Obtencion_del_ground_truth}
 
 El simulador CARLA ofrece información a través de \acs{ros} de todo el entorno, esto quiere decir que se puede obtener la información del resto de objetos del entorno para crear un dataset de forma online u offline. Dicha información en \acs{ros} viene definida en el topic \textit{/carla/objects} en con un formato basado en un array de objetos, teniendo cada objeto la información del tipo, posición, velocidad, etc.\par
-Para el desarrollo de este apartado del \acs{ad_devkit} se parte del trabajo \ac{ab4cogt} \cite{ab4cogt}, pero al encontrar multitud de malas prácticas de programación que influirían en la ampliación y mantenimiento del código, se decide realizar una reingeniería del mismo para solucionar los problemas encontrados.
+Para el desarrollo de este apartado del \acs{ad_devkit} se parte del trabajo 'A Baseline for CARLA Online
+Ground-Truth Generation (AB4COGT)' \cite{ab4cogt}, pero al encontrar multitud de malas prácticas de programación que influirían en la ampliación y mantenimiento del código, se decide realizar una reingeniería del mismo para solucionar los problemas encontrados.
 
 \begin{table}[H]
 \parbox{.35\linewidth}{
@@ -101,7 +102,7 @@ El repositorio del que se parte \cite{ab4cogt} genera un archivo de texto que co
 \subsection{Calculo de la visibilidad de los objetos}
 \label{sec:Calculo_de_la_visibilidad_de_los_objetos}
 
-El proyecto \acs{ab4cogt} obtiene el groundtruth de los objetos cercanos al vehículo, pero en este no se calcula la visibilidad de dichos objetos. Es necesario realizar el cálculo de la visibilidad de los objetos desde el vehículo, ya que al proceder a la evaluación se reduciría la precisión de los modelos por no poder detectar dichos objetos ocluidos o no visibles.
+El proyecto \acs{ab4cogt} obtiene el groundtruth de los objetos cercanos al vehículo, pero en este no se calcula la visibilidad de dichos objetos. Es necesario realizar el cálculo de la visibilidad de los objetos desde el vehículo, ya que, en el caso contrario, al proceder a la evaluación se reduciría la precisión de los modelos por no poder detectar dichos objetos ocluidos o no visibles.
 
 \begin{codefloat}
 \begin{lstlisting}[language=Python]
@@ -372,7 +373,7 @@ En el desarrollo de la herramienta se adopta un acercamiento basado en \acs{oop}
 
 Con la obtención de los objetos del entorno que tiene que ser detectados, se crea el apartado para la evaluación offline de los modelos. Dicho apartado es realizado de forma offline y no online debido a las complicaciones que supone generar el grountruth, correr los modelos y evaluarlos en tiempo real, por lo que se decide evaluarlos a posteriori de la ejecución. Esto se traduce en tres fases para la evaluación de un modelo: generación del groundtruth, ejecución del modelo para la obtención de los detecciones y evaluación de las detecciones respecto del groundtruth.\par
 Para la generación del archivo CSV de las detecciones procedentes del modelo PointPillars Multihead se ha añadido al repositorio \url{https://github.com/RobeSafe-UAH/t4ac_openpcdet_ros} que contiene el modelo implementado sobre CARLA, un script que a partir del desarrollo realizado reutiliza sus funciones para correr el modelo y guardar las detecciones en un fichero CSV. Dicho script aún funcionando sin ningún ajuste, puede ser utilizado en otras arquitecturas ajustando ciertos flags antes de la ejecución.\par
-La evaluación de un modelo se realiza a partir de diferentes métricas utilizadas en datasets estudiados como son Kitti y nuScenes para así tratar de estandarizar aún más esta herramienta. Las métricas calculados en la evaluación son las siguientes:
+La evaluación de un modelo se realiza a partir de diferentes métricas utilizadas en datasets estudiados como son Kitti y nuScenes para así tratar de estandarizar aún más esta herramienta. Las métricas calculadas en la evaluación son las siguientes:
 
 \begin{itemize}
 \item \acl{iou}\par
@@ -381,6 +382,14 @@ En la evaluación se utiliza el \acs{iou} 2D y 3D para hacer una relación entre l
 $IoU\ 2D = \dfrac{Área\ de\ la\ intersección}{Área\ de\ la\ unión}$\\[10pt]
 $IoU\ 3D = \dfrac{Volumen\ de\ la\ intersección}{Volumen\ de\ la\ unión}$
 \end{center}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/6_ad_devkit/iou.png}
+	\caption{Visualización del IoU 2D y 3D.}
+	\label{fig:Visualizacion_del_iou_2d_y_3d}
+\end{figure}
+
 \item Curva precision-recall\par
 La precision indica cuantas de las detecciones son verdaderas.
 \begin{center}
@@ -391,6 +400,7 @@ Mientras que el recall indica cuanto del groundtruth es detectado.
 $Precision = \dfrac{Verdaderos\ positivos}{Verdaderos\ positivos \cup Falsos\ negativos}$
 \end{center}
 La curva de precision-recall por tanto representa la relación entre precision y recall.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{figures/6_ad_devkit/precision_recall.jpg}
@@ -398,12 +408,10 @@ La curva de precision-recall por tanto representa la relación entre precision y 
 	\label{fig:Ejemplo_de_curva_de_precision_recall}
 \end{figure}
 
-\newpage
-
 \item \acl{ap}\par
 Esta es una métrica muy importante ya que relaciona tanto la precision como el recall para medir cómo de preciso es un modelo. Para ello se calcula el área por debajo de la curva de precisión, teniendo ésta un valor entre 0 y 1.\par
 No solo se calcula el \acs{ap} por cada clase sino que también se calcula el mAP que sería la media de precisión de todas las clases para la obtención de la precisión general del modelo.
 \item \ac{ave}\par
 La evaluación de los sistemas de seguimiento también se han tenido en cuenta por lo que se calcula una métrica como es el \acs{ave} para saber de que manera se estima la velocidad de los objetos, pudiendo obtenerla tanto por clase como por la media de todas estas. Esta métrica se calcula como el error de velocidad absoluto en 2D trabajando en \acs{bev}.
 \end{itemize}
-Este apartado del evaluador ha sido realizado principalmente por Miguel Antunes García en su TFG \cite{tfg_miguel} de forma que al unirlo al generados de groundtruth, se ha conseguido un funcionamiento básico para la capa de percepción del \acs{ad_devkit}.
+Este apartado del evaluador ha sido realizado principalmente por Miguel Antunes García en su TFG \cite{tfg_miguel} de forma que al unirlo al generador de groundtruth, se ha conseguido un funcionamiento básico para la capa de percepción del \acs{ad_devkit}.

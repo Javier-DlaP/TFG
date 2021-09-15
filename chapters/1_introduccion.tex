@@ -75,8 +75,8 @@ El problema de este sensor recae en el computo que es necesario para obtener inf
 	\label{fig:Uso_de_camara_con_lluvia}
 \end{figure}
 
-Por último es necesario conocer las limitaciones de la cámara, funciona de forma correcta en situaciones de buena luminosidad y sin reflejos, pero en situaciones con lluvia \ref{fig:Uso_de_camara_con_lluvia}, niebla, durante la noche y otros escenarios climatológicos adversos, no es capaz de obtener toda la información que esta obtendría en situaciones más favorables, lo cual hace que otros sensores sean usados en estas condiciones adversas para lidiar con estar limitaciones.\par
-Aún conociendo las desventajas de estos sensores la gran mayoría de enfoques incluyen cámaras para la obtención de los objetos del entorno tanto en 2D como en 3D, pudiendo utilizar para lo segundo un sistema de cámaras estéreo que obtienen también información de la profundidad.
+Por último es necesario conocer las limitaciones de la cámara, funciona de forma correcta en situaciones de buena luminosidad y sin reflejos, pero en situaciones con lluvia \ref{fig:Uso_de_camara_con_lluvia}, niebla, durante la noche y otros escenarios climatológicos adversos, no es capaz de obtener toda la información que se obtendría en situaciones más favorables, lo cual hace que otros sensores sean usados en estas condiciones adversas para lidiar con estar limitaciones.\par
+Aún conociendo las desventajas de estos sensores, la gran mayoría de enfoques incluyen cámaras para la obtención de los objetos del entorno tanto en 2D como en 3D, pudiendo utilizar para lo segundo un sistema de cámaras estéreo que obtienen también información de la profundidad.
 
 \subsubsection{Radar}
 \label{sec:radar}
@@ -114,7 +114,7 @@ Aún siendo un sensor muy útil, que puede aumentar el nivel de redundancia del si
 \label{sec:sistemas-de-deteccion}
 
 Unicamente con un sistema de sensores no es posible la comprensión del entorno, también es necesario de un procesamiento de los datos. Mientras que la cámara no da ninguna información de forma directa, el \acs{lidar} y el \acs{radar} son capaces de obtener la posición de obstáculos alrededor del vehículo, y además el \acs{radar} es capaz de inferir la velocidad de los objetos sin necesidad de un seguimiento.\par
-Principalmente, en los sistemas de detección para conducción autónoma se trata de obtener las posiciones de los diferentes objetos de interés del entorno. Estas detecciones pueden ser tanto en 2D como en 3D, pero el problema radica en como obtener un rectángulo u ortoedro que identifique donde se encuentran dicho objetos del entorno.
+Principalmente, en los sistemas de detección para conducción autónoma se trata de obtener las posiciones de los diferentes objetos de interés del entorno. Estas detecciones pueden ser tanto en 2D como en 3D, pero el problema radica en como obtener un rectángulo u ortoedro que identifique dónde se encuentran dichos objetos del entorno.
 
 \begin{figure}[H]
 	\centering
@@ -123,7 +123,7 @@ Principalmente, en los sistemas de detección para conducción autónoma se trata d
 	\label{fig:Detecciones_2d_utilizando_camara}
 \end{figure}
 
-Una de las formas de detección del entorno es a partir de cámaras, esto se consigue con un sistema de una cámara o de un sistema multicámara que abarque los 360 grados alrededor del coche, con esto instalado en el coche se pueden generar rectángulos sobre las imágenes de los objetos del entorno como coches, peatones, bicicletas, motocicletas... Con esto se obtendría un listado de objetos detectados en 2D, lo cual es obtenible con un modelo basado en redes neuronales como \acs{yolo} \cite{yolo} que es capaz de hacerlo en tiempo real, y que funciona tal y como se ve en la figura \ref{fig:Detecciones_2d_utilizando_camara}.
+Una de las formas de detección del entorno es a partir de cámaras, esto se consigue con un sistema de una cámara o de un sistema multicámara que abarque los 360 grados alrededor del coche, con este sistema instalado en el coche se pueden generar rectángulos sobre las imágenes de los objetos del entorno como coches, peatones, bicicletas, motocicletas... Con ello se obtendría un listado de objetos detectados en 2D, lo cual es obtenible con un modelo basado en redes neuronales como \acs{yolo} \cite{yolo} que es capaz de hacerlo en tiempo real, y que funciona tal y como se ve en la figura \ref{fig:Detecciones_2d_utilizando_camara}.
 
 \begin{figure}[H]
 	\centering

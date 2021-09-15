@@ -94,8 +94,8 @@ La idea principal del algoritmo \acs{ransac} es la generación de rectas a partir
  	\label{alg:Algoritmo_ransac}
 \end{algorithm}
 
-En el caso de las nubes de puntos que devuelve el \acs{lidar}, se trabaja en un entorno tridimensional, por lo que no funciona de la misma manera dicho algoritmo, se utiliza una variación, \acs{ransac}-3D como se ve en la figura \ref{fig:Aplicacion_de_ransac_3d}, que en vez de trabajar con datos en 2D se trabajan en 3D, por lo que se pasa de ajustar un modelo lineal se ajusta un modelo como plano, por lo que como mínimo se necesitan tres puntos para generar un posible modelo ya que es el mínimo número de puntos para generar un plano, el resto funciona de forma similar definiendo el límite de distancia, iteraciones, etc.\par
-Como se se ha explicado, los resultados suelen ser similares a una regresión linear en un entorno bidimensional, pero en este caso no sería del todo cierto, ya que el plano que abarca más puntos suele ser en la mayoría de los casos el correspondiente al suelo. Esto implica una modificación de la regresión linear a las tres dimensiones, esto es una regresión ajustada como un plano, esta generara en la mayoría de las situaciones un plano que se encuentra por encima del suelo, ya que trataría de minimizar una métrica de error al plano (distancia euclídea, manhattan, minkowski, hamming, etc.), por lo que los objetos de la escena levantarían el plano para minimizar el error de este a los puntos correspondientes a los objetos.
+En el caso de las nubes de puntos que devuelve el \acs{lidar}, se trabaja en un entorno tridimensional, por lo que no funciona de la misma manera dicho algoritmo, se utiliza una variación, \acs{ransac}-3D como se ve en la figura \ref{fig:Aplicacion_de_ransac_3d}, que en vez de trabajar con datos en 2D se trabajan en 3D, por lo que se pasa de ajustar una recta a ajustar un plano, se necesitan al menos tres puntos para generar un posible modelo, ya que es el mínimo número de puntos para generar un plano, el resto funciona de forma similar definiendo el límite de distancia, iteraciones, etc.\par
+Como se se ha explicado, los resultados suelen ser similares a una regresión linear en un entorno bidimensional, pero en este caso no sería del todo cierto, ya que el plano que abarca más puntos suele ser en la mayoría de los casos el correspondiente al suelo. Esto implica una modificación de la regresión linear a las tres dimensiones, esto es una regresión ajustada como un plano, lo que generará en la mayoría de las situaciones un plano que se encuentra por encima del suelo, ya que trataría de minimizar una métrica de error al plano (distancia euclídea, manhattan, minkowski, hamming, etc.), por lo que los objetos de la escena levantarían el plano para minimizar el error de este a los puntos correspondientes a los objetos.
 
 \begin{figure}[H]
 	\centering
@@ -104,7 +104,7 @@ Como se se ha explicado, los resultados suelen ser similares a una regresión lin
 	\label{fig:Aplicacion_de_ransac_3d}
 \end{figure}
 
-De forma comparativa al algoritmo \acs{ransac}-3D, este genera un plano ajustándose a la mayoría de los puntos de la escena, anotando como inliers aquellos puntos pertenecientes al suelo y dejando el resto de puntos que colisionan con el entorno como outliers, por lo que dicho algoritmo \acs{ransac} es el utilizado para la tarea de filtrado de la sección de la nube de puntos que colisiona con el suelo de la escena.
+De forma comparativa al algoritmo \acs{ransac}-3D, se genera un plano ajustándose a la mayoría de los puntos de la escena, anotando como inliers aquellos puntos pertenecientes al suelo y dejando el resto de puntos que colisionan con el entorno como outliers, por lo que dicho algoritmo \acs{ransac} es el utilizado para la tarea de filtrado de la sección de la nube de puntos que colisiona con el suelo de la escena.
 
 \section{KD-tree}
 \label{sec:kd_tree}
@@ -145,6 +145,8 @@ Antes de analizar en profundidad la estructura KD-tree, es necesario comprender 
  	\caption{Búsqueda en árbol binario ordenado}
  	\label{alg:Busqueda_en_arbol_binario_ordenado}
 \end{algorithm}
+
+\vspace{0.5cm}
 
 En el caso del árbol de la figura \ref{fig:Arbol_binario_ordenado} para buscar el número 7 se utiliza el siguiente procedimiento:
 \begin{enumerate}
@@ -195,6 +197,8 @@ Al contrario que los árboles binarios, un KD-tree es capaz de localizar un númer
  	\caption{Inserción en KD-tree}
  	\label{alg:Insercion_en_KD_tree}
 \end{algorithm}
+
+\vspace{0.5cm}
 
 Lo que produce esta forma de guardar los datos en el árbol, es que según se aumenta la profundidad en el árbol, la región de los nodos hijos es cada vez menor, lo que permite una más sencilla agrupación y estudio de los datos por regiones en un entorno K dimensional. Como se ve en la figura \ref{fig:Espacio_bidimensional_dividido_por_un_kd_tree} el espacio bidimensional va siendo dividido por regiones, esto es gracias a que cada nodo divide en dos el espacio sobre el que se encuentran sus hijos, lo cual es una perfecta manera de agrupar los puntos en clústeres utilizando esta estructura, tal y como se detalla en el algoritmo \ref{alg:Cluster_por_distancia_en_KD_tree}
 
@@ -269,6 +273,8 @@ Lo que produce esta forma de guardar los datos en el árbol, es que según se aume
  	\caption{Cluster por distancia en KD-tree}
  	\label{alg:Cluster_por_distancia_en_KD_tree}
 \end{algorithm}
+
+\vspace{0.5cm}
 
 Gracias a la estructura KD-tree, se puede reducir la cantidad de nodos o puntos analizados, ya que cada punto no tiene que ser estudiado con el resto sino que solo se estudian los puntos que están en una región cercana dentro del radio máximo de distancia definido. Lo que produce una complejidad de $O(n * \log n)$ para la construcción de la estructura más la complejidad $O(n * \log n)$ de la función de clustering por distancia, por lo que en total se tendría una mejora de complejidad de $O(n²)$ a $O(n * \log n)$.\par
 La eficiencia de esta estructura en ciertas tareas, ha producido que a pesar de ser una técnica del año 1975, se siga estudiando para su utilización junto a \acs{knn} \cite{knn_kd_tree}, aumentando su rendimiento con datos preordenados \cite{kd_tree_presorted} o la paralelización de su construcción en técnicas como \acs{knn} \cite{kd_tree_gpu}.
