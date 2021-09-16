@@ -247,11 +247,12 @@ Las clases de peatón y ciclista, como se puede ver principalmente en los modelos
 \hline \multicolumn{7}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-SECOND & Detección & 0.7 - 0.5 & 84.96 \% & 67.94 \% & 66.6 \% & 18.59 Hz\\
-\hline
-\multirow{5}{*}{SECOND}
-& \multirow{2}{*}{Vista de pájaro} & 0.7 - 0.5 & 54.02 \% & 39.57 \% & 37.65 \% &
-\multirow{5}{*}{18.59 Hz}\\
+\multirow{6}{*}{SECOND}
+& Detección & 0.7 - 0.5 & 84.96 \% & 67.94 \% & 66.6 \% & 
+\multirow{6}{*}{18.59 Hz}\\
+\cline{2-3}
+\cline{4-6}
+& \multirow{2}{*}{Vista de pájaro} & 0.7 - 0.5 & 54.02 \% & 39.57 \% & 37.65 \% &\\
 \cline{3-6}
 & & 0.5 - 0.25 & 86.40 \% & 70.29 \% & 68.72 \% &\\
 \cline{2-3}
@@ -580,7 +581,8 @@ Tras el reentrenamiento probando con múltiples configuraciones de parámetros y d
 \subsubsection{Número de nubes de puntos de entrada en modelos evaluados sobre nuScenes}
 \label{sec:numero_de_pcl_de_entrada_en_modelos_evaluados_sobre_nuscenes}
 
-En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto se recomienda un uso de 10 barridos.
+En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar}, para de esta manera obtener una mayor nube de puntos aprovechando su tasa de 20 Hz y para poder detectar las velocidades de los objetos del entorno, en concreto se recomienda un uso de 10 barridos.\par
+Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo.
 
 \begin{figure}[H]
 	\centering
@@ -589,7 +591,6 @@ En el dataset nuScenes se recomienda el uso de múltiples barridos del \acs{lidar
 \label{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos}
 \end{figure}
 
-Basados en el principio de que a partir de cada uno de los vóxeles se extraen las características, se decide estudiar la ganancia en rendimiento de los modelos CBGS al utilizar menos barridos, lo cual a su vez disminuirá la precisión del modelo.\par
 La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos} muestra el rendimiento sobre todo el dataset de nuScenes, mostrando la mediana, cuartiles y deciles de la velocidad de inferencia de los modelos. Se puede ver de esta manera que a partir del uso único de 3 barridos se consigue una mejora en el rendimiento, mientras que con el aumento hasta 10, la velocidad de inferencia no se mejora. Por otra parte revisando los deciles del rendimiento se observa que unicamente PointPillars Multihead consigue un rendimiento siempre superior a los 10 Hz, requisito indispensable para la implementación el proyecto Techs4AgeCar.
 
 \begin{center}
@@ -987,4 +988,4 @@ Basado en estas características, se consiguen utilizar las detecciones 3D aproxi
 
 En la figura \ref{fig:Fusion_sensorial_en_el_vehiculo_t4ac} se muestran las detecciones producidas por el sistema de fusión sensorial, donde en las imágenes de la izquierda se muestran las detecciones de los sistemas de cámara y \acs{lidar}, siendo las detecciones rojas aquellas producidas por la cámara y las detecciones azules las generadas por el sistema basado en \acs{lidar}. Por otra parte a la derecha se muestra el resultado de la fusión sensorial como detecciones de color negro.\par
 Se puede observar como las detecciones de la cámara solo se encuentran en la parte frontal y las producidas por el \acs{lidar} alrededor del vehículo, esto consigue un sistema donde se mejoran las detecciones frontales, ya que es necesario una detección en ambos sistemas sobre un objeto para darse como correcta dicha detección.\par
-En cuanto a la velocidad de inferencia para el modelo CBGS, se espera una velocidad de inferencia de 8.68 Hz en el portátil de abordo del vehículo T4AC, que consta de una tarjeta gráfica GTX 1070 Mobile, dicho sistema sustituye al sistema basado en PointPillars ejecutado sobre una NVIDIA Jetson AGX Xavier, que obtiene una frecuencia en la inferencia de 7.3 Hz.
+En cuanto a la velocidad de inferencia para el modelo CBGS, ésta es de 8.68 Hz en el portátil de abordo del vehículo T4AC, que consta de una tarjeta gráfica GTX 1070 Mobile. Dicho sistema sustituye al basado en PointPillars ejecutado sobre una NVIDIA Jetson AGX Xavier, que obtiene una velocidad de 7.3 Hz.
