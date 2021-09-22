@@ -157,7 +157,7 @@ En 2020 tras el éxito de este dataset se anuncia y se lanza KITTI-360 \cite{kitt
 Al estar basado este trabajo en la detección utilizando \acs{lidar}, se estudia la forma en la que se guardan los datos de las nubes de puntos junto con la representación del groundtruth, para ello se analiza tanto la carpeta de velodyne\_points como el archivo tracklets.xml.\par
 Para el trabajo con bounding boxes 3D, es posible utilizar únicamente el kit de detecciones 3D que contiene un conjunto de txt con la información de los objetos por cada barrido. Estos archivos contienen la información de: tipo, truncado, ocluido, bounding box 2D, dimensiones y localización. Todas estas características acerca de los objetos se encuentran de la misma manera en el archivo tracklets.xml, pero la información de rotación se encuentra divida en un ángulo alpha y otro rotation\_y, en vez de rotación por cada uno de los tres ejes, los cuales se estudiarán más en profundidad en el capítulo \ref{cha:ad_devkit}.\par
 Se utiliza el archivo \textit{tracklets.xml} ya que define el groundtruth de la escena, pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en una estructura que se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
-Se ha decidido crear un programa que lea la nube de puntos indicada y que marque en un entorno 3D la posición de los objetos de la escena. Esto podría ser realizado mediante el devkit que KITTI ofrece, pero se encuentra unicamente de forma oficial en Matlab, por lo que como los modelos de Deep Learning a utilizar se encuentran en Pytorch, se ha decidido analizar los datos utilizando Python.\par
+Se ha decidido crear un programa que lea la nube de puntos indicada y que marque en un entorno 3D la posición de los objetos de la escena. Esto podría ser realizado mediante el devkit que KITTI ofrece, pero se encuentra únicamente de forma oficial en Matlab, por lo que como los modelos de Deep Learning a utilizar se encuentran en Pytorch, se ha decidido analizar los datos utilizando Python.\par
 La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estructura de los principales atributos del archivo tracklet\_labels.xml analizado. Encontramos el número de los diferentes objetos del escenario, a continuación, se analiza cada objeto a través de los diferentes barridos, mostrando primero las características de los objetos que se mantienen en el tiempo, como las dimensiones o el tipo de objeto y después se guarda la información de posición, rotación, etc.
 
 \begin{figure}[H]
@@ -271,7 +271,7 @@ con información recogida a 10 Hz proveniente de los sensores, lo que implican
 	\item 4 \acs{lidar} de corto alcance.
 	\item 5 cámaras alrededor del vehículo.
 \end{itemize}
-Como se ve en la figura \ref{fig:Vehículo_utilizado_en_waymo}, el acercamiento de la compañía entorno a la construcción del vehículo no utiliza \acs{radar}, depende unicamente de cámaras y \acs{lidar} para el apartado de percepción. Por lo que no se puede trabajar con \acs{radar} en el dataset, además de que no se tiene información de ningún sistema de localización, ya que dicho dataset se encuentra especializado en tareas de percepción y seguimiento de los objetos de la escena.\par
+Como se ve en la figura \ref{fig:Vehículo_utilizado_en_waymo}, el acercamiento de la compañía entorno a la construcción del vehículo no utiliza \acs{radar}, depende únicamente de cámaras y \acs{lidar} para el apartado de percepción. Por lo que no se puede trabajar con \acs{radar} en el dataset, además de que no se tiene información de ningún sistema de localización, ya que dicho dataset se encuentra especializado en tareas de percepción y seguimiento de los objetos de la escena.\par
 Es importante tener en cuenta que, en este dataset, la nube de puntos procedente del \acs{lidar} no utiliza un sistema de coordenadas cartesiano, sino un sistema de coordenadas esférico, donde las coordenadas (x, y, z) son reemplazadas por (distancia, azimuth, inclinación).
 
 \begin{center}
@@ -506,12 +506,12 @@ En conclusión, KITTI ha sido una gran base para el desarrollo de la siguiente ge
 \section{Estado del arte en técnicas de detección utilizando LiDAR}
 \label{sec:estado_del_arte_en_deteccion_utilizando_lidar}
 
-Las técnicas basadas en Deep Learning que hacen uso de \acs{cnn} llevan unos años siendo las mejores del \acs{sota} en el campo de la detección utilizando unicamente \acs{lidar}. En este apartado se van a estudiar los principales modelos de detección en este campo que hacen uso de estas técnicas.
+Las técnicas basadas en Deep Learning que hacen uso de \acs{cnn} llevan unos años siendo las mejores del \acs{sota} en el campo de la detección utilizando únicamente \acs{lidar}. En este apartado se van a estudiar los principales modelos de detección en este campo que hacen uso de estas técnicas.
 
 \subsection{SECOND}
 \label{sec:second}
 
-SECOND (Sparsely Embedded CONvolutional Detector) \cite{second} se publica en 2018 para superar los modelos de detección 3D, utilizando unicamente \acs{lidar}. Para ello propone una arquitectura basada en tres componentes principales: extractor de características a nivel de vóxel, \ac{cnn} dispersa y \ac{rpn}. Precedido todo ello de una fase de preprocesamiento de la nube de puntos y con una obtención a posteriori de las salidas del modelo.
+SECOND (Sparsely Embedded CONvolutional Detector) \cite{second} se publica en 2018 para superar los modelos de detección 3D, utilizando únicamente \acs{lidar}. Para ello propone una arquitectura basada en tres componentes principales: extractor de características a nivel de vóxel, \ac{cnn} dispersa y \ac{rpn}. Precedido todo ello de una fase de preprocesamiento de la nube de puntos y con una obtención a posteriori de las salidas del modelo.
 
 \begin{figure}[H]
 	\centering
