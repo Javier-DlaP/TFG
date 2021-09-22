@@ -149,16 +149,16 @@ El sistema de percepción del vehículo utilizado para la grabación de los datos s
 \end{figure}
 
 La estructura del dataset es tal y como se muestra en la figura \ref{for:Estructura_del_dataset_kitti}. Dentro de este dataset los datos se dividen según el día de grabación y la escena, y dentro de cada escena se tienen las imágenes de la cámara estéreo monocromática (image\_00, image\_01) y RGB (image\_02, image\_03), información de todo el sistema de locación del vehículo (oxts) y las nubes de puntos provenientes del \acs{lidar} (velodyne\_points).\par
-En 2020 tras el éxito de este dataset se anuncia y se lanza KITTI-360 \cite{kitti_360_dataset}, la evolución del dataset KITTI, el cual trae mejoras añadiendo dos cámaras de ojo de pez para una obtención de visión 2D en todos los ángulos del vehículo, y una unidad láser adicional SICK. Además se incluyen en el dataset bounding boxes 3D de todo el entorno, anotaciones de instancia a partir de la información del \acs{lidar} y anotaciones de confianza sobre el vídeo tomado por las cámaras, entre otras.
+En 2020 tras el éxito de este dataset se anuncia y se lanza KITTI-360 \cite{kitti_360_dataset}, la evolución del dataset KITTI, el cual trae mejoras añadiendo dos cámaras de ojo de pez para una obtención de visión 2D en todos los ángulos del vehículo, y una unidad láser adicional SICK. Además, se incluyen en el dataset bounding boxes 3D de todo el entorno, anotaciones de instancia a partir de la información del \acs{lidar} y anotaciones de confianza sobre el vídeo tomado por las cámaras, entre otras.
 
 \subsubsection{Análisis de la estructura del GT y las PCLs de KITTI}
 \label{sec:analisis_de_la_estructura_del_gt_y_las_pcls_de_kitti}
 
 Al estar basado este trabajo en la detección utilizando \acs{lidar}, se estudia la forma en la que se guardan los datos de las nubes de puntos junto con la representación del groundtruth, para ello se analiza tanto la carpeta de velodyne\_points como el archivo tracklets.xml.\par
-Para el trabajo con bounding boxes 3D, es posible utilizar unicamente el kit de detecciones 3D que contiene un conjunto de txt con la información de los objetos por cada barrido. Estos archivos contienen la información de: tipo, truncado, ocluido, bounding box 2D, dimensiones y localización. Todas estas características acerca de los objetos se encuentran de la misma manera en el archivo tracklets.xml, pero la información de rotación se encuentra divida en un ángulo alpha y otro rotation\_y, en vez de rotación por cada uno de los tres ejes, los cuales se estudiarán más en profundidad en el capítulo \ref{cha:ad_devkit}.\par
-Se utiliza el archivo \textit{tracklets.xml} ya que define el groundtruth de la escena pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en un estructura que se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
+Para el trabajo con bounding boxes 3D, es posible utilizar únicamente el kit de detecciones 3D que contiene un conjunto de txt con la información de los objetos por cada barrido. Estos archivos contienen la información de: tipo, truncado, ocluido, bounding box 2D, dimensiones y localización. Todas estas características acerca de los objetos se encuentran de la misma manera en el archivo tracklets.xml, pero la información de rotación se encuentra divida en un ángulo alpha y otro rotation\_y, en vez de rotación por cada uno de los tres ejes, los cuales se estudiarán más en profundidad en el capítulo \ref{cha:ad_devkit}.\par
+Se utiliza el archivo \textit{tracklets.xml} ya que define el groundtruth de la escena, pero no por cada barrido del \acs{lidar}, sino que se guarda por cada escenario, lo que se traduce en una estructura que se puede utilizar tanto para detección como para seguimiento de los objetos, todo ello como un archivo con formato \acs{xml}.\par
 Se ha decidido crear un programa que lea la nube de puntos indicada y que marque en un entorno 3D la posición de los objetos de la escena. Esto podría ser realizado mediante el devkit que KITTI ofrece, pero se encuentra unicamente de forma oficial en Matlab, por lo que como los modelos de Deep Learning a utilizar se encuentran en Pytorch, se ha decidido analizar los datos utilizando Python.\par
-La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estructura de los principales atributos del archivo tracklet\_labels.xml analizado. Encontramos el número de los diferentes objetos del escenario, a continuación se analiza cada objeto a través de los diferentes barridos, mostrando primero las características de los objetos que se mantienen en el tiempo, como las dimensiones o el tipo de objeto y después se guarda la información de posición, rotación, etc.
+La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estructura de los principales atributos del archivo tracklet\_labels.xml analizado. Encontramos el número de los diferentes objetos del escenario, a continuación, se analiza cada objeto a través de los diferentes barridos, mostrando primero las características de los objetos que se mantienen en el tiempo, como las dimensiones o el tipo de objeto y después se guarda la información de posición, rotación, etc.
 
 \begin{figure}[H]
 	\begin{forest}
@@ -238,7 +238,7 @@ La figura \ref{for:Estructura_del_archivo_tracket_labels_xml} muestra la estruct
 \end{figure}
 
 Tras dicho análisis, utilizando la librería MayaVi para la visualización del entorno 3D, NumPy para las transformaciones en el espacio y Beautiful Soup para la lectura del \acs{xml}, se visualizan múltiples escenas del dataset.\par
-Cabe destacar que como KITTI está realizado para que la parte de percepción se trabaje principalmente con la cámaras frontales del vehículo, aún teniendo información por los laterales y la parte trasera gracias al \acs{lidar}, esta no se tiene en cuenta en el groundtruth, razón por la que en la imagen \ref{fig:Visualizacion_de_una_nube_de_puntos_de_kitti_junto_con_su_ground_truth} los vehículos de la parte trasera no se muestran.
+Cabe destacar que como KITTI está realizado para que la parte de percepción se trabaje principalmente con la cámaras frontales del vehículo, aun teniendo información por los laterales y la parte trasera gracias al \acs{lidar}, esta no se tiene en cuenta en el groundtruth, razón por la que en la imagen \ref{fig:Visualizacion_de_una_nube_de_puntos_de_kitti_junto_con_su_ground_truth} los vehículos de la parte trasera no se muestran.
 
 \begin{figure}[H]
 	\centering
@@ -252,7 +252,7 @@ Todo el código utilizado para la visualización de los objetos junto con unos esc
 \label{sec:waymo}
 
 Waymo Open Dataset \cite{waymo_dataset} es el dataset liberado de forma Open-Source por parte de Waymo y Google para la aceleración del desarrollo de tecnologías de conducción autónoma.\par
-La propuesta de este dataset es la oferta de un gran número de anotaciones de alta calidad tanto 2D como 3D,  que además contienen información de seguimiento. Se han utilizado múltiples ciudades para sus escenarios grabados, como son: San Francisco, Mountain View, Los Angeles, Detroit, Seattle y Phoenix. Además se trabaja con multitud de entornos y condiciones ambientales como son: construcciones, atardeceres, noches, días lluviosos, etc.
+La propuesta de este dataset es la oferta de un gran número de anotaciones de alta calidad tanto 2D como 3D, que además contienen información de seguimiento. Se han utilizado múltiples ciudades para sus escenarios grabados, como son: San Francisco, Mountain View, Los Angeles, Detroit, Seattle y Phoenix. Además, se trabaja con multitud de entornos y condiciones ambientales como son: construcciones, atardeceres, noches, días lluviosos, etc.
 
 \begin{figure}[H]
 	\centering
@@ -272,7 +272,7 @@ con información recogida a 10 Hz proveniente de los sensores, lo que implican
 	\item 5 cámaras alrededor del vehículo.
 \end{itemize}
 Como se ve en la figura \ref{fig:Vehículo_utilizado_en_waymo}, el acercamiento de la compañía entorno a la construcción del vehículo no utiliza \acs{radar}, depende unicamente de cámaras y \acs{lidar} para el apartado de percepción. Por lo que no se puede trabajar con \acs{radar} en el dataset, además de que no se tiene información de ningún sistema de localización, ya que dicho dataset se encuentra especializado en tareas de percepción y seguimiento de los objetos de la escena.\par
-Es importante tener en cuenta que en este dataset, la nube de puntos procedente del \acs{lidar} no utiliza un sistema de coordenadas cartesiano, sino un sistema de coordenadas esférico, donde las coordenadas (x, y, z) son reemplazadas por (distancia, azimuth, inclinación).
+Es importante tener en cuenta que, en este dataset, la nube de puntos procedente del \acs{lidar} no utiliza un sistema de coordenadas cartesiano, sino un sistema de coordenadas esférico, donde las coordenadas (x, y, z) son reemplazadas por (distancia, azimuth, inclinación).
 
 \begin{center}
 $distancia = \sqrt{x²+y²+z²}$\\[10pt]
@@ -280,7 +280,7 @@ $azimuth = \atantwo(y, x)$\\[10pt]
 $inclinación = \atantwo(z, \sqrt{x²+y²})$
 \end{center}
 
-Mientras que en otros datasets se tienen multitud de clases, muchas de ellas indistinguibles unas de otras, Waymo utiliza unicamente 4 tipos de objetos diferentes. En las 11,8 millones de bounding boxes 2D se encuentran vehículos, peatones y ciclistas, mientras que en las 12,6 millones de bounding boxes 3D se añaden además la detección y seguimiento de señales.
+Mientras que en otros datasets se tienen multitud de clases, muchas de ellas indistinguibles unas de otras, Waymo utiliza únicamente 4 tipos de objetos diferentes. En los 11,8 millones de bounding boxes 2D se encuentran vehículos, peatones y ciclistas, mientras que en las 12,6 millones de bounding boxes 3D se añaden además la detección y seguimiento de señales.
 
 \begin{figure}[H]
 	\centering
@@ -313,7 +313,7 @@ En comparación con otros datasets, se incluye un set más completo de sensores co
 	\label{fig:Vehiculo_utilizado_en_el_dataset_de_nuscenes}
 \end{figure}
 
-NuScenes tiene 23 clases diferentes a detectar, entre ellas se encuentran como en el resto de datasets: coches, ciclistas, peatones, etc. Pero en este se encuentran además animales, diferenciación por el tipo de los peatones, como serían policías o personas en silla de ruedas, además de barreras entre otras. Esto permite agrupar las clases para detectar unicamente las más simples o servir como un sistema de evaluación con toda la información necesaria para la implementación en un sistema \acs{ads}.\par
+NuScenes tiene 23 clases diferentes a detectar, entre ellas se encuentran como en el resto de datasets: coches, ciclistas, peatones, etc. Pero en este se encuentran además animales, diferenciación por el tipo de los peatones, como serían policías o personas en silla de ruedas, además de barreras entre otras. Esto permite agrupar las clases para detectar únicamente las más simples o servir como un sistema de evaluación con toda la información necesaria para la implementación en un sistema \acs{ads}.\par
 El sistema de evaluación de nuScenes permite evaluación de múltiples sistemas a diferentes niveles. Las diferentes tareas a evaluar son:
 \begin{itemize}
 	\item Detección de objetos 3D (10 tipos de objetos diferentes) utilizando cámara, \acs{lidar}, \acs{radar} y la información de los mapas.
@@ -415,7 +415,7 @@ El dataset completo de nuScenes ocupa medio terabyte, esto es debido a la cantid
 \label{for:Estructura_del_dataset_nuscenes}
 \end{figure}
 
-Dicha estructura es para el uso de todos los sensores del dataset y los mapas, pero en el caso de que se requieran unicamente la información proveniente de las cámaras, nuScenes ofrece nuImages, un dataset de nuScenes reducido, que además cambia la estructura interna de este.
+Dicha estructura es para el uso de todos los sensores del dataset y los mapas, pero en el caso de que se requieran únicamente la información proveniente de las cámaras, nuScenes ofrece nuImages, un dataset de nuScenes reducido, que además cambia la estructura interna de este.
 
 \begin{figure}[H]
 	\begin{minipage}{0.48\textwidth}
@@ -437,11 +437,11 @@ Las estructuras de estas versiones del dataset, no son sencillas de trabajar con
 \subsubsection{NuScenes devkit}
 \label{sec:nuscenes_devkit}
 
-Promover el uso de un dataset es importante en la medida que si no ofrece características nuevas en este o es difícil de utilizar, no destacará y desaparecerá entre la gran cantidad de datasets disponibles hoy en día. Para ello, nuScenes desarrolla y lanza la herramienta Open-Source nuScenes devkit.\par
+Promover el uso de un dataset es importante en la medida que, si no ofrece características nuevas en este o es difícil de utilizar, no destacará y desaparecerá entre la gran cantidad de datasets disponibles hoy en día. Para ello, nuScenes desarrolla y lanza la herramienta Open-Source nuScenes devkit.\par
 NuScenes devkit, ofrece un uso muy simplificado del dataset de nuScenes y nuImages. Ambos datasets incorporan a partir de archivos json una estructura similar a la de una base de datos relacional en la que a partir de claves primarias, externas e índices se consigue tener un conjunto de datos normalizado, para así minimizar al máximo la redundancia de datos.\par
-Al ofrecer una gran cantidad de datos no solo de los sensores sino de la escenas, configuraciones de calibración, visibilidad, categorías, etc., se ha estructurado en diferentes archivos json para no tener que repetir datos por cada imagen o nube de puntos. El devkit ha sido programado para su uso en Python 3 y los tutoriales para aprender a utilizar dicho devkit se encuentran en Jupyter Notebooks, aunque también se recomienda su uso en Google Colab.\par
+Al ofrecer una gran cantidad de datos no solo de los sensores sino de la escena, configuraciones de calibración, visibilidad, categorías, etc., se ha estructurado en diferentes archivos json para no tener que repetir datos por cada imagen o nube de puntos. El devkit ha sido programado para su uso en Python 3 y los tutoriales para aprender a utilizar dicho devkit se encuentran en Jupyter Notebooks, aunque también se recomienda su uso en Google Colab.\par
 Para el aprendizaje del devkit de nuScenes se descarga la versión mini del dataset, el cual tiene la misma estructura que el dataset completo. Junto con Jupyter se estudia todo el dataset siguiendo los diferentes tutoriales que ofrece. Tras trabajar con la herramienta y acostumbrase al uso de los tokens que relacionan los diferentes archivos json, es muy sencillo obtener todos los datos requeridos.\par
-A partir del devkit es muy sencillo realizar tareas como filtrado de clases, agrupaciones, transformaciones mundo a cámara, seguimiento de objetos individualizado, etc. De esta manera se ahorra mucho tiempo en la construcción de complejas funciones ya  que se encuentran insertadas en el kit de desarrollo, además de que permite ver de forma analítica el comportamiento del dataset.
+A partir del devkit es muy sencillo realizar tareas como filtrado de clases, agrupaciones, transformaciones mundo a cámara, seguimiento de objetos individualizado, etc. De esta manera se ahorra mucho tiempo en la construcción de complejas funciones ya que se encuentran insertadas en el kit de desarrollo, además de que permite ver de forma analítica el comportamiento del dataset.
 
 \begin{figure}[H]
 	\centering
@@ -499,7 +499,7 @@ En la parte del hardware, se ha visto que el acercamiento por parte de KITTI de 
 	\end{center}
 \end{table}
 
-En relación a la cantidad de situaciones y de datos, Waymo y nuScenes se encuentran en un estado similar con una gran cantidad de datos del entorno, mientras que KITTI se queda más atrás debido a la longevidad del dataset.\par
+Con relación a la cantidad de situaciones y de datos, Waymo y nuScenes se encuentran en un estado similar con una gran cantidad de datos del entorno, mientras que KITTI se queda más atrás debido a la longevidad del dataset.\par
 Unicamente KITTI y nuScenes cuentan con un devkit, este es utilizado para un uso más simplificado del dataset, aunque en el caso de nuScenes es casi obligatorio su uso. El problema de KITTI en este aspecto es el uso de Matlab para el devkit ya que la mayoría de la comunidad investigadora no utiliza este lenguaje para la creación de los modelos de detección, aunque se pueden encontrar de forma no oficial, repositorios Open-Source que ofrecen variantes del devkit de KITTI en otros lenguajes, tal y como ocurre con pykitti \cite{pykitti}.\par
 En conclusión, KITTI ha sido una gran base para el desarrollo de la siguiente generación de datasets, aunque para sistemas de percepción algo más complejos se puede quedar corto, lo cual se ha ido mejorando con el tiempo y por esto mismo se ha desarrollado KITII-360. Por otra parte, Waymo y nuScenes ofrecen un dataset más completo, aunque nuScenes ofrece información de un sensor más y contiene la información de los mapas. Debido a ello se ha decidido estudiar más en profundidad y trabajar con los dataset de KITTI y nuScenes.
 
@@ -539,17 +539,17 @@ Para ello se construye una tabla de matrices de reglas para guardar los indices 
 
 En este trabajo se implementa un generador de reglas en GPU aprovechando la aceleración por hardware y el procesamiento paralelo para conseguir una generación de reglas en la mitad de tiempo que SparseConvNet. Este extractor se utiliza para convertir la información 3D en un formato similar a una imagen \ac{bev}.
 \item \acl{rpn}\par
-Las \acs{rpn} fueron presentadas junto con el detector Fast R-CNN \cite{fast_rcnn} y son utilizadas en este modelo para que a partir del mapa de características extraído de la fase anterior, obtenga las predicciones del modelo.
+Las \acs{rpn} fueron presentadas junto con el detector Fast R-CNN \cite{fast_rcnn} y son utilizadas en este modelo para que, a partir del mapa de características extraído de la fase anterior, obtenga las predicciones del modelo.
 \item Obtención de las detecciones\par
 En la salida se utilizan unos tamaños fijados para las diferentes clases que se ajustan a las detecciones, a partir del centro del objeto detectado. Por cada objeto se fija un one-hot vector para el ajuste de las cajas y otro para el ajuste de la dirección. Tras esto se aplica un límite de precisión por clase para minimizar los falsos positivos.
 \end{enumerate}
 
-Este método tras su publicación consiguió convertirse en el mejor del \acs{sota} en el benchmark KITTI en su evaluador de detección utilizando \acs{lidar}, además de ejecutarse en tiempo real, con tiempos de computo de 20 Hz en su modelo completo y 40 Hz en su modelo reducido.
+Este método tras su publicación consiguió convertirse en el mejor del \acs{sota} en el benchmark KITTI en su evaluador de detección utilizando \acs{lidar}, además de ejecutarse en tiempo real, con tiempos de cómputo de 20 Hz en su modelo completo y 40 Hz en su modelo reducido.
 
 \subsection{PointPillars}
 \label{sec:pointpillars}
 
-PointPillars se publica meses después de SECOND y no solo consigue una mejora en la precisión para la detección de objetos 3D sino que lo consigue a una velocidad de inferencia de hasta 62 Hz o hasta 105 Hz con su modelo reducido. Esto no solo permite la utilización de nubes de puntos mayores sin disminuir apenas el rendimiento sino que permite la integración de este modelo en sistemas embebidos.\par
+PointPillars se publica meses después de SECOND y no solo consigue una mejora en la precisión para la detección de objetos 3D sino que lo consigue a una velocidad de inferencia de hasta 62 Hz o hasta 105 Hz con su modelo reducido. Esto no solo permite la utilización de nubes de puntos mayores sin disminuir apenas el rendimiento, sino que permite la integración de este modelo en sistemas embebidos.\par
 Para la obtención de esta velocidad de inferencia, PointPillars elimina el uso de las capas convolucionales 3D, convirtiendo las nubes de puntos en imágenes \acs{bev} de la escena. Los principales componentes de la red que consiguen este funcionamiento son los siguientes:
 
 \begin{figure}[H]
@@ -561,7 +561,7 @@ Para la obtención de esta velocidad de inferencia, PointPillars elimina el uso d
 
 \begin{enumerate}
 \item Nube de puntos a pseudo imágenes\par
-Se comienza voxelizando la nube de puntos formando diferentes pilares, esto quiere decir que cada vóxel tiene un tamaño $x$ e $y$ fijo pero en $z$ se tiene un tamaño infinito. Por cada punto en los vóxeles se les añade junto a las tres dimensiones con la información de posición: el grado de reflectividad, la distancia aritmética a la media de los puntos del vóxel en las tres dimensiones y el desplazamiento en $x$ e $y$ al centro del vóxel, por lo que se tiene un espacio de nueve dimensiones por pilar. Para limitar el cómputo, se define un támaño máximo por pilar de [9, número de pilares no vacíos, número de puntos por pilar], de esta manera se fija un máximo de números de puntos por pilar y se aplica zero padding si el pilar se encuentra con muy poca información.\par
+Se comienza voxelizando la nube de puntos formando diferentes pilares, esto quiere decir que cada vóxel tiene un tamaño $x$ e $y$ fijo, pero en $z$ se tiene un tamaño infinito. Por cada punto en los vóxeles se les añade junto a las tres dimensiones con la información de posición: el grado de reflectividad, la distancia aritmética a la media de los puntos del vóxel en las tres dimensiones y el desplazamiento en $x$ e $y$ al centro del vóxel, por lo que se tiene un espacio de nueve dimensiones por pilar. Para limitar el cómputo, se define un tamaño máximo por pilar de [9, número de pilares no vacíos, número de puntos por pilar], de esta manera se fija un máximo de números de puntos por pilar y se aplica zero padding si el pilar se encuentra con muy poca información.\par
 Tras esto se aplica una capa linear con batch normalization y una \acs{relu} seguido de una operación de máximo por cada uno de los puntos del pilar para obtener un tensor de tamaño [X, número de pilares no vacíos], lo cual se transfiere a una pseudo imagen pasando el número de pilares no vacíos a la altura y anchura de la imagen en función de la posición de dichos pilares. Con lo que se consigue una estructura similar a la de una imagen \acs{bev}.
 \item Backbone\par
 Se utiliza un backbone similar al de VoxelNet \cite{voxelnet}, este backbone tiene dos subcapas, una que aumenta el número de características a nivel espacial y otra que aumenta y relaciona las características de los pilares.
@@ -589,7 +589,7 @@ El funcionamiento de las dos fases del modelo es el siguiente:
 \item Generación de propuestas de detección 3D vía segmentación de la nube de puntos\par
 La primera fase del modelo se basa en el backbone de PointNet++ \cite{pointnet++} para extraer las características a nivel de punto de la nube de puntos utilizando una agrupación multiescala. Con dicho modelo junto con un método propio basado en la discretización 2D en \acs{bev} (bin-based) se hayan las múltiples detecciones 3D, pero se reducen por cada objeto aplicando \ac{nms} basado en el \ac{iou} como \acs{bev} con un límite de 0,8 y solo las 100 mejores detecciones son mantenidas para la siguiente fase de ajuste de las detecciones 3D.
 \item Refinamiento de las bounding boxes 3D\par
-Tras la obtención de las bounding boxes 3D, se trata de mejorar el centro y la orientación de éstas. Por cada una de dichas detecciones se aumenta su tamaño por un valor constante incluyendo además una mascara que diferencia aquellos puntos de la detección original al espacio aumentado. Cada una de dichas detecciones aumentadas pasan a utilizar el sistema de coordenadas propio de cada detección.
+Tras la obtención de las bounding boxes 3D, se trata de mejorar el centro y la orientación de éstas. Por cada una de dichas detecciones se aumenta su tamaño por un valor constante incluyendo además una máscara que diferencia aquellos puntos de la detección original al espacio aumentado. Cada una de dichas detecciones aumentadas pasan a utilizar el sistema de coordenadas propio de cada detección.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/region_pooling_pointrcnn.png}
@@ -599,7 +599,7 @@ Tras la obtención de las bounding boxes 3D, se trata de mejorar el centro y la o
 A partir de los puntos de cada agrupación de las características extraídas de la primera fase y de un parámetro que agrega información de la distancia al sensor para aquellas agrupaciones con menos puntos, calculado como $\sqrt{x²+y²+z²}$, se introducen en múltiples capas \acs{fc} para obtener las características locales. Tras esto se vuelve a utilizar el modelo bin-based utilizado en la primera fase con lo que se obtienen las bounding boxes 3D aplicando nuevamente \acs{nms} sobre un \acs{iou} en \acs{bev} con un límite de 0,01 para eliminar solapamientos.
 \end{enumerate}
 
-Al estar basado este método en dos subredes, sufre de un tiempo de computo mayor, lo que se traduce en una velocidad de 12 Hz \cite{rangercnn}, pero suficiente para aplicarse en tiempo real, al obtener típicamente las nubes de puntos a 10 Hz.
+Al estar basado este método en dos subredes, sufre de un tiempo de cómputo mayor, lo que se traduce en una velocidad de 12 Hz \cite{rangercnn}, pero suficiente para aplicarse en tiempo real, al obtener típicamente las nubes de puntos a 10 Hz.
 
 \subsection{PV-RCNN}
 \label{sec:pv_rcnn}
@@ -617,7 +617,7 @@ PV-RCNN \cite{pv_rcnn} unifica los beneficios de las dos principales técnicas de
 \item 3D Voxel \acs{cnn} para la extracción de características y generación de detecciones\par
 Se utiliza una Voxel \acs{cnn} con 3D sparse convolution junto con una \acs{rpn}, la cual es una elección popular en el \acs{sota} gracias a su eficiencia, por lo que es el backbone utilizado en este modelo. Este método obtiene de forma interna características semánticas de los vóxeles además de conseguir las detecciones de los objetos a partir de los tamaños prefijados o anchors.
 \item Codificación de escenas de vóxel a puntos clave\par
-Primero se agregan las características de los vóxeles en un conjunto de puntos clave que sirven de conexión entre la fase anterior y el refinamiento de las detecciones. Para la obtención de los puntos clave se adopta el algoritmo Furthest Point Sampling y se aplica sobre la nube de puntos, lo cual elige puntos de forma uniformemente distribuida sobre los vóxeles no vacíos. Tras esto se propone el módulo Voxel Set Abstraction para codificar características semánticas de la primera fase en los puntos clave. Basándose en la premisa de que los puntos más cercanos tiene que contribuir más a la propuesta de detección se propone el módulo Predicted Keypoint Weighting.
+Primero se agregan las características de los vóxeles en un conjunto de puntos clave que sirven de conexión entre la fase anterior y el refinamiento de las detecciones. Para la obtención de los puntos clave se adopta el algoritmo Furthest Point Sampling y se aplica sobre la nube de puntos, lo cual elige puntos de forma uniformemente distribuida sobre los vóxeles no vacíos. Tras esto se propone el módulo Voxel Set Abstraction para codificar características semánticas de la primera fase en los puntos clave. Basándose en la premisa de que los puntos más cercanos tienen que contribuir más a la propuesta de detección se propone el módulo Predicted Keypoint Weighting.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/4_sistemas_de_percepcion_con_lidar_basados_en_deep_learning/pkw_pvrcnn.png}
@@ -648,11 +648,11 @@ Para realizar la inferencia en el modelo se siguen los siguientes pasos:
 
 \begin{enumerate}
 \item Entrada de la red\par
-Debido al método de validación de las detecciones en nuScenes es necesaria la inferencia de la velocidad, por lo que siguiendo el método oficial del dataset, se utilizan diez barridos de \acs{lidar} para la obtención del dato de la velocidad. En la entrada del modelo es necesario entonces alguna medida de tiempo, por lo que cada punto se encuentra codificado como [$x$, $y$, $z$, $intensity$, $\Delta t$], siendo $\Delta t$ la diferencia de tiempo entre el barrido inicial y el barrido del que proviene el punto. Tras esto se voxeliza la nube de puntos con un tamaño de vóxel de [0.1, 0.1, 0.2] m para la reducción del tiempo de computo. Dentro de cada vóxel se mantiene unicamente la media de todos los puntos de dicho vóxel.
+Debido al método de validación de las detecciones en nuScenes es necesaria la inferencia de la velocidad, por lo que siguiendo el método oficial del dataset, se utilizan diez barridos de \acs{lidar} para la obtención del dato de la velocidad. En la entrada del modelo es necesario entonces alguna medida de tiempo, por lo que cada punto se encuentra codificado como [$x$, $y$, $z$, $intensity$, $\Delta t$], siendo $\Delta t$ la diferencia de tiempo entre el barrido inicial y el barrido del que proviene el punto. Tras esto se voxeliza la nube de puntos con un tamaño de vóxel de [0.1, 0.1, 0.2] m para la reducción del tiempo de cómputo. Dentro de cada vóxel se mantiene únicamente la media de todos los puntos de dicho vóxel.
 \item Backbone utilizado\par
-En la red principal se utiliza un modelo basado en sparse 3D convolution y un extractor de características. Tras esto se aplica un \acs{rpn}, lo que termina en una red similar a la de VoxelNet \cite{voxelnet} para extraer más características pero con capas convolucionales 2D.
+En la red principal se utiliza un modelo basado en sparse 3D convolution y un extractor de características. Tras esto se aplica un \acs{rpn}, lo que termina en una red similar a la de VoxelNet \cite{voxelnet} para extraer más características, pero con capas convolucionales 2D.
 \item Class-balance Grouping\par
-Al tener una aparición de las diferentes clases muy irregular, con casi un 45\% de los objetos siendo coches, es muy difícil para objetos con formas diferentes extraer las diferencias entre ellos. Por ejemplo una bicicleta y una motocicleta tienen una forma muy similar en lo que respecta a la nube de puntos, al igual que ocurren con un camión y un camión de construcción. Para solucionar este problema se propone la agrupación de clases en función de su similitud, teniendo en cuenta el tamaño de los objetos y un balanceo del tamaño de los grupos en función del número de clases. Lo cual acaba generando 6 grupos diferentes: (Coche), (Camión, Camión de construcción), (Bus, Tráiler), (Barrera), (Motocicleta, Bicicleta), (Peatón, Cono de tráfico). Por lo que tras la elección del grupo, se obtiene su cabecera y se hayan la posición, tamaño, rotación y velocidad.
+Al tener una aparición de las diferentes clases muy irregular, con casi un 45\% de los objetos siendo coches, es muy difícil para objetos con formas diferentes extraer las diferencias entre ellos. Por ejemplo, una bicicleta y una motocicleta tienen una forma muy similar en lo que respecta a la nube de puntos, al igual que ocurren con un camión y un camión de construcción. Para solucionar este problema se propone la agrupación de clases en función de su similitud, teniendo en cuenta el tamaño de los objetos y un balanceo del tamaño de los grupos en función del número de clases. Lo cual acaba generando 6 grupos diferentes: (Coche), (Camión, Camión de construcción), (Bus, Tráiler), (Barrera), (Motocicleta, Bicicleta), (Peatón, Cono de tráfico). Por lo que, tras la elección del grupo, se obtiene su cabecera y se hayan la posición, tamaño, rotación y velocidad.
 \end{enumerate}
 
 Este método consigue por tanto una detección de objetos 3D además de un pseudo tracking para inferir la velocidad de los objetos, todo ello trabajando con 10 clases diferentes y obteniendo una velocidad de 9 Hz.
@@ -661,7 +661,7 @@ Este método consigue por tanto una detección de objetos 3D además de un pseudo t
 \label{sec:openpcdet}
 
 OpenPCDet \cite{openpcdet} es un proyecto Open-Source para realizar detecciones de objetos 3D utilizando \acs{lidar}. Esta herramienta ha sido utilizada para la evaluación, entrenamiento e implementación de diversos modelos debido a la diversidad de modelos y de datasets que son soportados.\par
-OpenPCDet es un repositorio en Pytorch \cite{pytorch} que soporta múltiples modelos \acs{sota} en detección de objetos 3D, con un código altamente refactorizado para las arquitecturas basadas en una o dos etapas. Este repositorio de código abierto es activamente actualizado con nuevos datasets soportados y modelos. Basado en OpenPCDet se ha conseguido ganar el año 2020 el Waymo Open Dataset en detección 3D, seguimiento 3D y adaptación del entorno utilizando unicamente las nubes de puntos del \acs{lidar}.
+OpenPCDet es un repositorio en Pytorch \cite{pytorch} que soporta múltiples modelos \acs{sota} en detección de objetos 3D, con un código altamente refactorizado para las arquitecturas basadas en una o dos etapas. Este repositorio de código abierto es activamente actualizado con nuevos datasets soportados y modelos. Basado en OpenPCDet se ha conseguido ganar el año 2020 el Waymo Open Dataset en detección 3D, seguimiento 3D y adaptación del entorno utilizando únicamente las nubes de puntos del \acs{lidar}.
 
 \begin{figure}[H]
 	\centering

@@ -23,7 +23,7 @@
 \contentsline {table}{\numberline {7.7}{\ignorespaces An\'alisis por clase de CBGS PointPillars Multihead en nuScenes.\relax }}{69}{table.244}
 \contentsline {table}{\numberline {7.8}{\ignorespaces An\'alisis por clase de PointPillars en nuScenes.\relax }}{70}{table.245}
 \contentsline {table}{\numberline {7.9}{\ignorespaces Comparativa de los modelos entrenados sobre nuScenes.\relax }}{70}{table.246}
-\contentsline {table}{\numberline {7.10}{\ignorespaces An\'alisis de la precisi\'on de SECOND Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.254}
+\contentsline {table}{\numberline {7.10}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{73}{table.254}
 \contentsline {table}{\numberline {7.11}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el n\'umero de barridos.\relax }}{74}{table.255}
 \contentsline {table}{\numberline {7.12}{\ignorespaces An\'alisis de la precisi\'on de PointPillars Multihead seg\'un el tama\~no del voxel.\relax }}{74}{table.257}
 \contentsline {table}{\numberline {7.13}{\ignorespaces Par\'ametros del LiDAR en CARLA.\relax }}{75}{table.caption.259}

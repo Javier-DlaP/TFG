@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.3.1)  16 SEP 2021 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.3.1)  22 SEP 2021 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1527,6 +1527,10 @@ LaTeX Info: Redefining \% on input line 33.
 
 LaTeX Warning: Label `fig:Arquitectura_propuesta_del_detector_pv_rcnn' multiply
  defined.
+
+
+LaTeX Warning: Label `tab:Analisis_de_la_precision_de_pointpillars_multihead_se
+gun_el_numero_de_barridos' multiply defined.
 
 )
 \openout1 = `book.aux'.
@@ -5838,10 +5842,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
  ) 
 Here is how much of TeX's memory you used:
- 56170 strings out of 494747
- 1154120 string characters out of 6176208
- 1256142 words of memory out of 5000000
- 57915 multiletter control sequences out of 15000+600000
+ 56169 strings out of 494747
+ 1154042 string characters out of 6176208
+ 1256041 words of memory out of 5000000
+ 57914 multiletter control sequences out of 15000+600000
  624364 words of font info for 85 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
  165i,16n,190p,10466b,5353s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -5862,7 +5866,7 @@ pe1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/courier/ucrr8a.pfb>
-Output written on book.pdf (130 pages, 17131217 bytes).
+Output written on book.pdf (130 pages, 17131364 bytes).
 PDF statistics:
  2574 PDF objects out of 2984 (max. 8388607)
  2262 compressed objects within 23 object streams

@@ -230,7 +230,7 @@ Mientras que para la estimación de la orientación se utiliza la métrica \ac{aos}
 \end{longtable}
 \end{center}
 
-Las clases de peatón y ciclista, como se puede ver principalmente en los modelos SECOND y PointPillars, al ser valuados sobre KITTI obtienen una precisión muy baja, esto es debido a que dichas clases son detectadas con muy pocos puntos de la nube de puntos correspondiente, por lo que no es muy preciso en dichas clases. Para evaluar de forma más significativa y comparar los diferentes modelos se evalúan las tareas de detección 3D y \acs{bev} con un \acs{iou} de 0.7 y 0.5 en coches, y para el caso de peatones y ciclistas de  de 0.5 y 0.25.
+Las clases de peatón y ciclista, como se puede ver principalmente en los modelos SECOND y PointPillars, al ser valuados sobre KITTI obtienen una precisión muy baja, esto es debido a que dichas clases son detectadas con muy pocos puntos de la nube de puntos correspondiente, por lo que no es muy preciso en dichas clases. Para evaluar de forma más significativa y comparar los diferentes modelos se evalúan las tareas de detección 3D y \acs{bev} con un \acs{iou} de 0.7 y 0.5 en coches, y para el caso de peatones y ciclistas de 0.5 y 0.25.
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|c|c|c|}
@@ -320,13 +320,13 @@ Las clases de peatón y ciclista, como se puede ver principalmente en los modelos
 \end{longtable}
 \end{center}
 
-Tras la obtención de la comparativa cuantitativa de los modelos en al tabla \ref{tab:Comparativa_de_los_modelos_entrenados_sobre_kitti} se observa como la mejor precisión se obtiene utilizando el modelo PointRCNN y la mayor velocidad de inferencia con el modelo PointPillars.
+Tras la obtención de la comparativa cuantitativa de los modelos en la tabla \ref{tab:Comparativa_de_los_modelos_entrenados_sobre_kitti} se observa como la mejor precisión se obtiene utilizando el modelo PointRCNN y la mayor velocidad de inferencia con el modelo PointPillars.
 
 \subsection{Análisis cuantitativo en nuScenes}
 \label{sec:analisis_cuantitativo_en_nuscenes}
 
-La evaluación sobre el dataset nuScenes consta unicamente del modelo CBGS, pero este modelo se utiliza con dos backbone diferentes: uno basado en SECOND y otro en PointPillars.\par
-Los modelos entrenados sobre nuScenes se evaluan unicamente sobre el benchmark de detección 3D, dicha evaluación consta no solo del \acs{ap}, como realiza KITTI, sino que también utiliza las siguientes métricas:
+La evaluación sobre el dataset nuScenes consta únicamente del modelo CBGS, pero este modelo se utiliza con dos backbone diferentes: uno basado en SECOND y otro en PointPillars.\par
+Los modelos entrenados sobre nuScenes se evalúan únicamente sobre el benchmark de detección 3D, dicha evaluación consta no solo del \acs{ap}, como realiza KITTI, sino que también utiliza las siguientes métricas:
 
 \begin{itemize}
 \item \textbf{\ac{ate}}: Distancia euclídea en \acs{bev} medido en metros
@@ -503,7 +503,7 @@ Barrera& 0.39 & 0.71 & 0.30 & 0.08 & nan & nan \\
 \hline
 \multirow{7}{*}{PointPillars Multihead (CBGS)}
 & mAP & 0.4474 &
-\multirow{7}{*}{\textbf{12.84 Hz}}\\
+\multirow{7}{*}{12.84 Hz}\\
 \cline{2-3}
 & mATE & 0.3379 &\\
 \cline{2-3}
@@ -519,7 +519,7 @@ Barrera& 0.39 & 0.71 & 0.30 & 0.08 & nan & nan \\
 \hline
 \multirow{7}{*}{PointPillars}
 & mAP & 0.3050 &
-\multirow{7}{*}{37.29 Hz}\\
+\multirow{7}{*}{\textbf{37.29 Hz}}\\
 \cline{2-3}
 & mATE & 0.5169 &\\
 \cline{2-3}
@@ -543,12 +543,12 @@ El modelo PointPillars es claramente superado en nuScenes por los modelos basado
 \subsection{Análisis adicionales}
 \label{sec:analisis_adicionales}
 
-Tras el estudio de la precisión y el rendimiento de los modelos, se deciden realizar diferentes estudios de los modelos sobre ambos datasets para: evaluar todos los modelos sobre el mismo dataset, tratar de reducir el tiempo de computo y aumentar la precisión del modelo CBGS.
+Tras el estudio de la precisión y el rendimiento de los modelos, se deciden realizar diferentes estudios de los modelos sobre ambos datasets para: evaluar todos los modelos sobre el mismo dataset, tratar de reducir el tiempo de cómputo y aumentar la precisión del modelo CBGS.
 
 \subsubsection{Transferencia de modelos basados en Kitti a nuScenes}
 \label{sec:ajuste_de_modelos_basados_en_kitti_a_nuscenes}
 
-La evaluación realizada en KITTI para la detección 3D se aplica unicamente en la parte frontal del vehículo para que las cámaras sean capaces de detectar todos los objetos, por ello los modelos entrenados sobre este dataset han sido entrenados para que su detección se ajuste unicamente a la parte frontal.
+La evaluación realizada en KITTI para la detección 3D se aplica únicamente en la parte frontal del vehículo para que las cámaras sean capaces de detectar todos los objetos, por ello los modelos entrenados sobre este dataset han sido entrenados para que su detección se ajuste únicamente a la parte frontal.
 
 \begin{figure}[H]
 	\centering
@@ -591,7 +591,7 @@ Basados en el principio de que a partir de cada uno de los vóxeles se extraen la
 \label{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos}
 \end{figure}
 
-La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos} muestra el rendimiento sobre todo el dataset de nuScenes, mostrando la mediana, cuartiles y deciles de la velocidad de inferencia de los modelos. Se puede ver de esta manera que a partir del uso único de 3 barridos se consigue una mejora en el rendimiento, mientras que con el aumento hasta 10, la velocidad de inferencia no se mejora. Por otra parte revisando los deciles del rendimiento se observa que unicamente PointPillars Multihead consigue un rendimiento siempre superior a los 10 Hz, requisito indispensable para la implementación el proyecto Techs4AgeCar.
+La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun_el_numero_de_barridos} muestra el rendimiento sobre todo el dataset de nuScenes, mostrando la mediana, cuartiles y deciles de la velocidad de inferencia de los modelos. Se puede ver de esta manera que a partir del uso único de 3 barridos se consigue una mejora en el rendimiento, mientras que con el aumento hasta 10, la velocidad de inferencia no se mejora. Por otra parte, revisando los deciles del rendimiento se observa que únicamente PointPillars Multihead consigue un rendimiento siempre superior a los 10 Hz, requisito indispensable para la implementación el proyecto Techs4AgeCar.
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|c|c|c|c|}
@@ -609,28 +609,28 @@ La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun
 \hline \multicolumn{8}{r}{\textit{Continua en la próxima página}} \\
 \endfoot
 \endlastfoot
-1 & 0.34 & 0.26 & 0.53 & 1.56 & 0.33 & 0.35 & 0.43 \\
+1 & 0.35 & 0.27 & 0.63 & 1.74 & 0.33 & 0.31 & 0.39 \\
 \hline
-2 & 0.33 & 0.26 & 0.33 & 0.82 & 0.22 & 0.43 & 0.52 \\
+2 & 0.36 & 0.26 & 0.42 & 0.89 & 0.23 & 0.36 & 0.47 \\
 \hline
-3 & 0.32 & 0.26 & 0.29 & 0.54 & 0.21 & 0.47 & 0.57 \\
+3 & 0.35 & 0.26 & 0.37 & 0.61 & 0.21 & 0.39 & 0.52 \\
 \hline
-4 & 0.32 & 0.26 & 0.28 & 0.43 & 0.21 & 0.49 & 0.60 \\
+4 & 0.35 & 0.26 & 0.34 & 0.47 & 0.21 & 0.41 & 0.54 \\
 \hline
-5 & 0.32 & 0.26 & 0.27 & 0.36 & 0.20 & 0.50 & 0.61 \\
+5 & 0.34 & 0.26 & 0.34 & 0.39 & 0.20 & 0.42 & 0.56 \\
 \hline
-6 & 0.31 & 0.26 & 0.26 & 0.33 & 0.20 & 0.50 & 0.62 \\
+6 & 0.34 & 0.26 & 0.33 & 0.36 & 0.20 & 0.43 & 0.57 \\
 \hline
-7 & 0.31 & 0.26 & 0.26 & 0.30 & 0.21 & 0.51 & 0.62 \\
+7 & 0.34 & 0.26 & 0.33 & 0.33 & 0.20 & 0.44 & 0.57 \\
 \hline
-8 & 0.31 & 0.25 & 0.26 & 0.28 & 0.21 & 0.51 & 0.62 \\
+8 & 0.34 & 0.26 & 0.33 & 0.31 & 0.20 & 0.44 & 0.58 \\
 \hline
-9 & 0.31 & 0.25 & 0.27 & 0.27 & 0.24 & 0.51 & 0.62 \\
+9 & 0.34 & 0.26 & 0.32 & 0.30 & 0.20 & 0.45 & 0.58 \\
 \hline
-10 & 0.31 & 0.26 & 0.26 & 0.26 & 0.20 & 0.51 & 0.62 \\
+10 & 0.34 & 0.26 & 0.32 & 0.29 & 0.20 & 0.45 & 0.58 \\
 \hline
-\caption{Análisis de la precisión de SECOND Multihead según el número de barridos.}
-\label{tab:Analisis_de_la_precision_de_second_multihead_segun_el_numero_de_barridos}
+\caption{Análisis de la precisión de PointPillars Multihead según el número de barridos.}
+\label{tab:Analisis_de_la_precision_de_pointpillars_multihead_segun_el_numero_de_barridos}
 \end{longtable}
 \end{center}
 
@@ -675,7 +675,7 @@ La figura \ref{fig:Analisis_del_rendimiento_de_los_modelos_basados_en_cbgs_segun
 \end{longtable}
 \end{center}
 
-El uso de 2 barridos con SECOND Multihead no supera en precisión a PointPillars Multihead con los 10 barridos por lo que este modelo sería descartado. Por otra parte en el caso de PointPillars Multihead sería recomendable el uso de 8 barridos en vez de 10 ya que la precisión no se ve apenas reducida, mientras que el rendimiento consigue una mejora de poco más del 4\%, que aunque sea poco puede definir en un caso extremo si una nube de puntos es analizada o no por la velocidad de inferencia del modelo.
+El uso de 2 barridos con SECOND Multihead no supera en precisión a PointPillars Multihead con los 10 barridos por lo que este modelo sería descartado. Por otra parte, en el caso de PointPillars Multihead sería recomendable el uso de 8 barridos en vez de 10 ya que la precisión no se ve apenas reducida, mientras que el rendimiento consigue una mejora de poco más del 4\%, que aunque sea poco puede definir en un caso extremo si una nube de puntos es analizada o no por la velocidad de inferencia del modelo.
 
 \subsubsection{Tamaño del vóxel en modelos basados en redes neuronales}
 \label{sec:tamaño_del_voxel_en_modelos_basados_en_redes_neuronales}
@@ -764,7 +764,7 @@ El estudio realizado en el capítulo \ref{cha:sistemas_clasicos_de_percepcion_con
 \end{figure}
 
 La velocidad de inferencia de este sistema es de 13.14 milisegundos de media, teniendo como funciones más demandantes: la aplicación del algoritmo \acs{ransac} 3D con 9.57 milisegundos y la función de clustering basada en KD-tree con 2.14 milisegundos, esto resulta en un sistema con una capacidad de inferencia de 76 Hz.\par
-El funcionamiento de este algoritmo como se ve en la figura \ref{fig:Modelo_clasico_en_carla} es bastante bueno, con pocos falsos positivos. El mayor problema que tiene dicho algoritmo es la incapacidad de detectar otro tipo de objeto que no sean coches, ya que si tienen que ser detectados los peatones, aparecerían problemas de muchos falsos positivos con farolas, semáforos, etc. La diferenciación de cada objeto en función de su clase no es posible en este método ya que aunque se analizase el tamaño de los objetos se encontrarían muchos fallos en función del número de puntos incidentes sobre cada objeto, ya que farolas, arbustos, conos, semáforos y peatones serían incluidos en el mismo grupo.
+El funcionamiento de este algoritmo como se ve en la figura \ref{fig:Modelo_clasico_en_carla} es bastante bueno, con pocos falsos positivos. El mayor problema que tiene dicho algoritmo es la incapacidad de detectar otro tipo de objeto que no sean coches, ya que, si tienen que ser detectados los peatones, aparecerían problemas de muchos falsos positivos con farolas, semáforos, etc. La diferenciación de cada objeto en función de su clase no es posible en este método ya que, aunque se analizase el tamaño de los objetos se encontrarían muchos fallos en función del número de puntos incidentes sobre cada objeto, ya que farolas, arbustos, conos, semáforos y peatones serían incluidos en el mismo grupo.
 
 \subsection{Análisis cualitativo de Pointpillars Multihead en CARLA}
 \label{sec:analisis_cualitativo_de_cbgs_en_carla}
@@ -797,8 +797,8 @@ El modelo finalmente implementado en el proyecto ha sido PointPillars Multihead,
 \label{fig:Pointpillars_multihead_en_carla}
 \end{figure}
 
-Las pruebas se han desarrollado sobre un mapa creado dentro del grupo RobeSafe que simula la Universidad de Alcalá, en el que se ha colaborado, y en un mapa proporcionado por CARLA. Este modelo ya no solo ajusta mejor las bounding boxes de los coches sino que detecta a los peatones del escenario respecto del modelo clásico.\par
-Aún obteniendo estos resultados tan buenos hay que tener en cuenta que la intensidad no se utiliza, por lo que la asociación de objetos entre barridos es más difícil. Durante la implementación de dicho modelo se ha detectado un fallo en CARLA en el que el frame del \acs{lidar} se encuentra vibrando, lo cual es el culpable de la mala inferencia de velocidad obtenida, por lo que ha sido reportado dicho error. Se observa además que debido a este problema del simulador, se obtiene una precisión mucho mejor con el vehículo parado o a velocidades bajas.
+Las pruebas se han desarrollado sobre un mapa creado dentro del grupo RobeSafe que simula la Universidad de Alcalá, en el que se ha colaborado, y en un mapa proporcionado por CARLA. Este modelo ya no solo ajusta mejor las bounding boxes de los coches, sino que detecta a los peatones del escenario respecto del modelo clásico.\par
+Aun obteniendo estos resultados tan buenos hay que tener en cuenta que la intensidad no se utiliza, por lo que la asociación de objetos entre barridos es más difícil. Durante la implementación de dicho modelo se ha detectado un fallo en CARLA en el que el frame del \acs{lidar} se encuentra vibrando, lo cual es el culpable de la mala inferencia de velocidad obtenida, por lo que ha sido reportado dicho error. Se observa además que, debido a este problema del simulador, se obtiene una precisión mucho mejor con el vehículo parado o a velocidades bajas.
 
 \subsubsection{Comparativa con PointPillars en CARLA}
 \label{sec:comparatica_con_pointpillars_en_carla}
@@ -919,7 +919,7 @@ Al no poder evaluar de forma cuantitativa la precisión, se analizan de forma cua
 \label{fig:Pointpillars_multihead_en_el_vehiculo_t4ac}
 \end{figure}
 
-Tras el ajuste para la detección de unicamente ciertas clases, se puede observar una precisión muy buena donde todos los coches cercanos al propio vehículo son detectados, incluso en situaciones donde hay coches con muy pocos puntos al ser ocluidos por múltiples árboles, el sistema es capaz de detectarlos. Aún trabajando en un sistema real donde hay muchos puntos de colisión con árboles, con los ajustes realizados no se obtienen apenas falsos positivos lo cual es un gran beneficio para su uso en otras capas del proyecto Techs4AgeCar, aunque la detección de objetos pequeños como conos o peatones sigue produciendo falsos positivos debido a que se tiene la mitad de puntos en la nube respecto de las nubes de puntos utilizadas en el entrenamiento del modelo.
+Tras el ajuste para la detección de unicamente ciertas clases, se puede observar una precisión muy buena donde todos los coches cercanos al propio vehículo son detectados, incluso en situaciones donde hay coches con muy pocos puntos al ser ocluidos por múltiples árboles, el sistema es capaz de detectarlos. Aun trabajando en un sistema real donde hay muchos puntos de colisión con árboles, con los ajustes realizados no se obtienen apenas falsos positivos lo cual es un gran beneficio para su uso en otras capas del proyecto Techs4AgeCar, aunque la detección de objetos pequeños como conos o peatones sigue produciendo falsos positivos debido a que se tiene la mitad de puntos en la nube respecto de las nubes de puntos utilizadas en el entrenamiento del modelo.
 
 \subsubsection{Comparativa con PointPillars sobre el vehículo T4AC}
 \label{sec:comparatica_con_pointpillars_sobre el vehículo T4AC}
@@ -957,7 +957,7 @@ La ventaja que se tenía antes con este modelo es la ejecución sobre la NVIDIA Je
 \subsection{Análisis cualitativo del sistema de fusión sensorial sobre el vehículo T4AC}
 \label{sec:analisis_cualitativo_del_sistema_de_fusion_sensorial_sobre_el_vehiculo_t4ac}
 
-Los sistemas de detección basados en \acs{lidar} tienen el inconveniente de la cantidad de falsos positivos que producen al no tener la información suficiente para hallar los objetos del entorno de una forma sencilla, mientras que gracias a este sensor se consigue un ajuste muy bueno de las bounding boxes entorno a los objetos. Por otra parte los sistemas de detección basados en cámara monocular ofrecen un muy buen reconocimiento de los objetos en un entorno 2D, mientras que no son capaces de obtener detecciones 3D muy precisas.\par
+Los sistemas de detección basados en \acs{lidar} tienen el inconveniente de la cantidad de falsos positivos que producen al no tener la información suficiente para hallar los objetos del entorno de una forma sencilla, mientras que gracias a este sensor se consigue un ajuste muy bueno de las bounding boxes entorno a los objetos. Por otra parte, los sistemas de detección basados en cámara monocular ofrecen un muy buen reconocimiento de los objetos en un entorno 2D, mientras que no son capaces de obtener detecciones 3D muy precisas.\par
 Basado en estas características, se consiguen utilizar las detecciones 3D aproximadas provenientes del sistema basado en cámara, mientras que se aprovecha del sistema basado en \acs{lidar} para su ajuste.
 
 \begin{figure}[H]
@@ -986,6 +986,6 @@ Basado en estas características, se consiguen utilizar las detecciones 3D aproxi
 \label{fig:Fusion_sensorial_en_el_vehiculo_t4ac}
 \end{figure}
 
-En la figura \ref{fig:Fusion_sensorial_en_el_vehiculo_t4ac} se muestran las detecciones producidas por el sistema de fusión sensorial, donde en las imágenes de la izquierda se muestran las detecciones de los sistemas de cámara y \acs{lidar}, siendo las detecciones rojas aquellas producidas por la cámara y las detecciones azules las generadas por el sistema basado en \acs{lidar}. Por otra parte a la derecha se muestra el resultado de la fusión sensorial como detecciones de color negro.\par
+En la figura \ref{fig:Fusion_sensorial_en_el_vehiculo_t4ac} se muestran las detecciones producidas por el sistema de fusión sensorial, donde en las imágenes de la izquierda se muestran las detecciones de los sistemas de cámara y \acs{lidar}, siendo las detecciones rojas aquellas producidas por la cámara y las detecciones azules las generadas por el sistema basado en \acs{lidar}. Por otra parte, a la derecha se muestra el resultado de la fusión sensorial como detecciones de color negro.\par
 Se puede observar como las detecciones de la cámara solo se encuentran en la parte frontal y las producidas por el \acs{lidar} alrededor del vehículo, esto consigue un sistema donde se mejoran las detecciones frontales, ya que es necesario una detección en ambos sistemas sobre un objeto para darse como correcta dicha detección.\par
 En cuanto a la velocidad de inferencia para el modelo CBGS, ésta es de 8.68 Hz en el portátil de abordo del vehículo T4AC, que consta de una tarjeta gráfica GTX 1070 Mobile. Dicho sistema sustituye al basado en PointPillars ejecutado sobre una NVIDIA Jetson AGX Xavier, que obtiene una velocidad de 7.3 Hz.

@@ -11,12 +11,12 @@
 \end{FraseCelebre}
 
 \noindent
-Mientras que se tienen múltiples tipos de técnicas de percepción tanto clásicas como basadas en Deep Learning, el uso de técnicas clásicas utilizando unicamente \acs{lidar} no abundan, por lo que se presentan las técnicas estudiadas e implementadas en el simulador CARLA para la detección de los objetos del entorno.
+Mientras que se tienen múltiples tipos de técnicas de percepción tanto clásicas como basadas en Deep Learning, el uso de técnicas clásicas utilizando únicamente \acs{lidar} no abundan, por lo que se presentan las técnicas estudiadas e implementadas en el simulador CARLA para la detección de los objetos del entorno.
 
 \section{Voxelización}
 \label{sec:voxelizacion}
 
-Las nubes de puntos generadas por el \acs{lidar} pueden ser de hasta 1.300.000 puntos por segundo en un \acs{lidar} de 64 haces \cite{velodyne_hdl_64} lo que implicaría el análisis de una gran cantidad de datos en tiempo real lo que puede no ser muy viable ya que se tiene una capacidad de computo limitada en un vehículo.\par
+Las nubes de puntos generadas por el \acs{lidar} pueden ser de hasta 1.300.000 puntos por segundo en un \acs{lidar} de 64 haces \cite{velodyne_hdl_64} lo que implicaría el análisis de una gran cantidad de datos en tiempo real lo que puede no ser muy viable ya que se tiene una capacidad de cómputo limitada en un vehículo.\par
 Para ello se utiliza la voxelización, esta no solo se utiliza en sistemas de percepción, sino que también es utilizada en imágenes volumétricas de ámbito médico, para la representación del terreno o en el pipeline gráfico de un ordenador. Esta técnica trata de reducir la cantidad de datos en memoria a la vez que reduce el computo al reducir la resolución de la escena. Por lo que se puede entender como un proceso de discretización del entorno.
 
 \begin{figure}[H]
@@ -48,7 +48,7 @@ El algoritmo \acs{ransac} \cite{ransac} tiene una funcionalidad similar a la reg
 	\label{fig:Aplicacion_de_ransac_para_deteccion_de_outliers}
 \end{figure}
 
-La idea principal del algoritmo \acs{ransac} es la generación de rectas a partir de 2 o más puntos para aceptar como la mejor recta aquella que contenga más puntos entre un límite seleccionado, y esto es repetido un número arbitrario de veces. Esta recta será la que contenga los puntos asumidos como normales o inliers, y el resto de puntos son asumidos como anómalos o outliers. La función completa utiliza el siguiente algoritmo \ref{alg:Algoritmo_ransac}.
+La idea principal del algoritmo \acs{ransac} es la generación de rectas a partir de 2 o más puntos para aceptar como la mejor recta aquella que contenga más puntos entre un límite seleccionado, y esto es repetido un número arbitrario de veces. Esta recta será la que contenga los puntos asumidos como normales o inliers, y el resto de los puntos son asumidos como anómalos o outliers. La función completa utiliza el siguiente algoritmo \ref{alg:Algoritmo_ransac}.
 
 \newpage
 
@@ -95,7 +95,7 @@ La idea principal del algoritmo \acs{ransac} es la generación de rectas a partir
 \end{algorithm}
 
 En el caso de las nubes de puntos que devuelve el \acs{lidar}, se trabaja en un entorno tridimensional, por lo que no funciona de la misma manera dicho algoritmo, se utiliza una variación, \acs{ransac}-3D como se ve en la figura \ref{fig:Aplicacion_de_ransac_3d}, que en vez de trabajar con datos en 2D se trabajan en 3D, por lo que se pasa de ajustar una recta a ajustar un plano, se necesitan al menos tres puntos para generar un posible modelo, ya que es el mínimo número de puntos para generar un plano, el resto funciona de forma similar definiendo el límite de distancia, iteraciones, etc.\par
-Como se se ha explicado, los resultados suelen ser similares a una regresión linear en un entorno bidimensional, pero en este caso no sería del todo cierto, ya que el plano que abarca más puntos suele ser en la mayoría de los casos el correspondiente al suelo. Esto implica una modificación de la regresión linear a las tres dimensiones, esto es una regresión ajustada como un plano, lo que generará en la mayoría de las situaciones un plano que se encuentra por encima del suelo, ya que trataría de minimizar una métrica de error al plano (distancia euclídea, manhattan, minkowski, hamming, etc.), por lo que los objetos de la escena levantarían el plano para minimizar el error de este a los puntos correspondientes a los objetos.
+Como se ha explicado, los resultados suelen ser similares a una regresión linear en un entorno bidimensional, pero en este caso no sería del todo cierto, ya que el plano que abarca más puntos suele ser en la mayoría de los casos el correspondiente al suelo. Esto implica una modificación de la regresión linear a las tres dimensiones, esto es una regresión ajustada como un plano, lo que generará en la mayoría de las situaciones un plano que se encuentra por encima del suelo, ya que trataría de minimizar una métrica de error al plano (distancia euclídea, manhattan, minkowski, hamming, etc.), por lo que los objetos de la escena levantarían el plano para minimizar el error de este a los puntos correspondientes a los objetos.
 
 \begin{figure}[H]
 	\centering
@@ -104,14 +104,14 @@ Como se se ha explicado, los resultados suelen ser similares a una regresión lin
 	\label{fig:Aplicacion_de_ransac_3d}
 \end{figure}
 
-De forma comparativa al algoritmo \acs{ransac}-3D, se genera un plano ajustándose a la mayoría de los puntos de la escena, anotando como inliers aquellos puntos pertenecientes al suelo y dejando el resto de puntos que colisionan con el entorno como outliers, por lo que dicho algoritmo \acs{ransac} es el utilizado para la tarea de filtrado de la sección de la nube de puntos que colisiona con el suelo de la escena.
+De forma comparativa al algoritmo \acs{ransac}-3D, se genera un plano ajustándose a la mayoría de los puntos de la escena, anotando como inliers aquellos puntos pertenecientes al suelo y dejando el resto de los puntos que colisionan con el entorno como outliers, por lo que dicho algoritmo \acs{ransac} es el utilizado para la tarea de filtrado de la sección de la nube de puntos que colisiona con el suelo de la escena.
 
 \section{KD-tree}
 \label{sec:kd_tree}
 
-Tras la eliminación del suelo en la nube de puntos podemos encontrarnos con que los diferentes objetos del entorno se encuentran separados, ya que el suelo era el elemento unificador de la mayoría de puntos de la escena. Teniendo en cuenta esto, es necesario el uso de una técnica que sea capaz de agrupar los puntos más cercanos por distancia, ya que si se hace comprobando cada punto con el resto se obtendría una complejidad de $O(n²)$.\par
+Tras la eliminación del suelo en la nube de puntos podemos encontrarnos con que los diferentes objetos del entorno se encuentran separados, ya que el suelo era el elemento unificador de la mayoría de los puntos de la escena. Teniendo en cuenta esto, es necesario el uso de una técnica que sea capaz de agrupar los puntos más cercanos por distancia, ya que si se hace comprobando cada punto con el resto se obtendría una complejidad de $O(n²)$.\par
 Teniendo en cuenta el coste computacional de los algoritmos de clustering y al trabajar con tantos puntos, alrededor de 1.000.000 por segundo y sabiendo que un \acs{lidar} suele trabajar a 10 Hz, es muy recomendable aplicar una voxelización si no se aplicó previamente en la eliminación de los puntos incidentes en el suelo.\par
-Para el clustering, se podría utiliza el algoritmo \ac{knn}, pero esto produciría clústeres no válidos al encontrarse objetos con pocos vóxeles o con demasiados, lo que produciría clústeres incompletos y otros mal formados sino se tiene en cuenta una distancia máxima entre vóxeles.\par
+Para el clustering, se podría utilizar el algoritmo \ac{knn}, pero esto produciría clústeres no válidos al encontrarse objetos con pocos vóxeles o con demasiados, lo que produciría clústeres incompletos y otros mal formados sino se tiene en cuenta una distancia máxima entre vóxeles.\par
 El KD-tree \cite{kd_tree} es una estructura de datos que con un eficiente uso de memoria, es capaz de hacer búsquedas en un entorno K dimensional con una complejidad media de $O(\log n)$, esto lo convierte en una gran estructura para trabajar con datos en un entorno tridimensional, como es el caso de las nubes de puntos o de vóxeles. Un KD-tree tiene una estructura similar a un árbol binario, la eficiencia de la estructura radica en la ordenación del mismo, donde en cada altura del árbol se ordena según una dimensión iterativamente.\par
 Antes de analizar en profundidad la estructura KD-tree, es necesario comprender los árboles binarios, tanto su uso, como su utilidad. Los árboles binarios son una estructura de datos donde cada nodo tiene otros dos nodos hijos, referidos como hijo izquierdo e hijo derecho. La utilidad de la estructura radica en la forma en la que se pueden guardar los datos, mientras que para buscar un valor en una lista, es necesario iterar por todos ellos o hasta que se encuentre con una complejidad máxima de $O(n)$, lo que hace que un KD-tree tenga una complejidad máxima de $O(\log_2 n)$.
 
@@ -200,7 +200,7 @@ Al contrario que los árboles binarios, un KD-tree es capaz de localizar un númer
 
 \vspace{0.5cm}
 
-Lo que produce esta forma de guardar los datos en el árbol, es que según se aumenta la profundidad en el árbol, la región de los nodos hijos es cada vez menor, lo que permite una más sencilla agrupación y estudio de los datos por regiones en un entorno K dimensional. Como se ve en la figura \ref{fig:Espacio_bidimensional_dividido_por_un_kd_tree} el espacio bidimensional va siendo dividido por regiones, esto es gracias a que cada nodo divide en dos el espacio sobre el que se encuentran sus hijos, lo cual es una perfecta manera de agrupar los puntos en clústeres utilizando esta estructura, tal y como se detalla en el algoritmo \ref{alg:Cluster_por_distancia_en_KD_tree}
+Lo que produce esta forma de guardar los datos en el árbol, es que según se aumenta la profundidad en el árbol, la región de los nodos hijos es cada vez menor, lo que permite una más sencilla agrupación y estudio de los datos por regiones en un entorno K dimensional. Como se ve en la figura \ref{fig:Espacio_bidimensional_dividido_por_un_kd_tree} el espacio bidimensional va siendo dividido por regiones, esto es gracias a que cada nodo divide en dos el espacio sobre el que se encuentran sus hijos, lo cual es una perfecta manera de agrupar los puntos en clústeres utilizando esta estructura, tal y como se detalla en el algoritmo \ref{alg:Cluster_por_distancia_en_KD_tree}.
 
 \begin{figure}[H]
 	\begin{minipage}{0.48\textwidth}
@@ -276,8 +276,8 @@ Lo que produce esta forma de guardar los datos en el árbol, es que según se aume
 
 \vspace{0.5cm}
 
-Gracias a la estructura KD-tree, se puede reducir la cantidad de nodos o puntos analizados, ya que cada punto no tiene que ser estudiado con el resto sino que solo se estudian los puntos que están en una región cercana dentro del radio máximo de distancia definido. Lo que produce una complejidad de $O(n * \log n)$ para la construcción de la estructura más la complejidad $O(n * \log n)$ de la función de clustering por distancia, por lo que en total se tendría una mejora de complejidad de $O(n²)$ a $O(n * \log n)$.\par
-La eficiencia de esta estructura en ciertas tareas, ha producido que a pesar de ser una técnica del año 1975, se siga estudiando para su utilización junto a \acs{knn} \cite{knn_kd_tree}, aumentando su rendimiento con datos preordenados \cite{kd_tree_presorted} o la paralelización de su construcción en técnicas como \acs{knn} \cite{kd_tree_gpu}.
+Gracias a la estructura KD-tree, se puede reducir la cantidad de nodos o puntos analizados, ya que cada punto no tiene que ser estudiado con el resto, sino que solo se estudian los puntos que están en una región cercana dentro del radio máximo de distancia definido. Lo que produce una complejidad de $O(n * \log n)$ para la construcción de la estructura más la complejidad $O(n * \log n)$ de la función de clustering por distancia, por lo que en total se tendría una mejora de complejidad de $O(n²)$ a $O(n * \log n)$.\par
+La eficiencia de esta estructura en ciertas tareas ha producido que, a pesar de ser una técnica del año 1975, se siga estudiando para su utilización junto a \acs{knn} \cite{knn_kd_tree}, aumentando su rendimiento con datos preordenados \cite{kd_tree_presorted} o la paralelización de su construcción en técnicas como \acs{knn} \cite{kd_tree_gpu}.
 
 \newpage
 
@@ -286,5 +286,5 @@ La eficiencia de esta estructura en ciertas tareas, ha producido que a pesar de 
 
 Tras la obtención de las detecciones por parte de los diversos algoritmos clásicos podemos encontrarnos ante diferentes problemas con dichas detecciones.\par
 Estas pueden generar clústeres con pocos o demasiados puntos, lo que puede resultar en clústeres incorrectos. Aquellos con pocos puntos pueden identificar objetos lejanos u objetos que no son necesarios para el entendimiento de la escena, por otra parte, aquellas detecciones con muchos puntos pueden identificar camiones, vehículos de construcción o simplemente objetos muy cercanos, pero también es muy normal que las construcciones sean detectadas por lo que hay que filtrar tanto por un número máximo como mínimo de puntos para obtener mejores detecciones.\par
-Otra práctica para el filtrado, es el ajuste a unos tamaños prefijados en todas las dimensiones, lo cual elimina aquellos objetos que no son similares a los vehículos que se desean detectar.\par
-Estas técnicas de filtrado no solo se pueden utilizar tras la obtención de las detecciones, sino que la nube de puntos obtenida del \acs{lidar} es posible filtrarla, para que así solo se trabaje con una \ac{roi}, ya que a partir de cierta distancia las detecciones no van a ser muy precisas, para ello se puede filtrar también por distancia al vehículo. Además, un filtrado que permita trabajar unicamente con la parte delantera y trasera del coche, aporta una reducción en el computo de los algoritmos, a la vez que se reducen las falsas detecciones.
+Otra práctica para el filtrado es el ajuste a unos tamaños prefijados en todas las dimensiones, lo cual elimina aquellos objetos que no son similares a los vehículos que se desean detectar.\par
+Estas técnicas de filtrado no solo se pueden utilizar tras la obtención de las detecciones, sino que la nube de puntos obtenida del \acs{lidar} es posible filtrarla, para que así solo se trabaje con una \ac{roi}, ya que a partir de cierta distancia las detecciones no van a ser muy precisas, para ello se puede filtrar también por distancia al vehículo. Además, un filtrado que permita trabajar únicamente con la parte delantera y trasera del coche aporta una reducción en el cómputo de los algoritmos, a la vez que se reducen las falsas detecciones.

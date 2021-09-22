@@ -16,7 +16,7 @@ En conjunto con el \acs{kit} se ha comenzado a desarrollar la herramienta el \ac
 \section{Motivación para la creación del AD DevKit}
 \label{sec:Motivacion_para_la_creacion_del_ad_devkit}
 
-Durante el comienzo del desarrollo de este Trabajo Fin de Grado el cotutor Carlos Gómez Huélamo realiza un estancia en el \acs{kit} donde se propone la idea de creación de un sistema de evaluación de sistemas de conducción autónoma que no solo se reduzca a la parte de percepción sino que también afecte al control, planificación y al sistema de decisiones del vehículo.
+Durante el comienzo del desarrollo de este Trabajo Fin de Grado el cotutor Carlos Gómez Huélamo realiza una estancia en el \acs{kit} donde se propone la idea de creación de un sistema de evaluación de sistemas de conducción autónoma que no solo se reduzca a la parte de percepción, sino que también afecte al control, planificación y al sistema de decisiones del vehículo.
 
 \begin{figure}[H]
 	\centering
@@ -26,7 +26,7 @@ Durante el comienzo del desarrollo de este Trabajo Fin de Grado el cotutor Carlo
 \end{figure}
 
 Este acercamiento no ha sido visto nunca hasta ahora, por lo que el trabajo en este proyecto puede llegar a tener un gran impacto, ya no solo por el carácter multidisciplinar del evaluador sino por la creación de un evaluador en CARLA, aunque durante el desarrollo de este evaluador se han publicado desde un modelo entrenado sobre CARLA \cite{ramnets} a un evaluador de percepción para CARLA \cite{kitticarla}.\par
-El diseño del evaluador se encuentra dividido en 4 partes, cada una evaluando un apartado del sistema de conducción autónomo. Mientras que el grupo RobeSafe se encarga de la evaluación de percepción y el control, en el \acs{kit} se encargan de la evaluación de la planificación y la toma de decisiones. Dentro del grupo RobeSafe, Carlos Gómez Huélamo, el cotutor del TFG, se ha encargado del evaluador de la capa de control, obteniendo el groundtruth necesario junto con métricas para puntuar a los modelos.
+El diseño del evaluador se encuentra dividido en 4 partes, cada una evaluando un apartado del sistema de conducción autónomo. Mientras que el grupo RobeSafe se encarga de la evaluación de percepción y el control, en el \acs{kit} se encargan de la evaluación de la planificación y la toma de decisiones. Dentro del grupo RobeSafe, Carlos Gómez Huélamo, el cotutor del TFG se ha encargado del evaluador de la capa de control, obteniendo el groundtruth necesario junto con métricas para puntuar a los modelos.
 
 \begin{figure}[H]
 	\centering
@@ -36,7 +36,7 @@ El diseño del evaluador se encuentra dividido en 4 partes, cada una evaluando un
 \end{figure}
 
 El apartado para la evaluación de la capa de percepción es la abordada en este trabajo, pero al ser un trabajo de gran complejidad se realiza de forma conjutna con Miguel Antunes García \cite{tfg_miguel}, ya que este desarrollo permite realizar en ambos TFGs el análisis de los métodos de percepción implementados en la arquitectura del proyecto Techs4AgeCar.\par
-Un sistema de evaluación de múltiples capas puede sufrir una menor valoración que un método de una capa en concreto, ya que el problema puede provenir de otra capa. Por ejemplo, un fallo en la capa de planificación, puede resultar en una pobre valoración del sistema de control. Para solucionar esto, se propone un sistema de evaluación online por capas en la que a la vez que se corre el simulador CARLA se realiza la evaluación. El desarrollo propuesto para la realización dentro de este TFG, se encuentra compuesto de la generación de groundtruth en tiempo real, mientras que la evaluación se realiza a posteriori, para de esta manera obtener una primera versión funcional del sistema de evaluación.
+Un sistema de evaluación de múltiples capas puede sufrir una menor valoración que un método de una capa en concreto, ya que el problema puede provenir de otra capa. Por ejemplo, un fallo en la capa de planificación puede resultar en una pobre valoración del sistema de control. Para solucionar esto, se propone un sistema de evaluación online por capas en la que a la vez que se corre el simulador CARLA se realiza la evaluación. El desarrollo propuesto para la realización dentro de este TFG, se encuentra compuesto de la generación de groundtruth en tiempo real, mientras que la evaluación se realiza a posteriori, para de esta manera obtener una primera versión funcional del sistema de evaluación.
 
 \section{Obtención del groundtruth}
 \label{sec:Obtencion_del_ground_truth}
@@ -124,7 +124,7 @@ if self.pointcloud is not None:
 \label{cod:Filtrado_en_funcion_de_la_visibilidad_de_los_objetos_en_el_ad_devkit}
 \end{codefloat}
 
-Una de las partes más importes y delicadas para el uso de esta aplicación en tiempo real es la eficiencia, por lo que hubo que analizar la manera en que se puede realizar un método similar al trazado de rayos, pero con un bajo coste computacional, por ello se decide utilizar la última nube de puntos obtenida de \acs{ros} para filtrar los objetos del entorno en función de si se encuentra algún punto de dicha nube dentro de la bounding box 3D del groundtruth de CARLA. Este método es similar al utilizado en nuScenes donde solo se añaden una bounding box si se encuentra algún punto del \acs{lidar} sobre esta. Para la realización de esta operación es necesaria la vectorización de las operaciones, ya que es necesario un computo en un tiempo menor a $10^{-2}$ segundos.
+Una de las partes más importes y delicadas para el uso de esta aplicación en tiempo real es la eficiencia, por lo que hubo que analizar la manera en que se puede realizar un método similar al trazado de rayos, pero con un bajo coste computacional, por ello se decide utilizar la última nube de puntos obtenida de \acs{ros} para filtrar los objetos del entorno en función de si se encuentra algún punto de dicha nube dentro de la bounding box 3D del groundtruth de CARLA. Este método es similar al utilizado en nuScenes donde solo se añaden una bounding box si se encuentra algún punto del \acs{lidar} sobre esta. Para la realización de esta operación es necesaria la vectorización de las operaciones, ya que es necesario un cómputo en un tiempo menor a $10^{-2}$ segundos.
 
 \subsection{Geometría de la cámara}
 \label{sec:Geometria_de_la_camara}
@@ -233,7 +233,7 @@ f & 0 & 0 & 0 \\
 $
 \end{center}
 
-Por último es necesario aplicar una transformación en la imagen, realizando una conversión de milímetros a píxeles y aplicando un offset para trasladar el centro de la imagen. Tras esta operación se pasa de las coordenadas de los ejes $x$ e $y$ $(dx, dy)$ a las coordenadas pixélicas $(u, v)$.
+Por último, es necesario aplicar una transformación en la imagen, realizando una conversión de milímetros a píxeles y aplicando un offset para trasladar el centro de la imagen. Tras esta operación se pasa de las coordenadas de los ejes $x$ e $y$ $(dx, dy)$ a las coordenadas pixélicas $(u, v)$.
 
 \begin{center}
 $
@@ -273,7 +273,7 @@ f/dx & 0 & u_0 \\
 $
 \end{center}
 
-Dicha matriz intrínseca no es necesario calcularla ya que es fija en función de las características de la cámara, por lo que CARLA ofrece esta matriz. Calculando unicamente la matriz extrínseca se hayan las coordenadas en pixélicas aplicando ambas matrices extrínseca e intrínseca sobre las coordenadas homogéneas.
+Dicha matriz intrínseca no es necesario calcularla ya que es fija en función de las características de la cámara, por lo que CARLA ofrece esta matriz. Calculando únicamente la matriz extrínseca se hayan las coordenadas en pixélicas aplicando ambas matrices extrínseca e intrínseca sobre las coordenadas homogéneas.
 
 \begin{center}
 $
@@ -284,13 +284,13 @@ M_{int} M_{ext}
 $
 \end{center}
 
-Teniendo las bounding boxes 3D transformadas a bounding boxes 2D se marcan aquellas que son visibles desde la cámara y cuales no, para ello se define las bounding boxes 2D como (-1, -1, -1, -1) para identificar que hay un objeto visibles desde el vehículo pero no desde la posición de la cámara.
+Teniendo las bounding boxes 3D transformadas a bounding boxes 2D se marcan aquellas que son visibles desde la cámara y cuáles no, para ello se define las bounding boxes 2D como (-1, -1, -1, -1) para identificar que hay un objeto visible desde el vehículo, pero no desde la posición de la cámara.
 
 \subsection{Formato del groundtruth obtenido}
 \label{sec:Formato_del_ground_truth_obtenido}
 
 El groundtruth utilizado en la evaluación de los sistemas de percepción consta de múltiples atributos, como son: tiempo del groundtruth, tipo de objeto, bounding box 2D, posición, tamaño, rotación y velocidad. A partir de estos parámetros se crea el CSV necesario para la evaluación offline y los mensajes de ROS necesarios para la evaluación online.\par
-Dos de estos atributos son los denominados en el dataset KITTI: \textit{alpha} y \textit{rotation\_y}. Alpha identifica respecto de las coordenadas de cámara de KITTI el ángulo formado entre el eje X y la dirección del coche detectado, mientras que rotation\_y es el ángulo entre el eje X y la recta que une el vehículo propio y el detectado. Este último  ángulo es renombrado a rotation\_z en el groundtruth para aludir al sistema de coordenadas de CARLA y no al de KITTI.
+Dos de estos atributos son los denominados en el dataset KITTI: \textit{alpha} y \textit{rotation\_y}. Alpha identifica respecto de las coordenadas de cámara de KITTI el ángulo formado entre el eje X y la dirección del coche detectado, mientras que rotation\_y es el ángulo entre el eje X y la recta que une el vehículo propio y el detectado. Este último ángulo es renombrado a rotation\_z en el groundtruth para aludir al sistema de coordenadas de CARLA y no al de KITTI.
 
 \begin{figure}[H]
 	\centering
@@ -348,7 +348,7 @@ El CSV contiene la información del groundtruth para la evaluación offline, mient
 \subsection{Funcionamiento del generador de groundtruth}
 \label{sec:Funcionamiento_del_generador_de_ground_truth}
 
-El funcionamiento del sistema de obtención del groundtruth se basa en un nodo que realiza todas las suscripciones necesarias para obtener dichos datos de la forma correcta y enviarlo como mensaje a ROS. Tras esto se suscribe al groundtruth recién publicado y se crea un archivo CSV con este. Por último se guarda la información proveniente de la cámara, \acs{lidar} y \acs{radar} para poder ejecutar los modelos con los mismos datos más adelante y realizar así la evaluación online.
+El funcionamiento del sistema de obtención del groundtruth se basa en un nodo que realiza todas las suscripciones necesarias para obtener dichos datos de la forma correcta y enviarlo como mensaje a ROS. Tras esto se suscribe al groundtruth recién publicado y se crea un archivo CSV con este. Por último, se guarda la información proveniente de la cámara, \acs{lidar} y \acs{radar} para poder ejecutar los modelos con los mismos datos más adelante y realizar así la evaluación online.
 
 \begin{figure}[H]
 	\centering
@@ -410,8 +410,8 @@ La curva de precision-recall por tanto representa la relación entre precision y 
 
 \item \acl{ap}\par
 Esta es una métrica muy importante ya que relaciona tanto la precision como el recall para medir cómo de preciso es un modelo. Para ello se calcula el área por debajo de la curva de precisión, teniendo ésta un valor entre 0 y 1.\par
-No solo se calcula el \acs{ap} por cada clase sino que también se calcula el mAP que sería la media de precisión de todas las clases para la obtención de la precisión general del modelo.
+No solo se calcula el \acs{ap} por cada clase, sino que también se calcula el mAP que sería la media de precisión de todas las clases para la obtención de la precisión general del modelo.
 \item \ac{ave}\par
-La evaluación de los sistemas de seguimiento también se han tenido en cuenta por lo que se calcula una métrica como es el \acs{ave} para saber de que manera se estima la velocidad de los objetos, pudiendo obtenerla tanto por clase como por la media de todas estas. Esta métrica se calcula como el error de velocidad absoluto en 2D trabajando en \acs{bev}.
+La evaluación de los sistemas de seguimiento también se ha tenido en cuenta por lo que se calcula una métrica como es el \acs{ave} para saber de qué manera se estima la velocidad de los objetos, pudiendo obtenerla tanto por clase como por la media de todas estas. Esta métrica se calcula como el error de velocidad absoluto en 2D trabajando en \acs{bev}.
 \end{itemize}
 Este apartado del evaluador ha sido realizado principalmente por Miguel Antunes García en su TFG \cite{tfg_miguel} de forma que al unirlo al generador de groundtruth, se ha conseguido un funcionamiento básico para la capa de percepción del \acs{ad_devkit}.
